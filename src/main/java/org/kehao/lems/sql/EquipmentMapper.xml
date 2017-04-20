@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kehao.lems.dao.EquipmentMapper">
+  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.Equipment">
+    <id column="eid" jdbcType="CHAR" property="eid" />
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="ename" jdbcType="VARCHAR" property="ename" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="addtime" jdbcType="TIMESTAMP" property="addtime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="epid" jdbcType="CHAR" property="epid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    eid, id, ename, type, addtime, status, remark, epid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from s_equipment
+    where eid = #{eid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from s_equipment
+    where eid = #{eid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="org.kehao.lems.entity.Equipment">
+    insert into s_equipment (eid, id, ename, 
+      type, addtime, status, 
+      remark, epid)
+    values (#{eid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{epid,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.kehao.lems.entity.Equipment">
+    insert into s_equipment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="epid != null">
+        epid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eid != null">
+        #{eid,jdbcType=CHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="epid != null">
+        #{epid,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.Equipment">
+    update s_equipment
+    <set>
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="epid != null">
+        epid = #{epid,jdbcType=CHAR},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Equipment">
+    update s_equipment
+    set id = #{id,jdbcType=VARCHAR},
+      ename = #{ename,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      epid = #{epid,jdbcType=CHAR}
+    where eid = #{eid,jdbcType=CHAR}
+  </update>
+</mapper>
