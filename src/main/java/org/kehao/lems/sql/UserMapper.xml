@@ -150,4 +150,10 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where uid = #{uid,jdbcType=CHAR}
   </update>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List" />
+      from s_user
+      where uname = #{uname,jdbcType=CHAR}
+  </select>
 </mapper>

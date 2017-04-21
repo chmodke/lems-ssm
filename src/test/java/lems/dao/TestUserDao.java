@@ -15,8 +15,14 @@ public class TestUserDao {
 	@Resource
 	UserMapper userMapper;
 	@Test
-	public void testGetUser(){
-		User user=userMapper.selectByPrimaryKey("9999");
+	public void testGetUserByUid(){
+		User user=userMapper.selectByPrimaryKey("99999");
+		System.out.println(user.getTureName());
+	}
+
+	@Test
+	public void testGetUserByUname(){
+		User user=userMapper.selectByName("admin");
 		System.out.println(user.getTureName());
 	}
 }

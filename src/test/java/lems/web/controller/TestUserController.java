@@ -41,7 +41,7 @@ public class TestUserController {
 		//发送执行一个HTTP请求
 		RequestBuilder request=MockMvcRequestBuilders
 		.post("/user/login.do")
-		.param("id", "9999");//传数据
+		.param("id", "99999");//传数据
 		
 		MvcResult result=mockMvc.perform(request)
 		.andDo(MockMvcResultHandlers.print())//将请求头和响应头打印

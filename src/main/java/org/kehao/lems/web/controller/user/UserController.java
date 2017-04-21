@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 	@Resource
 	private UserService userService;
-	@RequestMapping("/login.do")
+	@RequestMapping("/getuser.do")
 	@ResponseBody
 	public LEMSResult login(String id){
 		LEMSResult result=new LEMSResult();
@@ -21,5 +21,10 @@ public class UserController {
 		result.setStatus(0);
 		result.setMessage("success");
 		return result;
+	}
+	@RequestMapping("/login.do")
+	@ResponseBody
+	public LEMSResult login(String uname,String passwd){
+		return userService.validationUser(uname,passwd);
 	}
 }
