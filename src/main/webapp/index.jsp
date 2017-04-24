@@ -88,6 +88,12 @@
                     <li>用户授权管理</li>
                 </ul>
             </div>
+            <div title="用户个人信息管理" data-options="border:false,iconCls:'anchor'">
+                <ul>
+                    <li>用户信息变更</li>
+                    <li>用户密码变更</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;">
