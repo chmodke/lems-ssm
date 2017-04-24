@@ -23,6 +23,8 @@ public class User {
 
     private Date createtime;
 
+    private String token;
+
     public String getUid() {
         return uid;
     }
@@ -101,5 +103,13 @@ public class User {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token == null ? null : token.trim();
     }
 }

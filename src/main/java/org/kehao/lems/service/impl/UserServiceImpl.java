@@ -4,6 +4,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.service.UserService;
+import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
 import org.kehao.lems.utils.secret.aes.util.AesUtil;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by kehao on 2017/4/20.
@@ -46,8 +49,12 @@ public class UserServiceImpl implements UserService{
             result.setMessage("用户名不存在");
             result.setStatus(1);
             return result;
-        }else if(passwd.equals(user.getPasswd())){
-            //TODO 密码校验算法
+        }else if(LEMSMD5Util.validate(passwd,user.getPasswd(),user.getSalt())){
+            user.setToken(CodeUtil.createId());
+            Map data=new HashMap();
+            data.put("uid",user.getUid());
+            data.put("token",user.getToken());
+            userMapper.updateTokenByUid(data);
             result.setData(user);
             result.setMessage("登录成功");
             result.setStatus(0);
@@ -57,11 +64,6 @@ public class UserServiceImpl implements UserService{
             result.setStatus(2);
             return result;
         }
-    }
-    private boolean validation(String passwd_db, String passwd,String salt){
-        boolean flag=false;
-//        if(passwd_db.equals(LEMSMD5Util.validate())
-        return flag;
     }
 
     /**

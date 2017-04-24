@@ -2,6 +2,8 @@ package org.kehao.lems.dao;
 
 import org.kehao.lems.entity.User;
 
+import java.util.Map;
+
 public interface UserMapper{
     int deleteByPrimaryKey(String uid);
 
@@ -18,4 +20,5 @@ public interface UserMapper{
     //---------------------
 
     User selectByName(String uname);
+    int updateTokenByUid(Map<String, Object> data);
 }

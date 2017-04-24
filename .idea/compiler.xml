@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LEMS" />
+        <module name="lems" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="LEMS" target="1.5" />
+      <module name="lems" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

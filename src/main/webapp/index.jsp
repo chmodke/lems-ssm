@@ -15,6 +15,7 @@
 
     <link id="easyuiTheme" rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/bootstrap/easyui.css" type="text/css">
     <script type="text/javascript" src="jslib/cookie_util.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="jslib/base64.js" charset="UTF-8"></script>
 
     <script type="text/javascript" src="jslib/lems/lems-util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/lems/index.js" charset="UTF-8"></script>
@@ -40,11 +41,17 @@
             <b>暂无备案</b>
         </div>
     </div>
-    <div data-options="region:'east',title:'备注',split:false,collapsible:true,resizable:true"  style="width:100px;">
+    <div data-options="region:'east',title:'备注',split:true,collapsible:true,resizable:true"  style="width:100px;">
 
     </div>
     <div data-options="region:'west',title:'功能导航',split:false,collapsible:true" style="width:150px;">
         <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="基础功能" data-options="border:false,iconCls:'anchor'">
+                <ul>
+                    <li>设备查询</li>
+                    <li>实验室查询</li>
+                </ul>
+            </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li>设备采购(添加)</li>

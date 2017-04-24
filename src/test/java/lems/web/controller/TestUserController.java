@@ -1,6 +1,7 @@
 package lems.web.controller;
 
 import junit.framework.Assert;
+import org.apache.commons.codec.binary.Base64;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -57,4 +58,27 @@ public class TestUserController {
 		//断言
 		Assert.assertEquals(0, lemsResult.getStatus());
 	}
+	@Test
+    public void test2() throws Exception{
+        String msg = "admin" + ":" + "123456";
+        String base_64_msg= Base64.encodeBase64String(msg.getBytes());
+        String authorization="Basic "+base_64_msg;
+
+        //发送执行一个HTTP请求
+        RequestBuilder request=MockMvcRequestBuilders
+                .post("/user/login.do")
+                .header("Authorization", authorization);//使用header传数据
+        MvcResult result=mockMvc.perform(request)
+                .andDo(MockMvcResultHandlers.print())//将请求头和响应头打印
+                .andExpect(MockMvcResultMatchers.status().isOk())//期望返回状态码200
+                .andReturn();//用来返回结果
+        //提取响应中的json字符串
+        String jsonStr=result.getResponse().getContentAsString();
+        System.out.println(jsonStr);
+        //将json字符串转成java对象
+        ObjectMapper mapper=new ObjectMapper();
+        LEMSResult noteResult=mapper.readValue(jsonStr, LEMSResult.class);
+        //断言
+        Assert.assertEquals(0, noteResult.getStatus());
+    }
 }

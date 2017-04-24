@@ -9,25 +9,42 @@
 <script>
     var loginDialog;
     var login_btn;
+    var reset_btn;
     $(function () {
         loginDialog = $("#loginDialog");
         login_btn = $("#login_btn");
+        reset_btn = $("#reset_btn");
 
         login_btn.click(login);
+        reset_btn.click(reset);
+        var uid=getCookie("uid");
+        var token=getCookie("token");
+        if(uid!=null&&token!=null){
+            loginDialog.dialog('destroy');
+        }
 
 
         function login() {
             var name = $("#namebox").val();
             var pwd = $("#passbox").val();
+
+            var msg = name + ":" + pwd;
+            var base64_msg = Base64.encode(msg);
+
             $.ajax({
                 url: "user/login.do",
                 type: "post",
-                data: {"uname": name, "passwd": pwd},
+                // data:{"uname":name,"passwd":pwd},
                 dataType: "json",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + base64_msg);
+                },
                 success: function (result) {
                     if (result.status == 0) {
-                        var userId = result.data.uid;
-//                        addCookie("userId", userId, 0.5);
+                        var uid = result.data.uid;
+                        var token=result.data.token;
+                        addCookie("uid", uid, );
+                        addCookie("token",token,)
                         loginDialog.dialog('destroy');
                         $.messager.show({
                             title: '提示',
@@ -37,10 +54,10 @@
                         });
                     }
                     if (result.status == 1) {
-                        $.messager.alert('标题', result.message);
+                        $.messager.alert('警告', result.message);
                     }
                     if (result.status == 2) {
-                        $.messager.alert('标题', result.message);
+                        $.messager.alert('警告', result.message);
                     }
                 },
                 error: function () {
@@ -48,6 +65,11 @@
                 },
                 async: true
             });
+        }
+
+        function reset() {
+            $("#namebox").val("");
+            $("#passbox").val("");
         }
     });
 
@@ -74,7 +96,7 @@
             <tr>
                 <td colspan="2">
                     <div class="dialog-button">
-                        <a id="reset" class="l-btn">
+                        <a id="reset_btn" class="l-btn">
                                     <span class="l-btn-left">
                                         <span class="l-btn-text">清空</span>
                                     </span>

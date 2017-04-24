@@ -12,9 +12,6 @@ import com.sun.org.apache.xml.internal.security.utils.Base64;
  * Created by hao on 2017/04/24.
  */
 public class LEMSMD5Util {
-    public static String createId(){
-        return UUID.randomUUID().toString().replaceAll("-", "");
-    }
     /**
      * 采用MD5摘要算法处理
      *
@@ -76,7 +73,7 @@ public class LEMSMD5Util {
     }
 
     public static void main(String[] args) {
-        System.out.println(md5("123456","qwe"));
-        System.out.println(validate("123456","6fXFJAwLs5SI5tv72xUX4A==","qwe"));
+        System.out.println(md5("123456","123456"));
+        System.out.println(validate("123456","6khXbzC+FmmXFpnAmtBclA==","123456"));
     }
 }

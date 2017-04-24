@@ -12,10 +12,11 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="masterid" jdbcType="CHAR" property="masterid" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="token" jdbcType="CHAR" property="token" />
   </resultMap>
   <sql id="Base_Column_List">
     uid, uname, ture_name, passwd, salt, office_address, office_phone, email, 
-    masterid, createtime
+    masterid, createtime,token
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -31,11 +32,11 @@
     insert into s_user (uid, uname, ture_name, 
       passwd, salt, 
       office_address, office_phone, email, 
-      masterid, createtime)
+      masterid, createtime,token)
     values (#{uid,jdbcType=CHAR}, #{uname,jdbcType=VARCHAR}, #{tureName,jdbcType=VARCHAR}, 
       #{passwd,jdbcType=CHAR}, #{salt,jdbcType=CHAR}, 
       #{officeAddress,jdbcType=VARCHAR}, #{officePhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{masterid,jdbcType=CHAR}, #{createtime,jdbcType=TIMESTAMP})
+      #{masterid,jdbcType=CHAR}, #{createtime,jdbcType=TIMESTAMP},#{token,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="org.kehao.lems.entity.User">
     insert into s_user
@@ -70,6 +71,9 @@
       <if test="createtime != null">
         createtime,
       </if>
+      <if test="token != null">
+        token,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="uid != null">
@@ -101,6 +105,9 @@
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -134,6 +141,9 @@
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
+      <if test="token != null">
+        token = #{token,jdbcType=CHAR},
+      </if>
     </set>
     where uid = #{uid,jdbcType=CHAR}
   </update>
@@ -147,7 +157,8 @@
       office_phone = #{officePhone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       masterid = #{masterid,jdbcType=CHAR},
-      createtime = #{createtime,jdbcType=TIMESTAMP}
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      token = #{token,jdbcType=CHAR},
     where uid = #{uid,jdbcType=CHAR}
   </update>
   <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -156,4 +167,7 @@
       from s_user
       where uname = #{uname,jdbcType=CHAR}
   </select>
+  <update id="updateTokenByUid" parameterType="map" >
+      update s_user set token = #{token,jdbcType=CHAR} where uid = #{uid,jdbcType=CHAR}
+  </update>
 </mapper>
