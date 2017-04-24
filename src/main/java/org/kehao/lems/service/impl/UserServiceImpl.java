@@ -1,12 +1,17 @@
 package org.kehao.lems.service.impl;
 
+import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.service.UserService;
+import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
+import org.kehao.lems.utils.secret.aes.util.AesUtil;
+import org.kehao.lems.utils.secret.aes_plus.util.AesUtilPlus;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by kehao on 2017/4/20.
@@ -28,6 +33,12 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
+    /**
+     * 登录校验算法
+     * @param name
+     * @param passwd
+     * @return
+     */
     public LEMSResult validationUser(String name, String passwd) {
         LEMSResult result=new LEMSResult();
         User user=userMapper.selectByName(name);
@@ -46,5 +57,23 @@ public class UserServiceImpl implements UserService{
             result.setStatus(2);
             return result;
         }
+    }
+    private boolean validation(String passwd_db, String passwd,String salt){
+        boolean flag=false;
+//        if(passwd_db.equals(LEMSMD5Util.validate())
+        return flag;
+    }
+
+    /**
+     * 登录校验入口
+     * @param auther
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+    public LEMSResult checkLogin(String auther) throws UnsupportedEncodingException {
+        String base64_msg = auther.split(" ")[1];
+        byte[] output = Base64.decodeBase64(base64_msg);
+        String msg = new String(output, "utf-8");
+        return validationUser(msg.split(":")[0], msg.split(":")[1]);
     }
 }
