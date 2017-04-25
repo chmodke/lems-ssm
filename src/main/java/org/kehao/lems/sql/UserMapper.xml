@@ -170,4 +170,10 @@
   <update id="updateTokenByUid" parameterType="map" >
       update s_user set token = #{token,jdbcType=CHAR} where uid = #{uid,jdbcType=CHAR}
   </update>
+  <select id="selectByEmail"  parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from s_user
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
 </mapper>

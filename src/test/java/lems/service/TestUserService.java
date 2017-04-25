@@ -30,10 +30,10 @@ public class TestUserService {
         System.out.println(((User)result.getData()).getTureName());
     }
 
-    @Test
+    /*@Test
     public void testGetUserVali(){
         LEMSResult result=userService.validationUser("admin","123456");
         System.out.println(result.getMessage());
-    }
+    }*/
 
 }

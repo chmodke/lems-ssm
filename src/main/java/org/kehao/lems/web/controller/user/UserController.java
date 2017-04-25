@@ -3,6 +3,7 @@ package org.kehao.lems.web.controller.user;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.kehao.lems.entity.User;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,12 @@ import java.io.UnsupportedEncodingException;
 public class UserController {
 	@Resource
 	private UserService userService;
+
+    /**
+     * 通过id获取用户信息，测试使用
+     * @param id
+     * @return
+     */
 	@RequestMapping("/getuser.do")
 	@ResponseBody
 	public LEMSResult login(String id){
@@ -25,14 +32,40 @@ public class UserController {
 		result.setMessage("success");
 		return result;
 	}
-	@RequestMapping("/login1.do")
+
+    /**
+     * 明文登录方法，测试使用
+     * @param uname
+     * @param passwd
+     * @return
+     */
+	/*@RequestMapping("/login1.do")
 	@ResponseBody
 	public LEMSResult login(String uname,String passwd){
 		return userService.validationUser(uname,passwd);
-	}
+	}*/
+
+    /**
+     * 用户登录，使用请求头传递数据
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
+     */
 	@RequestMapping("/login.do")
 	@ResponseBody
 	public LEMSResult login(HttpServletRequest request) throws UnsupportedEncodingException {
         return userService.checkLogin(request.getHeader("Authorization"));
     }
+
+    /**
+     * 添加用户
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+	@RequestMapping("/useradd.do")
+	@ResponseBody
+	public LEMSResult useradd(HttpServletRequest request) throws UnsupportedEncodingException {
+		return userService.userAdd(request.getHeader("Authorization"));
+	}
 }

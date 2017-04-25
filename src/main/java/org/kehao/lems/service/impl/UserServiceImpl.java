@@ -12,7 +12,9 @@ import org.kehao.lems.utils.secret.aes_plus.util.AesUtilPlus;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,12 +39,24 @@ public class UserServiceImpl implements UserService{
     }
 
     /**
+     * 登录校验入口
+     * @param auther
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+    public LEMSResult checkLogin(String auther) throws UnsupportedEncodingException {
+        String base64_msg = auther.split(" ")[1];
+        byte[] output = Base64.decodeBase64(base64_msg);
+        String msg = new String(output, "utf-8");
+        return validationUser(msg.split(":")[0], msg.split(":")[1]);
+    }
+    /**
      * 登录校验算法
      * @param name
      * @param passwd
      * @return
      */
-    public LEMSResult validationUser(String name, String passwd) {
+    private LEMSResult validationUser(String name, String passwd) {
         LEMSResult result=new LEMSResult();
         User user=userMapper.selectByName(name);
         if(user==null){
@@ -66,16 +80,46 @@ public class UserServiceImpl implements UserService{
         }
     }
 
-    /**
-     * 登录校验入口
-     * @param auther
-     * @return
-     * @throws UnsupportedEncodingException
-     */
-    public LEMSResult checkLogin(String auther) throws UnsupportedEncodingException {
+
+    public LEMSResult userAdd(String auther)throws UnsupportedEncodingException {
         String base64_msg = auther.split(" ")[1];
         byte[] output = Base64.decodeBase64(base64_msg);
         String msg = new String(output, "utf-8");
-        return validationUser(msg.split(":")[0], msg.split(":")[1]);
+        User user =new User();
+        user.setUname(msg.split(":")[0]);
+        user.setPasswd(msg.split(":")[1]);
+        user.setTureName(msg.split(":")[2]);
+        user.setEmail(msg.split(":")[3]);
+        user.setMasterid(msg.split(":")[4]);
+        return userAdd(user);
+
     }
+    private LEMSResult userAdd(User user){
+        LEMSResult result=new LEMSResult();
+        if(userMapper.selectByName(user.getUname())!=null){
+            result.setMessage("此用户名已存在");
+            result.setStatus(2);
+            return result;
+        }else if(userMapper.selectByEmail(user.getEmail())!=null){
+            result.setMessage("此用邮箱已被注册");
+            result.setStatus(3);
+            return result;
+        }
+        user.setUid(CodeUtil.createId());
+        String salt=CodeUtil.createSalt(6);
+        user.setSalt(salt);
+        user.setPasswd(LEMSMD5Util.md5(user.getPasswd(),salt));
+        user.setCreatetime(new Timestamp(System.currentTimeMillis()));
+        int rec=userMapper.insertSelective(user);
+        if (rec==1){
+            result.setData(user);
+            result.setMessage("添加成功");
+            result.setStatus(0);
+        }else {
+            result.setMessage("添加失败,请稍后重试");
+            result.setStatus(1);
+        }
+        return result;
+    }
+
 }

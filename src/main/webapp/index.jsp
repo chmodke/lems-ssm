@@ -17,6 +17,9 @@
     <script type="text/javascript" src="jslib/cookie_util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/base64.js" charset="UTF-8"></script>
 
+    <!-- 引入my97日期时间控件 -->
+    <script type="text/javascript" src="jslib/My97DatePicker4.8b3/My97DatePicker/WdatePicker.js" charset="utf-8"></script>
+
     <script type="text/javascript" src="jslib/lems/lems-util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/lems/index.js" charset="UTF-8"></script>
 </head>
@@ -98,6 +101,14 @@
     </div>
     <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;">
         <jsp:include page="user/login.jsp"></jsp:include>
+        <div id="tt" class="easyui-tabs" style="width:99.5%;height:99.5%;padding: 0px">
+            <div title="welcome" data-options="closable:false" style="overflow:auto;display:none;">
+                <jsp:include page="welcome.jsp"></jsp:include>
+            </div>
+            <div title="Tab2" data-options="closable:true" style="overflow:auto;display:none;" >
+                tab2
+            </div>
+        </div>
     </div>
 </div>
 </body>

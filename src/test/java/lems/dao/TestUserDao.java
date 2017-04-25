@@ -37,4 +37,9 @@ public class TestUserDao {
         data.put("token",temp);
 		int ststus=userMapper.updateTokenByUid(data);
 	}
+	@Test
+	public void testSelectUserByEmail(){
+	    User user=userMapper.selectByEmail("admin@xx.com");
+        System.out.println(user.getUid());
+    }
 }

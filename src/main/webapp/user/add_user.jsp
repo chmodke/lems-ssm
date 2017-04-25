@@ -43,8 +43,8 @@
                     if (result.status == 0) {
                         var uid = result.data.uid;
                         var token=result.data.token;
-                        addCookie("uid", uid, -1);
-                        addCookie("token",token,-1)
+                        addCookie("uid", uid, );
+                        addCookie("token",token,)
                         loginDialog.dialog('destroy');
                         $.messager.show({
                             title: '提示',
@@ -74,9 +74,9 @@
     });
 
 </script>
-<div id="loginDialog" class="easyui-dialog"
-     style="width: 315px;height: 210px;overflow: hidden; margin:0px;padding: 10px;padding-bottom: 0px"
-     data-options="title: '登录',resizable:false,modal:true,closable:false,closed:false">
+<div id="addUserDialog" class="easyui-dialog"
+     style="width: 310px;height: 210px;overflow: hidden; margin:0px;padding: 10px;padding-bottom: 0px"
+     data-options="title: '添加用户',resizable:false,modal:true,closable:false,closed:false">
     <form method="post">
         <table class="table table-hover table-condensed">
             <tr>
@@ -94,6 +94,20 @@
                 </td>
             </tr>
             <tr>
+                <th>真实姓名</th>
+                <td>
+                    <input id="truenamebox" type="text" placeholder="请输入真实姓名" class="easyui-validatebox"
+                           data-options="required:true">
+                </td>
+            </tr>
+            <tr>
+                <th>邮箱</th>
+                <td>
+                    <input id="emailbox" type="text" placeholder="请输入邮箱" class="easyui-validatebox"
+                           data-options="required:true">
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2">
                     <div class="dialog-button">
                         <a id="reset_btn" class="l-btn">
@@ -101,9 +115,9 @@
                                         <span class="l-btn-text">清空</span>
                                     </span>
                         </a>
-                        <a id="login_btn" class="l-btn">
+                        <a id="add_btn" class="l-btn">
                                     <span class="l-btn-left">
-                                        <span class="l-btn-text">登录</span>
+                                        <span class="l-btn-text">添加</span>
                                     </span>
                         </a>
                     </div>
