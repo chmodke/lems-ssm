@@ -22,6 +22,26 @@
 
     <script type="text/javascript" src="jslib/lems/lems-util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/lems/index.js" charset="UTF-8"></script>
+    <script>
+        $(function(){
+            $("#index_logout").click(index_logout);
+
+            function index_logout(){
+                delCookie("uid");
+                delCookie("token");
+                delCookie("uname");
+                window.location.reload();
+            }
+        });
+    </script>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:none;
+        }
+    </style>
 </head>
 <body>
 <div id="cc" class="easyui-layout" data-options="fit : true">
@@ -31,9 +51,9 @@
                 <b style="font-size: 48px;color: #0E76CB">Laboratory Equipment Management System</b>
             </div>
             <div style="width: 20%;float: left;text-align: left;margin-bottom: auto">
-                <b>[***]，您好</b><br>
+                <b>[</b><span id="index_username"></span><b>]您好</b><br>
                 <b>欢迎使用实验室设备管理系统</b><br>
-                <b>[***]角色</b>
+                <b>[</b><span id="index_userrole"></span><b>]角色&emsp;</b><span id="index_logout"></span>
             </div>
         </div>
     </div>
@@ -86,7 +106,7 @@
             </div>
             <div title="用户管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>用户添加</li>
+                    <li><a href="javascript:;">用户添加</a></li>
                     <li>用户删除</li>
                     <li>用户授权管理</li>
                 </ul>
@@ -102,11 +122,11 @@
     <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;">
         <jsp:include page="user/login.jsp"></jsp:include>
         <div id="tt" class="easyui-tabs" style="width:99.5%;height:99.5%;padding: 0px">
-            <div title="welcome" data-options="closable:false" style="overflow:auto;display:none;">
+            <div title="欢迎" data-options="closable:false" style="overflow:auto;display:none;">
                 <jsp:include page="welcome.jsp"></jsp:include>
             </div>
-            <div title="Tab2" data-options="closable:true" style="overflow:auto;display:none;" >
-                tab2
+            <div title="添加用户" data-options="closable:true" style="overflow:auto;display:none;" >
+                <jsp:include page="user/add_user.jsp"></jsp:include>
             </div>
         </div>
     </div>

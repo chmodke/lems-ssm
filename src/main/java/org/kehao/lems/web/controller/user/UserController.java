@@ -54,7 +54,7 @@ public class UserController {
 	@RequestMapping("/login.do")
 	@ResponseBody
 	public LEMSResult login(HttpServletRequest request) throws UnsupportedEncodingException {
-        return userService.checkLogin(request.getHeader("Authorization"));
+        return userService.checkLogin(request.getHeader("Authorization_login"));
     }
 
     /**
@@ -66,6 +66,6 @@ public class UserController {
 	@RequestMapping("/useradd.do")
 	@ResponseBody
 	public LEMSResult useradd(HttpServletRequest request) throws UnsupportedEncodingException {
-		return userService.userAdd(request.getHeader("Authorization"));
+		return userService.userAdd(request.getHeader("Authorization_adduser"));
 	}
 }

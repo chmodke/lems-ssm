@@ -69,7 +69,7 @@ public class TestUserController {
 	 * @throws Exception
 	 */
 	@Test
-    public void test2() throws Exception{
+    public void testAuthorLogin() throws Exception{
         String msg = "admin" + ":" + "123456";
         String base_64_msg= Base64.encodeBase64String(msg.getBytes());
         String authorization="Basic "+base_64_msg;
@@ -77,7 +77,7 @@ public class TestUserController {
         //发送执行一个HTTP请求
         RequestBuilder request=MockMvcRequestBuilders
                 .post("/user/login.do")
-                .header("Authorization", authorization);//使用header传数据
+                .header("Authorization_login", authorization);//使用header传数据
         MvcResult result=mockMvc.perform(request)
                 .andDo(MockMvcResultHandlers.print())//将请求头和响应头打印
                 .andExpect(MockMvcResultMatchers.status().isOk())//期望返回状态码200
@@ -92,11 +92,11 @@ public class TestUserController {
         Assert.assertEquals(0, noteResult.getStatus());
     }
     @Test
-    public void userControllerUserAdd() throws Exception{
-	    String uname="kehao";
+    public void testAuthorAdd() throws Exception{
+	    String uname="test003";
 	    String passwd="123456";
-	    String trueName="kehao";
-	    String email="kehao001@xx.com";
+	    String trueName="test003";
+	    String email="test003@xx.com";
 	    String masterid="9999";
         String msg = uname + ":" + passwd + ":"+trueName+ ":" + email+":"+masterid;
         String base_64_msg= Base64.encodeBase64String(msg.getBytes());
@@ -105,7 +105,7 @@ public class TestUserController {
         //发送执行一个HTTP请求
         RequestBuilder request=MockMvcRequestBuilders
                 .post("/user/useradd.do")
-                .header("Authorization", authorization);//使用header传数据
+                .header("Authorization_adduser", authorization);//使用header传数据
         MvcResult result=mockMvc.perform(request)
                 .andDo(MockMvcResultHandlers.print())//将请求头和响应头打印
                 .andExpect(MockMvcResultMatchers.status().isOk())//期望返回状态码200
