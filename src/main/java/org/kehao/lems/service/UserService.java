@@ -38,4 +38,11 @@ public interface UserService {
      * @return
      */
     LEMSResult userAdd(String auther)throws UnsupportedEncodingException;
+
+    /**
+     * 校验用户名是否存在
+     * @param uname
+     * @return
+     */
+    LEMSResult useraddValidation(String uname);
 }

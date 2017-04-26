@@ -24,13 +24,33 @@
     <script type="text/javascript" src="jslib/lems/index.js" charset="UTF-8"></script>
     <script>
         $(function(){
-            $("#index_logout").click(index_logout);
+            if(!navigator.cookieEnabled){//判断浏览器是否支持cookie
+                $.messager.alert('警告', "你的浏览器未启用Cookie功能，如需使用本系统请开启浏览器Cookie",'info');
+            }
 
+            $("#index_logout").click(index_logout);//退出按钮事件绑定
+            $("#useradd_link").click(useradd_tab_add);//添加用户菜单事件绑定
+
+            /**
+             * 退出按钮单击事件处理
+             */
             function index_logout(){
                 delCookie("uid");
                 delCookie("token");
                 delCookie("uname");
                 window.location.reload();
+            }
+
+            /**
+             * 单击添加用户菜单事件
+             */
+            function useradd_tab_add(){
+                $("#index_tt").tabs('add',{
+                    title:"用户添加",
+                    closable:true,
+                    href:'user/add_user.jsp',
+                    fit:true
+                });
             }
         });
     </script>
@@ -106,7 +126,7 @@
             </div>
             <div title="用户管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li><a href="javascript:;">用户添加</a></li>
+                    <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
                     <li>用户删除</li>
                     <li>用户授权管理</li>
                 </ul>
@@ -121,13 +141,13 @@
     </div>
     <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;">
         <jsp:include page="user/login.jsp"></jsp:include>
-        <div id="tt" class="easyui-tabs" style="width:99.5%;height:99.5%;padding: 0px">
+        <div id="index_tt" class="easyui-tabs" style="width:99.5%;height:99.5%;padding: 0px">
             <div title="欢迎" data-options="closable:false" style="overflow:auto;display:none;">
                 <jsp:include page="welcome.jsp"></jsp:include>
             </div>
-            <div title="添加用户" data-options="closable:true" style="overflow:auto;display:none;" >
+            <%--<div title="添加用户" data-options="closable:true" style="overflow:auto;display:none;" >
                 <jsp:include page="user/add_user.jsp"></jsp:include>
-            </div>
+            </div>--%>
         </div>
     </div>
 </div>

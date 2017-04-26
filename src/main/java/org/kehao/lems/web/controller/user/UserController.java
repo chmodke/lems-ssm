@@ -68,4 +68,15 @@ public class UserController {
 	public LEMSResult useradd(HttpServletRequest request) throws UnsupportedEncodingException {
 		return userService.userAdd(request.getHeader("Authorization_adduser"));
 	}
+
+    /**
+     * 添加用户中用户名校验
+     * @param uname
+     * @return
+     */
+    @RequestMapping("/useradd_validation.do")
+	@ResponseBody
+	public LEMSResult useraddValidation(String uname){
+		return userService.useraddValidation(uname);
+	}
 }

@@ -94,6 +94,7 @@ public class UserServiceImpl implements UserService{
         return userAdd(user);
 
     }
+
     private LEMSResult userAdd(User user){
         LEMSResult result=new LEMSResult();
         if(userMapper.selectByName(user.getUname())!=null){
@@ -122,4 +123,16 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
+    public LEMSResult useraddValidation(String uname) {
+        LEMSResult result=new LEMSResult();
+        User user=userMapper.selectByName(uname);
+        if(user!=null){
+            result.setMessage("用户名已存在");
+            result.setStatus(1);
+        }else{
+            result.setMessage("用户名可用");
+            result.setStatus(0);
+        }
+        return result;
+    }
 }

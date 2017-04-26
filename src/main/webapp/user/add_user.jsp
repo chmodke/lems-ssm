@@ -2,18 +2,43 @@
 <script>
     $(function () {
         var add_user_btn = $("#add_user_btn");
-        var adduser_reset_btn = $("#reset_btn");
+        var adduser_reset_btn = $("#adduser_reset_btn");
 
         add_user_btn.click(add_user);//添加用户按钮事件绑定
         adduser_reset_btn.click(adduser_reset);
 
+//        $("#adduser_namebox").blur(validation_adduser());
+        //暂时不启用
+
+        /**
+         * 注册页面回车键事件绑定
+         */
         $("#adduser_emailbox").keydown(function (event) {
             var keyCode=event.keyCode;
             if(keyCode==13){
                 add_user();
             }
         });
-
+        //验证用户名是否被占用
+        function validation_adduser() {
+            var adduser_uname = $("#adduser_namebox").val();
+            $.ajax({
+                url: "./user/useradd_validation.do",
+                type: "post",
+                data:{"uname":adduser_uname},
+                dataType: "json",
+                success: function (result) {
+                    if (result.status != 0) {
+                        $.messager.alert('警告', result.message);
+                    }
+                },
+                error: function () {
+                    $.messager.alert('警告', "校验用户名异常");
+                },
+                async: true
+            });
+        }
+        //用户登录
         function add_user() {
             var adduser_uid=getCookie("uid");
             var adduser_token=getCookie("token");

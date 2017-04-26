@@ -12,6 +12,9 @@
     <script type="text/javascript" src="jslib/lems-util.js" charset="UTF-8"></script>--%>
     <script type="text/javascript" charset="utf-8">
         $(function() {
+            /**
+             * 初始化日历组件
+             */
             $('#layout_east_calendar').calendar({
                 fit : false,
                 current : new Date(),
@@ -22,6 +25,9 @@
 
             });
         });
+        /**
+         * 显示本地时钟
+         */
         function time() {
             var date=new Date();
             var hours=date.getHours();

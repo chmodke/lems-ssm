@@ -8,6 +8,7 @@
         login_btn.click(login);
         reset_login_btn.click(reset_login);
 
+        //绑定回车键事件
         $("#login_passbox").keydown(function (event) {
             var keyCode=event.keyCode;
             if(keyCode==13){
@@ -31,7 +32,7 @@
             $("#index_logout").html('<a href="javascript:;">安全退出</a>');//显示退出按钮
 
         }
-
+        //用户登录
         function login() {
             var login_uname = $("#login_namebox").val();
             var login_passwd = $("#login_passbox").val();
@@ -126,14 +127,14 @@
                 <td colspan="2">
                     <div class="dialog-button">
                         <a id="reset_login_btn" class="l-btn">
-                                    <span class="l-btn-left">
-                                        <span class="l-btn-text">清空</span>
-                                    </span>
+                            <span class="l-btn-left">
+                                <span class="l-btn-text">清空</span>
+                            </span>
                         </a>
                         <a id="login_btn" class="l-btn">
-                                    <span class="l-btn-left">
-                                        <span class="l-btn-text">登录</span>
-                                    </span>
+                            <span class="l-btn-left">
+                                <span class="l-btn-text">登录</span>
+                            </span>
                         </a>
                     </div>
                 </td>
