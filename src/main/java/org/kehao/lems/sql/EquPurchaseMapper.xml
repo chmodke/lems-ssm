@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kehao.lems.dao.EquPurchaseMapper">
   <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquPurchase">
-    <id column="epid" jdbcType="CHAR" property="epid" />
+    <result column="epid" jdbcType="CHAR" property="epid" />
     <result column="pcid" jdbcType="CHAR" property="pcid" />
     <result column="uid" jdbcType="CHAR" property="uid" />
     <result column="pctime" jdbcType="TIMESTAMP" property="pctime" />
@@ -14,11 +14,11 @@
     select 
     <include refid="Base_Column_List" />
     from s_equ_purchase
-    where epid = #{epid,jdbcType=CHAR}
+    where pcid = #{pcid,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from s_equ_purchase
-    where epid = #{epid,jdbcType=CHAR}
+    where pcid = #{pcid,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="org.kehao.lems.entity.EquPurchase">
     insert into s_equ_purchase (epid, pcid, uid, pctime
@@ -60,8 +60,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquPurchase">
     update s_equ_purchase
     <set>
-      <if test="pcid != null">
-        pcid = #{pcid,jdbcType=CHAR},
+      <if test="epid != null">
+        epid = #{epid,jdbcType=CHAR},
       </if>
       <if test="uid != null">
         uid = #{uid,jdbcType=CHAR},
@@ -70,13 +70,13 @@
         pctime = #{pctime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where epid = #{epid,jdbcType=CHAR}
+    where pcid = #{pcid,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquPurchase">
     update s_equ_purchase
-    set pcid = #{pcid,jdbcType=CHAR},
+    set epid = #{epid,jdbcType=CHAR},
       uid = #{uid,jdbcType=CHAR},
       pctime = #{pctime,jdbcType=TIMESTAMP}
-    where epid = #{epid,jdbcType=CHAR}
+    where pcid = #{pcid,jdbcType=CHAR}
   </update>
 </mapper>

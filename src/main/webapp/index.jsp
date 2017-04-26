@@ -30,6 +30,9 @@
 
             $("#index_logout").click(index_logout);//退出按钮事件绑定
             $("#useradd_link").click(useradd_tab_add);//添加用户菜单事件绑定
+            $("#equadd_link").click(equadd_tab_add);//添加设备菜单事件绑定
+            $("#labadd_link").click(labadd_tab_add);//添加实验室菜单事件绑定
+
 
             /**
              * 退出按钮单击事件处理
@@ -45,13 +48,52 @@
              * 单击添加用户菜单事件
              */
             function useradd_tab_add(){
-                $("#index_tt").tabs('add',{
-                    title:"用户添加",
-                    closable:true,
-                    href:'user/add_user.jsp',
-                    fit:true
-                });
+                //防止重复添加tab
+                if($("#index_tt").tabs("exists","用户添加")){
+                    $("#index_tt").tabs("select","用户添加");
+                }else{
+                    //单击添加用户菜单事件
+                    $("#index_tt").tabs('add',{
+                        title:"用户添加",
+                        closable:true,
+                        href:'user/add_user.jsp',
+                        fit:true
+                    });
+                }
             }
+
+            /**
+             * 单击添加设备菜单事件
+             */
+            function equadd_tab_add(){
+                if($("#index_tt").tabs("exists","设备采购")){
+                    $("#index_tt").tabs("select","设备采购");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"设备采购",
+                        closable:true,
+                        href:"equ/add_equ.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 单击添加实验室菜单事件
+             */
+            function labadd_tab_add(){
+                if($("#index_tt").tabs("exists","添加实验室")){
+                    $("#index_tt").tabs("select","添加实验室");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"添加实验室",
+                        closable:true,
+                        href:"lab/add_lab.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -59,6 +101,9 @@
             text-decoration:none;
         }
         a:hover{
+            text-decoration:none;
+        }
+        a:visited{
             text-decoration:none;
         }
     </style>
@@ -97,7 +142,7 @@
             </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设备采购(添加)</li>
+                    <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
                     <li>设备报修</li>
                     <li>设备转移(分配)</li>
                     <li>设备采购</li>
@@ -107,7 +152,7 @@
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>实验室添加</li>
+                    <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
                     <li>实验室移除</li>
                     <li>实验室负责人管理</li>
                 </ul>

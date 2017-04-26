@@ -7,7 +7,10 @@
         add_user_btn.click(add_user);//添加用户按钮事件绑定
         adduser_reset_btn.click(adduser_reset);
 
-//        $("#adduser_namebox").blur(validation_adduser());
+        $("#adduser_namebox").blur(validation_adduser);
+        $("#adduser_namebox").focus(function(){
+            $("#adduser_namebox_msg").text("");
+        });
         //暂时不启用
 
         /**
@@ -29,7 +32,8 @@
                 dataType: "json",
                 success: function (result) {
                     if (result.status != 0) {
-                        $.messager.alert('警告', result.message);
+                        $("#adduser_namebox_msg").text(result.message);
+//                        $.messager.alert('警告', result.message);
                     }
                 },
                 error: function () {
@@ -38,7 +42,7 @@
                 async: true
             });
         }
-        //用户登录
+        //用户添加
         function add_user() {
             var adduser_uid=getCookie("uid");
             var adduser_token=getCookie("token");
@@ -90,12 +94,16 @@
 </script>
 <form method="post">
     <table class="table table-hover table-condensed" style="width: 500px;margin: auto">
-        <option value="添加用户"></option>
+        <h3 style="text-align: center">添加用户</h3>
+        <hr>
         <tr>
             <th>登录名</th>
             <td>
                 <input id="adduser_namebox" type="text" placeholder="请输入登录名" class="easyui-validatebox"
                        data-options="required:true">
+            </td>
+            <td style="width:130px;margin-left: 80px">
+                <span style="color:red;margin-left: 10px" id="adduser_namebox_msg"></span>
             </td>
         </tr>
         <tr>
@@ -104,6 +112,7 @@
                 <input id="adduser_passbox" type="password" placeholder="请输入密码" class="easyui-validatebox"
                        data-options="required:true">
             </td>
+            <td></td>
         </tr>
         <tr>
             <th>真实姓名</th>
@@ -111,6 +120,7 @@
                 <input id="adduser_truenamebox" type="text" placeholder="请输入真实姓名" class="easyui-validatebox"
                        data-options="required:true">
             </td>
+            <td></td>
         </tr>
         <tr>
             <th>邮箱</th>
@@ -118,6 +128,7 @@
                 <input id="adduser_emailbox" type="text" placeholder="请输入邮箱" class="easyui-validatebox"
                        data-options="required:true">
             </td>
+            <td></td>
         </tr>
         <tr>
             <td colspan="2">
