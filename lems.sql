@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-04-27 09:33:19
+Date: 2017-04-27 16:06:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -73,6 +73,8 @@ CREATE TABLE `s_equipment` (
 -- Records of s_equipment
 -- ----------------------------
 INSERT INTO `s_equipment` VALUES ('9999', '9999', '电脑', '电脑', '2017-04-25 09:32:11', '0', '电脑', '9999');
+INSERT INTO `s_equipment` VALUES ('a7d5fe3f19cd4fd5a58e785c9cba7c5f', '631-002', '数据库服务器', '123', '2017-04-27 15:55:10', '0', '数据库服务器', '8050d7fc49d14468a6cd0fae7f9472d8');
+INSERT INTO `s_equipment` VALUES ('d16bbc38a9a94f6a8ca1f82797463cfa', '631-001', 'web服务器', '服务器', '2017-04-27 15:20:08', '0', '计算机', '79e142a75ba3492ca528c390863f3b93');
 
 -- ----------------------------
 -- Table structure for s_equ_break
@@ -111,6 +113,8 @@ CREATE TABLE `s_equ_purchase` (
 -- ----------------------------
 -- Records of s_equ_purchase
 -- ----------------------------
+INSERT INTO `s_equ_purchase` VALUES ('79e142a75ba3492ca528c390863f3b93', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-27 15:20:08', '88888.800');
+INSERT INTO `s_equ_purchase` VALUES ('8050d7fc49d14468a6cd0fae7f9472d8', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-27 15:55:10', '8888.880');
 INSERT INTO `s_equ_purchase` VALUES ('9999', '9999', '2017-04-25 09:30:54', '9999.000');
 
 -- ----------------------------
@@ -255,7 +259,7 @@ CREATE TABLE `s_user` (
 -- ----------------------------
 INSERT INTO `s_user` VALUES ('0e690bc74f354a0996942ee091709943', 'kehao003', 'kehao003', 'ILfXjzPgW073ICQUfhIhwA==', 'sqDUL6', null, null, 'kehao003@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:31:19', null);
 INSERT INTO `s_user` VALUES ('0ec092f59ead420ba6b3829ea4d4cfb8', 'test002', 'test002', 'LV/jqd7Y0ZJRDxdf4alnFQ==', 'FjeoK4', null, null, 'test002@xx.com', '9999', '2017-04-26 09:53:50', null);
-INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'kNO3eXei0oqCUGep7pImyw==', 'SJvwg7', null, null, 'kehao@x.com', '9999', '2017-04-26 16:56:04', 'b8dcfd69ee664dc88a0aa43dc0e9871c');
+INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'kNO3eXei0oqCUGep7pImyw==', 'SJvwg7', null, null, 'kehao@x.com', '9999', '2017-04-27 15:40:28', '8fed9133f53549248d3e6be8a0ad40db');
 INSERT INTO `s_user` VALUES ('2caf84fa65c04963818da964ce10fc4b', 'test000', 'kehao', 'aMtnkqh+KcQGjfZoLftcuQ==', '0tzkmh', null, null, 'test001@xx.com', '9999', '2017-04-26 09:46:33', null);
 INSERT INTO `s_user` VALUES ('56c0b00dbceb4a54b065b0aa71bca526', 'user1', 'user', '6khXbzC+FmmXFpnAmtBclA==', '123456', '630', '111', 'xxx@xx.com', '9999', '2017-04-25 09:42:57', null);
 INSERT INTO `s_user` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '朱晨光', '朱晨光', 'mUuuLL580Y+CC97uHFrgDw==', 'wHsa7Q', null, null, 'zhuchenguang@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:34:34', 'd1c553fb2f8e43ddb4704f79f0de53ae');
