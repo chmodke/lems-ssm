@@ -3,21 +3,14 @@ package org.kehao.lems.entity;
 import java.util.Date;
 
 public class EquPurchase {
-    private String epid;
-
     private String pcid;
 
     private String uid;
 
     private Date pctime;
 
-    public String getEpid() {
-        return epid;
-    }
-
-    public void setEpid(String epid) {
-        this.epid = epid == null ? null : epid.trim();
-    }
+    private Double price;
+    private Equipment equipment;
 
     public String getPcid() {
         return pcid;
@@ -41,5 +34,21 @@ public class EquPurchase {
 
     public void setPctime(Date pctime) {
         this.pctime = pctime;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 }

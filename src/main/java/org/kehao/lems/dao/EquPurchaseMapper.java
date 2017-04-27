@@ -14,4 +14,6 @@ public interface EquPurchaseMapper {
     int updateByPrimaryKeySelective(EquPurchase record);
 
     int updateByPrimaryKey(EquPurchase record);
+
+    EquPurchase selectEquPurcJionPurcByPcid(String pcid);
 }

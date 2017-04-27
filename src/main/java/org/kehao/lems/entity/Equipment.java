@@ -17,7 +17,9 @@ public class Equipment {
 
     private String remark;
 
-    private String epid;
+    private String pcid;
+
+    private EquPurchase equPurchase;
 
     public String getEid() {
         return eid;
@@ -75,11 +77,19 @@ public class Equipment {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public String getEpid() {
-        return epid;
+    public String getPcid() {
+        return pcid;
     }
 
-    public void setEpid(String epid) {
-        this.epid = epid == null ? null : epid.trim();
+    public void setPcid(String pcid) {
+        this.pcid = pcid == null ? null : pcid.trim();
+    }
+
+    public EquPurchase getEquPurchase() {
+        return equPurchase;
+    }
+
+    public void setEquPurchase(EquPurchase equPurchase) {
+        this.equPurchase = equPurchase;
     }
 }

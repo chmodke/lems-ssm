@@ -28,6 +28,9 @@
             var lab_size=$("#addlab_size").val();
             var lab_equcount=$("#addlab_equcount").val();
             var lab_remark=$("#addlab_remark").val();
+            if(lab_remark==null){
+                lab_remark="";
+            }
             var lab_uid=addlab_uid;
 
             $.ajax({

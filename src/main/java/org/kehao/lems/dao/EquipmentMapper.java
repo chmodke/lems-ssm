@@ -14,4 +14,6 @@ public interface EquipmentMapper {
     int updateByPrimaryKeySelective(Equipment record);
 
     int updateByPrimaryKey(Equipment record);
+
+    Equipment selectEquJionPurcByEid(String eid);
 }

@@ -1,82 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kehao.lems.dao.EquPurchaseMapper">
-  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquPurchase">
-    <result column="epid" jdbcType="CHAR" property="epid" />
-    <result column="pcid" jdbcType="CHAR" property="pcid" />
-    <result column="uid" jdbcType="CHAR" property="uid" />
-    <result column="pctime" jdbcType="TIMESTAMP" property="pctime" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    epid, pcid, uid, pctime
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from s_equ_purchase
-    where pcid = #{pcid,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquPurchase">
+        <id column="pcid" jdbcType="CHAR" property="pcid"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="pctime" jdbcType="TIMESTAMP" property="pctime"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+      pcid, uid, pctime, price
+    </sql>
+
+    <!-- 自定义映射关系 -->
+    <resultMap id="Purc_Equ_Jion_Map" type="org.kehao.lems.entity.EquPurchase">
+        <id column="pcid" jdbcType="CHAR" property="pcid"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="pctime" jdbcType="TIMESTAMP" property="pctime"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <!-- 关联 属性 equPurchase装载 -->
+        <association property="equipment" javaType="org.kehao.lems.entity.Equipment"><!-- 对象关联 -->
+            <id column="eid" jdbcType="CHAR" property="eid"/>
+            <result column="id" jdbcType="VARCHAR" property="id"/>
+            <result column="ename" jdbcType="VARCHAR" property="ename"/>
+            <result column="type" jdbcType="VARCHAR" property="type"/>
+            <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+            <result column="status" jdbcType="INTEGER" property="status"/>
+            <result column="remark" jdbcType="VARCHAR" property="remark"/>
+            <result column="pcid" jdbcType="CHAR" property="pcid"/>
+        </association>
+    </resultMap>
+
+
+    <sql id="Jion_Column_List">
+        purchase.pcid,uid,pctime,price,eid,id, ename, type, addtime, status, remark
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from s_equ_purchase
+        where pcid = #{pcid,jdbcType=CHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from s_equ_purchase
     where pcid = #{pcid,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="org.kehao.lems.entity.EquPurchase">
-    insert into s_equ_purchase (epid, pcid, uid, pctime
-      )
-    values (#{epid,jdbcType=CHAR}, #{pcid,jdbcType=CHAR}, #{uid,jdbcType=CHAR}, #{pctime,jdbcType=TIMESTAMP}
-      )
+    <insert id="insert" parameterType="org.kehao.lems.entity.EquPurchase">
+    insert into s_equ_purchase (pcid, uid, pctime, 
+      price)
+    values (#{pcid,jdbcType=CHAR}, #{uid,jdbcType=CHAR}, #{pctime,jdbcType=TIMESTAMP}, 
+      #{price,jdbcType=DOUBLE})
   </insert>
-  <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquPurchase">
-    insert into s_equ_purchase
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="epid != null">
-        epid,
-      </if>
-      <if test="pcid != null">
-        pcid,
-      </if>
-      <if test="uid != null">
-        uid,
-      </if>
-      <if test="pctime != null">
-        pctime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="epid != null">
-        #{epid,jdbcType=CHAR},
-      </if>
-      <if test="pcid != null">
-        #{pcid,jdbcType=CHAR},
-      </if>
-      <if test="uid != null">
-        #{uid,jdbcType=CHAR},
-      </if>
-      <if test="pctime != null">
-        #{pctime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquPurchase">
+    <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquPurchase">
+        insert into s_equ_purchase
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pcid != null">
+                pcid,
+            </if>
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="pctime != null">
+                pctime,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pcid != null">
+                #{pcid,jdbcType=CHAR},
+            </if>
+            <if test="uid != null">
+                #{uid,jdbcType=CHAR},
+            </if>
+            <if test="pctime != null">
+                #{pctime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquPurchase">
+        update s_equ_purchase
+        <set>
+            <if test="uid != null">
+                uid = #{uid,jdbcType=CHAR},
+            </if>
+            <if test="pctime != null">
+                pctime = #{pctime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where pcid = #{pcid,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquPurchase">
     update s_equ_purchase
-    <set>
-      <if test="epid != null">
-        epid = #{epid,jdbcType=CHAR},
-      </if>
-      <if test="uid != null">
-        uid = #{uid,jdbcType=CHAR},
-      </if>
-      <if test="pctime != null">
-        pctime = #{pctime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where pcid = #{pcid,jdbcType=CHAR}
+        set uid = #{uid,jdbcType=CHAR},
+          pctime = #{pctime,jdbcType=TIMESTAMP},
+          price = #{price,jdbcType=DOUBLE}
+        where pcid = #{pcid,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquPurchase">
-    update s_equ_purchase
-    set epid = #{epid,jdbcType=CHAR},
-      uid = #{uid,jdbcType=CHAR},
-      pctime = #{pctime,jdbcType=TIMESTAMP}
-    where pcid = #{pcid,jdbcType=CHAR}
-  </update>
+
+    <!--关联查询-->
+    <select id="selectEquPurcJionPurcByPcid" parameterType="java.lang.String" resultMap="Purc_Equ_Jion_Map">
+        select
+        <include refid="Jion_Column_List"/>
+        from s_equipment equipment join
+        s_equ_purchase purchase on(equipment.pcid=purchase.pcid)
+        where purchase.pcid = #{pcid,jdbcType=CHAR}
+    </select>
 </mapper>

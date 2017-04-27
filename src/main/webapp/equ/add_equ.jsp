@@ -1,68 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
-    /*$(function () {
-        var add_user_btn = $("#add_user_btn");
-        var adduser_reset_btn = $("#adduser_reset_btn");
+    $(function () {
+        var add_equ_btn = $("#add_equ_btn");
+        var addequ_reset_btn = $("#addequ_reset_btn");
 
-        add_user_btn.click(add_user);//添加用户按钮事件绑定
-        adduser_reset_btn.click(adduser_reset);
+        add_equ_btn.click(add_equ);//添加用户按钮事件绑定
+        addequ_reset_btn.click(addequ_reset);
 
-//        $("#adduser_namebox").blur(validation_adduser());
-        //暂时不启用
-
-        /!**
+        /**
          * 注册页面回车键事件绑定
-         *!/
-        $("#adduser_emailbox").keydown(function (event) {
+         */
+        /*$("#adduser_emailbox").keydown(function (event) {
             var keyCode=event.keyCode;
             if(keyCode==13){
                 add_user();
             }
-        });
-        //验证用户名是否被占用
-        function validation_adduser() {
-            var adduser_uname = $("#adduser_namebox").val();
-            $.ajax({
-                url: "./user/useradd_validation.do",
-                type: "post",
-                data:{"uname":adduser_uname},
-                dataType: "json",
-                success: function (result) {
-                    if (result.status != 0) {
-                        $.messager.alert('警告', result.message);
-                    }
-                },
-                error: function () {
-                    $.messager.alert('警告', "校验用户名异常");
-                },
-                async: true
-            });
-        }
-        //用户登录
-        function add_user() {
-            var adduser_uid=getCookie("uid");
-            var adduser_token=getCookie("token");
+        });*/
+        //设备添加
+        function add_equ() {
+            var addequ_uid=getCookie("uid");
+            var addequ_token=getCookie("token");
 
-            if(adduser_uid==null||adduser_token==null){
+            if(addequ_uid==null||addequ_token==null){
                 $.messager.alert('警告', "非法操作");
             }
 
-            var adduser_uname = $("#adduser_namebox").val();
-            var adduser_passwd = $("#adduser_passbox").val();
-            var adduser_trueName=$("#adduser_truenamebox").val();
-            var adduser_email=$("#adduser_emailbox").val();
-
-            var adduser_msg = adduser_uname + ":" + adduser_passwd + ":"+adduser_trueName+ ":" + adduser_email+":"+adduser_uid;
-            var base64_adduser_msg = Base64.encode(adduser_msg);
+            var addequ_serial = $("#addequ_serial").val();
+            var addequ_name = $("#addequ_name").val();
+            var addequ_type=$("#addequ_type").val();
+            var addequ_price=$("#addequ_price").val();
+            var addequ_remark=$("#addequ_remark").val();
+            if(addequ_remark==null){
+                addequ_remark="";
+            }
 
             $.ajax({
-                url: "./user/useradd.do",
+                url: "./equ/equadd.do",
                 type: "post",
-                // data:{"uname":name,"passwd":pwd},
+                data:{"id":addequ_serial,"ename":addequ_name,"type":addequ_type,"remark":addequ_remark,"equPurchase.uid":addequ_uid,"equPurchase.price":addequ_price},
                 dataType: "json",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Authorization_adduser", "Basic " + base64_adduser_msg);
-                },
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message);
@@ -73,19 +49,20 @@
                     }
                 },
                 error: function () {
-                    $.messager.alert('警告', "添加用户异常");
+                    $.messager.alert('警告', "添加设备异常");
                 },
                 async: true
             });
         }
 
-        function adduser_reset() {
-            $("#adduser_namebox").val("");
-            $("#adduser_passbox").val("");
-            $("#adduser_truenamebox").val("");
-            $("#adduser_emailbox").val("");
+        function addequ_reset() {
+            $("#addequ_serial").val("");
+            $("#addequ_name").val("");
+            $("#addequ_type").val("");
+            $("#addequ_price").val("");
+            $("#addequ_remark").val("");
         }
-    });*/
+    });
 
 </script>
 <form method="post">
@@ -117,6 +94,13 @@
             <th>采购时间</th>
             <td>
                 <input id="addequ_time" type="text" placeholder="请输入采购时间" class="easyui-validatebox"
+                       data-options="required:true">
+            </td>
+        </tr>
+        <tr>
+            <th>采购价格</th>
+            <td>
+                <input id="addequ_price" type="text" placeholder="请输入采购价格" class="easyui-validatebox"
                        data-options="required:true">
             </td>
         </tr>
