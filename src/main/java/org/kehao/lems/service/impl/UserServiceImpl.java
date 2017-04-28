@@ -7,6 +7,7 @@ import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
+import org.kehao.lems.utils.SendEmail;
 import org.kehao.lems.utils.secret.aes.util.AesUtil;
 import org.kehao.lems.utils.secret.aes_plus.util.AesUtilPlus;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,15 @@ public class UserServiceImpl implements UserService{
 
     public LEMSResult getUserByUid(String uid) {
         LEMSResult result=new LEMSResult();
-        result.setData(userMapper.selectByPrimaryKey(uid));
+        User user=userMapper.selectByPrimaryKey(uid);
+        if(user!=null){
+            result.setData(user);
+            result.setStatus(0);
+            result.setMessage("获取用户信息成功");
+        }else {
+            result.setStatus(1);
+            result.setMessage("获取用户信息失败");
+        }
         return result;
     }
 
@@ -130,8 +139,79 @@ public class UserServiceImpl implements UserService{
             result.setMessage("用户名已存在");
             result.setStatus(1);
         }else{
-            result.setMessage("用户名可用");
+            result.setMessage("用户名不存在");
             result.setStatus(0);
+        }
+        return result;
+    }
+
+    public LEMSResult modfifyUserInfo(User user) {
+        LEMSResult result=new LEMSResult();
+        if(userMapper.updateByPrimaryKeySelective(user)==1){
+            result.setStatus(0);
+            result.setMessage("修改用户信息成功");
+        }else {
+            result.setStatus(1);
+            result.setMessage("修改用户信息失败");
+        }
+        return result;
+    }
+
+    /**
+     * 发送验证邮件
+     * @param uname
+     * @return
+     */
+    public LEMSResult sendValiCode(String uname) {
+        final User user=(User)this.getUserByName(uname).getData();
+        LEMSResult result=new LEMSResult();
+        String valiCode=CodeUtil.createCode(8);
+        //发送邮件
+        // /邮件的内容
+        final StringBuffer sb = new StringBuffer("您的邮箱:");
+        sb.append(user.getEmail()+"</br>");
+        sb.append("您的验证码:");
+        sb.append(valiCode);
+        // 发送邮件
+        Thread t=new Thread (){//使用后台线程缩短ajax响应时间
+            public void run(){
+                SendEmail.send(user.getEmail(), sb.toString());
+            }
+        };
+        //采用双线程，缩短ajax响应时间
+        t.start();
+        result.setData(valiCode);
+        result.setStatus(0);
+        result.setMessage("获取成功");
+        return result;
+    }
+
+    public LEMSResult modifyUserPasswd(String auther) throws UnsupportedEncodingException {
+        String base64_msg = auther.split(" ")[1];
+        byte[] output = Base64.decodeBase64(base64_msg);
+        String msg = new String(output, "utf-8");
+        User user =new User();
+        user.setUname(msg.split(":")[0]);
+        user.setPasswd(msg.split(":")[1]);
+        return modifyUserPasswd(user);
+    }
+
+    /**
+     * 修改用户密码工具方法
+     * @param user
+     * @return
+     */
+    private LEMSResult modifyUserPasswd(User user){
+        LEMSResult result=new LEMSResult();
+        String salt=CodeUtil.createSalt(6);
+        user.setSalt(salt);
+        user.setPasswd(LEMSMD5Util.md5(user.getPasswd(),salt));
+        if(userMapper.updateByUserNameSelective(user)==1){
+            result.setStatus(0);
+            result.setMessage("重置密码成功");
+        }else {
+            result.setStatus(1);
+            result.setMessage("重置密码失败");
         }
         return result;
     }

@@ -45,4 +45,25 @@ public interface UserService {
      * @return
      */
     LEMSResult useraddValidation(String uname);
+
+    /**
+     * 修改用户信息
+     * @param user
+     * @return
+     */
+    LEMSResult modfifyUserInfo(User user);
+
+    /**
+     * 发送验证邮件
+     * @return
+     */
+    LEMSResult sendValiCode(String uname);
+
+    /**
+     * 重置用户密码，重置密码与修改密码共用
+     * @param auther
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+    LEMSResult modifyUserPasswd(String auther)throws UnsupportedEncodingException;
 }

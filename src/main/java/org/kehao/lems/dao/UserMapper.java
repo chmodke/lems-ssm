@@ -22,4 +22,5 @@ public interface UserMapper{
     User selectByName(String uname);
     int updateTokenByUid(Map<String, Object> data);
     User selectByEmail(String email);
+    int updateByUserNameSelective(User record);
 }

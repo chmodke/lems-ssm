@@ -46,8 +46,8 @@ public class TestUserController {
 	public void userControllerLogin() throws Exception{		
 		//发送执行一个HTTP请求
 		RequestBuilder request=MockMvcRequestBuilders
-		.post("/user/login1.do")
-		.param("id", "99999");//传数据
+		.post("/user/getuserinfo.do")
+		.param("id", "9999");//传数据
 		
 		MvcResult result=mockMvc.perform(request)
 		.andDo(MockMvcResultHandlers.print())//将请求头和响应头打印

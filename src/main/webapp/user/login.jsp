@@ -2,11 +2,21 @@
 <script>
     $(function () {
         var loginDialog = $("#loginDialog");
-        var login_btn = $("#login_btn");
-        var reset_login_btn = $("#reset_login_btn");
+        $("#login_btn").click(login);
+        $("#reset_login_btn").click(reset_login);
+        $("#repeatpwd_btn").click(function () {
+            $('#login_repeat').dialog({
+                title: '重置密码',
+                width:'620px',
+                height:'400px',
+                closed: false,
+                cache: false,
+                href: './user/repeatpwd.jsp',
+                modal: true
+            });
+        });
 
-        login_btn.click(login);
-        reset_login_btn.click(reset_login);
+
 
         //绑定回车键事件
         $("#login_passbox").keydown(function (event) {
@@ -104,6 +114,7 @@
         }
     });
 </script>--%>
+<div id="login_repeat">
 <div id="loginDialog" class="easyui-dialog"
      style="width: 315px;height: 210px;overflow: hidden; margin:0px;padding: 10px;padding-bottom: 0px"
      data-options="title: '登录',resizable:false,modal:true,closable:false,closed:false">
@@ -126,6 +137,11 @@
             <tr>
                 <td colspan="2">
                     <div class="dialog-button">
+                        <a id="repeatpwd_btn" class="l-btn">
+                            <span class="l-btn-left">
+                                <span class="l-btn-text">忘记密码</span>
+                            </span>
+                        </a>
                         <a id="reset_login_btn" class="l-btn">
                             <span class="l-btn-left">
                                 <span class="l-btn-text">清空</span>
@@ -136,9 +152,11 @@
                                 <span class="l-btn-text">登录</span>
                             </span>
                         </a>
+
                     </div>
                 </td>
             </tr>
         </table>
     </form>
+</div>
 </div>

@@ -20,30 +20,14 @@ public class UserController {
 
     /**
      * 通过id获取用户信息，测试使用
-     * @param id
+     * @param uid
      * @return
      */
-	@RequestMapping("/getuser.do")
+	@RequestMapping("/getuserinfo.do")
 	@ResponseBody
-	public LEMSResult login(String id){
-		LEMSResult result=new LEMSResult();
-		result.setData(userService.getUserByUid(id));
-		result.setStatus(0);
-		result.setMessage("success");
-		return result;
+	public LEMSResult login(String uid){
+		return userService.getUserByUid(uid);
 	}
-
-    /**
-     * 明文登录方法，测试使用
-     * @param uname
-     * @param passwd
-     * @return
-     */
-	/*@RequestMapping("/login1.do")
-	@ResponseBody
-	public LEMSResult login(String uname,String passwd){
-		return userService.validationUser(uname,passwd);
-	}*/
 
     /**
      * 用户登录，使用请求头传递数据
@@ -79,4 +63,38 @@ public class UserController {
 	public LEMSResult useraddValidation(String uname){
 		return userService.useraddValidation(uname);
 	}
+
+    /**
+     * 修改用户信息
+     * @param user
+     * @return
+     */
+    @RequestMapping("/modfifyuserinfo.do")
+    @ResponseBody
+    public LEMSResult modfifyUserInfo(User user){
+        return userService.modfifyUserInfo(user);
+    }
+
+    /**
+     * 发送验证码
+     * @param uname
+     * @return
+     */
+    @RequestMapping("/send_vali_code.do")
+    @ResponseBody
+    public LEMSResult sendValiCode(String uname){
+        return userService.sendValiCode(uname);
+    }
+
+    /**
+     * 重置用户密码
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+    @RequestMapping("/moduser_pwd.do")
+    @ResponseBody
+    public LEMSResult modifyUserPasswd(HttpServletRequest request) throws UnsupportedEncodingException {
+        return userService.modifyUserPasswd(request.getHeader("Authorization_moduser_passwd"));
+    }
 }

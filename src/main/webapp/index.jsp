@@ -32,6 +32,7 @@
             $("#useradd_link").click(useradd_tab_add);//添加用户菜单事件绑定
             $("#equadd_link").click(equadd_tab_add);//添加设备菜单事件绑定
             $("#labadd_link").click(labadd_tab_add);//添加实验室菜单事件绑定
+            $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
 
 
             /**
@@ -94,6 +95,22 @@
                 }
             }
 
+            /**
+             * 用户信息修改菜单事件
+             */
+            function modify_user_info_tab_add(){
+                if($("#index_tt").tabs("exists","用户信息变更")){
+                    $("#index_tt").tabs("select","用户信息变更");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"用户信息变更",
+                        closable:true,
+                        href:"user/modify_user_info.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -145,9 +162,6 @@
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
                     <li>设备报修</li>
                     <li>设备转移(分配)</li>
-                    <li>设备采购</li>
-                    <li>设备保修</li>
-                    <li>设备转移</li>
                 </ul>
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">
@@ -178,7 +192,7 @@
             </div>
             <div title="用户个人信息管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>用户信息变更</li>
+                    <li><a id="modify_user_info_link" href="javascript:;">用户信息变更</a></li>
                     <li>用户密码变更</li>
                 </ul>
             </div>
