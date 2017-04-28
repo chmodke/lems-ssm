@@ -19,7 +19,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class SendEmail {
     
-    public static final String HOST = "smtp.lems.com";
+    public static final String HOST = "localhost";
     public static final String PROTOCOL = "smtp";   
     public static final int PORT = 25;
     public static final String FROM = "localhost@lems.com";//发件人的email

@@ -60,6 +60,13 @@ public interface UserService {
     LEMSResult sendValiCode(String uname);
 
     /**
+     * 校验验证码
+     * @param reqCode
+     * @return
+     */
+    LEMSResult valiCodeValidation(String reqCode);
+
+    /**
      * 重置用户密码，重置密码与修改密码共用
      * @param auther
      * @return

@@ -85,6 +85,16 @@ public class UserController {
     public LEMSResult sendValiCode(String uname){
         return userService.sendValiCode(uname);
     }
+    /**
+     * 校验验证码
+     * @param valiCode
+     * @return
+     */
+    @RequestMapping("/vali_vali_code.do")
+    @ResponseBody
+    public LEMSResult valiCodeValidation(String valiCode){
+        return userService.valiCodeValidation(valiCode);
+    }
 
     /**
      * 重置用户密码
@@ -92,9 +102,9 @@ public class UserController {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @RequestMapping("/moduser_pwd.do")
+    @RequestMapping("/rep_user_pwd.do")
     @ResponseBody
     public LEMSResult modifyUserPasswd(HttpServletRequest request) throws UnsupportedEncodingException {
-        return userService.modifyUserPasswd(request.getHeader("Authorization_moduser_passwd"));
+        return userService.modifyUserPasswd(request.getHeader("Authorization_rep_user_passwd"));
     }
 }

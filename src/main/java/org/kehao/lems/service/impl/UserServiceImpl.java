@@ -27,6 +27,8 @@ public class UserServiceImpl implements UserService{
     @Resource
     private UserMapper userMapper;
 
+    private String valiCode="";
+
     public LEMSResult getUserByUid(String uid) {
         LEMSResult result=new LEMSResult();
         User user=userMapper.selectByPrimaryKey(uid);
@@ -165,7 +167,7 @@ public class UserServiceImpl implements UserService{
     public LEMSResult sendValiCode(String uname) {
         final User user=(User)this.getUserByName(uname).getData();
         LEMSResult result=new LEMSResult();
-        String valiCode=CodeUtil.createCode(8);
+        valiCode=CodeUtil.createCode(8);
         //发送邮件
         // /邮件的内容
         final StringBuffer sb = new StringBuffer("您的邮箱:");
@@ -180,9 +182,19 @@ public class UserServiceImpl implements UserService{
         };
         //采用双线程，缩短ajax响应时间
         t.start();
-        result.setData(valiCode);
         result.setStatus(0);
         result.setMessage("获取成功");
+        return result;
+    }
+    public LEMSResult valiCodeValidation(String reqCode){
+        LEMSResult result=new LEMSResult();
+        if(reqCode!=null&&!reqCode.equals("")&&reqCode.equals(valiCode)){
+            result.setStatus(0);
+            result.setMessage("验证码正确");
+        }else {
+            result.setStatus(1);
+            result.setMessage("验证码错误");
+        }
         return result;
     }
 

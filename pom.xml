@@ -174,7 +174,7 @@
 
     <!--//////////////// PLUGINS /////////////////-->
     <build>
-        <finalName>qiai</finalName>
+        <finalName>lems</finalName>
         <defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
