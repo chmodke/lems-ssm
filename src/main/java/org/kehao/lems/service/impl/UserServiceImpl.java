@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
     @Resource
     private UserMapper userMapper;
 
-    private String valiCode="";
+    private Map<String,String> valiCode=new HashMap<String, String>(8);//存储用户重置密码时产生的用户名和验证码键值对，防止用户恶意利用
 
     public LEMSResult getUserByUid(String uid) {
         LEMSResult result=new LEMSResult();
@@ -167,13 +167,13 @@ public class UserServiceImpl implements UserService{
     public LEMSResult sendValiCode(String uname) {
         final User user=(User)this.getUserByName(uname).getData();
         LEMSResult result=new LEMSResult();
-        valiCode=CodeUtil.createCode(8);
+        valiCode.put(uname,CodeUtil.createCode(8));
         //发送邮件
         // /邮件的内容
         final StringBuffer sb = new StringBuffer("您的邮箱:");
         sb.append(user.getEmail()+"</br>");
         sb.append("您的验证码:");
-        sb.append(valiCode);
+        sb.append(valiCode.get(uname));
         // 发送邮件
         Thread t=new Thread (){//使用后台线程缩短ajax响应时间
             public void run(){
@@ -186,9 +186,9 @@ public class UserServiceImpl implements UserService{
         result.setMessage("获取成功");
         return result;
     }
-    public LEMSResult valiCodeValidation(String reqCode){
+    public LEMSResult valiCodeValidation(String uname,String reqCode){
         LEMSResult result=new LEMSResult();
-        if(reqCode!=null&&!reqCode.equals("")&&reqCode.equals(valiCode)){
+        if(reqCode!=null&&!reqCode.equals("")&&reqCode.equals(valiCode.get(uname))){
             result.setStatus(0);
             result.setMessage("验证码正确");
         }else {

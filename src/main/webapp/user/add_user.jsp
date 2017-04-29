@@ -139,7 +139,7 @@
                                     </span>
                     </a>
                     <a id="add_user_btn" class="l-btn">
-                                    <span class="l-btn-left" style="background-color:#0e90d2">
+                                    <span class="l-btn-left" style="color:#ffffff;background-color:#0e90d2">
                                         <span class="l-btn-text">添加</span>
                                     </span>
                     </a>

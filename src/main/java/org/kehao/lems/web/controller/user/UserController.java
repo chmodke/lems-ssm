@@ -92,8 +92,8 @@ public class UserController {
      */
     @RequestMapping("/vali_vali_code.do")
     @ResponseBody
-    public LEMSResult valiCodeValidation(String valiCode){
-        return userService.valiCodeValidation(valiCode);
+    public LEMSResult valiCodeValidation(String uname,String valiCode){
+        return userService.valiCodeValidation(uname,valiCode);
     }
 
     /**

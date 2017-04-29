@@ -2,16 +2,17 @@
 <script>
     $(function () {
         var loginDialog = $("#loginDialog");
-        $("#login_btn").click(login);
-        $("#reset_login_btn").click(reset_login);
-        $("#repeatpwd_btn").click(function () {
+        $("#login_btn").click(login);//登录按钮事件绑定
+        $("#reset_login_btn").click(reset_login);//重置按钮事件绑定
+        $("#repeatpwd_btn").click(function () {//忘记密码按钮事件绑定
             $('#login_repeat').dialog({
                 title: '重置密码',
-                width:'620px',
-                height:'400px',
+                width:'650px',
+                height:'435px',
                 closed: false,
                 cache: false,
-                href: './user/repeatpwd.jsp',
+                href: './user/repeat_pwd.jsp',
+                queryParams: {'repuname': $("#login_namebox").val() },//传递参数
                 modal: true
             });
         });
@@ -46,13 +47,19 @@
         function login() {
             var login_uname = $("#login_namebox").val();
             var login_passwd = $("#login_passbox").val();
-
+            if(login_uname==""||login_uname==""){
+                $.messager.alert('警告','用户名为空');
+                return;
+            }
+            if(login_passwd==""||login_passwd==""){
+                $.messager.alert('警告','密码为空')
+                return;
+            }
             var login_msg = login_uname + ":" + login_passwd;
-
             var base64_login_msg = Base64.encode(login_msg);
 
             $.ajax({
-                url: "user/login.do",
+                url: "./user/login.do",
                 type: "post",
                 // data:{"uname":name,"passwd":pwd},
                 dataType: "json",
@@ -95,25 +102,6 @@
     });
 
 </script>
-<%--<script>
-    $.extend($.fn.validatebox.defaults.rules, {
-        lems_minLength: {
-            validator: function(value, param){
-
-                var re=new RegExp("ain");
-                return value.matcher(re);
-            },
-            message: 'Please enter at least {0} characters.'
-        },
-        lems_email: {
-            validator: function(value, param){
-                var re=new RegExp(" /^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/");
-                return value.matcher(re);
-            },
-            message: 'Please enter a correct email.'
-        }
-    });
-</script>--%>
 <div id="login_repeat">
 <div id="loginDialog" class="easyui-dialog"
      style="width: 315px;height: 210px;overflow: hidden; margin:0px;padding: 10px;padding-bottom: 0px"
@@ -124,14 +112,14 @@
                 <th>登录名</th>
                 <td>
                     <input id="login_namebox" type="text" placeholder="请输入登录名" class="easyui-validatebox"
-                           data-options="required:true,validType:'lems_minLength[6]'">
+                           data-options="required:true">
                 </td>
             </tr>
             <tr>
                 <th>密码</th>
                 <td>
                     <input id="login_passbox" type="password" placeholder="请输入密码" class="easyui-validatebox"
-                           data-options="required:true,validType:'lems_minLength[6]'">
+                           data-options="required:true">
                 </td>
             </tr>
             <tr>
@@ -148,7 +136,7 @@
                             </span>
                         </a>
                         <a id="login_btn" class="l-btn" >
-                            <span class="l-btn-left" style="background-color:#0e90d2">
+                            <span class="l-btn-left" style="color:#ffffff;background-color:#0e90d2">
                                 <span class="l-btn-text">登录</span>
                             </span>
                         </a>

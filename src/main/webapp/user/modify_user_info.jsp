@@ -130,7 +130,7 @@
                                     </span>
                     </a>
                     <a id="mod_userinfo_btn" class="l-btn">
-                                    <span class="l-btn-left" style="background-color:#0e90d2">
+                                    <span class="l-btn-left" style="color:#ffffff;background-color:#0e90d2">
                                         <span class="l-btn-text">修改</span>
                                     </span>
                     </a>

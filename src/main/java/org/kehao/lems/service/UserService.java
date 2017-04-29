@@ -64,7 +64,7 @@ public interface UserService {
      * @param reqCode
      * @return
      */
-    LEMSResult valiCodeValidation(String reqCode);
+    LEMSResult valiCodeValidation(String uname,String reqCode);
 
     /**
      * 重置用户密码，重置密码与修改密码共用

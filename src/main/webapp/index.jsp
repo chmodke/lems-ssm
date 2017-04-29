@@ -33,6 +33,7 @@
             $("#equadd_link").click(equadd_tab_add);//添加设备菜单事件绑定
             $("#labadd_link").click(labadd_tab_add);//添加实验室菜单事件绑定
             $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
+            $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
 
 
             /**
@@ -106,6 +107,21 @@
                         title:"用户信息变更",
                         closable:true,
                         href:"user/modify_user_info.jsp",
+                        fit:true
+                    });
+                }
+            }
+            /**
+             * 用户密码修改菜单事件
+             */
+            function modify_user_pwd_tab_add(){
+                if($("#index_tt").tabs("exists","用户密码变更")){
+                    $("#index_tt").tabs("select","用户密码变更");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"用户密码变更",
+                        closable:true,
+                        href:"user/modify_user_pwd.jsp",
                         fit:true
                     });
                 }
@@ -193,7 +209,7 @@
             <div title="用户个人信息管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="modify_user_info_link" href="javascript:;">用户信息变更</a></li>
-                    <li>用户密码变更</li>
+                    <li><a id="modify_user_pwd_link" href="javascript:;">用户密码变更</a></li>
                 </ul>
             </div>
         </div>
