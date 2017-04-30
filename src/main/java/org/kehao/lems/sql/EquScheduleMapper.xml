@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kehao.lems.dao.EquScheduleMapper">
+  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquSchedule">
+    <id column="seid" jdbcType="CHAR" property="seid" />
+    <result column="eid" jdbcType="CHAR" property="eid" />
+    <result column="starttime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    seid, eid, starttime, endtime, sname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from s_equ_schedule
+    where seid = #{seid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from s_equ_schedule
+    where seid = #{seid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="org.kehao.lems.entity.EquSchedule">
+    insert into s_equ_schedule (seid, eid, starttime, 
+      endtime, sname)
+    values (#{seid,jdbcType=CHAR}, #{eid,jdbcType=CHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{sname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquSchedule">
+    insert into s_equ_schedule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="seid != null">
+        seid,
+      </if>
+      <if test="eid != null">
+        eid,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+      <if test="sname != null">
+        sname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="seid != null">
+        #{seid,jdbcType=CHAR},
+      </if>
+      <if test="eid != null">
+        #{eid,jdbcType=CHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquSchedule">
+    update s_equ_schedule
+    <set>
+      <if test="eid != null">
+        eid = #{eid,jdbcType=CHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sname != null">
+        sname = #{sname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where seid = #{seid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquSchedule">
+    update s_equ_schedule
+    set eid = #{eid,jdbcType=CHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      sname = #{sname,jdbcType=VARCHAR}
+    where seid = #{seid,jdbcType=CHAR}
+  </update>
+</mapper>

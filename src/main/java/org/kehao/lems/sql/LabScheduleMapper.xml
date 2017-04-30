@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kehao.lems.dao.LabScheduleMapper">
+  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.LabSchedule">
+    <id column="slid" jdbcType="CHAR" property="slid" />
+    <result column="lid" jdbcType="CHAR" property="lid" />
+    <result column="starttime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    slid, lid, starttime, endtime, sname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from s_lab_schedule
+    where slid = #{slid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from s_lab_schedule
+    where slid = #{slid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="org.kehao.lems.entity.LabSchedule">
+    insert into s_lab_schedule (slid, lid, starttime, 
+      endtime, sname)
+    values (#{slid,jdbcType=CHAR}, #{lid,jdbcType=CHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{sname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.kehao.lems.entity.LabSchedule">
+    insert into s_lab_schedule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="slid != null">
+        slid,
+      </if>
+      <if test="lid != null">
+        lid,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+      <if test="sname != null">
+        sname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="slid != null">
+        #{slid,jdbcType=CHAR},
+      </if>
+      <if test="lid != null">
+        #{lid,jdbcType=CHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.LabSchedule">
+    update s_lab_schedule
+    <set>
+      <if test="lid != null">
+        lid = #{lid,jdbcType=CHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sname != null">
+        sname = #{sname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where slid = #{slid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.LabSchedule">
+    update s_lab_schedule
+    set lid = #{lid,jdbcType=CHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      sname = #{sname,jdbcType=VARCHAR}
+    where slid = #{slid,jdbcType=CHAR}
+  </update>
+</mapper>

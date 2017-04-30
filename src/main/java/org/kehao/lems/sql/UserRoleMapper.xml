@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kehao.lems.dao.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.UserRole">
+    <result column="uid" jdbcType="CHAR" property="uid" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+  </resultMap>
+
+    <sql id="Base_Column_List">
+        uid,rid
+    </sql>
+
+  <!-- 自定义映射关系 -->
+  <resultMap id="URole_Role_Jion_Map" type="org.kehao.lems.entity.UserRole">
+      <result column="uid" jdbcType="CHAR" property="uid" />
+      <result column="rid" jdbcType="INTEGER" property="rid" />
+    <!-- 关联 属性 equPurchase装载 -->
+    <association property="role" javaType="org.kehao.lems.entity.Role"><!-- 对象关联 -->
+        <id column="rid" jdbcType="INTEGER" property="rid" />
+        <result column="rname" jdbcType="VARCHAR" property="rname" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+    </association>
+  </resultMap>
+
+  <sql id="Jion_Role_Column_List">
+    uid, urole.rid, rname, remark
+  </sql>
+
+    <!-- 自定义映射关系 -->
+    <resultMap id="URole_User_Jion_Map" type="org.kehao.lems.entity.UserRole">
+        <result column="uid" jdbcType="CHAR" property="uid" />
+        <result column="rid" jdbcType="INTEGER" property="rid" />
+        <!-- 关联 属性 equPurchase装载 -->
+        <association property="user"  javaType="org.kehao.lems.entity.User"><!-- 对象关联 -->
+            <id column="uid" jdbcType="CHAR" property="uid"/>
+            <result column="uname" jdbcType="VARCHAR" property="uname"/>
+            <result column="ture_name" jdbcType="VARCHAR" property="tureName"/>
+            <result column="passwd" jdbcType="CHAR" property="passwd"/>
+            <result column="salt" jdbcType="CHAR" property="salt"/>
+            <result column="office_address" jdbcType="VARCHAR" property="officeAddress"/>
+            <result column="office_phone" jdbcType="VARCHAR" property="officePhone"/>
+            <result column="email" jdbcType="VARCHAR" property="email"/>
+            <result column="masterid" jdbcType="CHAR" property="masterid"/>
+            <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+            <result column="token" jdbcType="CHAR" property="token"/>
+        </association>
+    </resultMap>
+
+    <sql id="Jion_User_Column_List">
+        urole.uid, rid, uname, ture_name, passwd, salt, office_address, office_phone, email, masterid, createtime,token
+    </sql>
+
+  <insert id="insert" parameterType="org.kehao.lems.entity.UserRole">
+    insert into user_role (uid, rid)
+    values (#{uid,jdbcType=CHAR}, #{rid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="org.kehao.lems.entity.UserRole">
+    insert into user_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="rid != null">
+        rid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=CHAR},
+      </if>
+      <if test="rid != null">
+        #{rid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+    <select id="selectRloeByURId" parameterType="java.lang.String" resultMap="URole_Role_Jion_Map">
+        select
+        <include refid="Jion_Role_Column_List"/>
+        from user_role urole join s_role role on(urole.rid=role.rid)
+        where urole.rid = #{rid,jdbcType=CHAR}
+    </select>
+
+    <select id="selectUserByURId" parameterType="java.lang.String" resultMap="URole_User_Jion_Map">
+        select
+        <include refid="Jion_User_Column_List"/>
+        from user_role urole join s_user user on(urole.uid=user.uid)
+        where urole.rid = #{rid,jdbcType=CHAR}
+    </select>
+</mapper>
