@@ -1,5 +1,12 @@
 package org.kehao.lems.service.impl;
 
+import java.io.UnsupportedEncodingException;
+import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
 import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
 import org.kehao.lems.entity.User;
@@ -8,16 +15,7 @@ import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
 import org.kehao.lems.utils.SendEmail;
-import org.kehao.lems.utils.secret.aes.util.AesUtil;
-import org.kehao.lems.utils.secret.aes_plus.util.AesUtilPlus;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.io.UnsupportedEncodingException;
-import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by kehao on 2017/4/20.
@@ -76,10 +74,11 @@ public class UserServiceImpl implements UserService{
             return result;
         }else if(LEMSMD5Util.validate(passwd,user.getPasswd(),user.getSalt())){
             user.setToken(CodeUtil.createId());
-            Map data=new HashMap();
+            Map<String ,Object> data=new HashMap<String ,Object>();
             data.put("uid",user.getUid());
             data.put("token",user.getToken());
             userMapper.updateTokenByUid(data);
+            user=userMapper.selectRloeByUid(user.getUid());
             result.setData(user);
             result.setMessage("登录成功");
             result.setStatus(0);
@@ -191,6 +190,7 @@ public class UserServiceImpl implements UserService{
         if(reqCode!=null&&!reqCode.equals("")&&reqCode.equals(valiCode.get(uname))){
             result.setStatus(0);
             result.setMessage("验证码正确");
+            valiCode.remove(uname);
         }else {
             result.setStatus(1);
             result.setMessage("验证码错误");

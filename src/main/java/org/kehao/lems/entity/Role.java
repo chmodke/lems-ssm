@@ -1,11 +1,15 @@
 package org.kehao.lems.entity;
 
+import java.util.List;
+
 public class Role {
     private Integer rid;
 
     private String rname;
 
     private String remark;
+
+    private List<UserRole> userRole;
 
     public Integer getRid() {
         return rid;
@@ -29,5 +33,13 @@ public class Role {
 
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
+    }
+
+    public void setUserRole(List<UserRole> userRole) {
+        this.userRole = userRole;
+    }
+
+    public List<UserRole> getUserRole() {
+        return userRole;
     }
 }

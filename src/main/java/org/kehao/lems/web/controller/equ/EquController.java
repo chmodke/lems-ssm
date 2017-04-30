@@ -1,18 +1,15 @@
 package org.kehao.lems.web.controller.equ;
 
+import javax.annotation.Resource;
+
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
-import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.service.EquPurcService;
 import org.kehao.lems.service.EquService;
-import org.kehao.lems.service.LabService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.annotation.Resource;
-import java.util.Map;
 
 
 /**

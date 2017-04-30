@@ -19,7 +19,7 @@ public class TestUserDao {
 	UserMapper userMapper;
 	@Test
 	public void testGetUserByUid(){
-		User user=userMapper.selectByPrimaryKey("99999");
+		User user=userMapper.selectByPrimaryKey("9999");
 		System.out.println(user.getTureName());
 	}
 
@@ -30,16 +30,27 @@ public class TestUserDao {
 	}
 	@Test
 	public void testUpdateTokenByUid(){
-        Map data=new HashMap();
+        Map<String,Object> data=new HashMap<String ,Object>();
         String temp=CodeUtil.createId();
         System.out.println(temp);
         data.put("uid","9999");
         data.put("token",temp);
 		int ststus=userMapper.updateTokenByUid(data);
+		System.out.println(ststus);
 	}
 	@Test
 	public void testSelectUserByEmail(){
 	    User user=userMapper.selectByEmail("admin@xx.com");
         System.out.println(user.getUid());
+    }
+    @Test
+    public void selectURloeByUid (){
+        User user = userMapper.selectURloeByUid("9999");
+        System.out.println(user.getUserRole().getRid());
+    }
+    @Test
+    public void selectRloeByUid(){
+	    User user=userMapper.selectRloeByUid("9999");
+        System.out.println(user.getUserRole().getRole().getRname());
     }
 }

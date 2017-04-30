@@ -43,6 +43,7 @@
                 delCookie("uid");
                 delCookie("token");
                 delCookie("uname");
+                delCookie("role");
                 window.location.reload();
             }
 

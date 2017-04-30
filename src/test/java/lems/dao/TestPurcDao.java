@@ -16,7 +16,7 @@ public class TestPurcDao {
     EquPurchaseMapper equPurchaseMapper;
     @Test
     public void testGetSelectPurcJionEquByEid(){
-        EquPurchase equPurchase=equPurchaseMapper.selectEquPurcJionPurcByPcid("9999");
+        EquPurchase equPurchase=equPurchaseMapper.selectEquPurcJionPurcByPcid("79e142a75ba3492ca528c390863f3b93");
         System.out.println(equPurchase.getEquipment().getEname());
     }
 }

@@ -5,6 +5,10 @@ public class UserRole {
 
     private Integer rid;
 
+    private User user;
+
+    private Role role;
+
     public String getUid() {
         return uid;
     }
@@ -19,5 +23,21 @@ public class UserRole {
 
     public void setRid(Integer rid) {
         this.rid = rid;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }

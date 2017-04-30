@@ -1,10 +1,9 @@
 package org.kehao.lems.service;
 
+import java.io.UnsupportedEncodingException;
+
 import org.kehao.lems.entity.User;
 import org.kehao.lems.utils.LEMSResult;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.UnsupportedEncodingException;
 
 /**
  * Created by kehao on 2017/4/20.

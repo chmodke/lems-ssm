@@ -16,7 +16,7 @@ public class TestEquDao {
     EquipmentMapper equipmentMapper;
     @Test
     public void testGetSelectEquJionPurcByEid(){
-        Equipment equipment=equipmentMapper.selectEquJionPurcByEid("9999");
+        Equipment equipment=equipmentMapper.selectEquJionPurcByEid("d16bbc38a9a94f6a8ca1f82797463cfa");
         System.out.println(equipment.getEquPurchase().getUid());
     }
 }

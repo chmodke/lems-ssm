@@ -25,6 +25,8 @@ public class User {
 
     private String token;
 
+    private UserRole userRole;
+
     public String getUid() {
         return uid;
     }
@@ -111,5 +113,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
     }
 }
