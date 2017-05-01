@@ -21,6 +21,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import junit.framework.Assert;
 
+import java.util.Date;
+
 @SuppressWarnings("deprecation")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
@@ -48,9 +50,10 @@ public class TestEquController {
 		RequestBuilder request=MockMvcRequestBuilders
 		.post("/equ/equadd.do")
 		.param("equPurchase.uid", "16e3a3765d2a40b4917eb2cce7d372d4")//传数据
-		.param("equPurchase.price", "88888.8")
-		.param("id", "631-001")
+		.param("equPurchase.price", "88886.8")
+		.param("id", "0429-018")
 		.param("ename", "web服务器")
+		.param("equPurchase.pctime","2017-04-18 16:45:52")
 		.param("type", "服务器")
 		.param("remark", "计算机");
 		

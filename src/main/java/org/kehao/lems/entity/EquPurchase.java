@@ -1,5 +1,7 @@
 package org.kehao.lems.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class EquPurchase {
@@ -7,9 +9,11 @@ public class EquPurchase {
 
     private String uid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date pctime;
 
     private Double price;
+
     private Equipment equipment;
 
     public String getPcid() {

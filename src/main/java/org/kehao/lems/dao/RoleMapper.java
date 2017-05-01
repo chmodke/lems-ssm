@@ -28,4 +28,11 @@ public interface RoleMapper {
      * @return
      */
     Role selectUserByRid(String rid);
+
+    /**
+     * 根据角色名查询角色
+     * @param rname
+     * @return
+     */
+    Role selectByRname(String rname);
 }

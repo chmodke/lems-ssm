@@ -72,6 +72,10 @@ public class UserServiceImpl implements UserService{
             result.setMessage("用户名不存在");
             result.setStatus(1);
             return result;
+        }else if(user.getStatus()!=0){
+            result.setMessage("用户状态不可用");
+            result.setStatus(3);
+            return result;
         }else if(LEMSMD5Util.validate(passwd,user.getPasswd(),user.getSalt())){
             user.setToken(CodeUtil.createId());
             Map<String ,Object> data=new HashMap<String ,Object>();
@@ -226,5 +230,50 @@ public class UserServiceImpl implements UserService{
             result.setMessage("重置密码失败");
         }
         return result;
+    }
+
+    public LEMSResult getUser(Integer page, Integer pageSize, User user) {
+        LEMSResult result=new LEMSResult();
+        Map<String,Object> map=new HashMap<String, Object>(4);
+        if(null!=user.getUname()){
+            map.put("uname",user.getUname());
+        }
+        if(null!=user.getTureName()){
+            map.put("tureName",user.getTureName());
+        }
+        if(null!=user.getCreatetime()){
+            map.put("createtime",user.getCreatetime());
+        }
+//        if(null!=user.getUserRole().getRole().getRname()){
+//            map.put("rname",user.getUserRole().getRole().getRname());
+//        }
+        if(null==page){
+            page=1;
+        }
+        map.put("startRec",pageSize*(page-1));//5*(1-1)=0,,5*(2-1)=5
+        if(null==pageSize){
+            pageSize=5;
+        }
+        map.put("recCount",pageSize);
+        result.setData(userMapper.selectUserCondition(map));
+        result.setStatus(0);
+        return result;
+    }
+
+    public Long getUserCount(User user) {
+        Map<String,Object> map=new HashMap<String, Object>(4);
+        if(null!=user.getUname()){
+            map.put("uname",user.getUname());
+        }
+        if(null!=user.getTureName()){
+            map.put("tureName",user.getTureName());
+        }
+        if(null!=user.getCreatetime()){
+            map.put("createtime",user.getCreatetime());
+        }
+//        if(null!=user.getUserRole().getRole().getRname()){
+//            map.put("rname",user.getUserRole().getRole().getRname());
+//        }
+        return userMapper.selectUserConditionCount(map);
     }
 }

@@ -2,10 +2,12 @@ package org.kehao.lems.web.controller.equ;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.service.EquPurcService;
 import org.kehao.lems.service.EquService;
+import org.kehao.lems.service.impl.EquPurcServiceImpl;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,12 +32,12 @@ public class EquController {
     @RequestMapping("/equadd.do")
     @ResponseBody
     public LEMSResult equAdd(Equipment equipment){
-        System.out.println(equipment);
-        LEMSResult result=new LEMSResult();
+        LEMSResult result;
 
         EquPurchase equPurchase=new EquPurchase();
         equPurchase.setUid(equipment.getEquPurchase().getUid());
         equPurchase.setPrice(equipment.getEquPurchase().getPrice());
+        equPurchase.setPctime(equipment.getEquPurchase().getPctime());
 
         result=equPurcService.equPurcAdd(equPurchase);
         String pcid=(String)result.getData();

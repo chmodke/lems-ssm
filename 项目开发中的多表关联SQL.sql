@@ -44,3 +44,14 @@ where user.uid = '16e3a3765d2a40b4917eb2cce7d372d4';
 select rname, remark,uname, ture_name, office_address, office_phone, email, masterid, createtime
 from s_role role join user_role urole on(urole.rid=role.rid) join s_user user on (user.uid=urole.uid)
 where role.rid = '405230015';
+
+<!-- 用户列表 -->
+select user.uid,uname, ture_name, office_address, office_phone, email, masterid, createtime,status,rname, remark 
+from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid) 
+where user.status='0' AND user.ture_name LIKE '%a%'
+
+<!-- 用户列表 分页 -->
+select user.uid,uname, ture_name, office_address, office_phone, email, masterid, createtime,status,rname, remark 
+from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid) 
+where user.status='0' AND user.ture_name LIKE '%a%' LIMIT 0,5;
+

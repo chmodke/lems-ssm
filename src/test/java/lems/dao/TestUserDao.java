@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -52,5 +53,16 @@ public class TestUserDao {
     public void selectRloeByUid(){
 	    User user=userMapper.selectRloeByUid("9999");
         System.out.println(user.getUserRole().getRole().getRname());
+    }
+    @Test
+	public void selectUserCondition (){
+        Map map=new HashMap();
+        map.put("tureName","a");
+        map.put("page",1);
+        map.put("pageSize",10);
+        List<User> userList=userMapper.selectUserCondition(map);
+        for(User u:userList){
+            System.out.println(u.getUname());
+        }
     }
 }

@@ -24,6 +24,7 @@ public class User {
     private Date createtime;
 
     private String token;
+    private Integer status;
 
     private UserRole userRole;
 
@@ -113,6 +114,14 @@ public class User {
 
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getStatus() {
+        return status;
     }
 
     public void setUserRole(UserRole userRole) {

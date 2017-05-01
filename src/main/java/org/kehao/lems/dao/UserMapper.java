@@ -1,5 +1,6 @@
 package org.kehao.lems.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.kehao.lems.entity.User;
@@ -60,4 +61,16 @@ public interface UserMapper{
      * @return
      */
     User selectRloeByUid(String uid);
+
+    /**
+     * 查询用户，搜索功能接口
+     * @return
+     */
+    List<User> selectUserCondition(Map map);
+    /**
+     * 查询用户数量，搜索功能接口
+     * @return
+     */
+    Long selectUserConditionCount(Map map);
+
 }
