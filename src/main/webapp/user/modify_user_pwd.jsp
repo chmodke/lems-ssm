@@ -146,7 +146,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <div class="dialog-button">
                         <a id="mod_user_passwd_reset_btn" class="l-btn">
                                     <span class="l-btn-left">

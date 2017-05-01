@@ -8,7 +8,6 @@ import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.sql.Timestamp;
 
 /**
  * Created by hao on 2017/04/27.
@@ -22,8 +21,6 @@ public class EquPurcServiceImpl implements EquPurcService {
         LEMSResult result=new LEMSResult();
         String pcid=CodeUtil.createId();
         equPurchase.setPcid(pcid);
-        equPurchase.setPctime(new Timestamp(System.currentTimeMillis()));
-        //TODO 后期采购时间前台传输
         if(equPurchaseMapper.insertSelective(equPurchase)==1){
             result.setStatus(0);
             result.setMessage("采购部分完成");

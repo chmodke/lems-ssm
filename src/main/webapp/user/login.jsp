@@ -38,7 +38,7 @@
 
             $("#index_username").text(getCookie("uname"));//显示用户名称
             //TODO 显示用户角色
-            $("#index_userrole").text(getCookie("uname"));//显示用户角色
+            $("#index_userrole").text(getCookie("role"));//显示用户角色
 
             $("#index_logout").html('<a href="javascript:;">安全退出</a>');//显示退出按钮
 
@@ -71,6 +71,7 @@
                         addCookie("uid", result.data.uid, -1);//添加Cookie
                         addCookie("token",result.data.token,-1);
                         addCookie("uname",result.data.uname,-1);
+                        addCookie("role",result.data.userRole.role.rname);
                         loginDialog.dialog('destroy');
                         $.messager.show({
                             title: '提示',
@@ -80,7 +81,7 @@
                         });
                         $("#index_username").text(getCookie("uname"));//显示用户名称
                         //TODO 显示用户角色
-                        $("#index_userrole").text(getCookie("uname"));//显示用户角色
+                        $("#index_userrole").text(getCookie("role"));//显示用户角色
 
                         $("#index_logout").html('<a href="javascript:;">安全退出</a>')//显示退出按钮
                     }

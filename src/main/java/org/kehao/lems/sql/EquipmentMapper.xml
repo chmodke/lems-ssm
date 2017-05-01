@@ -47,17 +47,17 @@
         where eid = #{eid,jdbcType=CHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from s_equipment
-    where eid = #{eid,jdbcType=CHAR}
-  </delete>
+        delete from s_equipment
+        where eid = #{eid,jdbcType=CHAR}
+    </delete>
     <insert id="insert" parameterType="org.kehao.lems.entity.Equipment">
-    insert into s_equipment (eid, id, ename, 
-      type, addtime, status, 
-      remark, pcid)
-    values (#{eid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR}, 
-      #{type,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
-      #{remark,jdbcType=VARCHAR}, #{pcid,jdbcType=CHAR})
-  </insert>
+        insert into s_equipment (eid, id, ename,
+          type, addtime, status,
+          remark, pcid)
+        values (#{eid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR},
+          #{type,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+          #{remark,jdbcType=VARCHAR}, #{pcid,jdbcType=CHAR})
+    </insert>
     <insert id="insertSelective" parameterType="org.kehao.lems.entity.Equipment">
         insert into s_equipment
         <trim prefix="(" suffix=")" suffixOverrides=",">

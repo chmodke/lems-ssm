@@ -72,4 +72,20 @@ public interface UserService {
      * @throws UnsupportedEncodingException
      */
     LEMSResult modifyUserPasswd(String auther)throws UnsupportedEncodingException;
+
+    /**
+     * 查询用户，搜索功能
+     *
+     * @param page
+     * @param pageSize
+     *@param user 搜索条件  @return
+     */
+    LEMSResult getUser(Integer page, Integer pageSize, User user);
+
+    /**
+     * 查询用户，搜索功能,搜索到的用户数量
+     * @param user
+     * @return
+     */
+    Long getUserCount(User user) ;
 }

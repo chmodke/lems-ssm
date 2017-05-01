@@ -11,14 +11,15 @@
     <script type="text/javascript" src="./jslib/jquery-easyui-1.5.1/locale/easyui-lang-zh_CN.js" charset="UTF-8"></script>
     <link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/icon.css">
     <link href="./jslib/bootstrap-2.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <%--<link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/default/easyui.css">--%>
 
+    <%--<link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/default/easyui.css">--%><%--换用bootstrap样式--%>
     <link id="easyuiTheme" rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/bootstrap/easyui.css" type="text/css">
+
     <script type="text/javascript" src="jslib/cookie_util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/base64.js" charset="UTF-8"></script>
 
-    <!-- 引入my97日期时间控件 -->
-    <script type="text/javascript" src="jslib/My97DatePicker4.8b3/My97DatePicker/WdatePicker.js" charset="utf-8"></script>
+<%--    <!-- 引入my97日期时间控件 -->
+    <script type="text/javascript" src="jslib/My97DatePicker4.8b3/My97DatePicker/WdatePicker.js" charset="utf-8"></script>--%>
 
     <script type="text/javascript" src="jslib/lems/lems-util.js" charset="UTF-8"></script>
     <script type="text/javascript" src="jslib/lems/index.js" charset="UTF-8"></script>
@@ -34,6 +35,9 @@
             $("#labadd_link").click(labadd_tab_add);//添加实验室菜单事件绑定
             $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
             $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
+            $("#roleadd_link").click(roleadd_tab_add);//添加角色菜单事件绑定
+            $("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
+            $("#userlist_link").click(userlist_tab_add);//用户列表菜单事件绑定
 
 
             /**
@@ -43,6 +47,7 @@
                 delCookie("uid");
                 delCookie("token");
                 delCookie("uname");
+                delCookie("role");
                 window.location.reload();
             }
 
@@ -127,6 +132,54 @@
                 }
             }
 
+            /**
+             * 添加角色菜单事件
+             */
+            function roleadd_tab_add(){
+                if($("#index_tt").tabs("exists","角色添加")){
+                    $("#index_tt").tabs("select","角色添加");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"角色添加",
+                        closable:true,
+                        href:"./role/add_role.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 删除用户菜单事件
+             */
+            function userremove_tab_add(){
+                if($("#index_tt").tabs("exists","用户删除")){
+                    $("#index_tt").tabs("select","用户删除");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"用户删除",
+                        closable:true,
+                        href:"./user/remove_user.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 用户列表菜单事件
+             */
+            function userlist_tab_add(){
+                if($("#index_tt").tabs("exists","用户列表")){
+                    $("#index_tt").tabs("select","用户列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"用户列表",
+                        closable:true,
+                        href:"./user/list_user.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -178,6 +231,7 @@
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
                     <li>设备报修</li>
                     <li>设备转移(分配)</li>
+                    <li>设备注销</li>
                 </ul>
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">
@@ -199,11 +253,19 @@
                     <li>设实验室预约</li>
                 </ul>
             </div>
+            <div title="角色管理" data-options="border:false,iconCls:'anchor'">
+                <ul>
+                    <li><a id="roleadd_link" href="javascript:;">角色添加</a></li>
+                    <li>角色删除</li>
+                    <li>角色权限管理(资源)</li>
+                </ul>
+            </div>
             <div title="用户管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
+                    <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
-                    <li>用户删除</li>
-                    <li>用户授权管理</li>
+                    <li><a id="userremove_link" href="javascript:;">用户删除</a></li>
+                    <li>用户授权管理(角色)</li>
                 </ul>
             </div>
             <div title="用户个人信息管理" data-options="border:false,iconCls:'anchor'">
@@ -216,13 +278,10 @@
     </div>
     <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;">
         <jsp:include page="user/login.jsp"></jsp:include>
-        <div id="index_tt" class="easyui-tabs" style="width:99.5%;height:99.5%;padding: 0px">
-            <div title="欢迎" data-options="closable:false" style="overflow:auto;display:none;">
+        <div id="index_tt" class="easyui-tabs" fit="true" style="overflow:hidden;padding: 0px">
+            <div title="欢迎" data-options="closable:false" fit="true" style="overflow:hidden;display:none;">
                 <jsp:include page="welcome.jsp"></jsp:include>
             </div>
-            <%--<div title="添加用户" data-options="closable:true" style="overflow:auto;display:none;" >
-                <jsp:include page="user/add_user.jsp"></jsp:include>
-            </div>--%>
         </div>
     </div>
 </div>
