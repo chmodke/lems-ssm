@@ -2,6 +2,7 @@ package org.kehao.lems.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -232,19 +233,16 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
-    public LEMSResult getUser(Integer page, Integer pageSize, User user) {
+    public LEMSResult getUser(Integer page, Integer pageSize, User user, String order, String sort,String rname) {
         LEMSResult result=new LEMSResult();
-        Map<String,Object> map=new HashMap<String, Object>(4);
+        Map<String,Object> map=new HashMap<String, Object>(8);
         if(null!=user.getUname()){
             map.put("uname",user.getUname());
         }
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-        if(null!=user.getCreatetime()){
-            map.put("createtime",user.getCreatetime());
-        }
-//        if(null!=user.getUserRole().getRole().getRname()){
+//        if(null!=user.getUserRole()){
 //            map.put("rname",user.getUserRole().getRole().getRname());
 //        }
         if(null==page){
@@ -255,25 +253,39 @@ public class UserServiceImpl implements UserService{
             pageSize=5;
         }
         map.put("recCount",pageSize);
+
+        map.put("order",order);
+        if(sort.equals("tureName")){
+            sort="ture_name";
+        }
+        if(sort.equals("userRole")){
+            sort="rname";
+        }
+        map.put("sort",sort);
+
+        if(null!=rname){
+            map.put("rname",rname);
+        }
+
         result.setData(userMapper.selectUserCondition(map));
         result.setStatus(0);
         return result;
     }
 
-    public Long getUserCount(User user) {
-        Map<String,Object> map=new HashMap<String, Object>(4);
+    public Long getUserCount(User user,String rname) {
+        Map<String,Object> map=new HashMap<String, Object>(8);
         if(null!=user.getUname()){
             map.put("uname",user.getUname());
         }
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-        if(null!=user.getCreatetime()){
-            map.put("createtime",user.getCreatetime());
-        }
-//        if(null!=user.getUserRole().getRole().getRname()){
+//        if(null!=user.getUserRole()){
 //            map.put("rname",user.getUserRole().getRole().getRname());
 //        }
+        if(null!=rname){
+            map.put("rname",rname);
+        }
         return userMapper.selectUserConditionCount(map);
     }
 }

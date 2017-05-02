@@ -129,10 +129,13 @@ public class TestUserController {
 		//发送执行一个HTTP请求
 		RequestBuilder request=MockMvcRequestBuilders
 				.post("/user/user_list.do")
-				.param("page","3")//传数据
-				.param("rows","5");
-//                .param("uname","a")
-//                .param("userRole.role.rname","管理员");
+				.param("page","1")//传数据
+				.param("rows","5")
+                .param("uname","k")
+				.param("sort","uname")
+                .param("order","desc")
+                .param("rname","管")
+                .param("tureName","k");
 
 
 		MvcResult result=mockMvc.perform(request)

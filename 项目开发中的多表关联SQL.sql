@@ -55,3 +55,7 @@ select user.uid,uname, ture_name, office_address, office_phone, email, masterid,
 from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid) 
 where user.status='0' AND user.ture_name LIKE '%a%' LIMIT 0,5;
 
+select user.uid,uname, ture_name, office_address, office_phone, email, masterid, createtime,status,rname, remark
+from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
+where user.status='0' AND user.ture_name ORDER BY rname LIKE '%a%' LIMIT 0,5;
+

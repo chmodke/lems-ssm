@@ -6,11 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.LEMSResult;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -128,10 +130,11 @@ public class UserController {
      */
     @RequestMapping("/user_list.do")
     @ResponseBody
-    public Map<String,Object> getUserList(Integer page, Integer rows, User user) {
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public Map<String,Object> getUserList(Integer page, Integer rows, User user,String order,String sort,String rname) {
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("rows", userService.getUser(page, rows, user).getData());
-        data.put("total", userService.getUserCount(user));
+        data.put("rows", userService.getUser(page, rows, user,order,sort,rname).getData());
+        data.put("total", userService.getUserCount(user,rname));
         return data;
     }
 }

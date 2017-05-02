@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/index.jsp" line="282" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/index.jsp" line="289" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" line="82" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/repeat_pwd.jsp" line="11" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="113" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="123" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="134" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="144" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/test/test_datagrid.html" line="10" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60717c3a-28ec-4aba-8786-214ae1031305" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/RoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/RoleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquPurchase.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquPurchase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lems.sql" afterPath="$PROJECT_DIR$/lems.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquPurcServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquPurcServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/RoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/RoleMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/inc.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/inc.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/user/modify_user_pwd.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/user/modify_user_pwd.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java" afterPath="$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/lems/web/controller/TestEquController.java" afterPath="$PROJECT_DIR$/src/test/java/lems/web/controller/TestEquController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java" afterPath="$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/项目开发中的多表关联SQL.sql" afterPath="$PROJECT_DIR$/项目开发中的多表关联SQL.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,7 +38,133 @@
     <favorites_list name="LEMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="121" column="96" lean-forward="true" selection-start-line="121" selection-start-column="96" selection-end-line="121" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="83" column="56" lean-forward="true" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="815">
+              <caret line="284" column="11" lean-forward="true" selection-start-line="284" selection-start-column="11" selection-end-line="284" selection-end-column="11" />
+              <folding>
+                <element signature="e#806#822#0" expanded="true" />
+                <element signature="e#2570#2586#0" expanded="true" />
+                <element signature="e#5826#5977#0" expanded="true" />
+                <element signature="e#5976#5977#0" expanded="true" />
+                <element signature="e#7731#7747#0" expanded="true" />
+                <element signature="e#8793#8809#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="133" column="29" lean-forward="false" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_user.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="64" column="11" lean-forward="true" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#3314#3320#0#HTML" expanded="true" />
+                <element signature="e#3384#3390#0#HTML" expanded="true" />
+                <element signature="e#3407#3413#0#HTML" expanded="true" />
+                <element signature="e#3481#3487#0#HTML" expanded="true" />
+                <element signature="e#3504#3510#0#HTML" expanded="true" />
+                <element signature="e#3573#3579#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#3817#3823#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="326" column="100" lean-forward="true" selection-start-line="326" selection-start-column="100" selection-end-line="326" selection-end-column="100" />
+              <folding>
+                <element signature="e#13567#13571#0" expanded="true" />
+                <element signature="e#13693#13697#0" expanded="true" />
+                <element signature="e#14660#14664#0" expanded="true" />
+                <element signature="e#14786#14790#0" expanded="true" />
+                <marker date="1493711696105" expanded="true" signature="4672:4783" ph="select from s_user" />
+                <marker date="1493711696105" expanded="true" signature="4876:4935" ph="delete from " />
+                <marker date="1493711696105" expanded="true" signature="5026:5564" ph="insert into s_user... " />
+                <marker date="1493711696105" expanded="true" signature="8169:9500" ph="update s_use... " />
+                <marker date="1493711696105" expanded="true" signature="9603:10199" ph="update s_use... " />
+                <marker date="1493711696105" expanded="true" signature="10312:10427" ph="select from s_user" />
+                <marker date="1493711696105" expanded="true" signature="10503:10584" ph="update s_use... " />
+                <marker date="1493711696105" expanded="true" signature="10696:10814" ph="select from s_user" />
+                <marker date="1493711696105" expanded="true" signature="10925:12254" ph="update s_use... " />
+                <marker date="1493711696105" expanded="true" signature="12378:12554" ph="select from s_user" />
+                <marker date="1493711696105" expanded="true" signature="12676:12891" ph="select from s_user" />
+                <marker date="1493711696105" expanded="true" signature="13014:14028" ph="select from s_user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestUserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EquService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -89,7 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquPurchaseMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/SendEmail.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/repeatpwd.jsp" />
@@ -115,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/RoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/RoleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/del_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
@@ -124,22 +237,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/role/add_role.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/user_list.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jslib/jquery-easyui-1.5.1/jquery.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/jslib/jquery-easyui-1.5.1/jquery.easyui.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/test/test.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/test/test2.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/test/test_datagrid.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/inc.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java" />
+        <option value="$PROJECT_DIR$/项目开发中的多表关联SQL.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" />
       </list>
     </option>
   </component>
@@ -508,8 +623,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1616" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -558,7 +673,7 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -568,7 +683,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -579,10 +694,134 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -604,7 +843,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -630,7 +869,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -656,7 +895,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -682,7 +921,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -708,7 +947,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -726,37 +965,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -783,52 +992,10 @@
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -854,7 +1021,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -884,7 +1051,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -914,7 +1081,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -948,37 +1115,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1015,7 +1152,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36095616" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../EasyUI" />
@@ -1024,12 +1161,12 @@
     <property name="SearchEverywhereHistoryKey" value="Map&#9;PSI&#9;JAVA://org.kehao.lems.dao.EquBreakMapper&#10;updateTokenByUid&#9;PSI&#9;JAVA://lems.dao.TestUserDao#testUpdateTokenByUid" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Workspace\IDEA\LEMS" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\user" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\role" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\java\org\kehao\lems\utils" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\lab" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.kehao.lems.service" />
@@ -1038,12 +1175,12 @@
       <recent name="lems.web.controller" />
       <recent name="org.kehao.lems.web.controller.equ" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\user" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\role" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\java\org\kehao\lems\utils" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\lab" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\user" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1058,7 +1195,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.lems">
+  <component name="RunManager" selected="JUnit.TestUserController.getUserList">
     <configuration default="false" name="TestUserDao.selectRloeByUid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1609,78 +1746,6 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="lems" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.72" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
-      <deployment>
-        <artifact name="LEMS:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/lems" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_LEMS_2" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51192" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="LEMS:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <configuration default="false" name="lems_war" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.72" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/lems_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -1754,9 +1819,81 @@
         </option>
       </method>
     </configuration>
+    <configuration default="false" name="lems" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.77" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="LEMS:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/lems" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_LEMS_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51192" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LEMS:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.lems" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.lems_war" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.lems_war" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.lems" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.TestUserDao.selectRloeByUid" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.TestEquController.equControllerAdd" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.CodeUtil.testCreateCode" />
@@ -1814,43 +1951,45 @@
       <workItem from="1493534647982" duration="704000" />
       <workItem from="1493538834115" duration="12361000" />
       <workItem from="1493607922208" duration="31836000" />
+      <workItem from="1493686862254" duration="937000" />
+      <workItem from="1493703079026" duration="10850000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 33m 31s.xml">
+    <history-entry file="TestUserController_getUserList - 2017.05.02 at 16h 16m 15s.xml">
       <configuration name="TestUserController.getUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 38m 11s.xml">
+    <history-entry file="TestUserController_getUserList - 2017.05.02 at 16h 16m 53s.xml">
       <configuration name="TestUserController.getUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 39m 09s.xml">
+    <history-entry file="TestUserController_getUserList - 2017.05.02 at 16h 17m 26s.xml">
       <configuration name="TestUserController.getUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 44m 31s.xml">
+    <history-entry file="TestUserController_getUserList - 2017.05.02 at 16h 18m 25s.xml">
       <configuration name="TestUserController.getUserList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 49m 08s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 13m 58s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 49m 56s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 20m 48s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 50m 28s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 24m 04s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 53m 18s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 24m 40s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 58m 26s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 26m 34s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestUserController_getUserList - 2017.05.01 at 21h 59m 04s.xml">
-      <configuration name="TestUserController.getUserList" configurationId="JUnit" />
+    <history-entry file="TestUserDao_selectUserCondition - 2017.05.02 at 14h 26m 54s.xml">
+      <configuration name="TestUserDao.selectUserCondition" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201318000" />
+    <option name="totallyTimeSpent" value="213105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1862,13 +2001,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.359447" sideWeight="0.5025773" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28366113" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28350514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1876,21 +2015,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40337422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3938224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325887" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44478527" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37194338" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34202453" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4234234" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19974227" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925257" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2684049" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1898,6 +2036,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2684049" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1919,7 +2058,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="39" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1932,32 +2071,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="33" column="89" lean-forward="true" selection-start-line="33" selection-start-column="89" selection-end-line="33" selection-end-column="89" />
-          <folding>
-            <marker date="1493533840333" expanded="true" signature="2602:2693" ph="insert into user_role... " />
-            <marker date="1493533840333" expanded="true" signature="3326:3497" ph="select from user_role" />
-            <marker date="1493533840333" expanded="true" signature="3621:3792" ph="select from user_role" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/dao/TestUserRoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/dao/TestEquDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserRoleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1969,17 +2082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/service/TestUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="23" column="58" lean-forward="true" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2022,10 +2124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#1613#1614#0" expanded="false" />
-            <element signature="e#1647#1648#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2033,9 +2131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2051,7 +2146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2059,9 +2153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2077,7 +2168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2085,9 +2175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2095,16 +2182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
-          <folding>
-            <marker date="1493609750573" expanded="true" signature="3191:3305" ph="select from s_role" />
-            <marker date="1493609750573" expanded="true" signature="3399:3461" ph="delete from " />
-            <marker date="1493609750573" expanded="true" signature="3552:3689" ph="insert into s_role... " />
-            <marker date="1493609750573" expanded="true" signature="4602:4905" ph="update s_rol... " />
-            <marker date="1493609750573" expanded="true" signature="5008:5158" ph="update s_rol... " />
-            <marker date="1493609750573" expanded="true" signature="5301:5485" ph="select from s_role" />
-            <marker date="1493609750573" expanded="true" signature="5607:5823" ph="select from s_user" />
-            <marker date="1493609750573" expanded="true" signature="5938:6056" ph="select from s_role" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2112,13 +2189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-32">
           <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2126,18 +2196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#796#797#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2145,22 +2203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="124" column="5" lean-forward="true" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-          <folding>
-            <element signature="e#2444#2445#0" expanded="true" />
-            <element signature="e#2480#2481#0" expanded="true" />
-            <element signature="e#2514#2515#0" expanded="true" />
-            <element signature="e#2543#2544#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2168,7 +2210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2176,9 +2217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1493388153710" expanded="true" signature="474:560" ph="insert into equ_lab... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2186,14 +2224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="103" column="17" lean-forward="true" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-          <folding>
-            <marker date="1493611418958" expanded="true" signature="2270:2386" ph="select from s_equipment" />
-            <marker date="1493611418958" expanded="true" signature="2479:2543" ph="delete from " />
-            <marker date="1493611418958" expanded="true" signature="2639:2981" ph="insert into s_equipment... " />
-            <marker date="1493611418958" expanded="true" signature="4787:5620" ph="update s_equ... " />
-            <marker date="1493611418958" expanded="true" signature="5724:6064" ph="update s_equ... " />
-            <marker date="1493611418958" expanded="true" signature="6205:6393" ph="select from s_equipment" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2201,7 +2231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2209,7 +2238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="148" column="32" lean-forward="true" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2217,7 +2245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
           <caret line="107" column="28" lean-forward="true" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2233,9 +2260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2249,66 +2273,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
-          <folding>
-            <element signature="e#3258#3273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="82" column="49" lean-forward="true" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="256" column="37" lean-forward="true" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
-          <folding>
-            <element signature="e#7668#7684#0" expanded="true" />
-            <element signature="e#8558#8574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jslib/jquery-easyui-1.5.1/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="4" column="1667" lean-forward="false" selection-start-line="4" selection-start-column="1667" selection-end-line="4" selection-end-column="1667" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2316,7 +2284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="11146" column="20" lean-forward="true" selection-start-line="11146" selection-start-column="20" selection-end-line="11146" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2324,31 +2291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-576">
           <caret line="73" column="74" lean-forward="true" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="318" column="60" lean-forward="false" selection-start-line="318" selection-start-column="60" selection-end-line="318" selection-end-column="60" />
-          <folding>
-            <marker date="1493647079988" expanded="true" signature="4672:4783" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="4876:4935" ph="delete from " />
-            <marker date="1493647079988" expanded="true" signature="5026:5564" ph="insert into s_user... " />
-            <marker date="1493647079988" expanded="true" signature="8169:9500" ph="update s_use... " />
-            <marker date="1493647079988" expanded="true" signature="9603:10199" ph="update s_use... " />
-            <marker date="1493647079988" expanded="true" signature="10312:10427" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="10503:10584" ph="update s_use... " />
-            <marker date="1493647079988" expanded="true" signature="10696:10814" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="10925:12254" ph="update s_use... " />
-            <marker date="1493647079988" expanded="true" signature="12378:12469" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="12378:12554" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="12676:12891" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="13014:13193" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="13014:13815" ph="select from s_user" />
-            <marker date="1493647079988" expanded="true" signature="13940:14624" ph="select from s_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2356,17 +2298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
           <caret line="36" column="75" lean-forward="true" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2383,22 +2314,6 @@
         <state relative-caret-position="224">
           <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="56" column="103" lean-forward="false" selection-start-line="56" selection-start-column="103" selection-end-line="56" selection-end-column="103" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#2;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#2708#2714#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2422,7 +2337,153 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="78" lean-forward="false" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/CodeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lems/service/TestUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="58" lean-forward="true" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lems/dao/TestUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目开发中的多表关联SQL.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="59" column="77" lean-forward="true" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lems.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="326" column="100" lean-forward="true" selection-start-line="326" selection-start-column="100" selection-end-line="326" selection-end-column="100" />
+          <folding>
+            <element signature="e#13567#13571#0" expanded="true" />
+            <element signature="e#13693#13697#0" expanded="true" />
+            <element signature="e#14660#14664#0" expanded="true" />
+            <element signature="e#14786#14790#0" expanded="true" />
+            <marker date="1493711696105" expanded="true" signature="4672:4783" ph="select from s_user" />
+            <marker date="1493711696105" expanded="true" signature="4876:4935" ph="delete from " />
+            <marker date="1493711696105" expanded="true" signature="5026:5564" ph="insert into s_user... " />
+            <marker date="1493711696105" expanded="true" signature="8169:9500" ph="update s_use... " />
+            <marker date="1493711696105" expanded="true" signature="9603:10199" ph="update s_use... " />
+            <marker date="1493711696105" expanded="true" signature="10312:10427" ph="select from s_user" />
+            <marker date="1493711696105" expanded="true" signature="10503:10584" ph="update s_use... " />
+            <marker date="1493711696105" expanded="true" signature="10696:10814" ph="select from s_user" />
+            <marker date="1493711696105" expanded="true" signature="10925:12254" ph="update s_use... " />
+            <marker date="1493711696105" expanded="true" signature="12378:12554" ph="select from s_user" />
+            <marker date="1493711696105" expanded="true" signature="12676:12891" ph="select from s_user" />
+            <marker date="1493711696105" expanded="true" signature="13014:14028" ph="select from s_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="284" column="11" lean-forward="true" selection-start-line="284" selection-start-column="11" selection-end-line="284" selection-end-column="11" />
+          <folding>
+            <element signature="e#806#822#0" expanded="true" />
+            <element signature="e#2570#2586#0" expanded="true" />
+            <element signature="e#5826#5977#0" expanded="true" />
+            <element signature="e#5976#5977#0" expanded="true" />
+            <element signature="e#7731#7747#0" expanded="true" />
+            <element signature="e#8793#8809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="83" column="56" lean-forward="true" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="121" column="96" lean-forward="true" selection-start-line="121" selection-start-column="96" selection-end-line="121" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="133" column="29" lean-forward="false" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="64" column="11" lean-forward="true" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#3314#3320#0#HTML" expanded="true" />
+            <element signature="e#3384#3390#0#HTML" expanded="true" />
+            <element signature="e#3407#3413#0#HTML" expanded="true" />
+            <element signature="e#3481#3487#0#HTML" expanded="true" />
+            <element signature="e#3504#3510#0#HTML" expanded="true" />
+            <element signature="e#3573#3579#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#3817#3823#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2445,7 +2506,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Spring (LEMS)|Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2492,7 +2553,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>JDK1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

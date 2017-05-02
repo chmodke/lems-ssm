@@ -310,13 +310,19 @@
         <if test="tureName != null">
             AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="createtime != null">
-            AND user.createtime >= #{createtime,jdbcType=TIMESTAMP},
+        <if test="start_create != null">
+            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        </if>
+        <if test="end_create != null">
+            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
         </if>
         <if test="rname!=null">
             AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
         </if>
-        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER};
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
     </select>
     <select id="selectUserConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select COUNT(*)
@@ -328,8 +334,11 @@
         <if test="tureName != null">
             AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="createtime != null">
-            AND user.createtime >= #{createtime,jdbcType=TIMESTAMP},
+        <if test="start_create != null">
+            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        </if>
+        <if test="end_create != null">
+            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
         </if>
         <if test="rname!=null">
             AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
