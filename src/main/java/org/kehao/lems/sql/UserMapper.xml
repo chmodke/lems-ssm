@@ -345,4 +345,11 @@
         </if>
     </select>
 
+    <update id="updateUserStatusByUid" parameterType="java.util.Map">
+        UPDATE s_user SET status = #{status} WHERE uid IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
 </mapper>

@@ -6,12 +6,14 @@
             pagination: true,
             fit: true,
             fitColumns: true,
+            singleSelect:false,
             idField: 'uid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],
             sortName: 'uname',
             sortOrder: 'asc',
             columns: [[
+                {field:'ck',checkbox:"true"},
                 {field: 'uname', title: '用户名', width: 100, sortable: true},
                 {field: 'tureName', title: '真实姓名', width: 100, sortable: true},
                 {field: 'officeAddress', title: '办公室', width: 100},
@@ -43,29 +45,61 @@
                     fixed: true
                 }
             ]],
-            toolbar:[{
+            toolbar:['-',{
                 text:'增加',
                 iconCls:'icon-add',
                 handler:function(){
-
+                    $("#user_dialog").dialog({
+                        title: '用户添加',
+                        width: 650,
+                        height: 430,
+                        href: './user/add_user.jsp',
+                        modal: true
+                    });
                 }
             },'-',{
                 text:'删除',
                 iconCls:'icon-remove',
                 handler:function(){
-
-                }
-            },'-',{
-                text:'修改',
-                iconCls:'icon-edit',
-                handler:function(){
-
+                    del_user();
                 }
             }]
         });
 
         $("#search_user_btn").click(search_user);//绑定查询事件
         $("#reset_search_user_btn").click(reset_search_user);
+
+        /**
+         * 删除用户
+         */
+        function del_user(){
+            var del_userlist=$('#user_list').datagrid('getSelections');
+            var del_list='';
+            for(var i=0;i<del_userlist.length;i++){
+                var selected=del_userlist[i];
+                del_list+=selected['uid']+' ';
+            }
+            del_list.trim();
+            console.info(del_list);
+            $.ajax({
+                url: "./user/userdel.do",
+                type: "post",
+                data:{"delList":del_list},
+                dataType: "json",
+                success: function (result) {
+                    if (result.status == 0) {
+                        $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
+                    }
+                    if (result.status != 0) {
+                        $.messager.alert('警告', result.message);
+                    }
+                },
+                error: function () {
+                    $.messager.alert('警告', "删除用户异常");
+                },
+                async: true
+            });
+        }
 
         /**
          * 条件查询
@@ -107,7 +141,8 @@
             </div>
         </form>
     </div>
-    <div data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
+    <div id="user_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
+        <div id="user_dialog" style="overflow: hidden"></div>
         <table id="user_list"></table>
     </div>
 </div>

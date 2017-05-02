@@ -2,6 +2,7 @@ package org.kehao.lems.service;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.List;
 
 import org.kehao.lems.entity.User;
 import org.kehao.lems.utils.LEMSResult;
@@ -89,4 +90,11 @@ public interface UserService {
      * @return
      */
     Long getUserCount(User user,String rname) ;
+
+    /**
+     * 批量禁用用户
+     * @param delList
+     * @return
+     */
+    LEMSResult userDel (List<String> delList);
 }

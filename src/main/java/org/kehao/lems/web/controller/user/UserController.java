@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -137,4 +134,19 @@ public class UserController {
         data.put("total", userService.getUserCount(user,rname));
         return data;
     }
+
+    /**
+     * 禁用用户
+     *
+     * @param delList 待删除用户id列表
+     * @return
+     */
+    @RequestMapping("/userdel.do")
+    @ResponseBody
+    public LEMSResult userDel(String delList) {
+        String[] arr=delList.split(" ");
+        List<String> list=Arrays.asList(arr);
+        return userService.userDel(list);
+    }
 }
+

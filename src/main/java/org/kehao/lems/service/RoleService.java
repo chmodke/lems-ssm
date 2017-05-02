@@ -22,4 +22,6 @@ public interface RoleService {
      * @return
      */
     LEMSResult roleaddValidation(String rname);
+
+    LEMSResult getAllRole();
 }

@@ -37,4 +37,14 @@ public class RoleController {
 		return roleService.roleaddValidation(rname);
 	}
 
+    /**
+     * 获取所有角色名称
+     * @return
+     */
+    @RequestMapping("/get_all_role.do")
+    @ResponseBody
+    public LEMSResult getAllRole(){
+        return roleService.getAllRole();
+    }
+
 }

@@ -137,4 +137,9 @@
         from s_role
         where rname = #{rname,jdbcType=VARCHAR}
     </select>
+    <select id="selectAllRole" resultType="org.kehao.lems.entity.Role">
+        select
+        <include refid="Base_Column_List"/>
+        from s_role
+    </select>
 </mapper>

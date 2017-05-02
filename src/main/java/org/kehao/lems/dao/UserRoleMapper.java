@@ -12,4 +12,7 @@ public interface UserRoleMapper {
     List<UserRole> selectRloeByURId(String rid);
 
     List<UserRole> selectUserByURId(String rid);
+
+    int deleteByUid(String uid);
+    int deleteByRid(String rid);
 }
