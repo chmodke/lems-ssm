@@ -47,7 +47,7 @@
             ]],
             toolbar:['-',{
                 text:'增加',
-                iconCls:'icon-add',
+                iconCls:'icon-edit',
                 handler:function(){
                     $("#user_dialog").dialog({
                         title: '用户添加',
@@ -80,7 +80,6 @@
                 del_list+=selected['uid']+' ';
             }
             del_list.trim();
-            console.info(del_list);
             $.ajax({
                 url: "./user/userdel.do",
                 type: "post",
@@ -89,6 +88,7 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
+                        $('#user_list').datagrid('load',{});
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -119,10 +119,10 @@
          * 清空条件查询
          */
         function reset_search_user() {
-            var uname = $("#search_uname").val("");
-            var truename = $("#search_truename").val("");
-            var rname = $("#search_rname").val("");
-            $('#user_list').datagrid('load');
+            $("#search_uname").val("");
+            $("#search_truename").val("");
+            $("#search_rname").val("");
+            $('#user_list').datagrid('load',{});
         }
     });
 </script>

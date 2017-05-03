@@ -256,9 +256,6 @@ public class UserServiceImpl implements UserService{
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-//        if(null!=user.getUserRole()){
-//            map.put("rname",user.getUserRole().getRole().getRname());
-//        }
         if(null==page){
             page=1;
         }
@@ -294,9 +291,6 @@ public class UserServiceImpl implements UserService{
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-//        if(null!=user.getUserRole()){
-//            map.put("rname",user.getUserRole().getRole().getRname());
-//        }
         if(null!=rname){
             map.put("rname",rname);
         }
