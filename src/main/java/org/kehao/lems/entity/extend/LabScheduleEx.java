@@ -4,6 +4,14 @@ import org.kehao.lems.entity.LabSchedule;
 
 import java.util.Date;
 
-public class LabScheduleEx extends LabSchedule {
+public class LabScheduleEx{
+    private String slid;
 
+    private String lid;
+
+    private Date starttime;
+
+    private Date endtime;
+
+    private String sname;
 }

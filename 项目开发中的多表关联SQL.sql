@@ -59,3 +59,15 @@ select user.uid,uname, ture_name, office_address, office_phone, email, masterid,
 from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
 where user.status='0' AND user.ture_name ORDER BY rname LIKE '%a%' LIMIT 0,5;
 
+<!-- 大查询功能 -->
+
+select lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type,epurc.price,equ.id , equ.ename , equ.type , equ.status ,equ.type ,user.uname 
+from s_laboratory lab join equ_lab elab on(lab.lid=elab.lid) 
+join s_equipment equ on(elab.eid=equ.eid)  
+join s_equ_purchase epurc on(equ.pcid=epurc.pcid) 
+join s_user user on(epurc.uid=user.uid)
+where lab.lid = '0b1533555c0748b4a8e985f7b9e52897' order by epurc.price asc LIMIT 0,5;
+
+select lab.lid, lab.id, lab.lname, lab.lsize, lab.status, lab.type, lab.equcount,user.uname
+from s_laboratory lab join s_user user on(lab.uid=user.uid)
+where lab.lid = '0b1533555c0748b4a8e985f7b9e52897';

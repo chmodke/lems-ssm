@@ -56,6 +56,7 @@
                         href: './user/add_user.jsp',
                         modal: true
                     });
+//                    $('#user_list').datagrid('load');
                 }
             },'-',{
                 text:'删除',
@@ -88,7 +89,7 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#user_list').datagrid('load',{});
+                        $('#user_list').datagrid('load');
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);

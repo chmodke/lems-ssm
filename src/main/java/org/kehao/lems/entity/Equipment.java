@@ -21,6 +21,8 @@ public class Equipment {
 
     private EquPurchase equPurchase;
 
+    private EquLab equLab;
+
     public String getEid() {
         return eid;
     }
@@ -91,5 +93,13 @@ public class Equipment {
 
     public void setEquPurchase(EquPurchase equPurchase) {
         this.equPurchase = equPurchase;
+    }
+
+    public void setEquLab(EquLab equLab) {
+        this.equLab = equLab;
+    }
+
+    public EquLab getEquLab() {
+        return equLab;
     }
 }

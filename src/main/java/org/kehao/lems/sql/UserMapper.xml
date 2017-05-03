@@ -303,7 +303,7 @@
         select
         <include refid="Jion_User_Role_Column_List"/>
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
-        where user.status='0'
+        where user.status !='1'
         <if test="uname != null">
             AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
         </if>
@@ -327,7 +327,7 @@
     <select id="selectUserConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select COUNT(*)
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
-        where user.status='0'
+        where user.status !='1'
         <if test="uname != null">
             AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
         </if>

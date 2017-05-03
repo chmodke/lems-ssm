@@ -4,8 +4,25 @@ import org.kehao.lems.entity.Equipment;
 
 import java.util.Date;
 
-public class EquipmentEx extends Equipment {
+public class EquipmentEx{
+    private String eid;
+
+    private String id;
+
+    private String ename;
+
+    private String type;
+
+    private Date addtime;
+
+    private Integer status;
+
+    private String remark;
+
+    private String pcid;
+
+    //--------------------------
+
     private String uname;//采购员用户名
     private Date pctime;//采购时间
-    private Integer status;//设备状态
 }

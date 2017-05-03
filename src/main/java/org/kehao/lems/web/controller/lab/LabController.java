@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,5 +50,12 @@ public class LabController {
         data.put("rows", labService.labGet(page,rows,order,sort,laboratory).getData());
         data.put("total", labService.labGetCount(laboratory));
         return data;
+    }
+    @RequestMapping("/labdel.do")
+    @ResponseBody
+    public LEMSResult labDel(String delList){
+        String[] arr=delList.split(" ");
+        List<String> list= Arrays.asList(arr);
+        return labService.labDel(list);
     }
 }

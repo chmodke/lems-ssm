@@ -300,7 +300,7 @@ public class UserServiceImpl implements UserService{
     public LEMSResult userDel (List<String> delList){
         LEMSResult result=new LEMSResult();
         Map map=new HashMap();
-        map.put("status",1);
+        map.put("status",1);//删除状态
         map.put("list",delList);
         int rec=userMapper.updateUserStatusByUid(map);
         if(rec==delList.size()){

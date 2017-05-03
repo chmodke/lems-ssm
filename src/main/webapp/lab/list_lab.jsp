@@ -17,8 +17,8 @@
                 {field: 'id', title: '实验室编号', width: 100, sortable: true},
                 {field: 'lname', title: '实验室名称', width: 100, sortable: true},
                 {field: 'type', title: '实验室类型', width: 100, sortable: true},
-                {field: 'lsize', title: '办公室', width: 100},
-                {field: 'equcount', title: '电话', width: 100},
+                {field: 'lsize', title: '学生容量(人)', width: 100},
+                {field: 'equcount', title: '设备容量(台)', width: 100},
                 {
                     field: 'status',
                     title: '状态',
@@ -43,10 +43,11 @@
                     $("#lab_dialog").dialog({
                         title: '实验室添加',
                         width: 650,
-                        height: 430,
+                        height: 480,
                         href: './lab/add_lab.jsp',
                         modal: true
                     });
+//                    $('#lab_list').datagrid('load');
                 }
             },'-',{
                 text:'删除',
@@ -79,14 +80,14 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#lab_list').datagrid('load',{});
+                        $('#lab_list').datagrid('load');
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
                     }
                 },
                 error: function () {
-                    $.messager.alert('警告', "删除用户异常");
+                    $.messager.alert('警告', "删除实验室异常");
                 },
                 async: true
             });

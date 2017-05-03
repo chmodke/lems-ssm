@@ -31,4 +31,15 @@ public interface LaboratoryMapper {
      * @return
      */
     Long selectLaboratoryConditionCount(Map map);
+
+    /**
+     * 更新实验室状态为删除
+     * @param map
+     * @return
+     */
+    int updateLabStatusByLid(Map map);
+
+    Laboratory selectLabEquUserByLid(String lid);
+
+    Laboratory selectLabUserByLid(String lid);
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -82,5 +83,22 @@ public class LabServiceImpl implements LabService{
             map.put("type",laboratory.getType());
         }
         return laboratoryMapper.selectLaboratoryConditionCount(map);
+    }
+
+    public LEMSResult labDel(List<String> delList) {
+        LEMSResult result=new LEMSResult();
+        Map map=new HashMap();
+        map.put("status",1);//删除状态
+        map.put("list",delList);
+        int rec=laboratoryMapper.updateLabStatusByLid(map);
+        if(rec==delList.size()){
+            result.setMessage("批量删除成功");
+            result.setStatus(0);
+            result.setData(rec);
+        }else {
+            result.setMessage("批量删除失败");
+            result.setStatus(1);
+        }
+        return result;
     }
 }
