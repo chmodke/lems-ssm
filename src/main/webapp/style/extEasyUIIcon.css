@@ -1,4 +1,4 @@
-.tooltip{/*解决EasyUI与bootstrap冲突时tip不显示的问题*/
+.tooltip{/*瑙ｅ喅EasyUI涓巄ootstrap鍐茬獊鏃秚ip涓嶆樉绀虹殑闂*/
 	opacity:1;
 	filter:alpha(opacity=100);
 }

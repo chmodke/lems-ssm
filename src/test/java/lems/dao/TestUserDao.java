@@ -57,9 +57,10 @@ public class TestUserDao {
     @Test
 	public void selectUserCondition (){
         Map map=new HashMap();
-        map.put("tureName","a");
-        map.put("page",1);
-        map.put("pageSize",10);
+        map.put("startRec",0);
+        map.put("recCount",5);
+        map.put("sort","uname");
+        map.put("order","asc");
         List<User> userList=userMapper.selectUserCondition(map);
         for(User u:userList){
             System.out.println(u.getUname());

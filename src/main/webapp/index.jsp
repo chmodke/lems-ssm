@@ -38,6 +38,8 @@
             $("#roleadd_link").click(roleadd_tab_add);//添加角色菜单事件绑定
             $("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
             $("#userlist_link").click(userlist_tab_add);//用户列表菜单事件绑定
+            $("#lablist_link").click(lablist_tab_add);//用户列表菜单事件绑定
+
 
 
             /**
@@ -180,6 +182,22 @@
                 }
             }
 
+            /**
+             * 用户列表菜单事件
+             */
+            function lablist_tab_add(){
+                if($("#index_tt").tabs("exists","实验室列表")){
+                    $("#index_tt").tabs("select","实验室列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室列表",
+                        closable:true,
+                        href:"./lab/list_lab.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -236,6 +254,7 @@
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
+                    <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
                     <li>实验室移除</li>
                     <li>实验室负责人管理</li>

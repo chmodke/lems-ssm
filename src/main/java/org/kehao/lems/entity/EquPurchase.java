@@ -16,6 +16,8 @@ public class EquPurchase {
 
     private Equipment equipment;
 
+    private User user;
+
     public String getPcid() {
         return pcid;
     }
@@ -54,5 +56,13 @@ public class EquPurchase {
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

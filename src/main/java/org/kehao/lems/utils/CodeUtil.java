@@ -28,7 +28,7 @@ public class CodeUtil {
         Random rand=new Random();
         StringBuilder sb=new StringBuilder();
         for(int i=0;i<len;i++){
-            sb.append(rand.nextInt(10)+"");
+            sb.append(rand.nextInt(9)+1+"");
         }
         return sb.toString();
     }

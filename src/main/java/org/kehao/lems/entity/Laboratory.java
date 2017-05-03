@@ -1,6 +1,9 @@
 package org.kehao.lems.entity;
 
+import org.kehao.lems.entity.extend.EquLabEx;
+
 import java.util.Date;
+import java.util.List;
 
 public class Laboratory {
     private String lid;
@@ -22,6 +25,10 @@ public class Laboratory {
     private String uid;
 
     private Integer equcount;
+
+    private List<EquLab> equLab;
+
+    private User user;
 
     public String getLid() {
         return lid;
@@ -101,5 +108,21 @@ public class Laboratory {
 
     public void setEqucount(Integer equcount) {
         this.equcount = equcount;
+    }
+
+    public void setEquLab(List<EquLab> equLab) {
+        this.equLab = equLab;
+    }
+
+    public List<EquLab> getEquLab() {
+        return equLab;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

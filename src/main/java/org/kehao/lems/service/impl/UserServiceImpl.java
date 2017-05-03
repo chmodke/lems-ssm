@@ -2,14 +2,18 @@ package org.kehao.lems.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
+import org.kehao.lems.dao.UserRoleMapper;
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.UserRole;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSMD5Util;
@@ -24,6 +28,9 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private UserRoleMapper userRoleMapper;
 
     private Map<String,String> valiCode=new HashMap<String, String>(8);//存储用户重置密码时产生的用户名和验证码键值对，防止用户恶意利用
 
@@ -94,7 +101,6 @@ public class UserServiceImpl implements UserService{
         }
     }
 
-
     public LEMSResult userAdd(String auther)throws UnsupportedEncodingException {
         String base64_msg = auther.split(" ")[1];
         byte[] output = Base64.decodeBase64(base64_msg);
@@ -105,6 +111,8 @@ public class UserServiceImpl implements UserService{
         user.setTureName(msg.split(":")[2]);
         user.setEmail(msg.split(":")[3]);
         user.setMasterid(msg.split(":")[4]);
+        user.setUserRole(new UserRole());
+        user.getUserRole().setRid(Integer.valueOf(msg.split(":")[5]));
         return userAdd(user);
 
     }
@@ -125,14 +133,21 @@ public class UserServiceImpl implements UserService{
         user.setSalt(salt);
         user.setPasswd(LEMSMD5Util.md5(user.getPasswd(),salt));
         user.setCreatetime(new Timestamp(System.currentTimeMillis()));
+        user.getUserRole().setUid(user.getUid());
+        //添加用户
         int rec=userMapper.insertSelective(user);
-        if (rec==1){
+        //添加权限
+        int rec2=userRoleMapper.insert(user.getUserRole());
+        if (rec==1&&rec2==1){
             result.setData(user);
             result.setMessage("添加成功");
             result.setStatus(0);
         }else {
             result.setMessage("添加失败,请稍后重试");
             result.setStatus(1);
+            //撤销数据库操作
+            userRoleMapper.deleteByUid(user.getUserRole().getUid());
+            userMapper.deleteByPrimaryKey(user.getUserRole().getUid());
         }
         return result;
     }
@@ -232,21 +247,15 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
-    public LEMSResult getUser(Integer page, Integer pageSize, User user) {
+    public LEMSResult getUser(Integer page, Integer pageSize, User user, String order, String sort,String rname) {
         LEMSResult result=new LEMSResult();
-        Map<String,Object> map=new HashMap<String, Object>(4);
+        Map<String,Object> map=new HashMap<String, Object>(8);
         if(null!=user.getUname()){
             map.put("uname",user.getUname());
         }
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-        if(null!=user.getCreatetime()){
-            map.put("createtime",user.getCreatetime());
-        }
-//        if(null!=user.getUserRole().getRole().getRname()){
-//            map.put("rname",user.getUserRole().getRole().getRname());
-//        }
         if(null==page){
             page=1;
         }
@@ -255,25 +264,53 @@ public class UserServiceImpl implements UserService{
             pageSize=5;
         }
         map.put("recCount",pageSize);
+
+        map.put("order",order);
+        if(sort.equals("tureName")){
+            sort="ture_name";
+        }
+        if(sort.equals("userRole")){
+            sort="rname";
+        }
+        map.put("sort",sort);
+
+        if(null!=rname){
+            map.put("rname",rname);
+        }
+
         result.setData(userMapper.selectUserCondition(map));
         result.setStatus(0);
         return result;
     }
 
-    public Long getUserCount(User user) {
-        Map<String,Object> map=new HashMap<String, Object>(4);
+    public Long getUserCount(User user,String rname) {
+        Map<String,Object> map=new HashMap<String, Object>(8);
         if(null!=user.getUname()){
             map.put("uname",user.getUname());
         }
         if(null!=user.getTureName()){
             map.put("tureName",user.getTureName());
         }
-        if(null!=user.getCreatetime()){
-            map.put("createtime",user.getCreatetime());
+        if(null!=rname){
+            map.put("rname",rname);
         }
-//        if(null!=user.getUserRole().getRole().getRname()){
-//            map.put("rname",user.getUserRole().getRole().getRname());
-//        }
         return userMapper.selectUserConditionCount(map);
+    }
+
+    public LEMSResult userDel (List<String> delList){
+        LEMSResult result=new LEMSResult();
+        Map map=new HashMap();
+        map.put("status",1);//删除状态
+        map.put("list",delList);
+        int rec=userMapper.updateUserStatusByUid(map);
+        if(rec==delList.size()){
+            result.setMessage("批量删除成功");
+            result.setStatus(0);
+            result.setData(rec);
+        }else {
+            result.setMessage("批量删除失败");
+            result.setStatus(1);
+        }
+        return result;
     }
 }

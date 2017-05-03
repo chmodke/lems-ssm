@@ -303,37 +303,53 @@
         select
         <include refid="Jion_User_Role_Column_List"/>
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
-        where user.status='0'
+        where user.status !='1'
         <if test="uname != null">
             AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
         </if>
         <if test="tureName != null">
             AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="createtime != null">
-            AND user.createtime >= #{createtime,jdbcType=TIMESTAMP},
+        <if test="start_create != null">
+            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        </if>
+        <if test="end_create != null">
+            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
         </if>
         <if test="rname!=null">
             AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
         </if>
-        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER};
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
     </select>
     <select id="selectUserConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select COUNT(*)
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
-        where user.status='0'
+        where user.status !='1'
         <if test="uname != null">
             AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
         </if>
         <if test="tureName != null">
             AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="createtime != null">
-            AND user.createtime >= #{createtime,jdbcType=TIMESTAMP},
+        <if test="start_create != null">
+            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        </if>
+        <if test="end_create != null">
+            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
         </if>
         <if test="rname!=null">
             AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
         </if>
     </select>
+
+    <update id="updateUserStatusByUid" parameterType="java.util.Map">
+        UPDATE s_user SET status = #{status} WHERE uid IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
 
 </mapper>

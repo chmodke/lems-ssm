@@ -5,6 +5,10 @@ public class EquLab {
 
     private String eid;
 
+    private Equipment equipment;
+
+    private Laboratory laboratory;
+
     public String getLid() {
         return lid;
     }
@@ -19,5 +23,21 @@ public class EquLab {
 
     public void setEid(String eid) {
         this.eid = eid == null ? null : eid.trim();
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
+    }
+
+    public Laboratory getLaboratory() {
+        return laboratory;
     }
 }

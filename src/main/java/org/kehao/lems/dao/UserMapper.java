@@ -73,4 +73,12 @@ public interface UserMapper{
      */
     Long selectUserConditionCount(Map map);
 
+    /**
+     * 禁用用户
+     * @param map
+     * ['status':1]
+     * ['list':del_list]
+     * @return
+     */
+    int updateUserStatusByUid(Map map);
 }

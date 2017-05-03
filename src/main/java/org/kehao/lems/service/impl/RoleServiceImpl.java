@@ -8,6 +8,7 @@ import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by kehao on 2017/5/1.
@@ -39,6 +40,20 @@ public class RoleServiceImpl implements RoleService {
         }else{
             result.setStatus(1);
             result.setMessage("角色名不可用");
+        }
+        return result;
+    }
+
+    public LEMSResult getAllRole() {
+        LEMSResult result=new LEMSResult();
+        List<Role> roleList=roleMapper.selectAllRole();
+        if(roleList!=null&&roleList.size()>0){
+            result.setData(roleList);
+            result.setStatus(0);
+            result.setMessage("查询角色列表成功");
+        }else {
+            result.setStatus(1);
+            result.setMessage("查询角色列表失败");
         }
         return result;
     }

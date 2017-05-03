@@ -1,152 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kehao.lems.dao.LaboratoryMapper">
-  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.Laboratory">
-    <id column="lid" jdbcType="CHAR" property="lid" />
-    <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="lname" jdbcType="VARCHAR" property="lname" />
-    <result column="lsize" jdbcType="INTEGER" property="lsize" />
-    <result column="addtime" jdbcType="TIMESTAMP" property="addtime" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="uid" jdbcType="CHAR" property="uid" />
-    <result column="equcount" jdbcType="INTEGER" property="equcount" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    lid, id, lname, lsize, addtime, status, type, remark, uid, equcount
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from s_laboratory
-    where lid = #{lid,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from s_laboratory
-    where lid = #{lid,jdbcType=CHAR}
-  </delete>
-  <insert id="insert" parameterType="org.kehao.lems.entity.Laboratory">
-    insert into s_laboratory (lid, id, lname, 
-      lsize, addtime, status, 
-      type, remark, uid, equcount
-      )
-    values (#{lid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{lname,jdbcType=VARCHAR}, 
-      #{lsize,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
-      #{type,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{equcount,jdbcType=INTEGER}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="org.kehao.lems.entity.Laboratory">
-    insert into s_laboratory
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        lid,
-      </if>
-      <if test="id != null">
-        id,
-      </if>
-      <if test="lname != null">
-        lname,
-      </if>
-      <if test="lsize != null">
-        lsize,
-      </if>
-      <if test="addtime != null">
-        addtime,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="type != null">
-        type,
-      </if>
-      <if test="remark != null">
-        remark,
-      </if>
-      <if test="uid != null">
-        uid,
-      </if>
-      <if test="equcount != null">
-        equcount,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        #{lid,jdbcType=CHAR},
-      </if>
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="lname != null">
-        #{lname,jdbcType=VARCHAR},
-      </if>
-      <if test="lsize != null">
-        #{lsize,jdbcType=INTEGER},
-      </if>
-      <if test="addtime != null">
-        #{addtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null">
-        #{uid,jdbcType=CHAR},
-      </if>
-      <if test="equcount != null">
-        #{equcount,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.Laboratory">
-    update s_laboratory
-    <set>
-      <if test="id != null">
-        id = #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="lname != null">
-        lname = #{lname,jdbcType=VARCHAR},
-      </if>
-      <if test="lsize != null">
-        lsize = #{lsize,jdbcType=INTEGER},
-      </if>
-      <if test="addtime != null">
-        addtime = #{addtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="type != null">
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null">
-        uid = #{uid,jdbcType=CHAR},
-      </if>
-      <if test="equcount != null">
-        equcount = #{equcount,jdbcType=INTEGER},
-      </if>
-    </set>
-    where lid = #{lid,jdbcType=CHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Laboratory">
-    update s_laboratory
-    set id = #{id,jdbcType=VARCHAR},
-      lname = #{lname,jdbcType=VARCHAR},
-      lsize = #{lsize,jdbcType=INTEGER},
-      addtime = #{addtime,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=INTEGER},
-      type = #{type,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR},
-      uid = #{uid,jdbcType=CHAR},
-      equcount = #{equcount,jdbcType=INTEGER}
-    where lid = #{lid,jdbcType=CHAR}
-  </update>
+    <resultMap id="BaseResultMap" type="org.kehao.lems.entity.Laboratory">
+        <id column="lid" jdbcType="CHAR" property="lid"/>
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="lname" jdbcType="VARCHAR" property="lname"/>
+        <result column="lsize" jdbcType="INTEGER" property="lsize"/>
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="equcount" jdbcType="INTEGER" property="equcount"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+      lid, id, lname, lsize, addtime, status, type, remark, uid, equcount
+    </sql>
+
+    <!-- Lab Equ Purc User-->
+
+    <resultMap id="LabEquPurcUserResultMap" type="org.kehao.lems.entity.Laboratory">
+        <id column="lid" jdbcType="CHAR" property="lid"/>
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="lname" jdbcType="VARCHAR" property="lname"/>
+        <result column="lsize" jdbcType="INTEGER" property="lsize"/>
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="equcount" jdbcType="INTEGER" property="equcount"/>
+        <collection property="equLab" javaType="java.util.List" ofType="org.kehao.lems.entity.EquLab">
+            <result column="lid" jdbcType="CHAR" property="lid" />
+            <result column="eid" jdbcType="CHAR" property="eid" />
+            <association property="equipment" javaType="org.kehao.lems.entity.Equipment">
+                <id column="eid" jdbcType="CHAR" property="eid"/>
+                <result column="id" jdbcType="VARCHAR" property="id"/>
+                <result column="ename" jdbcType="VARCHAR" property="ename"/>
+                <result column="type" jdbcType="VARCHAR" property="type"/>
+                <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+                <result column="status" jdbcType="INTEGER" property="status"/>
+                <result column="remark" jdbcType="VARCHAR" property="remark"/>
+                <result column="pcid" jdbcType="CHAR" property="pcid"/>
+                <association property="equPurchase" javaType="org.kehao.lems.entity.EquPurchase"><!-- 对象关联 -->
+                    <id column="pcid" jdbcType="CHAR" property="pcid"/>
+                    <result column="uid" jdbcType="CHAR" property="uid"/>
+                    <result column="pctime" jdbcType="TIMESTAMP" property="pctime"/>
+                    <result column="price" jdbcType="DOUBLE" property="price"/>
+                    <association property="user" javaType="org.kehao.lems.entity.User">
+                        <id column="uid" jdbcType="CHAR" property="uid"/>
+                        <result column="uname" jdbcType="VARCHAR" property="uname"/>
+                        <result column="ture_name" jdbcType="VARCHAR" property="tureName"/>
+                        <result column="passwd" jdbcType="CHAR" property="passwd"/>
+                        <result column="salt" jdbcType="CHAR" property="salt"/>
+                        <result column="office_address" jdbcType="VARCHAR" property="officeAddress"/>
+                        <result column="office_phone" jdbcType="VARCHAR" property="officePhone"/>
+                        <result column="email" jdbcType="VARCHAR" property="email"/>
+                        <result column="masterid" jdbcType="CHAR" property="masterid"/>
+                        <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+                        <result column="token" jdbcType="CHAR" property="token"/>
+                        <result column="status" jdbcType="INTEGER" property="status"/>
+                    </association>
+                </association>
+            </association>
+        </collection>
+    </resultMap>
+    <sql id="Lab_Equ_Purc_User_Column_List">
+        lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type,epurc.price
+        equ.id , equ.ename , equ.type , equ.status ,equ.type ,user.uname
+    </sql>
+
+    <resultMap id="LabUserResultMap" type="org.kehao.lems.entity.Laboratory">
+        <id column="lid" jdbcType="CHAR" property="lid"/>
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="lname" jdbcType="VARCHAR" property="lname"/>
+        <result column="lsize" jdbcType="INTEGER" property="lsize"/>
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="equcount" jdbcType="INTEGER" property="equcount"/>
+        <association property="user" javaType="org.kehao.lems.entity.User">
+            <id column="uid" jdbcType="CHAR" property="uid"/>
+            <result column="uname" jdbcType="VARCHAR" property="uname"/>
+            <result column="ture_name" jdbcType="VARCHAR" property="tureName"/>
+            <result column="passwd" jdbcType="CHAR" property="passwd"/>
+            <result column="salt" jdbcType="CHAR" property="salt"/>
+            <result column="office_address" jdbcType="VARCHAR" property="officeAddress"/>
+            <result column="office_phone" jdbcType="VARCHAR" property="officePhone"/>
+            <result column="email" jdbcType="VARCHAR" property="email"/>
+            <result column="masterid" jdbcType="CHAR" property="masterid"/>
+            <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+            <result column="token" jdbcType="CHAR" property="token"/>
+            <result column="status" jdbcType="INTEGER" property="status"/>
+        </association>
+    </resultMap>
+    <sql id="Lab_User_Column_List">
+        lab.id ,user.uname
+    </sql>
+
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from s_laboratory
+        where lid = #{lid,jdbcType=CHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from s_laboratory
+        where lid = #{lid,jdbcType=CHAR}
+    </delete>
+    <insert id="insert" parameterType="org.kehao.lems.entity.Laboratory">
+        insert into s_laboratory (lid, id, lname,
+          lsize, addtime, status,
+          type, remark, uid, equcount
+          )
+        values (#{lid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{lname,jdbcType=VARCHAR},
+          #{lsize,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+          #{type,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{equcount,jdbcType=INTEGER}
+          )
+    </insert>
+    <insert id="insertSelective" parameterType="org.kehao.lems.entity.Laboratory">
+        insert into s_laboratory
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="lid != null">
+                lid,
+            </if>
+            <if test="id != null">
+                id,
+            </if>
+            <if test="lname != null">
+                lname,
+            </if>
+            <if test="lsize != null">
+                lsize,
+            </if>
+            <if test="addtime != null">
+                addtime,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="equcount != null">
+                equcount,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="lid != null">
+                #{lid,jdbcType=CHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="lname != null">
+                #{lname,jdbcType=VARCHAR},
+            </if>
+            <if test="lsize != null">
+                #{lsize,jdbcType=INTEGER},
+            </if>
+            <if test="addtime != null">
+                #{addtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="uid != null">
+                #{uid,jdbcType=CHAR},
+            </if>
+            <if test="equcount != null">
+                #{equcount,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.Laboratory">
+        update s_laboratory
+        <set>
+            <if test="id != null">
+                id = #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="lname != null">
+                lname = #{lname,jdbcType=VARCHAR},
+            </if>
+            <if test="lsize != null">
+                lsize = #{lsize,jdbcType=INTEGER},
+            </if>
+            <if test="addtime != null">
+                addtime = #{addtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="uid != null">
+                uid = #{uid,jdbcType=CHAR},
+            </if>
+            <if test="equcount != null">
+                equcount = #{equcount,jdbcType=INTEGER},
+            </if>
+        </set>
+        where lid = #{lid,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Laboratory">
+        update s_laboratory
+        set id = #{id,jdbcType=VARCHAR},
+          lname = #{lname,jdbcType=VARCHAR},
+          lsize = #{lsize,jdbcType=INTEGER},
+          addtime = #{addtime,jdbcType=TIMESTAMP},
+          status = #{status,jdbcType=INTEGER},
+          type = #{type,jdbcType=VARCHAR},
+          remark = #{remark,jdbcType=VARCHAR},
+          uid = #{uid,jdbcType=CHAR},
+          equcount = #{equcount,jdbcType=INTEGER}
+        where lid = #{lid,jdbcType=CHAR}
+    </update>
+
+    <select id="selectLaboratoryCondition" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from s_laboratory
+        where status !='1'
+        <if test="lname != null">
+            AND lname LIKE concat(concat('%',#{lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="id != null">
+            AND id LIKE concat(concat('%',#{id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="type!=null">
+            AND type LIKE concat(concat('%',#{type,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectLaboratoryConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        COUNT(*)
+        from s_laboratory
+        where status !='1'
+        <if test="lname != null">
+            AND lname LIKE concat(concat('%',#{lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="id != null">
+            AND id LIKE concat(concat('%',#{id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="type!=null">
+            AND type LIKE concat(concat('%',#{type,jdbcType=VARCHAR}),'%')
+        </if>
+    </select>
+    <update id="updateLabStatusByLid" parameterType="java.util.Map">
+        UPDATE s_laboratory SET status = #{status} WHERE lid IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+    <select id="selectLabEquUserByLid" parameterType="java.lang.String" resultMap="LabEquPurcUserResultMap">
+        select <include refid="Lab_Equ_Purc_User_Column_List"/>
+        from s_laboratory lab join equ_lab elab on(lab.lid=elab.lid)
+        join s_equipment equ on(elab.eid=equ.eid)
+        join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+        join s_user user on(epurc.uid=user.uid)
+        where lab.lid = #{lid,jdbcType=CHAR};
+    </select>
+
+    <select id="selectLabUserByLid" parameterType="java.lang.String" resultMap="LabUserResultMap">
+        select <include refid="Lab_User_Column_List"/>
+        from s_laboratory lab join s_user user on(lab.uid=user.uid)
+        where lab.lid = #{lid,jdbcType=CHAR};
+    </select>
 </mapper>

@@ -2,12 +2,10 @@ package org.kehao.lems.web.controller.equ;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.service.EquPurcService;
 import org.kehao.lems.service.EquService;
-import org.kehao.lems.service.impl.EquPurcServiceImpl;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

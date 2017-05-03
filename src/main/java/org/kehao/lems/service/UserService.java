@@ -1,6 +1,8 @@
 package org.kehao.lems.service;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
+import java.util.List;
 
 import org.kehao.lems.entity.User;
 import org.kehao.lems.utils.LEMSResult;
@@ -80,12 +82,19 @@ public interface UserService {
      * @param pageSize
      *@param user 搜索条件  @return
      */
-    LEMSResult getUser(Integer page, Integer pageSize, User user);
+    LEMSResult getUser(Integer page, Integer pageSize, User user, String order, String sort, String rname);
 
     /**
      * 查询用户，搜索功能,搜索到的用户数量
      * @param user
      * @return
      */
-    Long getUserCount(User user) ;
+    Long getUserCount(User user,String rname) ;
+
+    /**
+     * 批量禁用用户
+     * @param delList
+     * @return
+     */
+    LEMSResult userDel (List<String> delList);
 }

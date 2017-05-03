@@ -87,4 +87,12 @@
         from user_role urole join s_user user on(urole.uid=user.uid)
         where urole.rid = #{rid,jdbcType=CHAR}
     </select>
+    <delete id="deleteByUid" parameterType="java.lang.String">
+      delete from user_role
+      where uid = #{uid,jdbcType=CHAR}
+    </delete>
+    <delete id="deleteByRid" parameterType="java.lang.String">
+      delete from user_role
+      where rid = #{rid,jdbcType=CHAR}
+    </delete>
 </mapper>

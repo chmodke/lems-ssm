@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql_root
+Source Server         : kehao_mysql
 Source Server Version : 50703
 Source Host           : localhost:3306
 Source Database       : lems
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-04-27 16:06:14
+Date: 2017-05-02 00:08:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,8 +24,8 @@ CREATE TABLE `equ_lab` (
   `eid` char(32) NOT NULL COMMENT '设备id',
   KEY `equ_lab_lib_lid` (`lid`) USING BTREE,
   KEY `equ_lab_equ_eid` (`eid`) USING BTREE,
-  CONSTRAINT `equ_lab_lib_lid` FOREIGN KEY (`lid`) REFERENCES `s_laboratory` (`lid`),
-  CONSTRAINT `equ_lab_equ_eid` FOREIGN KEY (`eid`) REFERENCES `s_equipment` (`eid`)
+  CONSTRAINT `equ_lab_equ_eid` FOREIGN KEY (`eid`) REFERENCES `s_equipment` (`eid`),
+  CONSTRAINT `equ_lab_lib_lid` FOREIGN KEY (`lid`) REFERENCES `s_laboratory` (`lid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='设备所属实验室';
 
 -- ----------------------------
@@ -41,8 +41,8 @@ CREATE TABLE `role_permission` (
   `pid` int(9) NOT NULL,
   KEY `role_perms_role_rid` (`rid`) USING BTREE,
   KEY `role_perms_perms_pid` (`pid`) USING BTREE,
-  CONSTRAINT `role_perms_role_rid` FOREIGN KEY (`rid`) REFERENCES `s_role` (`rid`),
-  CONSTRAINT `role_perms_perms_pid` FOREIGN KEY (`pid`) REFERENCES `s_permission` (`pid`)
+  CONSTRAINT `role_perms_perms_pid` FOREIGN KEY (`pid`) REFERENCES `s_permission` (`pid`),
+  CONSTRAINT `role_perms_role_rid` FOREIGN KEY (`rid`) REFERENCES `s_role` (`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='角色_权限表';
 
 -- ----------------------------
@@ -72,9 +72,17 @@ CREATE TABLE `s_equipment` (
 -- ----------------------------
 -- Records of s_equipment
 -- ----------------------------
+INSERT INTO `s_equipment` VALUES ('41c9f5d89408441485a0be5dd9fde61b', '0429-003', '0429', '003', '2017-04-30 19:44:01', '0', '12', '08695abe001e40759a202d47ef4f7431');
+INSERT INTO `s_equipment` VALUES ('6101e7eedf2544b186f6fead7bf677bc', '0429-001', '0429', '001', '2017-04-30 17:13:42', '0', '采购日期实现测试', '4f5565971ad24b1cb933395d98c58a0d');
+INSERT INTO `s_equipment` VALUES ('6c2e9cbd753b4431942dbe1ebd82dba3', '0429-003', '0429', '003', '2017-04-30 19:45:21', '0', '12', 'ea40ef0930fa45e3becfe545902dc2e4');
+INSERT INTO `s_equipment` VALUES ('6d0918be1a964d07948495feef08fbd2', '631-001', 'web服务器', '服务器', '2017-04-30 16:49:59', '0', '计算机', '495277f85336499cb646b68de9a91e22');
+INSERT INTO `s_equipment` VALUES ('82f89ad15cd74461884acac5dbf12284', 'xxxy_zz01', '计算机', 'zz01', '2017-04-29 00:04:18', '0', '计算机', '8b880fc5597f4d329364ed680ceb826e');
+INSERT INTO `s_equipment` VALUES ('98b7579ec813488083287bfdb62cdd67', '531-001', '星研硬件实验箱', 'Y001', '2017-04-27 18:41:56', '0', '星研硬件实验箱', '66de736c5743481980b81a96b16df497');
 INSERT INTO `s_equipment` VALUES ('9999', '9999', '电脑', '电脑', '2017-04-25 09:32:11', '0', '电脑', '9999');
 INSERT INTO `s_equipment` VALUES ('a7d5fe3f19cd4fd5a58e785c9cba7c5f', '631-002', '数据库服务器', '123', '2017-04-27 15:55:10', '0', '数据库服务器', '8050d7fc49d14468a6cd0fae7f9472d8');
+INSERT INTO `s_equipment` VALUES ('cc4e2015519f4dd68d7ebadf4e37283e', '0429-002', '0429', '002', '2017-04-30 19:42:40', '0', '1', '72d7913511ca49bb84d41dafec02236d');
 INSERT INTO `s_equipment` VALUES ('d16bbc38a9a94f6a8ca1f82797463cfa', '631-001', 'web服务器', '服务器', '2017-04-27 15:20:08', '0', '计算机', '79e142a75ba3492ca528c390863f3b93');
+INSERT INTO `s_equipment` VALUES ('de3fd36c5d0e4401a667dc93c70a637c', 'equ_001_001', '数据库服务器', 'eq_003', '2017-04-27 23:48:22', '0', '服务器', '3c469c21d49242f7a1e27c47346db097');
 
 -- ----------------------------
 -- Table structure for s_equ_break
@@ -104,7 +112,7 @@ CREATE TABLE `s_equ_purchase` (
   `pcid` char(32) NOT NULL COMMENT '采购id',
   `uid` char(32) DEFAULT NULL COMMENT '采购员id',
   `pctime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '采购时间',
-  `price` double(10,3) DEFAULT '0.000' COMMENT '价格',
+  `price` double(16,3) DEFAULT '0.000' COMMENT '价格',
   PRIMARY KEY (`pcid`),
   KEY `purc_user_uid` (`uid`) USING BTREE,
   CONSTRAINT `purc_user_uid` FOREIGN KEY (`uid`) REFERENCES `s_user` (`uid`)
@@ -113,9 +121,17 @@ CREATE TABLE `s_equ_purchase` (
 -- ----------------------------
 -- Records of s_equ_purchase
 -- ----------------------------
-INSERT INTO `s_equ_purchase` VALUES ('79e142a75ba3492ca528c390863f3b93', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-27 15:20:08', '88888.800');
+INSERT INTO `s_equ_purchase` VALUES ('08695abe001e40759a202d47ef4f7431', 'af7b3b6768c243f28aa2f62de9a98287', '2017-04-20 19:42:23', '123123123.120');
+INSERT INTO `s_equ_purchase` VALUES ('3c469c21d49242f7a1e27c47346db097', 'be817b4d6b8743f5a1e26fd826b4f155', '2017-04-27 23:48:22', '8888.880');
+INSERT INTO `s_equ_purchase` VALUES ('495277f85336499cb646b68de9a91e22', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-30 16:49:58', '88888.800');
+INSERT INTO `s_equ_purchase` VALUES ('4f5565971ad24b1cb933395d98c58a0d', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-18 17:13:14', '8989.890');
+INSERT INTO `s_equ_purchase` VALUES ('66de736c5743481980b81a96b16df497', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-27 18:41:56', '899.990');
+INSERT INTO `s_equ_purchase` VALUES ('72d7913511ca49bb84d41dafec02236d', 'af7b3b6768c243f28aa2f62de9a98287', '2017-04-20 19:42:23', '123.120');
+INSERT INTO `s_equ_purchase` VALUES ('79e142a75ba3492ca528c390863f3b93', '16e3a3765d2a40b4917eb2cce7d372d4', null, '88888.800');
 INSERT INTO `s_equ_purchase` VALUES ('8050d7fc49d14468a6cd0fae7f9472d8', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-27 15:55:10', '8888.880');
+INSERT INTO `s_equ_purchase` VALUES ('8b880fc5597f4d329364ed680ceb826e', 'af7b3b6768c243f28aa2f62de9a98287', '2017-04-29 00:04:18', '8888.880');
 INSERT INTO `s_equ_purchase` VALUES ('9999', '9999', '2017-04-25 09:30:54', '9999.000');
+INSERT INTO `s_equ_purchase` VALUES ('ea40ef0930fa45e3becfe545902dc2e4', 'af7b3b6768c243f28aa2f62de9a98287', '2017-04-20 19:42:23', '123456789123.120');
 
 -- ----------------------------
 -- Table structure for s_equ_schedule
@@ -160,7 +176,9 @@ CREATE TABLE `s_laboratory` (
 -- Records of s_laboratory
 -- ----------------------------
 INSERT INTO `s_laboratory` VALUES ('45b0084bc10d4dd4b78eb9bf0c5ce477', '9#629', '629', '80', '2017-04-27 09:02:29', '0', '计算机机房', '计算机软件机房', '9999', '80');
+INSERT INTO `s_laboratory` VALUES ('62440b72fab24af984f99ceb1681bf2d', 'zzz_zz', '软件实验室', '80', '2017-04-29 00:04:50', '0', '计算机', '软件实验室', 'af7b3b6768c243f28aa2f62de9a98287', '80');
 INSERT INTO `s_laboratory` VALUES ('b91e4444c3f843e2b2be0276bd8b3265', '629', '计算机公共机房', '50', '2017-04-25 09:41:08', '0', '计算机', '计算机机房', '9999', '50');
+INSERT INTO `s_laboratory` VALUES ('b96a1257cbee464aba8845b29dbbea1a', 'soft_001', '软件工程实验室', '80', '2017-04-27 23:49:18', '0', '软件工程', '软件工程', 'be817b4d6b8743f5a1e26fd826b4f155', '80');
 
 -- ----------------------------
 -- Table structure for s_lab_schedule
@@ -230,8 +248,9 @@ CREATE TABLE `s_role` (
 -- ----------------------------
 -- Records of s_role
 -- ----------------------------
-INSERT INTO `s_role` VALUES ('376703787', 'stander', 'stander');
-INSERT INTO `s_role` VALUES ('405230015', 'administrator', 'administrator');
+INSERT INTO `s_role` VALUES ('66232668', '设备管理员', 'equ_manager');
+INSERT INTO `s_role` VALUES ('376703787', '普通用户', 'stander');
+INSERT INTO `s_role` VALUES ('405230015', '超级管理员', 'administrator');
 
 -- ----------------------------
 -- Table structure for s_user
@@ -249,6 +268,7 @@ CREATE TABLE `s_user` (
   `masterid` char(32) NOT NULL COMMENT '创建者ID',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `token` char(32) DEFAULT NULL COMMENT '登录认证',
+  `status` int(2) DEFAULT '0' COMMENT '用户状态',
   PRIMARY KEY (`uid`),
   KEY `user_master_id` (`masterid`) USING BTREE,
   CONSTRAINT `user_master_id` FOREIGN KEY (`masterid`) REFERENCES `s_user` (`uid`)
@@ -257,18 +277,21 @@ CREATE TABLE `s_user` (
 -- ----------------------------
 -- Records of s_user
 -- ----------------------------
-INSERT INTO `s_user` VALUES ('0e690bc74f354a0996942ee091709943', 'kehao003', 'kehao003', 'ILfXjzPgW073ICQUfhIhwA==', 'sqDUL6', null, null, 'kehao003@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:31:19', null);
-INSERT INTO `s_user` VALUES ('0ec092f59ead420ba6b3829ea4d4cfb8', 'test002', 'test002', 'LV/jqd7Y0ZJRDxdf4alnFQ==', 'FjeoK4', null, null, 'test002@xx.com', '9999', '2017-04-26 09:53:50', null);
-INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'kNO3eXei0oqCUGep7pImyw==', 'SJvwg7', null, null, 'kehao@x.com', '9999', '2017-04-27 15:40:28', '8fed9133f53549248d3e6be8a0ad40db');
-INSERT INTO `s_user` VALUES ('2caf84fa65c04963818da964ce10fc4b', 'test000', 'kehao', 'aMtnkqh+KcQGjfZoLftcuQ==', '0tzkmh', null, null, 'test001@xx.com', '9999', '2017-04-26 09:46:33', null);
-INSERT INTO `s_user` VALUES ('56c0b00dbceb4a54b065b0aa71bca526', 'user1', 'user', '6khXbzC+FmmXFpnAmtBclA==', '123456', '630', '111', 'xxx@xx.com', '9999', '2017-04-25 09:42:57', null);
-INSERT INTO `s_user` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '朱晨光', '朱晨光', 'mUuuLL580Y+CC97uHFrgDw==', 'wHsa7Q', null, null, 'zhuchenguang@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:34:34', 'd1c553fb2f8e43ddb4704f79f0de53ae');
-INSERT INTO `s_user` VALUES ('9999', 'admin', 'admin', '6khXbzC+FmmXFpnAmtBclA==', '123456', 'address', '110', 'admin@xx.com', '9999', '2017-04-27 09:00:46', '86d01fc5706b407da8d45eb69a35af97');
-INSERT INTO `s_user` VALUES ('9a0329eac5f444ee93e16aa00627489e', 'kehao004', 'kehao004', 'yQGL6sCpxi4Ox4SqbUUp2A==', 'fCOdm4', null, null, 'kehao004@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:40:53', null);
-INSERT INTO `s_user` VALUES ('c8f7256f5fa34a1b9fac60ce0d29ed6e', 'test003', 'test003', 'Gqs2VjEmWBQY3hsmN6rSqA==', '3rkUnK', null, null, 'test003@xx.com', '9999', '2017-04-26 09:56:02', null);
-INSERT INTO `s_user` VALUES ('caa8e746ff7e4cbd9285a21f51d25f8e', 'kehao001', 'kehao001', 'baSjbI/kE6d9BsThmXaZCA==', 'QdGPfX', null, null, 'kehao001@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 10:34:46', null);
-INSERT INTO `s_user` VALUES ('d791da75a18c4877b31b3b97cdc195a7', 'kehao002', 'kehao002', 'VF59KSBxbVFrTDjOsrfGcQ==', 'AhtWFp', null, null, 'kehao002@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 11:26:43', '12bc61a3f9474a98877764c45f850ef4');
-INSERT INTO `s_user` VALUES ('fc489fc09af74f659380b994011ca2d3', 'kehao005', 'kehao005', 'unPZRRKCZ4ITXoqn0LPVQA==', 'Xie4op', null, null, 'kehao005@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-04-26 16:56:36', null);
+INSERT INTO `s_user` VALUES ('0e690bc74f354a0996942ee091709943', 'kehao003', 'kehao003', 'ILfXjzPgW073ICQUfhIhwA==', 'sqDUL6', null, null, 'kehao003@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('0ec092f59ead420ba6b3829ea4d4cfb8', 'test002', 'test002', 'LV/jqd7Y0ZJRDxdf4alnFQ==', 'FjeoK4', null, null, 'test002@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'VCN6WdSBoDOKnmnzLvpgzA==', '5a2615', '火星', '111', 'kehao@lems.com', '9999', '2017-05-01 20:31:12', '4917cfc07e6042ce8a61729eecbdc5ed', '0');
+INSERT INTO `s_user` VALUES ('2caf84fa65c04963818da964ce10fc4b', 'test000', 'kehao', 'aMtnkqh+KcQGjfZoLftcuQ==', '0tzkmh', null, null, 'test001@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('56c0b00dbceb4a54b065b0aa71bca526', 'user1', 'user', '6khXbzC+FmmXFpnAmtBclA==', '123456', '630', '111', 'xxx@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '朱晨光', '朱晨光', 'mUuuLL580Y+CC97uHFrgDw==', 'wHsa7Q', null, null, 'zhuchenguang@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', 'd1c553fb2f8e43ddb4704f79f0de53ae', '0');
+INSERT INTO `s_user` VALUES ('8f6e66694bc84d3299e3c5df0485e579', 'wangwu', '王五', '4BnJUfs9SArj08zgPZttBQ==', '5dXKjO', null, null, 'wangwu@lems.com', 'af7b3b6768c243f28aa2f62de9a98287', '2017-05-01 18:17:23', null, '1');
+INSERT INTO `s_user` VALUES ('9999', 'admin', 'admin', '6khXbzC+FmmXFpnAmtBclA==', '123456', 'address', '110', 'admin@xx.com', '9999', '2017-05-01 18:17:11', '21b3a97c424d4b75b439d04d1a6cc404', '0');
+INSERT INTO `s_user` VALUES ('9a0329eac5f444ee93e16aa00627489e', 'kehao004', 'kehao004', 'yQGL6sCpxi4Ox4SqbUUp2A==', 'fCOdm4', null, null, 'kehao004@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('af7b3b6768c243f28aa2f62de9a98287', 'zhangsan', '张三', 'f339Fttx2MEhM5tqQl1Hdg==', 'hWQrtH', '极地', '130', 'zhangsan@xx.com', '9999', '2017-05-01 18:17:11', '4143a2b82ef1485296c29f62d0213a24', '0');
+INSERT INTO `s_user` VALUES ('be817b4d6b8743f5a1e26fd826b4f155', 'lisi', '李四', 'VGdHapNb/xVEX8A+z52XIA==', '6bGysS', null, null, 'lisi@xx.com', '9999', '2017-05-01 18:17:11', '89177a25ecc04c658561c6d14d97f3e9', '0');
+INSERT INTO `s_user` VALUES ('c8f7256f5fa34a1b9fac60ce0d29ed6e', 'test003', 'test003', 'Gqs2VjEmWBQY3hsmN6rSqA==', '3rkUnK', null, null, 'test003@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('caa8e746ff7e4cbd9285a21f51d25f8e', 'kehao001', 'kehao001', 'baSjbI/kE6d9BsThmXaZCA==', 'QdGPfX', null, null, 'kehao001@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
+INSERT INTO `s_user` VALUES ('d791da75a18c4877b31b3b97cdc195a7', 'kehao002', 'kehao002', 'VF59KSBxbVFrTDjOsrfGcQ==', 'AhtWFp', null, null, 'kehao002@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', '12bc61a3f9474a98877764c45f850ef4', '0');
+INSERT INTO `s_user` VALUES ('fc489fc09af74f659380b994011ca2d3', 'kehao005', 'kehao005', 'unPZRRKCZ4ITXoqn0LPVQA==', 'Xie4op', null, null, 'kehao005@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
 
 -- ----------------------------
 -- Table structure for user_role
@@ -279,12 +302,16 @@ CREATE TABLE `user_role` (
   `rid` int(9) NOT NULL,
   KEY `user_role_user_uid` (`uid`) USING BTREE,
   KEY `user_role_role_rid` (`rid`) USING BTREE,
-  CONSTRAINT `user_role_user_uid` FOREIGN KEY (`uid`) REFERENCES `s_user` (`uid`),
-  CONSTRAINT `user_role_role_rid` FOREIGN KEY (`rid`) REFERENCES `s_role` (`rid`)
+  CONSTRAINT `user_role_role_rid` FOREIGN KEY (`rid`) REFERENCES `s_role` (`rid`),
+  CONSTRAINT `user_role_user_uid` FOREIGN KEY (`uid`) REFERENCES `s_user` (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户_角色表';
 
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
 INSERT INTO `user_role` VALUES ('9999', '405230015');
-SET FOREIGN_KEY_CHECKS=1;
+INSERT INTO `user_role` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', '405230015');
+INSERT INTO `user_role` VALUES ('af7b3b6768c243f28aa2f62de9a98287', '376703787');
+INSERT INTO `user_role` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '376703787');
+INSERT INTO `user_role` VALUES ('0e690bc74f354a0996942ee091709943', '376703787');
+INSERT INTO `user_role` VALUES ('fc489fc09af74f659380b994011ca2d3', '66232668');

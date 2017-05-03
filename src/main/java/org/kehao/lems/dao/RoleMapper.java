@@ -2,6 +2,8 @@ package org.kehao.lems.dao;
 
 import org.kehao.lems.entity.Role;
 
+import java.util.List;
+
 public interface RoleMapper {
     int deleteByPrimaryKey(Integer rid);
 
@@ -35,4 +37,6 @@ public interface RoleMapper {
      * @return
      */
     Role selectByRname(String rname);
+
+    List<Role> selectAllRole();
 }

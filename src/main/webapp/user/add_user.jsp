@@ -8,17 +8,40 @@
         adduser_reset_btn.click(adduser_reset);
 
         $("#adduser_namebox").blur(validation_adduser);
-        $("#adduser_namebox").focus(function(){
+        $("#adduser_namebox").focus(function () {
             $("#adduser_namebox_msg").text("");
         });
         //暂时不启用
+
+        $.ajax({
+            url: './role/get_all_role.do',
+            dataType: 'json',
+            timeout: 1000,
+            cache: false,
+            success: function (result) {
+                var data = result.data;
+                var dataList, rid, rname;
+                dataList = [];
+                for(var i=0;i<data.length;i++){
+                    rid = data[i].rid;
+                    rname = data[i].rname;
+                    console.info({"id": rid, "text": rname});
+                    dataList.push({"id": rid, "text": rname});
+                }
+                $("#adduser_rolebox").combobox("loadData", dataList);
+            },
+            error: function () {
+
+            },
+            async: true
+        });
 
         /**
          * 注册页面回车键事件绑定
          */
         $("#adduser_emailbox").keydown(function (event) {
-            var keyCode=event.keyCode;
-            if(keyCode==13){
+            var keyCode = event.keyCode;
+            if (keyCode == 13) {
                 add_user();
             }
         });
@@ -28,7 +51,7 @@
             $.ajax({
                 url: "./user/useradd_validation.do",
                 type: "post",
-                data:{"uname":adduser_uname},
+                data: {"uname": adduser_uname},
                 dataType: "json",
                 success: function (result) {
                     if (result.status != 0) {
@@ -42,21 +65,23 @@
                 async: true
             });
         }
+
         //用户添加
         function add_user() {
-            var adduser_uid=getCookie("uid");
-            var adduser_token=getCookie("token");
+            var adduser_uid = getCookie("uid");
+            var adduser_token = getCookie("token");
 
-            if(adduser_uid==null||adduser_token==null){
+            if (adduser_uid == null || adduser_token == null) {
                 $.messager.alert('警告', "非法操作");
             }
 
             var adduser_uname = $("#adduser_namebox").val();
             var adduser_passwd = $("#adduser_passbox").val();
-            var adduser_trueName=$("#adduser_truenamebox").val();
-            var adduser_email=$("#adduser_emailbox").val();
+            var adduser_trueName = $("#adduser_truenamebox").val();
+            var adduser_email = $("#adduser_emailbox").val();
+            var adduser_role=$("#adduser_rolebox").combobox('getValue');
 
-            var adduser_msg = adduser_uname + ":" + adduser_passwd + ":"+adduser_trueName+ ":" + adduser_email+":"+adduser_uid;
+            var adduser_msg = adduser_uname + ":" + adduser_passwd + ":" + adduser_trueName + ":" + adduser_email + ":" + adduser_uid+ ":" + adduser_role;
             var base64_adduser_msg = Base64.encode(adduser_msg);
 
             $.ajax({
@@ -127,6 +152,14 @@
             <td>
                 <input id="adduser_emailbox" type="text" placeholder="请输入邮箱" class="easyui-validatebox"
                        data-options="required:true">
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>角色</th>
+            <td>
+                <select id="adduser_rolebox" class="easyui-combobox easyui-validatebox" placeholder="请选择角色"
+                        data-options="valueField:'id', textField:'text',panelHeight:'auto'"></select>
             </td>
             <td></td>
         </tr>
