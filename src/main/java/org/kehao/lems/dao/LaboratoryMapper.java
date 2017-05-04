@@ -1,6 +1,7 @@
 package org.kehao.lems.dao;
 
 import org.kehao.lems.entity.Laboratory;
+import org.kehao.lems.entity.extend.LaboratoryEx;
 
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,29 @@ public interface LaboratoryMapper {
      */
     int updateLabStatusByLid(Map map);
 
-    Laboratory selectLabEquUserByLid(String lid);
 
+    /**
+     * Test
+     */
+    Laboratory selectLabEquByCondition(String lid);
+
+    /**
+     * 查询实验室设备状态
+     * @param map
+     * @return
+     */
+    List<Laboratory> selectLabEquUserByCondition(Map map);
+    /**
+     * 查询实验室设备状态记录数量
+     * @param map
+     * @return
+     */
+    Long selectLabEquUserByConditionCount(Map map);
+
+    /**
+     * 查询实验室负责人
+     * @param lid
+     * @return
+     */
     Laboratory selectLabUserByLid(String lid);
 }

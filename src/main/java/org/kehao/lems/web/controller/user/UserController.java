@@ -130,8 +130,8 @@ public class UserController {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     public Map<String,Object> getUserList(Integer page, Integer rows, User user,String order,String sort,String rname) {
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("rows", userService.getUser(page, rows, user,order,sort,rname).getData());
         data.put("total", userService.getUserCount(user,rname));
+        data.put("rows", userService.getUser(page, rows, user,order,sort,rname).getData());
         return data;
     }
 

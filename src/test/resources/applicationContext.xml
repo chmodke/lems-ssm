@@ -57,6 +57,8 @@
     <!-- 定义SQLSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+        <!--输出打印SQL-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!-- SQL定义的XML -->
         <property name="mapperLocations" value="classpath:org/kehao/lems/sql/*.xml"></property>
     </bean>

@@ -71,3 +71,34 @@ where lab.lid = '0b1533555c0748b4a8e985f7b9e52897' order by epurc.price asc LIMI
 select lab.lid, lab.id, lab.lname, lab.lsize, lab.status, lab.type, lab.equcount,user.uname
 from s_laboratory lab join s_user user on(lab.uid=user.uid)
 where lab.lid = '0b1533555c0748b4a8e985f7b9e52897';
+
+<!--实验室查询功能主SQL-->
+select lab.lid,lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark , 
+epurc.price , elab.lid el_lid , elab.eid el_eid ,
+equ.id e_id , equ.ename , equ.type e_type , equ.status e_status , equ.remark e_remark ,
+epurc.uid ep_uid , user.uid u_uid , 
+user.uname u_uname 
+from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid) 
+left join s_equipment equ on(elab.eid=equ.eid)  
+left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+left join s_user user on(epurc.uid=user.uid) 
+where lab.status !='1' AND lab.lname LIKE '%6%' ORDER BY lab.lname asc LIMIT 0,2
+<!--实验室查询功能从SQL-->
+select COUNT(*)
+from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid) 
+left join s_equipment equ on(elab.eid=equ.eid)  
+left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+left join s_user user on(epurc.uid=user.uid) 
+where lab.status !='1' AND lab.lname LIKE '%6%'
+<!--MyBatis-->
+select lab.lid,lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark , 
+epurc.price ,  elab.lid el_lid , elab.eid el_eid ,  
+equ.id e_id , equ.ename , equ.type e_type , equ.status e_status , equ.remark e_remark , 
+epurc.uid ep_uid , 
+user.uid u_uid , user.uname u_uname 
+from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid) 
+left join s_equipment equ on(elab.eid=equ.eid)  
+left join s_equ_purchase epurc on(equ.pcid=epurc.pcid) 
+left join s_user user on(epurc.uid=user.uid) 
+where lab.status !='1' AND lab.lname LIKE concat(concat('%',?),'%'),  
+ORDER BY lab.lname asc  LIMIT ?,?

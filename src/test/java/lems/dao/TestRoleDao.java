@@ -23,7 +23,7 @@ public class TestRoleDao {
         }
     }
     @Test
-    public void selectRloeByUid(){
+    public void selectUserByRid(){
 	    Role role=roleMapper.selectUserByRid("405230015");
 	    for(UserRole uRole : role.getUserRole()){
             System.out.println(uRole.getUser().getUname());

@@ -2,6 +2,7 @@ package org.kehao.lems.service;
 
 import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.utils.LEMSResult;
 
 import java.util.List;
@@ -35,5 +36,22 @@ public interface LabService {
      */
     Long labGetCount(Laboratory laboratory);
 
+    /**
+     * 批量禁用实验室
+     * @param delList
+     * @return
+     */
     LEMSResult labDel(List<String> delList);
+
+    /**
+     * 搜索实验室信息
+     * @param page 页码
+     * @param rows 页面行数
+     * @param order 排序方式
+     * @param sort 排序字段
+     * @param laboratoryEx 搜索条件
+     * @return
+     */
+    LEMSResult searchLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
+    Long searchLabCount( LaboratoryEx laboratoryEx);
 }

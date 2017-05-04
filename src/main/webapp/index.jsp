@@ -39,6 +39,8 @@
             $("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
             $("#userlist_link").click(userlist_tab_add);//用户列表菜单事件绑定
             $("#lablist_link").click(lablist_tab_add);//用户列表菜单事件绑定
+            $("#labsearch_link").click(lab_search_list_tab_add);//用户列表菜单事件绑定
+
 
 
 
@@ -183,7 +185,7 @@
             }
 
             /**
-             * 用户列表菜单事件
+             * 实验室列表菜单事件
              */
             function lablist_tab_add(){
                 if($("#index_tt").tabs("exists","实验室列表")){
@@ -193,6 +195,22 @@
                         title:"实验室列表",
                         closable:true,
                         href:"./lab/list_lab.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 实验室搜索菜单事件
+             */
+            function lab_search_list_tab_add(){
+                if($("#index_tt").tabs("exists","实验室查询")){
+                    $("#index_tt").tabs("select","实验室查询");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室查询",
+                        closable:true,
+                        href:"./lab/search_lab.jsp",
                         fit:true
                     });
                 }
@@ -233,7 +251,7 @@
             <b>暂无备案</b>
         </div>
     </div>
-    <div data-options="region:'east',title:'备注',split:true,collapsible:true,resizable:true"  style="width:100px;">
+    <div data-options="region:'east',title:'备注',split:true,collapsible:true,resizable:true," closed="true"  style="width:100px;">
 
     </div>
     <div data-options="region:'west',title:'功能导航',split:false,collapsible:true" style="width:150px;">
@@ -241,7 +259,7 @@
             <div title="基础功能" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li>设备查询</li>
-                    <li>实验室查询</li>
+                    <li><a id="labsearch_link" href="javascript:;">实验室查询</a></li>
                 </ul>
             </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">

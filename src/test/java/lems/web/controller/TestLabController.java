@@ -39,7 +39,7 @@ public class TestLabController {
 	}
 
     /**
-     * 测试明文登录方法
+     * 测试实验室添加方法
      * @throws Exception
      */
     @Test
@@ -69,4 +69,30 @@ public class TestLabController {
 		//断言
 		Assert.assertEquals(0, lemsResult.getStatus());
 	}
+
+	/**
+	 * 测试实验室搜索方法
+	 * @throws Exception
+	 */
+	@Test
+	public void labControllerSearch() throws Exception{
+		//发送执行一个HTTP请求
+		RequestBuilder request=MockMvcRequestBuilders
+				.post("/lab/labsearch.do")
+				.param("page", "1")//传数据
+				.param("rows", "2")
+				.param("order", "asc")
+				.param("sort", "lab.lname")
+				.param("lname", "6");
+
+		MvcResult result=mockMvc.perform(request)
+				.andDo(MockMvcResultHandlers.print())//将请求头和响应头打印
+				.andExpect(MockMvcResultMatchers.status().isOk())//期望返回状态码200
+				.andReturn();//用来返回结果
+
+		//提取响应中的json字符串
+		String jsonStr=result.getResponse().getContentAsString();
+		System.out.println("----------------------------"+'\n'+jsonStr+'\n'+"----------------------------");
+        System.out.println(jsonStr);
+    }
 }

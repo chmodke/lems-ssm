@@ -2,6 +2,7 @@ package org.kehao.lems.web.controller.lab;
 
 import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.LabService;
 import org.kehao.lems.utils.LEMSResult;
 
@@ -47,8 +48,8 @@ public class LabController {
     @ResponseBody
     public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, Laboratory laboratory){
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("rows", labService.labGet(page,rows,order,sort,laboratory).getData());
         data.put("total", labService.labGetCount(laboratory));
+        data.put("rows", labService.labGet(page,rows,order,sort,laboratory).getData());
         return data;
     }
     @RequestMapping("/labdel.do")
@@ -57,5 +58,13 @@ public class LabController {
         String[] arr=delList.split(" ");
         List<String> list= Arrays.asList(arr);
         return labService.labDel(list);
+    }
+    @RequestMapping("/labsearch.do")
+    @ResponseBody
+    public Map<String,Object> searchLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", labService.searchLabCount(laboratoryEx));
+        data.put("rows", labService.searchLab(page, rows, order, sort, laboratoryEx).getData());
+        return data;
     }
 }
