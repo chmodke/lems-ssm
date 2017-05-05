@@ -348,6 +348,17 @@
         <if test="laboratoryEx.remark != null">
             AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
         </if>
+
+        <if test="laboratoryEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lname != null">
+            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+        </if>
+
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
         </if>
@@ -378,6 +389,16 @@
         </if>
         <if test="laboratoryEx.remark != null">
             AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="laboratoryEx.equ_id != null">
+            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.equ_ename != null">
+            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.equ_type != null">
+            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
         </if>
     </select>
 

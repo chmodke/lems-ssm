@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
-        $('#lab_list').datagrid({
+        $('#list_lab_list').datagrid({
             url: './lab/lab_list.do',
             pagination: true,
             fit: true,
@@ -40,7 +40,7 @@
                 text:'增加',
                 iconCls:'icon-edit',
                 handler:function(){
-                    $("#lab_dialog").dialog({
+                    $("#list_lab_dialog").dialog({
                         title: '实验室添加',
                         width: 650,
                         height: 480,
@@ -53,19 +53,19 @@
                 text:'删除',
                 iconCls:'icon-remove',
                 handler:function(){
-                    del_lab();
+                    list_del_lab();
                 }
             }]
         });
 
-        $("#search_lab_btn").click(search_lab);//绑定查询事件
-        $("#reset_search_lab_btn").click(reset_search_lab);
+        $("#list_search_lab_btn").click(list_search_lab);//绑定查询事件
+        $("#list_reset_search_lab_btn").click(list_reset_search_lab);
 
         /**
          * 删除用户
          */
-        function del_lab(){
-            var del_lablist=$('#lab_list').datagrid('getSelections');
+        function list_del_lab(){
+            var del_lablist=$('#list_lab_list').datagrid('getSelections');
             var del_list='';
             for(var i=0;i<del_lablist.length;i++){
                 var selected=del_lablist[i];
@@ -80,7 +80,7 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#lab_list').datagrid('load');
+                        $('#list_lab_list').datagrid('load');
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -96,25 +96,25 @@
         /**
          * 条件查询
          */
-        function search_lab() {
-            var lname = $("#search_lname").val().trim();
-            var id = $("#search_id").val().trim();
-            var type = $("#search_type").val().trim();
-            $('#lab_list').datagrid('load', {
-                lname: lname,
-                id:id,
-                type: type
+        function list_search_lab() {
+            var list_lname = $("#list_search_lname").val().trim();
+            var list_id = $("#list_search_id").val().trim();
+            var list_type = $("#list_search_type").val().trim();
+            $('#list_lab_list').datagrid('load', {
+                lname: list_lname,
+                id:list_id,
+                type: list_type
             });
         }
 
         /**
          * 清空条件查询
          */
-        function reset_search_lab() {
-            $("#search_lname").val("");
-            $("#search_id").val("");
-            $("#search_type").val("");
-            $('#lab_list').datagrid('load',{});
+        function list_reset_search_lab() {
+            $("#list_search_lname").val("");
+            $("#list_search_id").val("");
+            $("#list_search_type").val("");
+            $('#list_lab_list').datagrid('load',{});
         }
     });
 </script>
@@ -123,18 +123,18 @@
         <form>
 
             <div style="float: left;margin-top: 5px;margin-bottom: 5px" >
-                &emsp;<b>实验室名查询</b><input id="search_lname" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室编号查询</b><input id="search_id" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室类型查询</b><input id="search_type" class="easyui-validatebox">&emsp;
+                &emsp;<b>实验室名查询</b><input id="list_search_lname" class="easyui-validatebox">&emsp;
+                &emsp;<b>实验室编号查询</b><input id="list_search_id" class="easyui-validatebox">&emsp;
+                &emsp;<b>实验室类型查询</b><input id="list_search_type" class="easyui-validatebox">&emsp;
             </div>
             <div style="float: left;margin-top: 5px;margin-bottom: 5px">
-                <input id="search_lab_btn" type="button" value="查询">
-                <input id="reset_search_lab_btn" type="button" value="清空">&emsp;
+                <input id="list_search_lab_btn" type="button" value="查询">
+                <input id="list_reset_search_lab_btn" type="button" value="清空">&emsp;
             </div>
         </form>
     </div>
-    <div id="lab_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
-        <div id="lab_dialog" style="overflow: hidden"></div>
-        <table id="lab_list"></table>
+    <div id="list_lab_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
+        <div id="list_lab_dialog" style="overflow: hidden"></div>
+        <table id="list_lab_list"></table>
     </div>
 </div>

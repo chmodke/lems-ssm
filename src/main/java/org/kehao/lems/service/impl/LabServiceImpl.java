@@ -121,6 +121,16 @@ public class LabServiceImpl implements LabService{
         map.put("recCount",pageSize);
         //排序
         map.put("order",order);
+        //映射排序字段
+        if(sort.equals("equ_ename")){
+            sort="equ.ename";
+        }
+        if(sort.equals("equ_type")){
+            sort="equ.type";
+        }
+        if(sort.equals("equ_id")){
+            sort="equ.id";
+        }
         map.put("sort",sort);
 
         //封装返回数据集合
@@ -137,7 +147,7 @@ public class LabServiceImpl implements LabService{
                 //这里是非共有属性
                 BeanUtils.copyProperties(laboratoryEx,laboratoryExTmp);//复制一份数据
                 //复制非共有属性
-                laboratoryExTmp.setEqu_id(equLab.getEquipment().getEid());
+                laboratoryExTmp.setEqu_id(equLab.getEquipment().getId());
                 laboratoryExTmp.setEqu_ename(equLab.getEquipment().getEname());
                 laboratoryExTmp.setEqu_type(equLab.getEquipment().getType());
                 laboratoryExTmp.setEqu_status(equLab.getEquipment().getStatus());
