@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-05-04 16:54:15
+Date: 2017-05-05 11:43:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -67,7 +67,7 @@ CREATE TABLE `s_equipment` (
   `id` varchar(32) NOT NULL COMMENT '用户定义编号',
   `ename` varchar(32) DEFAULT NULL COMMENT '设备名称',
   `type` varchar(32) DEFAULT NULL COMMENT '设备类别',
-  `addtime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `addtime` datetime DEFAULT NULL COMMENT '添加时间',
   `status` int(2) DEFAULT NULL COMMENT '设备状态',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   `pcid` char(32) DEFAULT NULL COMMENT '采购id',
@@ -118,7 +118,7 @@ DROP TABLE IF EXISTS `s_equ_purchase`;
 CREATE TABLE `s_equ_purchase` (
   `pcid` char(32) NOT NULL COMMENT '采购id',
   `uid` char(32) DEFAULT NULL COMMENT '采购员id',
-  `pctime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '采购时间',
+  `pctime` datetime DEFAULT NULL COMMENT '采购时间',
   `price` double(16,3) DEFAULT '0.000' COMMENT '价格',
   PRIMARY KEY (`pcid`),
   KEY `purc_user_uid` (`uid`) USING BTREE,
@@ -147,8 +147,8 @@ DROP TABLE IF EXISTS `s_equ_schedule`;
 CREATE TABLE `s_equ_schedule` (
   `seid` char(32) NOT NULL COMMENT '设备日程id',
   `eid` char(32) NOT NULL COMMENT '设备id',
-  `starttime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '开始时间',
-  `endtime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '结束时间',
+  `starttime` datetime DEFAULT NULL COMMENT '开始时间',
+  `endtime` datetime DEFAULT NULL COMMENT '结束时间',
   `sname` varchar(32) DEFAULT NULL COMMENT '借用人姓名',
   PRIMARY KEY (`seid`),
   KEY `sch_equ_eid` (`eid`) USING BTREE,
@@ -168,7 +168,7 @@ CREATE TABLE `s_laboratory` (
   `id` varchar(32) NOT NULL COMMENT '自定义编号',
   `lname` varchar(32) DEFAULT NULL COMMENT '实验室名称',
   `lsize` int(4) DEFAULT '0' COMMENT '实验室容量',
-  `addtime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `addtime` datetime DEFAULT NULL COMMENT '添加时间',
   `status` int(2) DEFAULT '0' COMMENT '实验室状态',
   `type` varchar(32) DEFAULT NULL COMMENT '实验室类别',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
@@ -197,8 +197,8 @@ DROP TABLE IF EXISTS `s_lab_schedule`;
 CREATE TABLE `s_lab_schedule` (
   `slid` char(32) NOT NULL COMMENT '实验室使用日程id',
   `lid` char(32) NOT NULL COMMENT '实验室id',
-  `starttime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '开始时间',
-  `endtime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '结束时间',
+  `starttime` datetime DEFAULT NULL COMMENT '开始时间',
+  `endtime` datetime DEFAULT NULL COMMENT '结束时间',
   `sname` varchar(32) DEFAULT NULL COMMENT '借用人姓名',
   PRIMARY KEY (`slid`),
   KEY `sch_lib_lid` (`lid`) USING BTREE,
@@ -277,7 +277,7 @@ CREATE TABLE `s_user` (
   `office_phone` varchar(12) DEFAULT NULL COMMENT '办公室电话',
   `email` varchar(40) DEFAULT NULL COMMENT '邮箱，作为激活账户使用',
   `masterid` char(32) NOT NULL COMMENT '创建者ID',
-  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `token` char(32) DEFAULT NULL COMMENT '登录认证',
   `status` int(2) DEFAULT '0' COMMENT '用户状态',
   PRIMARY KEY (`uid`),
@@ -290,12 +290,12 @@ CREATE TABLE `s_user` (
 -- ----------------------------
 INSERT INTO `s_user` VALUES ('0e690bc74f354a0996942ee091709943', 'kehao003', 'kehao003', 'ILfXjzPgW073ICQUfhIhwA==', 'sqDUL6', null, null, 'kehao003@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('0ec092f59ead420ba6b3829ea4d4cfb8', 'test002', 'test002', 'LV/jqd7Y0ZJRDxdf4alnFQ==', 'FjeoK4', null, null, 'test002@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
-INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'VCN6WdSBoDOKnmnzLvpgzA==', '5a2615', '火星', '111', 'kehao@lems.com', '9999', '2017-05-04 09:07:31', '42754b872c194e468628e3b6733e180c', '0');
+INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'VCN6WdSBoDOKnmnzLvpgzA==', '5a2615', '火星', '111', 'kehao@lems.com', '9999', '2017-05-05 11:27:40', '6d926b2a6e5444c09745b0545118fbdf', '0');
 INSERT INTO `s_user` VALUES ('2caf84fa65c04963818da964ce10fc4b', 'test000', 'kehao', 'aMtnkqh+KcQGjfZoLftcuQ==', '0tzkmh', null, null, 'test001@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('56c0b00dbceb4a54b065b0aa71bca526', 'user1', 'user', '6khXbzC+FmmXFpnAmtBclA==', '123456', '630', '111', 'xxx@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '朱晨光', '朱晨光', 'mUuuLL580Y+CC97uHFrgDw==', 'wHsa7Q', null, null, 'zhuchenguang@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', 'd1c553fb2f8e43ddb4704f79f0de53ae', '0');
 INSERT INTO `s_user` VALUES ('8f6e66694bc84d3299e3c5df0485e579', 'wangwu', '王五', '4BnJUfs9SArj08zgPZttBQ==', '5dXKjO', null, null, 'wangwu@lems.com', 'af7b3b6768c243f28aa2f62de9a98287', '2017-05-01 18:17:23', null, '1');
-INSERT INTO `s_user` VALUES ('9999', 'admin', 'admin', '6khXbzC+FmmXFpnAmtBclA==', '123456', 'address', '110', 'admin@xx.com', '9999', '2017-05-01 18:17:11', '21b3a97c424d4b75b439d04d1a6cc404', '0');
+INSERT INTO `s_user` VALUES ('9999', 'admin', 'admin', '6khXbzC+FmmXFpnAmtBclA==', '123456', 'address', '110', 'admin@xx.com', '9999', '2017-05-05 11:40:53', '91934aa334ed40a2ad5fca4e35c5c7dg', '0');
 INSERT INTO `s_user` VALUES ('9a0329eac5f444ee93e16aa00627489e', 'kehao004', 'kehao004', 'yQGL6sCpxi4Ox4SqbUUp2A==', 'fCOdm4', null, null, 'kehao004@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('9b5f8b00c8aa4c188cdc7bfb6502c14c', 'kehao006', 'kehao', 'CSb7RgQVgOa1n3auvKn5cw==', 'gUHu7h', null, null, 'kehao006@lems.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-03 00:03:29', null, '1');
 INSERT INTO `s_user` VALUES ('9eeaaf17b2894b4bb3767a25f0155ce4', 'test004', 'test', 'G8TP3AtVmjMdK3BAvtsPpA==', 'jcPoOg', null, null, 'test004@lems.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-03 19:17:52', null, '0');
