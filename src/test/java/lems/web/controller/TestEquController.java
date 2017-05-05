@@ -21,8 +21,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import junit.framework.Assert;
 
-import java.util.Date;
-
 @SuppressWarnings("deprecation")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})

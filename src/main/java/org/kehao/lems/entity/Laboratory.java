@@ -1,7 +1,5 @@
 package org.kehao.lems.entity;
 
-import org.kehao.lems.entity.extend.EquLabEx;
-
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class Laboratory {
     }
 
     public void setLid(String lid) {
-        this.lid = lid == null ? null : lid.trim();
+        this.lid = lid;
     }
 
     public String getId() {
@@ -43,7 +41,7 @@ public class Laboratory {
     }
 
     public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+        this.id = id;
     }
 
     public String getLname() {
@@ -51,7 +49,7 @@ public class Laboratory {
     }
 
     public void setLname(String lname) {
-        this.lname = lname == null ? null : lname.trim();
+        this.lname = lname;
     }
 
     public Integer getLsize() {
@@ -83,7 +81,7 @@ public class Laboratory {
     }
 
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type;
     }
 
     public String getRemark() {
@@ -91,7 +89,7 @@ public class Laboratory {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
+        this.remark = remark;
     }
 
     public String getUid() {
@@ -99,7 +97,7 @@ public class Laboratory {
     }
 
     public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
+        this.uid = uid;
     }
 
     public Integer getEqucount() {
@@ -110,19 +108,19 @@ public class Laboratory {
         this.equcount = equcount;
     }
 
-    public void setEquLab(List<EquLab> equLab) {
-        this.equLab = equLab;
-    }
-
     public List<EquLab> getEquLab() {
         return equLab;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setEquLab(List<EquLab> equLab) {
+        this.equLab = equLab;
     }
 
     public User getUser() {
         return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

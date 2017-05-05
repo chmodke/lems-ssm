@@ -17,8 +17,50 @@
       lid, id, lname, lsize, addtime, status, type, remark, uid, equcount
     </sql>
 
-    <!-- Lab Equ Purc User-->
+    <!--Test-->
+    <resultMap id="LabEquResultMap" type="org.kehao.lems.entity.Laboratory">
+        <id column="lid" jdbcType="CHAR" property="lid"/>
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="lname" jdbcType="VARCHAR" property="lname"/>
+        <result column="lsize" jdbcType="INTEGER" property="lsize"/>
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="uid" jdbcType="CHAR" property="uid"/>
+        <result column="equcount" jdbcType="INTEGER" property="equcount"/>
+        <collection property="equLab" javaType="java.util.List" ofType="org.kehao.lems.entity.EquLab">
+            <result column="el_lid" jdbcType="CHAR" property="lid"/>
+            <result column="el_eid" jdbcType="CHAR" property="eid"/>
+            <association property="equipment" javaType="org.kehao.lems.entity.Equipment">
+                <id column="eid" jdbcType="CHAR" property="eid"/>
+                <result column="e_id" jdbcType="VARCHAR" property="id"/>
+                <result column="ename" jdbcType="VARCHAR" property="ename"/>
+                <result column="e_type" jdbcType="VARCHAR" property="type"/>
+                <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+                <result column="e_status" jdbcType="INTEGER" property="status"/>
+                <result column="e_remark" jdbcType="VARCHAR" property="remark"/>
+                <result column="pcid" jdbcType="CHAR" property="pcid"/>
+            </association>
+        </collection>
+    </resultMap>
+    <sql id="Lab_Equ_Column_List">
+            lab.lid, lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type, lab.remark,
+            elab.lid el_lid,elab.eid el_eid,
+            equ.id e_id , equ.ename , equ.type e_type , equ.status e_status ,equ.remark e_remark
+        </sql>
+    <select id="selectLabEquByCondition" parameterType="java.lang.String" resultMap="LabEquResultMap">
+        select
+        <include refid="Lab_Equ_Column_List"/>
+        from s_laboratory lab join equ_lab elab on(lab.lid=elab.lid)
+        join s_equipment equ on(elab.eid=equ.eid)
+        where lab.lid = #{lid,jdbcType=CHAR};
+    </select>
+    <!--Test-->
 
+
+    <!-- Lab Equ Purc User-->
+    <!--出现了不同表之间列名重复，需要给冲突字段加别名，关联表的冲突也需要解决-->
     <resultMap id="LabEquPurcUserResultMap" type="org.kehao.lems.entity.Laboratory">
         <id column="lid" jdbcType="CHAR" property="lid"/>
         <result column="id" jdbcType="VARCHAR" property="id"/>
@@ -31,25 +73,25 @@
         <result column="uid" jdbcType="CHAR" property="uid"/>
         <result column="equcount" jdbcType="INTEGER" property="equcount"/>
         <collection property="equLab" javaType="java.util.List" ofType="org.kehao.lems.entity.EquLab">
-            <result column="lid" jdbcType="CHAR" property="lid" />
-            <result column="eid" jdbcType="CHAR" property="eid" />
+            <result column="el_lid" jdbcType="CHAR" property="lid"/>
+            <result column="el_eid" jdbcType="CHAR" property="eid"/>
             <association property="equipment" javaType="org.kehao.lems.entity.Equipment">
                 <id column="eid" jdbcType="CHAR" property="eid"/>
-                <result column="id" jdbcType="VARCHAR" property="id"/>
+                <result column="e_id" jdbcType="VARCHAR" property="id"/>
                 <result column="ename" jdbcType="VARCHAR" property="ename"/>
-                <result column="type" jdbcType="VARCHAR" property="type"/>
+                <result column="e_type" jdbcType="VARCHAR" property="type"/>
                 <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
-                <result column="status" jdbcType="INTEGER" property="status"/>
-                <result column="remark" jdbcType="VARCHAR" property="remark"/>
+                <result column="e_status" jdbcType="INTEGER" property="status"/>
+                <result column="e_remark" jdbcType="VARCHAR" property="remark"/>
                 <result column="pcid" jdbcType="CHAR" property="pcid"/>
                 <association property="equPurchase" javaType="org.kehao.lems.entity.EquPurchase"><!-- 对象关联 -->
                     <id column="pcid" jdbcType="CHAR" property="pcid"/>
-                    <result column="uid" jdbcType="CHAR" property="uid"/>
+                    <result column="ep_uid" jdbcType="CHAR" property="uid"/>
                     <result column="pctime" jdbcType="TIMESTAMP" property="pctime"/>
                     <result column="price" jdbcType="DOUBLE" property="price"/>
                     <association property="user" javaType="org.kehao.lems.entity.User">
-                        <id column="uid" jdbcType="CHAR" property="uid"/>
-                        <result column="uname" jdbcType="VARCHAR" property="uname"/>
+                        <id column="u_uid" jdbcType="CHAR" property="uid"/>
+                        <result column="u_uname" jdbcType="VARCHAR" property="uname"/>
                         <result column="ture_name" jdbcType="VARCHAR" property="tureName"/>
                         <result column="passwd" jdbcType="CHAR" property="passwd"/>
                         <result column="salt" jdbcType="CHAR" property="salt"/>
@@ -66,8 +108,12 @@
         </collection>
     </resultMap>
     <sql id="Lab_Equ_Purc_User_Column_List">
-        lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type,epurc.price
-        equ.id , equ.ename , equ.type , equ.status ,equ.type ,user.uname
+        lab.lid,lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark , epurc.price ,
+        elab.lid el_lid , elab.eid el_eid ,
+        equ.id e_id , equ.ename , equ.type e_type , equ.status e_status , equ.remark e_remark ,
+        epurc.uid ep_uid ,
+        user.uid u_uid ,
+        user.uname u_uname
     </sql>
 
     <resultMap id="LabUserResultMap" type="org.kehao.lems.entity.Laboratory">
@@ -275,17 +321,89 @@
             #{item}
         </foreach>
     </update>
-    <select id="selectLabEquUserByLid" parameterType="java.lang.String" resultMap="LabEquPurcUserResultMap">
-        select <include refid="Lab_Equ_Purc_User_Column_List"/>
-        from s_laboratory lab join equ_lab elab on(lab.lid=elab.lid)
-        join s_equipment equ on(elab.eid=equ.eid)
-        join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
-        join s_user user on(epurc.uid=user.uid)
-        where lab.lid = #{lid,jdbcType=CHAR};
+
+    <select id="selectLabEquUserByCondition" parameterType="java.util.Map" resultMap="LabEquPurcUserResultMap">
+        select
+        <include refid="Lab_Equ_Purc_User_Column_List"/>
+        from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid)
+        left join s_equipment equ on(elab.eid=equ.eid)
+        left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+        left join s_user user on(epurc.uid=user.uid)
+        where lab.status !='1'
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lsize != null">
+            AND lab.lsize >= #{laboratoryEx.lsize,jdbcType=INTEGER}
+        </if>
+        <if test="laboratoryEx.status != null">
+            AND lab.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
+        </if>
+        <if test="laboratoryEx.type != null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.remark != null">
+            AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="laboratoryEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lname != null">
+            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectLabEquUserByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select count(*)
+        from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid)
+        left join s_equipment equ on(elab.eid=equ.eid)
+        left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+        left join s_user user on(epurc.uid=user.uid)
+        where lab.status !='1'
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lsize != null">
+            AND lab.lsize >= #{laboratoryEx.lsize,jdbcType=INTEGER}
+        </if>
+        <if test="laboratoryEx.status != null">
+            AND lab.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
+        </if>
+        <if test="laboratoryEx.type != null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.remark != null">
+            AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="laboratoryEx.equ_id != null">
+            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.equ_ename != null">
+            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.equ_type != null">
+            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+        </if>
     </select>
 
     <select id="selectLabUserByLid" parameterType="java.lang.String" resultMap="LabUserResultMap">
-        select <include refid="Lab_User_Column_List"/>
+        select user.uname
         from s_laboratory lab join s_user user on(lab.uid=user.uid)
         where lab.lid = #{lid,jdbcType=CHAR};
     </select>

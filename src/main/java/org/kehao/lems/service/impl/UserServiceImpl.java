@@ -2,7 +2,6 @@ package org.kehao.lems.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -259,10 +258,10 @@ public class UserServiceImpl implements UserService{
         if(null==page){
             page=1;
         }
-        map.put("startRec",pageSize*(page-1));//5*(1-1)=0,,5*(2-1)=5
         if(null==pageSize){
             pageSize=5;
         }
+        map.put("startRec",pageSize*(page-1));//5*(1-1)=0,,5*(2-1)=5
         map.put("recCount",pageSize);
 
         map.put("order",order);
