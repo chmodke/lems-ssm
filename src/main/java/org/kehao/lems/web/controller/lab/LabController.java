@@ -67,4 +67,12 @@ public class LabController {
         data.put("rows", labService.searchLab(page, rows, order, sort, laboratoryEx).getData());
         return data;
     }
+    @RequestMapping("/lab_mgr_list.do")
+    @ResponseBody
+    public Map<String,Object> mgr_get_Lib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", labService.labGetCount(laboratoryEx));
+        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
+        return data;
+    }
 }

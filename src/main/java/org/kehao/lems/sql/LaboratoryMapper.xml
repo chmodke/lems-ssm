@@ -142,7 +142,7 @@
         </association>
     </resultMap>
     <sql id="Lab_User_Column_List">
-        lab.lid,lab.id, lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark ,user.uname
+        lab.lid,lab.id, lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark ,user.uname,user.uid
     </sql>
 
 
@@ -418,4 +418,6 @@
         from s_laboratory lab join s_user user on(lab.uid=user.uid)
         where lab.lid = #{lid,jdbcType=CHAR};
     </select>
+
+
 </mapper>

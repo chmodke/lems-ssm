@@ -30,6 +30,8 @@ public class LaboratoryEx{
 
     private String lab_uname;//实验室负责人
 
+    private String lab_uid;//实验室负责人id
+
     private String equ_id;
 
     private String equ_ename;
@@ -188,5 +190,13 @@ public class LaboratoryEx{
 
     public void setEqu_uname(String equ_uname) {
         this.equ_uname = equ_uname;
+    }
+
+    public String getLab_uid() {
+        return lab_uid;
+    }
+
+    public void setLab_uid(String lab_uid) {
+        this.lab_uid = lab_uid;
     }
 }

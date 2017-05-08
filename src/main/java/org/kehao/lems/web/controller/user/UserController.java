@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.extend.UserEx;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -122,16 +123,16 @@ public class UserController {
     /**
      * 搜索用户
      *
-     * @param user 搜索条件
+     * @param userEx 搜索条件
      * @return 用户数据列表
      */
     @RequestMapping("/user_list.do")
     @ResponseBody
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    public Map<String,Object> getUserList(Integer page, Integer rows, User user,String order,String sort,String rname) {
+    public Map<String,Object> getUserList(Integer page, Integer rows,String order,String sort, UserEx userEx) {
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("total", userService.getUserCount(user,rname));
-        data.put("rows", userService.getUser(page, rows, user,order,sort,rname).getData());
+        data.put("total", userService.getUserCount(userEx));
+        data.put("rows", userService.getUser(page, rows,order,sort, userEx).getData());
         return data;
     }
 

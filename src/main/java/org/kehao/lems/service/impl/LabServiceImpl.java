@@ -74,6 +74,7 @@ public class LabServiceImpl implements LabService{
             //拿到空记录，会导致结果集错乱
             if(laboratory.getUser()!=null){//检测空记录
                 laboratoryEx1.setLab_uname(laboratory.getUser().getUname());
+                laboratoryEx1.setLab_uid(laboratory.getUser().getUid());
             }
             laboratoryExList.add(laboratoryEx1);
         }

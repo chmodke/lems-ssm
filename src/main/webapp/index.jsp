@@ -36,10 +36,12 @@
             $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
             $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
             $("#roleadd_link").click(roleadd_tab_add);//添加角色菜单事件绑定
-            $("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
+            //$("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
             $("#userlist_link").click(userlist_tab_add);//用户列表菜单事件绑定
             $("#lablist_link").click(lablist_tab_add);//用户列表菜单事件绑定
             $("#labsearch_link").click(lab_search_list_tab_add);//用户列表菜单事件绑定
+            $("#labmgr_link").click(mgr_lab_tab_add);//实验室负责人管理菜单事件绑定
+
 
 
 
@@ -52,6 +54,7 @@
                 delCookie("token");
                 delCookie("uname");
                 delCookie("role");
+                //window.open('about:blank','_self').close();//关闭当前页面
                 window.location.reload();
             }
 
@@ -216,6 +219,22 @@
                 }
             }
 
+            /**
+             * 实验室负责人管理菜单事件
+             */
+            function mgr_lab_tab_add(){
+                if($("#index_tt").tabs("exists","实验室负责人管理")){
+                    $("#index_tt").tabs("select","实验室负责人管理");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室负责人管理",
+                        closable:true,
+                        href:"./lab/mod_mgr_lab.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -232,7 +251,7 @@
 </head>
 <body>
 <div id="cc" class="easyui-layout" data-options="fit : true">
-    <div data-options="region:'north',split:false,collapsible:false" style="height:80px;">
+    <div data-options="region:'north',split:false,collapsible:false" style="height:70px;">
         <div style="width:100%;height: 100%">
             <div style="width:80%;float: left;margin-top: 20px;margin-bottom: auto">
                 <b style="font-size: 48px;color: #0E76CB">Laboratory Equipment Management System</b>
@@ -275,7 +294,7 @@
                     <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
                     <li>实验室移除</li>
-                    <li>实验室负责人管理</li>
+                    <li><a id="labmgr_link" href="javascript:;">实验室负责人</a></li>
                 </ul>
             </div>
             <div title="设备日程管理" data-options="border:false,iconCls:'anchor'">
@@ -301,7 +320,7 @@
                 <ul>
                     <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
-                    <li><a id="userremove_link" href="javascript:;">用户删除</a></li>
+                    <li><a id="userremove_link" href="javascript:;">用户删除(用户列表)</a></li>
                     <li>用户授权管理(角色)</li>
                 </ul>
             </div>

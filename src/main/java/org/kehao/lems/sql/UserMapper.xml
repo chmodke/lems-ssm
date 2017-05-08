@@ -76,6 +76,7 @@
         user.uid,uname, ture_name, office_address, office_phone, email, masterid, createtime,status,rname, remark
     </sql>
 
+
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -304,20 +305,20 @@
         <include refid="Jion_User_Role_Column_List"/>
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
         where user.status !='1'
-        <if test="uname != null">
-            AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
+        <if test="userEx.uname != null">
+            AND user.uname LIKE concat(concat('%',#{userEx.uname,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="tureName != null">
-            AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
+        <if test="userEx.tureName != null">
+            AND user.ture_name LIKE concat(concat('%',#{userEx.tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="start_create != null">
-            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        <if test="userEx.createtimeStart != null">
+            AND user.createtime &gt;= #{userEx.createtimeStart,jdbcType=TIMESTAMP}
         </if>
-        <if test="end_create != null">
-            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
+        <if test="userEx.createtimeEnd != null">
+            AND user.createtime &lt;= #{userEx.createtimeEnd,jdbcType=TIMESTAMP}
         </if>
-        <if test="rname!=null">
-            AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
+        <if test="userEx.rname!=null">
+            AND role.rname LIKE concat(concat('%',#{userEx.rname,jdbcType=VARCHAR}),'%')
         </if>
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
@@ -328,20 +329,20 @@
         select COUNT(*)
         from s_user user left join user_role urole on(user.uid=urole.uid) left join s_role role on(urole.rid=role.rid)
         where user.status !='1'
-        <if test="uname != null">
-            AND user.uname LIKE concat(concat('%',#{uname,jdbcType=VARCHAR}),'%')
+        <if test="userEx.uname != null">
+            AND user.uname LIKE concat(concat('%',#{userEx.uname,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="tureName != null">
-            AND user.ture_name LIKE concat(concat('%',#{tureName,jdbcType=VARCHAR}),'%')
+        <if test="userEx.tureName != null">
+            AND user.ture_name LIKE concat(concat('%',#{userEx.tureName,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="start_create != null">
-            AND user.createtime &gt;= #{start_create,jdbcType=TIMESTAMP}
+        <if test="userEx.createtimeStart != null">
+            AND user.createtime &gt;= #{userEx.createtimeStart,jdbcType=TIMESTAMP}
         </if>
-        <if test="end_create != null">
-            AND user.createtime &lt;= #{end_create,jdbcType=TIMESTAMP}
+        <if test="userEx.createtimeEnd != null">
+            AND user.createtime &lt;= #{userEx.createtimeEnd,jdbcType=TIMESTAMP}
         </if>
-        <if test="rname!=null">
-            AND role.rname LIKE concat(concat('%',#{rname,jdbcType=VARCHAR}),'%')
+        <if test="userEx.rname!=null">
+            AND role.rname LIKE concat(concat('%',#{userEx.rname,jdbcType=VARCHAR}),'%')
         </if>
     </select>
 

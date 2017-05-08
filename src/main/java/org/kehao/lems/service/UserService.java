@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.extend.UserEx;
 import org.kehao.lems.utils.LEMSResult;
 
 /**
@@ -80,16 +81,17 @@ public interface UserService {
      *
      * @param page
      * @param pageSize
-     *@param user 搜索条件  @return
+     * @param userEx 搜索条件
+     * @return
      */
-    LEMSResult getUser(Integer page, Integer pageSize, User user, String order, String sort, String rname);
+    LEMSResult getUser(Integer page, Integer pageSize, String order, String sort, UserEx userEx);
 
     /**
      * 查询用户，搜索功能,搜索到的用户数量
-     * @param user
+     * @param userEx
      * @return
      */
-    Long getUserCount(User user,String rname) ;
+    Long getUserCount(UserEx userEx) ;
 
     /**
      * 批量禁用用户

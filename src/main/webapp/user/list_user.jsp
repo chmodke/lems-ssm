@@ -19,18 +19,7 @@
                 {field: 'officeAddress', title: '办公室', width: 100},
                 {field: 'officePhone', title: '电话', width: 100},
                 {field: 'email', title: '邮箱', width: 100},
-                {
-                    field: 'userRole',
-                    title: '角色',
-                    width: 100,
-                    formatter: function (userRole, rec, index) {
-                        if (userRole.role) {
-                            return userRole.role.rname;
-                        }
-                    },
-                    sortable: true,
-                    fixed: true
-                },
+                {field: 'rname',title: '角色',width: 100,sortable: true},
                 {
                     field: 'createtime',
                     title: '创建时间',

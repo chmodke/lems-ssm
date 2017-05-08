@@ -5,7 +5,7 @@
             url: './lab/labsearch.do',
             pagination: true,
             fit: true,
-            fitColumns: true,
+            fitColumns: false,
             singleSelect: true,
             idField: 'lid',
             pageSize: 5,

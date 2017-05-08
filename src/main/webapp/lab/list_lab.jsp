@@ -19,16 +19,16 @@
                 {field: 'type', title: '实验室类型', width: 100, sortable: true},
                 {field: 'lsize', title: '学生容量(人)', width: 100},
                 {field: 'equcount', title: '设备容量(台)', width: 100},
-                {field: 'lab_uname', title: '设备负责人', width: 100,sortable: true},
+                {field: 'lab_uname', title: '实验室负责人', width: 100,sortable: true},
                 {
                     field: 'status',
                     title: '状态',
                     width: 100,
                     formatter: function (status, rec, index) {
-                        if (status==0) {
+                        if (status == 0) {
                             return '可用';
                         }
-                        if (status==1) {
+                        if (status == 2) {
                             return '已预约';
                         }
                     },
