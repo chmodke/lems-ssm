@@ -41,15 +41,15 @@ public class LabController {
      * @param rows
      * @param order
      * @param sort
-     * @param laboratory 查询条件
+     * @param laboratoryEx 查询条件
      * @return
      */
     @RequestMapping("/lab_list.do")
     @ResponseBody
-    public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, Laboratory laboratory){
+    public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("total", labService.labGetCount(laboratory));
-        data.put("rows", labService.labGet(page,rows,order,sort,laboratory).getData());
+        data.put("total", labService.labGetCount(laboratoryEx));
+        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
         return data;
     }
     @RequestMapping("/labdel.do")

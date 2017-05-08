@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="local_kehao">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="lems">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="qiai"/>
+    <schema id="7" parent="1" name="sypro"/>
+    <schema id="8" parent="1" name="sys"/>
+    <table id="9" parent="2" name="equ_lab">
+      <Comment>设备所属实验室</Comment>
+    </table>
+    <table id="10" parent="2" name="role_permission">
+      <Comment>角色_权限表</Comment>
+    </table>
+    <table id="11" parent="2" name="s_equ_break">
+      <Comment>设备故障表</Comment>
+    </table>
+    <table id="12" parent="2" name="s_equ_purchase">
+      <Comment>设备采购表</Comment>
+    </table>
+    <table id="13" parent="2" name="s_equ_schedule">
+      <Comment>设备使用日程表</Comment>
+    </table>
+    <table id="14" parent="2" name="s_equipment">
+      <Comment>设备表</Comment>
+    </table>
+    <table id="15" parent="2" name="s_lab_schedule">
+      <Comment>实验室使用日程表</Comment>
+    </table>
+    <table id="16" parent="2" name="s_laboratory">
+      <Comment>实验室表</Comment>
+    </table>
+    <table id="17" parent="2" name="s_permission">
+      <Comment>权限表</Comment>
+    </table>
+    <table id="18" parent="2" name="s_resources">
+      <Comment>资源表</Comment>
+    </table>
+    <table id="19" parent="2" name="s_role">
+      <Comment>角色表</Comment>
+    </table>
+    <table id="20" parent="2" name="s_user">
+      <Comment>用户表</Comment>
+    </table>
+    <table id="21" parent="2" name="user_role">
+      <Comment>用户_角色表</Comment>
+    </table>
+    <column id="22" parent="9" name="lid">
+      <Position>1</Position>
+      <Comment>实验室id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="eid">
+      <Position>2</Position>
+      <Comment>设备id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="9" name="equ_lab_equ_eid">
+      <ColNames>eid</ColNames>
+    </index>
+    <index id="25" parent="9" name="equ_lab_lib_lid">
+      <ColNames>lid</ColNames>
+    </index>
+    <foreign-key id="26" parent="9" name="equ_lab_lib_lid">
+      <ColNames>lid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_laboratory</RefTableName>
+      <RefColNames>lid</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="9" name="equ_lab_equ_eid">
+      <ColNames>eid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_equipment</RefTableName>
+      <RefColNames>eid</RefColNames>
+    </foreign-key>
+    <column id="28" parent="10" name="rid">
+      <Position>1</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="10" name="pid">
+      <Position>2</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="10" name="role_perms_perms_pid">
+      <ColNames>pid</ColNames>
+    </index>
+    <index id="31" parent="10" name="role_perms_role_rid">
+      <ColNames>rid</ColNames>
+    </index>
+    <foreign-key id="32" parent="10" name="role_perms_role_rid">
+      <ColNames>rid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_role</RefTableName>
+      <RefColNames>rid</RefColNames>
+    </foreign-key>
+    <foreign-key id="33" parent="10" name="role_perms_perms_pid">
+      <ColNames>pid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_permission</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <column id="34" parent="11" name="bid">
+      <Position>1</Position>
+      <Comment>故障事件id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="11" name="eid">
+      <Position>2</Position>
+      <Comment>故障设备id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="11" name="id">
+      <Position>3</Position>
+      <Comment>自定义编号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="11" name="breason">
+      <Position>4</Position>
+      <Comment>故障原因</Comment>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="status">
+      <Position>5</Position>
+      <Comment>处理状态</Comment>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <index id="39" parent="11" name="break_equ_eid">
+      <ColNames>eid</ColNames>
+    </index>
+    <key id="40" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>bid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="11" name="break_equ_eid">
+      <ColNames>eid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_equipment</RefTableName>
+      <RefColNames>eid</RefColNames>
+    </foreign-key>
+    <column id="42" parent="12" name="pcid">
+      <Position>1</Position>
+      <Comment>采购id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="uid">
+      <Position>2</Position>
+      <Comment>采购员id</Comment>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="44" parent="12" name="pctime">
+      <Position>3</Position>
+      <Comment>采购时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="45" parent="12" name="price">
+      <Position>4</Position>
+      <Comment>价格</Comment>
+      <DataType>double(16,3)|0</DataType>
+      <DefaultExpression>&apos;0.000&apos;</DefaultExpression>
+    </column>
+    <index id="46" parent="12" name="purc_user_uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="47" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pcid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="12" name="purc_user_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="49" parent="13" name="seid">
+      <Position>1</Position>
+      <Comment>设备日程id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="13" name="eid">
+      <Position>2</Position>
+      <Comment>设备id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="13" name="starttime">
+      <Position>3</Position>
+      <Comment>开始时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="52" parent="13" name="endtime">
+      <Position>4</Position>
+      <Comment>结束时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="53" parent="13" name="sname">
+      <Position>5</Position>
+      <Comment>借用人姓名</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <index id="54" parent="13" name="sch_equ_eid">
+      <ColNames>eid</ColNames>
+    </index>
+    <key id="55" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="13" name="sch_equ_eid">
+      <ColNames>eid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_equipment</RefTableName>
+      <RefColNames>eid</RefColNames>
+    </foreign-key>
+    <column id="57" parent="14" name="eid">
+      <Position>1</Position>
+      <Comment>系统id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="14" name="id">
+      <Position>2</Position>
+      <Comment>用户定义编号</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="14" name="ename">
+      <Position>3</Position>
+      <Comment>设备名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="60" parent="14" name="type">
+      <Position>4</Position>
+      <Comment>设备类别</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="61" parent="14" name="addtime">
+      <Position>5</Position>
+      <Comment>添加时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="62" parent="14" name="status">
+      <Position>6</Position>
+      <Comment>设备状态</Comment>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="63" parent="14" name="remark">
+      <Position>7</Position>
+      <Comment>备注</Comment>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="64" parent="14" name="pcid">
+      <Position>8</Position>
+      <Comment>采购id</Comment>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <index id="65" parent="14" name="equ_purc_eid">
+      <ColNames>pcid</ColNames>
+    </index>
+    <key id="66" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>eid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="67" parent="14" name="equ_pur_pcid">
+      <ColNames>pcid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_equ_purchase</RefTableName>
+      <RefColNames>pcid</RefColNames>
+    </foreign-key>
+    <column id="68" parent="15" name="slid">
+      <Position>1</Position>
+      <Comment>实验室使用日程id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="15" name="lid">
+      <Position>2</Position>
+      <Comment>实验室id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="15" name="starttime">
+      <Position>3</Position>
+      <Comment>开始时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="71" parent="15" name="endtime">
+      <Position>4</Position>
+      <Comment>结束时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="72" parent="15" name="sname">
+      <Position>5</Position>
+      <Comment>借用人姓名</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <index id="73" parent="15" name="sch_lib_lid">
+      <ColNames>lid</ColNames>
+    </index>
+    <key id="74" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>slid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="15" name="sch_lib_lid">
+      <ColNames>lid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_laboratory</RefTableName>
+      <RefColNames>lid</RefColNames>
+    </foreign-key>
+    <column id="76" parent="16" name="lid">
+      <Position>1</Position>
+      <Comment>系统id</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="16" name="id">
+      <Position>2</Position>
+      <Comment>自定义编号</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="16" name="lname">
+      <Position>3</Position>
+      <Comment>实验室名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="79" parent="16" name="lsize">
+      <Position>4</Position>
+      <Comment>实验室容量</Comment>
+      <DataType>int(4)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="80" parent="16" name="addtime">
+      <Position>5</Position>
+      <Comment>添加时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="81" parent="16" name="status">
+      <Position>6</Position>
+      <Comment>实验室状态</Comment>
+      <DataType>int(2)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="82" parent="16" name="type">
+      <Position>7</Position>
+      <Comment>实验室类别</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="83" parent="16" name="remark">
+      <Position>8</Position>
+      <Comment>备注</Comment>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="84" parent="16" name="uid">
+      <Position>9</Position>
+      <Comment>负责人id</Comment>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="85" parent="16" name="equcount">
+      <Position>10</Position>
+      <Comment>实验室设备数量</Comment>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <index id="86" parent="16" name="lab_user_uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="87" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>lid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="16" name="lab_user_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="89" parent="17" name="pid">
+      <Position>1</Position>
+      <Comment>权限ID</Comment>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="17" name="pname">
+      <Position>2</Position>
+      <Comment>权限名称</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="91" parent="17" name="remark">
+      <Position>3</Position>
+      <Comment>权限说明</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="92" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="93" parent="18" name="rsid">
+      <Position>1</Position>
+      <Comment>资源ID</Comment>
+      <DataType>char(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="18" name="pid">
+      <Position>2</Position>
+      <Comment>所属权限ID</Comment>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="18" name="rsname">
+      <Position>3</Position>
+      <Comment>资源描述</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="96" parent="18" name="url">
+      <Position>4</Position>
+      <Comment>资源路径</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="97" parent="18" name="remark">
+      <Position>5</Position>
+      <Comment>资源说明</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="98" parent="18" name="perms_res_pid">
+      <ColNames>pid</ColNames>
+    </index>
+    <key id="99" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rsid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="100" parent="18" name="perms_res_pid">
+      <ColNames>pid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_permission</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <column id="101" parent="19" name="rid">
+      <Position>1</Position>
+      <Comment>角色ID</Comment>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="19" name="rname">
+      <Position>2</Position>
+      <Comment>角色名称</Comment>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="19" name="remark">
+      <Position>3</Position>
+      <Comment>角色说明</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="104" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="105" parent="20" name="uid">
+      <Position>1</Position>
+      <Comment>用户ID</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="20" name="uname">
+      <Position>2</Position>
+      <Comment>账户登录名</Comment>
+      <DataType>varchar(24)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="20" name="ture_name">
+      <Position>3</Position>
+      <Comment>账户真实姓名</Comment>
+      <DataType>varchar(12)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="20" name="passwd">
+      <Position>4</Position>
+      <Comment>加密过的密码</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="20" name="salt">
+      <Position>5</Position>
+      <Comment>加密用的盐</Comment>
+      <DataType>char(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="20" name="office_address">
+      <Position>6</Position>
+      <Comment>办公室地址</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="111" parent="20" name="office_phone">
+      <Position>7</Position>
+      <Comment>办公室电话</Comment>
+      <DataType>varchar(12)|0</DataType>
+    </column>
+    <column id="112" parent="20" name="email">
+      <Position>8</Position>
+      <Comment>邮箱，作为激活账户使用</Comment>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="113" parent="20" name="masterid">
+      <Position>9</Position>
+      <Comment>创建者ID</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="114" parent="20" name="createtime">
+      <Position>10</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="115" parent="20" name="token">
+      <Position>11</Position>
+      <Comment>登录认证</Comment>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="116" parent="20" name="status">
+      <Position>12</Position>
+      <Comment>用户状态</Comment>
+      <DataType>int(2)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="117" parent="20" name="user_master_id">
+      <ColNames>masterid</ColNames>
+    </index>
+    <key id="118" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="119" parent="20" name="user_master_id">
+      <ColNames>masterid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="120" parent="21" name="uid">
+      <Position>1</Position>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="21" name="rid">
+      <Position>2</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="122" parent="21" name="user_role_role_rid">
+      <ColNames>rid</ColNames>
+    </index>
+    <index id="123" parent="21" name="user_role_user_uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <foreign-key id="124" parent="21" name="user_role_user_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="125" parent="21" name="user_role_role_rid">
+      <ColNames>rid</ColNames>
+      <RefSchemaName>lems</RefSchemaName>
+      <RefTableName>s_role</RefTableName>
+      <RefColNames>rid</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

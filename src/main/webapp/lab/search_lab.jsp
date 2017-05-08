@@ -6,14 +6,14 @@
             pagination: true,
             fit: true,
             fitColumns: true,
-            singleSelect: false,
+            singleSelect: true,
             idField: 'lid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],
             sortName: 'lname',
             sortOrder: 'asc',
             columns: [[
-                {field: 'ck', checkbox: "true"},
+                /*{field: 'ck', checkbox: "true"},*/
                 {field: 'id', title: '实验室编号', width: 80, sortable: true},
                 {field: 'lname', title: '实验室名称', width: 100, sortable: true},
                 {field: 'type', title: '实验室类型', width: 100, sortable: true},
@@ -27,7 +27,7 @@
                         if (status == 0) {
                             return '可用';
                         }
-                        if (status == 1) {
+                        if (status == 2) {
                             return '已预约';
                         }
                     },
@@ -46,12 +46,12 @@
                         if (equ_status == 0) {
                             return '可用';
                         }
-                        if (equ_status == 1) {
+                        if (equ_status == 2) {
                             return '已预约';
                         }
                     }
                 },
-                {field: 'purc_price', title: '设备价格', width: 100},
+                {field: 'purc_price', title: '设备价格(元)', width: 100},
                 {field: 'equ_uname', title: '设备采购者', width: 100},
                 {field: 'remark', title: '实验室备注', width: 100},
                 {field: 'equ_remark', title: '设备备注', width: 100}
@@ -69,16 +69,17 @@
             var id = $("#search_id").val().trim();
             var type = $("#search_type").val().trim();
             var ename = $("#search_ename").val().trim();
-            var eid = $("#search_eid" +
-                "").val().trim();
+            var eid = $("#search_eid").val().trim();
             var etype = $("#search_etype").val().trim();
+            var lstatus = $("#search_lstatus").val().trim();
             $('#lab_list').datagrid('load', {
                 lname: lname,
                 id: id,
                 type: type,
-                equ_ename:ename,
-                equ_id:eid,
-                equ_type:etype
+                equ_ename: ename,
+                equ_id: eid,
+                equ_type: etype,
+                status:lstatus
             });
         }
 
@@ -92,6 +93,7 @@
             $("#search_ename").val("");
             $("#search_eid").val("");
             $("#search_etype").val("");
+            $("#search_lstatus").val("");
             $('#lab_list').datagrid('load', {});
         }
     });
@@ -103,18 +105,28 @@
             <div style="float: left;margin-top: 5px;margin-bottom: 5px;padding-left: 5px">
                 <table>
                     <tr>
-                        <td><b>实验室名查询</b></td><td><input id="search_lname" class="easyui-validatebox"></td>
-                        <td><b>实验室编号查询</b></td><td><input id="search_id" class="easyui-validatebox"></td>
-                        <td><b>实验室类型查询</b></td><td><input id="search_type" class="easyui-validatebox"></td>
-                        <td rowspan="2" style="padding-left: 5px">
+                        <td><b>实验室名查询</b></td>
+                        <td><input id="search_lname" class="easyui-validatebox"></td>
+                        <td><b>实验室编号查询</b></td>
+                        <td><input id="search_id" class="easyui-validatebox"></td>
+                        <td><b>实验室类型查询</b></td>
+                        <td><input id="search_type" class="easyui-validatebox"></td>
+                        <td rowspan="3" style="padding-left: 5px">
                             <input id="search_lab_btn" type="button" value="查询">&emsp;
                             <input id="reset_search_lab_btn" type="button" value="清空">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>设备名查询</b></td><td><input id="search_ename" class="easyui-validatebox">&emsp;</td>
-                        <td><b>设备编号查询</b></td><td><input id="search_eid" class="easyui-validatebox">&emsp;</td>
-                        <td><b>设备类型查询</b></td><td><input id="search_etype" class="easyui-validatebox"></td>
+                        <td><b>设备名查询</b></td>
+                        <td><input id="search_ename" class="easyui-validatebox">&emsp;</td>
+                        <td><b>设备编号查询</b></td>
+                        <td><input id="search_eid" class="easyui-validatebox">&emsp;</td>
+                        <td><b>设备类型查询</b></td>
+                        <td><input id="search_etype" class="easyui-validatebox"></td>
+                    </tr>
+                    <tr>
+                        <td><b>实验室状态查询</b></td>
+                        <td><input id="search_lstatus" class="easyui-validatebox">&emsp;</td>
                     </tr>
                 </table>
             </div>

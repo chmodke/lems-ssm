@@ -24,17 +24,17 @@ public interface LabService {
      * @param rows
      * @param order
      * @param sort
-     * @param laboratory
+     * @param laboratoryEx
      * @return
      */
-    LEMSResult labGet(Integer page, Integer rows, String order, String sort, Laboratory laboratory);
+    LEMSResult labGet(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
 
     /**
      * 获得条件查询的记录总数
-     * @param laboratory
+     * @param laboratoryEx
      * @return
      */
-    Long labGetCount(Laboratory laboratory);
+    Long labGetCount(LaboratoryEx laboratoryEx);
 
     /**
      * 批量禁用实验室

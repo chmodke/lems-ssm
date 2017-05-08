@@ -20,7 +20,7 @@ public interface LaboratoryMapper {
     int updateByPrimaryKey(Laboratory record);
 
     /**
-     * 查询实验室，搜索功能接口
+     * 查询实验室，列表功能接口
      * @param map
      * @return
      */

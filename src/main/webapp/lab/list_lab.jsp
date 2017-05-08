@@ -19,6 +19,7 @@
                 {field: 'type', title: '实验室类型', width: 100, sortable: true},
                 {field: 'lsize', title: '学生容量(人)', width: 100},
                 {field: 'equcount', title: '设备容量(台)', width: 100},
+                {field: 'lab_uname', title: '设备负责人', width: 100,sortable: true},
                 {
                     field: 'status',
                     title: '状态',
@@ -123,8 +124,8 @@
         <form>
 
             <div style="float: left;margin-top: 5px;margin-bottom: 5px" >
-                &emsp;<b>实验室名查询</b><input id="list_search_lname" class="easyui-validatebox">&emsp;
                 &emsp;<b>实验室编号查询</b><input id="list_search_id" class="easyui-validatebox">&emsp;
+                &emsp;<b>实验室名查询</b><input id="list_search_lname" class="easyui-validatebox">&emsp;
                 &emsp;<b>实验室类型查询</b><input id="list_search_type" class="easyui-validatebox">&emsp;
             </div>
             <div style="float: left;margin-top: 5px;margin-bottom: 5px">
