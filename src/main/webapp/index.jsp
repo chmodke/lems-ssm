@@ -43,9 +43,7 @@
             $("#labsearch_link").click(lab_search_list_tab_add);//用户列表菜单事件绑定
             $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
             $("#equlist_link").click(equ_list_tab_add);//实验室负责人管理菜单事件绑定
-
-
-
+            $("#enorder_lab_link").click(enorder_lab_tab_add);//实验室负责人管理菜单事件绑定
 
 
             /**
@@ -253,6 +251,22 @@
                 }
             }
 
+            /**
+             * 实验室负责人管理菜单事件
+             */
+            function enorder_lab_tab_add(){
+                if($("#index_tt").tabs("exists","实验室预约")){
+                    $("#index_tt").tabs("select","实验室预约");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室预约",
+                        closable:true,
+                        href:"./lab/enorder_lab_list.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -325,7 +339,7 @@
             </div>
             <div title="实验室日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设实验室预约</li>
+                    <li><a id="enorder_lab_link" href="javascript:;">实验室预约</a></li>
                 </ul>
             </div>
             <div title="角色管理" data-options="border:false,iconCls:'anchor'">

@@ -25,7 +25,6 @@
                 for(var i=0;i<data.length;i++){
                     rid = data[i].rid;
                     rname = data[i].rname;
-                    console.info({"id": rid, "text": rname});
                     dataList.push({"id": rid, "text": rname});
                 }
                 $("#adduser_rolebox").combobox("loadData", dataList);

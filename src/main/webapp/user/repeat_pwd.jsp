@@ -2,7 +2,7 @@
 <script>
     $(function () {
         //读取登录框中的登录名
-        $("#rep_user_pwd_unamebox").val(lems.getQueryParam('login_repeat','repuname'));
+        $("#rep_user_pwd_unamebox").val(lems.getDialogParam('login_repeat','repuname'));
 
 
         var user_flag = false;//本地存储用户名校验状态,减少ajax次数

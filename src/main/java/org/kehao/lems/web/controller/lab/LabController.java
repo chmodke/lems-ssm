@@ -1,5 +1,6 @@
 package org.kehao.lems.web.controller.lab;
 
+import org.kehao.lems.entity.LabSchedule;
 import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.extend.LaboratoryEx;
@@ -11,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by kehao on 2017/4/26.
@@ -74,5 +72,18 @@ public class LabController {
         data.put("total", labService.labGetCount(laboratoryEx));
         data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
         return data;
+    }
+    @RequestMapping("/enorder_lab_list.do")
+    @ResponseBody
+    public Map<String,Object> enorder_Lib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", labService.enOrderLabCount(laboratoryEx));
+        data.put("rows", labService.enOrderLab(page,rows,order,sort,laboratoryEx).getData());
+        return data;
+    }
+    @RequestMapping("/order_lab.do")
+    @ResponseBody
+    public LEMSResult orderLab(LabSchedule labSchedule){
+        return labService.orderLab(labSchedule);
     }
 }

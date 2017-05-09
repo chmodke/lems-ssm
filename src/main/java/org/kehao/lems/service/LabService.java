@@ -53,5 +53,29 @@ public interface LabService {
      * @return
      */
     LEMSResult searchLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
+
+    /**
+     * 搜索到的结果数量
+     * @param laboratoryEx
+     * @return
+     */
     Long searchLabCount( LaboratoryEx laboratoryEx);
+
+    /**
+     * 可预约实验室列表
+     * @param page
+     * @param rows
+     * @param order
+     * @param sort
+     * @param laboratoryEx
+     * @return
+     */
+    LEMSResult enOrderLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
+
+    /**
+     * 可预约实验室数量
+     * @param laboratoryEx
+     * @return
+     */
+    Long enOrderLabCount(LaboratoryEx laboratoryEx);
 }

@@ -12,7 +12,7 @@
                 closed: false,
                 cache: false,
                 href: './user/repeat_pwd.jsp',
-                queryParams: {'repuname': $("#login_namebox").val() },//传递参数
+                params: {'repuname': $("#login_namebox").val() },//传递参数
                 modal: true
             });
         });

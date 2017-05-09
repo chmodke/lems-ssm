@@ -21,6 +21,7 @@ public interface LaboratoryMapper {
 
     /**
      * 查询实验室，列表功能接口
+     *
      * @param map
      * @return
      */
@@ -28,6 +29,7 @@ public interface LaboratoryMapper {
 
     /**
      * 查询实验室，搜索功能接口
+     *
      * @param map
      * @return
      */
@@ -35,6 +37,7 @@ public interface LaboratoryMapper {
 
     /**
      * 更新实验室状态为删除
+     *
      * @param map
      * @return
      */
@@ -48,12 +51,15 @@ public interface LaboratoryMapper {
 
     /**
      * 查询实验室设备状态
+     *
      * @param map
      * @return
      */
     List<Laboratory> selectLabEquUserByCondition(Map map);
+
     /**
      * 查询实验室设备状态记录数量
+     *
      * @param map
      * @return
      */
@@ -61,8 +67,23 @@ public interface LaboratoryMapper {
 
     /**
      * 查询实验室负责人
+     *
      * @param lid
      * @return
      */
     Laboratory selectLabUserByLid(String lid);
+
+    /**
+     * 可预约实验室列表
+     * @param map
+     * @return
+     */
+    List<Laboratory> selectEnOrderLabCondition(Map map);
+
+    /**
+     * 可预约实验室数量
+     * @param map
+     * @return
+     */
+    Long selectEnOrderLabConditionCount(Map map);
 }

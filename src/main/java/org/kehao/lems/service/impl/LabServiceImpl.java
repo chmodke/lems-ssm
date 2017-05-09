@@ -190,4 +190,51 @@ public class LabServiceImpl implements LabService{
         map.put("laboratoryEx",laboratoryEx);
         return laboratoryMapper.selectLabEquUserByConditionCount(map);
     }
+
+    public LEMSResult enOrderLab(Integer page, Integer pageSize, String order, String sort, LaboratoryEx laboratoryEx) {
+        LEMSResult result=new LEMSResult();
+        Map<String,Object> map=new HashMap<String, Object>(8);
+        //查询条件
+        map.put("laboratoryEx",laboratoryEx);
+        //分页
+        if(null==page){
+            page=1;
+        }
+        if(null==pageSize){
+            pageSize=5;
+        }
+        map.put("startRec",pageSize*(page-1));//5*(1-1)=0,,5*(2-1)=5
+        map.put("recCount",pageSize);
+        //映射排序字段
+        if(sort.equals("lab_uname")){
+            sort="user.uname";
+        }
+        //排序
+        map.put("order",order);
+        map.put("sort",sort);
+
+        List<Laboratory> laboratoryList=laboratoryMapper.selectEnOrderLabCondition(map);
+        //将数据封装至扩展对象
+        List<LaboratoryEx> laboratoryExList=new ArrayList<LaboratoryEx>(laboratoryList.size());
+        for(Laboratory laboratory:laboratoryList){
+            LaboratoryEx laboratoryEx1 = new LaboratoryEx();
+            BeanUtils.copyProperties(laboratory,laboratoryEx1);
+            //拿到空记录，会导致结果集错乱
+            if(laboratory.getUser()!=null){//检测空记录
+                laboratoryEx1.setLab_uname(laboratory.getUser().getUname());
+                laboratoryEx1.setLab_uid(laboratory.getUser().getUid());
+            }
+            laboratoryExList.add(laboratoryEx1);
+        }
+        result.setData(laboratoryExList);
+        result.setStatus(0);
+        return result;
+    }
+
+    public Long enOrderLabCount(LaboratoryEx laboratoryEx) {
+        Map<String,Object> map=new HashMap<String, Object>(8);
+        //查询条件
+        map.put("laboratoryEx",laboratoryEx);
+        return laboratoryMapper.selectEnOrderLabConditionCount(map);
+    }
 }
