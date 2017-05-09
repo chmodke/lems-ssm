@@ -102,4 +102,5 @@ public class Equipment {
     public EquLab getEquLab() {
         return equLab;
     }
+
 }

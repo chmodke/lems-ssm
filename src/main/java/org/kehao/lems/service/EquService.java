@@ -1,6 +1,7 @@
 package org.kehao.lems.service;
 
 import org.kehao.lems.entity.Equipment;
+import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.utils.LEMSResult;
 
 /**
@@ -14,4 +15,22 @@ public interface EquService {
      */
     LEMSResult equAdd(Equipment equipment);
 //    LEMSResult equDel(String eid);
+
+    /**
+     * 获得条件查询的记录
+     * @param page
+     * @param rows
+     * @param order
+     * @param sort
+     * @param equipmentEx
+     * @return
+     */
+    LEMSResult labGet(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx);
+
+    /**
+     * 获得条件查询的记录总数
+     * @param equipmentEx
+     * @return
+     */
+    Long labGetCount(EquipmentEx equipmentEx);
 }

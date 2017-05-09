@@ -12,7 +12,7 @@
 <%--<link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/default/easyui.css">--%><%--换用bootstrap样式--%>
 <link id="easyuiTheme" rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/bootstrap/easyui.css" type="text/css">
 
-<script type="text/javascript" src="jslib/cookie_util.js" charset="UTF-8"></script>
-<script type="text/javascript" src="jslib/base64.js" charset="UTF-8"></script>
+<script type="text/javascript" src="jslib/lems/cookie_util.js" charset="UTF-8"></script>
+<script type="text/javascript" src="jslib/lems/base64.js" charset="UTF-8"></script>
 
 <script type="text/javascript" src="jslib/lems/lems-util.js" charset="UTF-8"></script>

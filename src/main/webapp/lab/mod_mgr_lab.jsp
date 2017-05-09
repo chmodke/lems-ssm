@@ -3,6 +3,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
+    //TODO datagrid 行内修改功能待实现
     $(function () {
         $('#mgr_lab_list').datagrid({
             url: './lab/lab_mgr_list.do',

@@ -40,4 +40,5 @@ public class EquLab {
     public Laboratory getLaboratory() {
         return laboratory;
     }
+
 }

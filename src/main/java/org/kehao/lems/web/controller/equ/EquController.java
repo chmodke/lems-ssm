@@ -4,12 +4,17 @@ import javax.annotation.Resource;
 
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
+import org.kehao.lems.entity.extend.EquipmentEx;
+import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.EquPurcService;
 import org.kehao.lems.service.EquService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -55,5 +60,13 @@ public class EquController {
             }
         }
         return result;
+    }
+    @RequestMapping("/equ_list.do")
+    @ResponseBody
+    public Map<String,Object> getEquList(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", equService.labGetCount(equipmentEx));
+        data.put("rows", equService.labGet(page, rows, order, sort, equipmentEx).getData());
+        return data;
     }
 }
