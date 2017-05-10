@@ -7,6 +7,7 @@ import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.LabService;
 import org.kehao.lems.utils.LEMSResult;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -67,7 +68,7 @@ public class LabController {
     }
     @RequestMapping("/lab_mgr_list.do")
     @ResponseBody
-    public Map<String,Object> mgr_get_Lib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+    public Map<String,Object> mgrGetLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.labGetCount(laboratoryEx));
         data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
@@ -75,7 +76,7 @@ public class LabController {
     }
     @RequestMapping("/enorder_lab_list.do")
     @ResponseBody
-    public Map<String,Object> enorder_Lib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+    public Map<String,Object> enorderLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.enOrderLabCount(laboratoryEx));
         data.put("rows", labService.enOrderLab(page,rows,order,sort,laboratoryEx).getData());
@@ -83,7 +84,14 @@ public class LabController {
     }
     @RequestMapping("/order_lab.do")
     @ResponseBody
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     public LEMSResult orderLab(LabSchedule labSchedule){
         return labService.orderLab(labSchedule);
+    }
+
+    @RequestMapping("/mod_mgr_lab.do")
+    @ResponseBody
+    public LEMSResult modMgrLab(String lid,String uid){
+        return labService.modMgrLab(lid,uid);
     }
 }

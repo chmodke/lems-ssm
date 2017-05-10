@@ -81,4 +81,6 @@ public interface UserMapper{
      * @return
      */
     int updateUserStatusByUid(Map map);
+
+    List<User> selectAllUser(String status);
 }

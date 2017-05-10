@@ -1,5 +1,6 @@
 package org.kehao.lems.service;
 
+import org.kehao.lems.entity.LabSchedule;
 import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.extend.LaboratoryEx;
@@ -78,4 +79,20 @@ public interface LabService {
      * @return
      */
     Long enOrderLabCount(LaboratoryEx laboratoryEx);
+
+    /**
+     * 预约实验室
+     * @param labSchedule
+     * @return
+     */
+    LEMSResult orderLab(LabSchedule labSchedule);
+
+
+    /**
+     * 修改实验室负责人
+     * @param lid
+     * @param uid
+     * @return
+     */
+    LEMSResult modMgrLab(String lid,String uid);
 }

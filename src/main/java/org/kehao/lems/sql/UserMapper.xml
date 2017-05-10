@@ -353,4 +353,14 @@
         </foreach>
     </update>
 
+    <sql id="Info_Column_List">
+        uid, uname, ture_name,  office_address, office_phone, email, masterid, createtime,status
+    </sql>
+    <select id="selectAllUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Info_Column_List"/>
+        from s_user
+        where status = #{status,jdbcType=CHAR}
+    </select>
+
 </mapper>

@@ -2,16 +2,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
-        var order_lab_lid = lems.getGridParam('enorder_lab_list', 'order_lab_lid');
-        $("#order_lab_id").val(lems.getGridParam('enorder_lab_list', 'order_lab_id'));
-        $("#order_lab_lname").val(lems.getGridParam('enorder_lab_list', 'order_lab_lname'));
+        var order_lab_lid = lems.getDialogParam('enorder_lab_dialog', 'order_lab_lid');
+        $("#order_lab_id").val(lems.getDialogParam('enorder_lab_dialog', 'order_lab_id'));
+        $("#order_lab_lname").val(lems.getDialogParam('enorder_lab_dialog', 'order_lab_lname'));
 
         $("#order_lab_reset_btn").click(order_lab_reset);
         $("#order_lab_btn").click(order_lab);
 
         function order_lab_reset() {
-            $("#order_lab_id").val("");
-            $("#order_lab_lname").val("");
             $("#order_lab_stime").val("");
             $("#order_lab_etime").val("");
             $("#order_lab_user").val("");
@@ -19,12 +17,10 @@
         }
 
         function order_lab() {
-            var order_lab_id = $("#order_lab_id").val();
-            var order_lab_lname = $("#order_lab_lname").val();
-            var order_lab_stime = $("#order_lab_stime").val();
-            var order_lab_etime = $("#order_lab_etime").val();
-            var order_lab_user = $("#order_lab_user").val();
-            var order_lab_tel = $("#order_lab_tel").val();
+            var order_lab_stime = $("#order_lab_stime").datetimebox('getValue');
+            var order_lab_etime = $("#order_lab_etime").datetimebox('getValue');
+            var order_lab_user = $("#order_lab_user").val().trim();
+            var order_lab_tel = $("#order_lab_tel").val().trim();
             $.ajax({
                 url: "./lab/order_lab.do",
                 type: "post",
@@ -32,7 +28,8 @@
                     "lid": order_lab_lid,
                     "starttime": order_lab_stime,
                     "endtime": order_lab_etime,
-                    "sname": order_lab_user
+                    "sname": order_lab_user,
+                    "stel": order_lab_tel
                 },
                 dataType: "json",
                 success: function (result) {

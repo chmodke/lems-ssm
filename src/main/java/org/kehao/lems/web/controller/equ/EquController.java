@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -35,6 +37,7 @@ public class EquController {
     @RequestMapping("/equadd.do")
     @ResponseBody
     public LEMSResult equAdd(Equipment equipment){
+        //此方法设计逻辑有问题，不应该在控制层处理逻辑
         LEMSResult result;
 
         EquPurchase equPurchase=new EquPurchase();
@@ -68,5 +71,12 @@ public class EquController {
         data.put("total", equService.labGetCount(equipmentEx));
         data.put("rows", equService.labGet(page, rows, order, sort, equipmentEx).getData());
         return data;
+    }
+    @RequestMapping("/equdel.do")
+    @ResponseBody
+    public LEMSResult labDel(String delList){
+        String[] arr=delList.split(" ");
+        List<String> list= Arrays.asList(arr);
+        return equService.equDel(list);
     }
 }

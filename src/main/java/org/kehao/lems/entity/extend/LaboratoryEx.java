@@ -1,6 +1,8 @@
 package org.kehao.lems.entity.extend;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -16,6 +18,7 @@ public class LaboratoryEx{
 
     private Integer lsize;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date addtime;
 
     private Integer status;
@@ -38,6 +41,7 @@ public class LaboratoryEx{
 
     private String equ_type;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date equ_addtime;
 
     private Integer equ_status;

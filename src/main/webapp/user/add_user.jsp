@@ -13,6 +13,7 @@
         });
         //暂时不启用
 
+        //动态装载下来菜单
         $.ajax({
             url: './role/get_all_role.do',
             dataType: 'json',

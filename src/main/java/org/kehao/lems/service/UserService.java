@@ -99,4 +99,11 @@ public interface UserService {
      * @return
      */
     LEMSResult userDel (List<String> delList);
+
+
+    /**
+     * 获取所有用户，装载下拉列表使用
+     * @return
+     */
+    LEMSResult getAllUser();
 }

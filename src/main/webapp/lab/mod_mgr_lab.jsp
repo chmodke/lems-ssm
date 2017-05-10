@@ -1,78 +1,110 @@
-<%--
-实验室负责人管理页面
---%>
+<%--预约实验室窗口--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
-    //TODO datagrid 行内修改功能待实现
     $(function () {
-        $('#mgr_lab_list').datagrid({
-            url: './lab/lab_mgr_list.do',
-            pagination: true,
-            fit: true,
-            fitColumns: true,
-            singleSelect:true,
-            idField: 'lid',
-            pageSize: 5,
-            pageList: [5, 10, 15, 20],
-            sortName: 'lname',
-            sortOrder: 'asc',
-            columns: [[
-                {field:'ck',checkbox:"true"},
-                {field: 'id', title: '实验室编号', width: 100, sortable: true},
-                {field: 'lname', title: '实验室名称', width: 100, sortable: true},
-                {field: 'type', title: '实验室类型', width: 100, sortable: true},
-                /*----------实验室部分--------*/
-                {field: 'lab_uname', title: '实验室负责人', width: 100,sortable: true},
-                {field: 'lab_uid', title: '实验室负责人ID', width: 100}
-            ]]
+        var mod_mgr_lab_lid = lems.getDialogParam('mgr_lab_dialog', 'mod_mgr_lab_lid');
+        $("#mod_mgr_lab_id").val(lems.getDialogParam('mgr_lab_dialog', 'mod_mgr_lab_id'));
+        $("#mod_mgr_lab_lname").val(lems.getDialogParam('mgr_lab_dialog', 'mod_mgr_lab_lname'));
+
+        $("#mod_mgr_lab_reset_btn").click(mod_mgr_lab_reset);
+        $("#mod_mgr_lab_btn").click(mod_mgr_lab);
+
+        $.ajax({
+            url: './user/get_all_user.do',
+            dataType: 'json',
+            timeout: 1000,
+            cache: false,
+            success: function (result) {
+                var data = result.data;
+                var dataList, uid, uname;
+                dataList = [];
+                for(var i=0;i<data.length;i++){
+                    uid = data[i].uid;
+                    uname = data[i].uname;
+                    dataList.push({"id": uid, "text": uname});
+                }
+                $("#mod_mgr_lab_user").combobox("loadData", dataList);
+            },
+            error: function () {
+
+            },
+            async: true
         });
 
-        $("#mgr_search_lab_btn").click(mgr_lab_search_lab);//绑定查询事件
-        $("#mgr_reset_search_lab_btn").click(mgr_reset_search_lab);
 
 
-        /**
-         * 条件查询
-         */
-        function mgr_lab_search_lab() {
-            var mgr_lname = $("#mgr_lab_search_lname").val().trim();
-            var mgr_id = $("#mgr_lab_search_id").val().trim();
-            var mgr_type = $("#mgr_lab_search_type").val().trim();
-            $('#mgr_lab_list').datagrid('load', {
-                lname: mgr_lname,
-                id:mgr_id,
-                type: mgr_type
-            });
+        function mod_mgr_lab_reset() {
+            $("#order_lab_user").val("");
         }
 
-        /**
-         * 清空条件查询
-         */
-        function mgr_reset_search_lab() {
-            $("#mgr_lab_search_lname").val("");
-            $("#mgr_lab_search_id").val("");
-            $("#mgr_lab_search_type").val("");
-            $('#mgr_lab_list').datagrid('load',{});
+        function mod_mgr_lab() {
+            var mod_mgr_lab_uid=$("#mod_mgr_lab_user").combobox('getValue');
+            $.ajax({
+                url: "./lab/mod_mgr_lab.do",
+                type: "post",
+                data: {
+                    "lid": mod_mgr_lab_lid,
+                    "uid": mod_mgr_lab_uid
+                },
+                dataType: "json",
+                success: function (result) {
+                    if (result.status == 0) {
+                        $.messager.alert('提示', result.message);
+                    }
+                    if (result.status != 0) {
+                        $.messager.alert('警告', result.message);
+                    }
+                },
+                error: function () {
+                    $.messager.alert('警告', "预约实验室异常");
+                },
+                async: true
+            });
         }
     });
 </script>
-<div class="easyui-layout" data-options="fit : true">
-    <div data-options="region:'north',split:false,collapsible:true" style="overflow: hidden">
-        <form>
-
-            <div style="float: left;margin-top: 5px;margin-bottom: 5px" >
-                &emsp;<b>实验室编号查询</b><input id="mgr_lab_search_id" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室名查询</b><input id="mgr_lab_search_lname" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室类型查询</b><input id="mgr_lab_search_type" class="easyui-validatebox">&emsp;
-            </div>
-            <div style="float: left;margin-top: 5px;margin-bottom: 5px">
-                <input id="mgr_search_lab_btn" type="button" value="查询">
-                <input id="mgr_reset_search_lab_btn" type="button" value="清空">&emsp;
-            </div>
-        </form>
-    </div>
-    <div id="mgr_lab_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
-        <div id="mgr_lab_dialog" style="overflow: hidden"></div>
-        <table id="mgr_lab_list"></table>
-    </div>
+<div id="mod_mgr_lab_dialog">
+    <form method="post">
+        <table class="table table-hover table-condensed" style="width: 500px;margin: auto">
+            <h3 style="text-align: center">实验室管理人修改</h3>
+            <hr>
+            <tr>
+                <th>实验室编号</th>
+                <td>
+                    <input id="mod_mgr_lab_id" type="text" class="easyui-validatebox" editable="false"
+                           data-options="required:true">
+                </td>
+            </tr>
+            <tr>
+                <th>实验室名称</th>
+                <td>
+                    <input id="mod_mgr_lab_lname" type="text" class="easyui-validatebox" editable="false"
+                           data-options="required:true">
+                </td>
+            </tr>
+            <tr>
+                <th>管理人</th>
+                <td>
+                    <select id="mod_mgr_lab_user" class="easyui-combobox easyui-validatebox" placeholder="请选择用户"
+                            data-options="valueField:'id', textField:'text',panelHeight:'auto'"></select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="dialog-button">
+                        <a id="mod_mgr_lab_reset_btn" class="l-btn">
+                                    <span class="l-btn-left">
+                                        <span class="l-btn-text">清空</span>
+                                    </span>
+                        </a>
+                        <a id="mod_mgr_lab_btn" class="l-btn">
+                                    <span class="l-btn-left" style="color:#ffffff;background-color:#0e90d2">
+                                        <span class="l-btn-text">修改</span>
+                                    </span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>

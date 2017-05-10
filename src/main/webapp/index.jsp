@@ -229,7 +229,7 @@
                     $("#index_tt").tabs('add',{
                         title:"实验室负责人管理",
                         closable:true,
-                        href:"./lab/mod_mgr_lab.jsp",
+                        href:"./lab/mgr_lab.jsp",
                         fit:true
                     });
                 }
@@ -326,7 +326,7 @@
                 <ul>
                     <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
-                    <li>实验室移除</li>
+                    <li>实验室移除(列表)</li>
                     <li><a id="labmgr_link" href="javascript:;">实验室负责人</a></li>
                 </ul>
             </div>
@@ -340,6 +340,7 @@
             <div title="实验室日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="enorder_lab_link" href="javascript:;">实验室预约</a></li>
+                    <li>已预约列表</li>
                 </ul>
             </div>
             <div title="角色管理" data-options="border:false,iconCls:'anchor'">

@@ -314,8 +314,9 @@
             AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
         </if>
     </select>
-    <update id="updateLabStatusByLid" parameterType="java.util.Map">
-        UPDATE s_laboratory SET status = #{status} WHERE lid IN
+    <update id="updateLabStatusByLidBatch" parameterType="java.util.Map">
+        UPDATE s_laboratory SET status = #{status}
+        WHERE lid IN
         <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
             #{item}
         </foreach>
@@ -346,9 +347,6 @@
         </if>
         <if test="laboratoryEx.remark != null">
             AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.status != null">
-            AND lab.status LIKE concat(concat('%', #{laboratoryEx.status,jdbcType=VARCHAR}),'%')
         </if>
 
         <if test="laboratoryEx.id != null">
@@ -394,9 +392,6 @@
         </if>
         <if test="laboratoryEx.remark != null">
             AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.status != null">
-            AND lab.status LIKE concat(concat('%', #{laboratoryEx.status,jdbcType=VARCHAR}),'%')
         </if>
 
         <if test="laboratoryEx.id != null">
@@ -453,6 +448,15 @@
             AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
         </if>
     </select>
-
+    <update id="updateLabStatusByLid" parameterType="java.util.Map">
+        update s_laboratory
+        set status = #{status,jdbcType=INTEGER}
+        where lid = #{lid,jdbcType=CHAR}
+    </update>
+    <update id="updateLabUidByLid" parameterType="java.util.Map">
+        UPDATE s_laboratory
+        SET uid = #{uid,jdbcType=CHAR}
+        WHERE lid = #{lid,jdbcType=CHAR}
+    </update>
 
 </mapper>

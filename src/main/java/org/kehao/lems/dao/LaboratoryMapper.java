@@ -36,12 +36,12 @@ public interface LaboratoryMapper {
     Long selectLaboratoryConditionCount(Map map);
 
     /**
-     * 更新实验室状态为删除
+     * 更新实验室状态
      *
-     * @param map
+     * @param map Map[statsus,list]
      * @return
      */
-    int updateLabStatusByLid(Map map);
+    int updateLabStatusByLidBatch(Map map);
 
 
     /**
@@ -86,4 +86,17 @@ public interface LaboratoryMapper {
      * @return
      */
     Long selectEnOrderLabConditionCount(Map map);
+
+    /**
+     * 更新实验室状态
+     * @param map Map[status,lid]
+     * @return
+     */
+    int updateLabStatusByLid(Map<String,String > map);
+
+    /**
+     * @param map Map[lid,uid]
+     * @return
+     */
+    int updateLabUidByLid(Map<String,String > map);
 }

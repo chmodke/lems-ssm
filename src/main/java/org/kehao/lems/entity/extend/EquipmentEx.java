@@ -1,6 +1,7 @@
 package org.kehao.lems.entity.extend;
 
 import org.kehao.lems.entity.Equipment;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ public class EquipmentEx{
 
     private String type;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date addtime;
 
     private Integer status;

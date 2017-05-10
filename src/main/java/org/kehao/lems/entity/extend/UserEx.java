@@ -1,6 +1,7 @@
 package org.kehao.lems.entity.extend;
 
 import org.kehao.lems.entity.User;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -23,6 +24,7 @@ public class UserEx{
 
     private String masterid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 
     private String token;
@@ -31,7 +33,11 @@ public class UserEx{
     //------------------
 
     private String rname;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createtimeStart;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createtimeEnd;
 
     public String getUid() {

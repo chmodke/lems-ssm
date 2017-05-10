@@ -46,15 +46,18 @@
                         width: 650,
                         height: 480,
                         href: './lab/add_lab.jsp',
-                        modal: true
+                        modal: true,
+                        onClose: function () {
+                            $('#lab_list').datagrid('load',{});
+                        }
                     });
-//                    $('#lab_list').datagrid('load');
                 }
             },'-',{
                 text:'删除',
                 iconCls:'icon-remove',
                 handler:function(){
                     list_del_lab();
+                    $('#lab_list').datagrid('load',{});
                 }
             }]
         });
@@ -135,7 +138,9 @@
         </form>
     </div>
     <div id="list_lab_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
-        <div id="list_lab_dialog" style="overflow: hidden"></div>
+        <div id="list_lab_dialog" style="overflow: hidden">
+            <%--用于实现datagrid弹出窗口--%>
+        </div>
         <table id="list_lab_list"></table>
     </div>
 </div>

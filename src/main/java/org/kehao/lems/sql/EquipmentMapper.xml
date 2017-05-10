@@ -231,4 +231,11 @@
             AND equ.type LIKE concat(concat('%',#{equipmentEx.type,jdbcType=VARCHAR}),'%')
         </if>
     </select>
+    <update id="updateEquStatusByEidBatch" parameterType="java.util.Map">
+        UPDATE s_equipment SET status = #{status}
+        WHERE eid IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
 </mapper>

@@ -8,35 +8,43 @@
          * 实验室添加页面回车键事件绑定
          */
         $("#addlab_remark").keydown(function (event) {
-            var keyCode=event.keyCode;
-            if(keyCode==13){
+            var keyCode = event.keyCode;
+            if (keyCode == 13) {
                 add_lab();
             }
         });
         //实验室添加
         function add_lab() {
-            var addlab_uid=getCookie("uid");
-            var addlab_token=getCookie("token");
+            var addlab_uid = getCookie("uid");
+            var addlab_token = getCookie("token");
 
-            if(addlab_uid==null||addlab_token==null){
+            if (addlab_uid == null || addlab_token == null) {
                 $.messager.alert('警告', "非法操作");
             }
 
             var lab_serial = $("#addlab_serial").val();
             var lab_name = $("#addlab_name").val();
-            var lab_type=$("#addlab_type").val();
-            var lab_size=$("#addlab_size").val();
-            var lab_equcount=$("#addlab_equcount").val();
-            var lab_remark=$("#addlab_remark").val();
-            if(lab_remark==null){
-                lab_remark="";
+            var lab_type = $("#addlab_type").val();
+            var lab_size = $("#addlab_size").val();
+            var lab_equcount = $("#addlab_equcount").val();
+            var lab_remark = $("#addlab_remark").val();
+            if (lab_remark == null) {
+                lab_remark = "";
             }
-            var lab_uid=addlab_uid;
+            var lab_uid = addlab_uid;
 
             $.ajax({
                 url: "./lab/labadd.do",
                 type: "post",
-                data:{"id":lab_serial,"lname":lab_name,"type":lab_type,"lsize":lab_size,"equcount":lab_equcount,"remark":lab_remark,"uid":lab_uid},
+                data: {
+                    "id": lab_serial,
+                    "lname": lab_name,
+                    "type": lab_type,
+                    "lsize": lab_size,
+                    "equcount": lab_equcount,
+                    "remark": lab_remark,
+                    "uid": lab_uid
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {

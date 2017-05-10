@@ -18,9 +18,31 @@ public interface EquipmentMapper {
 
     int updateByPrimaryKey(Equipment record);
 
+    /**
+     * 查询设备信息及采购信息
+     * @param eid
+     * @return
+     */
     Equipment selectEquJionPurcByEid(String eid);
 
+    /**
+     * 条件查询设备
+     * @param map Map[sort,order,startRec,endRec,EquipmentEx]
+     * @return
+     */
     List<Equipment> selectEquipmentCondition(Map map);
 
+    /**
+     * 条件查询设备数量
+     * @param map Map[EquipmentEx]
+     * @return
+     */
     Long selectEquipmentConditionCount(Map map);
+
+    /**
+     * 更新设备状态
+     * @param map Map [status,list]
+     * @return
+     */
+    int updateEquStatusByEidBatch(Map map);
 }

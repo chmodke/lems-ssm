@@ -71,15 +71,13 @@
             var ename = $("#search_ename").val().trim();
             var eid = $("#search_eid").val().trim();
             var etype = $("#search_etype").val().trim();
-            var lstatus = $("#search_lstatus").val().trim();
             $('#lab_list').datagrid('load', {
                 lname: lname,
                 id: id,
                 type: type,
                 equ_ename: ename,
                 equ_id: eid,
-                equ_type: etype,
-                status:lstatus
+                equ_type: etype
             });
         }
 
@@ -93,7 +91,6 @@
             $("#search_ename").val("");
             $("#search_eid").val("");
             $("#search_etype").val("");
-            $("#search_lstatus").val("");
             $('#lab_list').datagrid('load', {});
         }
     });
@@ -123,10 +120,6 @@
                         <td><input id="search_eid" class="easyui-validatebox">&emsp;</td>
                         <td><b>设备类型查询</b></td>
                         <td><input id="search_etype" class="easyui-validatebox"></td>
-                    </tr>
-                    <tr>
-                        <td><b>实验室状态查询</b></td>
-                        <td><input id="search_lstatus" class="easyui-validatebox">&emsp;</td>
                     </tr>
                 </table>
             </div>

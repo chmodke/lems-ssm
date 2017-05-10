@@ -307,4 +307,19 @@ public class UserServiceImpl implements UserService{
         }
         return result;
     }
+
+    @Override
+    public LEMSResult getAllUser() {
+        LEMSResult result =new LEMSResult();
+        List<User> userList=userMapper.selectAllUser("0");
+        if(userList.size()>0){
+            result.setData(userList);
+            result.setMessage("获取成功");
+            result.setStatus(0);
+        }else {
+            result.setMessage("获取失败");
+            result.setStatus(1);
+        }
+        return result;
+    }
 }

@@ -1,5 +1,7 @@
 package org.kehao.lems.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class EquSchedule {
@@ -7,8 +9,10 @@ public class EquSchedule {
 
     private String eid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date starttime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endtime;
 
     private String sname;

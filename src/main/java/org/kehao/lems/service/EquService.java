@@ -4,6 +4,8 @@ import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.utils.LEMSResult;
 
+import java.util.List;
+
 /**
  * Created by hao on 2017/04/27.
  */
@@ -33,4 +35,11 @@ public interface EquService {
      * @return
      */
     Long labGetCount(EquipmentEx equipmentEx);
+
+    /**
+     * 批量删除设备
+     * @param delList
+     * @return
+     */
+    LEMSResult equDel(List<String> delList);
 }

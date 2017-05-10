@@ -149,5 +149,13 @@ public class UserController {
         List<String> list=Arrays.asList(arr);
         return userService.userDel(list);
     }
+
+    @RequestMapping("/get_all_user.do")
+    @ResponseBody
+    public LEMSResult getAllUser() {
+        return userService.getAllUser();
+    }
+
+
 }
 

@@ -44,15 +44,17 @@
                         width: 650,
                         height: 480,
                         href: './equ/add_equ.jsp',
-                        modal: true
+                        modal: true,
+                        onClose: function () {
+                            $('#equ_list_list').datagrid('load',{});
+                        }
                     });
-//                    $('#lab_list').datagrid('load');
                 }
             },'-',{
                 text:'删除',
                 iconCls:'icon-remove',
                 handler:function(){
-//                    equ_list_del();
+                    equ_list_del();
                 }
             }]
         });
@@ -61,14 +63,14 @@
         $("#equ_list_reset_search_lab_btn").click(equ_list_reset_search_lab);
 
         /**
-         * 删除用户
+         * 删除设备
          */
-        /*function equ_list_del(){
-            var del_lablist=$('#equ_list_list').datagrid('getSelections');
+        function equ_list_del(){
+            var del_equlist=$('#equ_list_list').datagrid('getSelections');
             var del_list='';
-            for(var i=0;i<del_lablist.length;i++){
-                var selected=del_lablist[i];
-                del_list+=selected['lid']+' ';
+            for(var i=0;i<del_equlist.length;i++){
+                var selected=del_equlist[i];
+                del_list+=selected['eid']+' ';
             }
             del_list.trim();
             $.ajax({
@@ -79,7 +81,7 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#list_lab_list').datagrid('load');
+                        $('#equ_list_list').datagrid('load',{});
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -90,7 +92,7 @@
                 },
                 async: true
             });
-        }*/
+        }
 
         /**
          * 条件查询
@@ -133,7 +135,9 @@
         </form>
     </div>
     <div id="equ_list_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
-        <div id="equ_list_dialog" style="overflow: hidden"></div>
+        <div id="equ_list_dialog" style="overflow: hidden">
+            <%--用于实现datagrid弹出窗口--%>
+        </div>
         <table id="equ_list_list"></table>
     </div>
 </div>
