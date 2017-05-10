@@ -28,15 +28,27 @@ var lems = {
         return ""; //返回参数值
     },
     /**
-     * 获取Ajax方式加载dialog中的参数
+     * 获取Ajax方式加载dialog时父级Dialog中的参数
      * @param dialogName dialog名
      * @param name 参数名
      * @returns {*}
      */
-    getQueryParam: function (dialogName, name) {
+    getDialogParam: function (dialogName, name) {
         var obj = $('#' + dialogName).dialog('options');
-        var queryParams = obj["queryParams"];
-        return queryParams[name];
+        var params = obj["params"];
+        return params[name];
+    },
+
+    /**
+     * 获取Ajax方式加载dialog时父级DataGrid中的参数
+     * @param gridName
+     * @param name
+     * @returns {*}
+     */
+    getGridParam: function (gridName, name) {
+        var obj = $('#' + gridName).dialog('options');
+        var params = obj["params"];
+        return params[name];
     }
 };
 /**

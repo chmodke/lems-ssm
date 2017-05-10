@@ -1,5 +1,7 @@
 package org.kehao.lems.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
@@ -21,6 +23,7 @@ public class User {
 
     private String masterid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 
     private String token;

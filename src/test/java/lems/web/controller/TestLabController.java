@@ -95,4 +95,29 @@ public class TestLabController {
 		System.out.println("----------------------------"+'\n'+jsonStr+'\n'+"----------------------------");
         System.out.println(jsonStr);
     }
+	/**
+	 * 测试实验室搜索方法
+	 * @throws Exception
+	 */
+	@Test
+	public void labControllerOrderLab() throws Exception{
+		//发送执行一个HTTP请求
+		RequestBuilder request=MockMvcRequestBuilders
+				.post("/lab/order_lab.do")
+				.param("lid", "0b1533555c0748b4a8e985f7b9e52897")//传数据
+				.param("starttime", "2017-05-10 11:43:39")
+				.param("endtime", "2017-05-17 11:43:43")
+				.param("sname", "lab.lname")
+				.param("stel", "121");
+
+		MvcResult result=mockMvc.perform(request)
+				.andDo(MockMvcResultHandlers.print())//将请求头和响应头打印
+				.andExpect(MockMvcResultMatchers.status().isOk())//期望返回状态码200
+				.andReturn();//用来返回结果
+
+		//提取响应中的json字符串
+		String jsonStr=result.getResponse().getContentAsString();
+		System.out.println("----------------------------"+'\n'+jsonStr+'\n'+"----------------------------");
+		System.out.println(jsonStr);
+	}
 }

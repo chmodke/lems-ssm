@@ -2,8 +2,11 @@ package lems.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.LabService;
+import org.kehao.lems.service.UserService;
+import org.kehao.lems.utils.LEMSResult;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 

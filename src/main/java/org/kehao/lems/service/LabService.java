@@ -1,6 +1,8 @@
 package org.kehao.lems.service;
 
+import org.kehao.lems.entity.LabSchedule;
 import org.kehao.lems.entity.Laboratory;
+import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.utils.LEMSResult;
 
@@ -23,17 +25,17 @@ public interface LabService {
      * @param rows
      * @param order
      * @param sort
-     * @param laboratory
+     * @param laboratoryEx
      * @return
      */
-    LEMSResult labGet(Integer page, Integer rows, String order, String sort, Laboratory laboratory);
+    LEMSResult labGet(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
 
     /**
      * 获得条件查询的记录总数
-     * @param laboratory
+     * @param laboratoryEx
      * @return
      */
-    Long labGetCount(Laboratory laboratory);
+    Long labGetCount(LaboratoryEx laboratoryEx);
 
     /**
      * 批量禁用实验室
@@ -52,5 +54,45 @@ public interface LabService {
      * @return
      */
     LEMSResult searchLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
+
+    /**
+     * 搜索到的结果数量
+     * @param laboratoryEx
+     * @return
+     */
     Long searchLabCount( LaboratoryEx laboratoryEx);
+
+    /**
+     * 可预约实验室列表
+     * @param page
+     * @param rows
+     * @param order
+     * @param sort
+     * @param laboratoryEx
+     * @return
+     */
+    LEMSResult enOrderLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx);
+
+    /**
+     * 可预约实验室数量
+     * @param laboratoryEx
+     * @return
+     */
+    Long enOrderLabCount(LaboratoryEx laboratoryEx);
+
+    /**
+     * 预约实验室
+     * @param labSchedule
+     * @return
+     */
+    LEMSResult orderLab(LabSchedule labSchedule);
+
+
+    /**
+     * 修改实验室负责人
+     * @param lid
+     * @param uid
+     * @return
+     */
+    LEMSResult modMgrLab(String lid,String uid);
 }

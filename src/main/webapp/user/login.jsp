@@ -12,7 +12,7 @@
                 closed: false,
                 cache: false,
                 href: './user/repeat_pwd.jsp',
-                queryParams: {'repuname': $("#login_namebox").val() },//传递参数
+                params: {'repuname': $("#login_namebox").val() },//传递参数
                 modal: true
             });
         });
@@ -37,7 +37,6 @@
             loginDialog.dialog('destroy');//销毁登录框
 
             $("#index_username").text(getCookie("uname"));//显示用户名称
-            //TODO 显示用户角色
             $("#index_userrole").text(getCookie("role"));//显示用户角色
 
             $("#index_logout").html('<a href="javascript:;">安全退出</a>');//显示退出按钮
@@ -80,7 +79,6 @@
                             showType: 'slide'
                         });
                         $("#index_username").text(getCookie("uname"));//显示用户名称
-                        //TODO 显示用户角色
                         $("#index_userrole").text(getCookie("role"));//显示用户角色
 
                         $("#index_logout").html('<a href="javascript:;">安全退出</a>')//显示退出按钮

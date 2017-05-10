@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/icon.css">
     <link href="./jslib/bootstrap-2.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-    <%--<link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/default/easyui.css">--%><%--换用bootstrap样式--%>
+    <%--<link rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/default/easyui.css">--%>
+    <%--换用bootstrap样式--%>
     <link id="easyuiTheme" rel="stylesheet" href="./jslib/jquery-easyui-1.5.1/themes/bootstrap/easyui.css" type="text/css">
 
-    <script type="text/javascript" src="jslib/cookie_util.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="jslib/base64.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="jslib/lems/cookie_util.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="jslib/lems/base64.js" charset="UTF-8"></script>
 
 <%--    <!-- 引入my97日期时间控件 -->
     <script type="text/javascript" src="jslib/My97DatePicker4.8b3/My97DatePicker/WdatePicker.js" charset="utf-8"></script>--%>
@@ -30,18 +31,19 @@
             }
 
             $("#index_logout").click(index_logout);//退出按钮事件绑定
-            $("#useradd_link").click(useradd_tab_add);//添加用户菜单事件绑定
-            $("#equadd_link").click(equadd_tab_add);//添加设备菜单事件绑定
-            $("#labadd_link").click(labadd_tab_add);//添加实验室菜单事件绑定
+            $("#useradd_link").click(user_add_tab_add);//添加用户菜单事件绑定
+            $("#equadd_link").click(equ_add_tab_add);//添加设备菜单事件绑定
+            $("#labadd_link").click(lab_add_tab_add);//添加实验室菜单事件绑定
             $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
             $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
-            $("#roleadd_link").click(roleadd_tab_add);//添加角色菜单事件绑定
-            $("#userremove_link").click(userremove_tab_add);//删除用户菜单事件绑定
-            $("#userlist_link").click(userlist_tab_add);//用户列表菜单事件绑定
-            $("#lablist_link").click(lablist_tab_add);//用户列表菜单事件绑定
+            $("#roleadd_link").click(role_add_tab_add);//添加角色菜单事件绑定
+            //$("#userremove_link").click(user_remove_tab_add);//删除用户菜单事件绑定
+            $("#userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
+            $("#lablist_link").click(lab_list_tab_add);//用户列表菜单事件绑定
             $("#labsearch_link").click(lab_search_list_tab_add);//用户列表菜单事件绑定
-
-
+            $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
+            $("#equlist_link").click(equ_list_tab_add);//实验室负责人管理菜单事件绑定
+            $("#enorder_lab_link").click(enorder_lab_tab_add);//实验室负责人管理菜单事件绑定
 
 
             /**
@@ -52,13 +54,14 @@
                 delCookie("token");
                 delCookie("uname");
                 delCookie("role");
+                //window.open('about:blank','_self').close();//关闭当前页面
                 window.location.reload();
             }
 
             /**
              * 单击添加用户菜单事件
              */
-            function useradd_tab_add(){
+            function user_add_tab_add(){
                 //防止重复添加tab
                 if($("#index_tt").tabs("exists","用户添加")){
                     $("#index_tt").tabs("select","用户添加");
@@ -76,7 +79,7 @@
             /**
              * 单击添加设备菜单事件
              */
-            function equadd_tab_add(){
+            function equ_add_tab_add(){
                 if($("#index_tt").tabs("exists","设备采购")){
                     $("#index_tt").tabs("select","设备采购");
                 }else{
@@ -92,7 +95,7 @@
             /**
              * 单击添加实验室菜单事件
              */
-            function labadd_tab_add(){
+            function lab_add_tab_add(){
                 if($("#index_tt").tabs("exists","添加实验室")){
                     $("#index_tt").tabs("select","添加实验室");
                 }else{
@@ -139,7 +142,7 @@
             /**
              * 添加角色菜单事件
              */
-            function roleadd_tab_add(){
+            function role_add_tab_add(){
                 if($("#index_tt").tabs("exists","角色添加")){
                     $("#index_tt").tabs("select","角色添加");
                 }else{
@@ -155,7 +158,7 @@
             /**
              * 删除用户菜单事件
              */
-            function userremove_tab_add(){
+            function user_remove_tab_add(){
                 if($("#index_tt").tabs("exists","用户删除")){
                     $("#index_tt").tabs("select","用户删除");
                 }else{
@@ -171,7 +174,7 @@
             /**
              * 用户列表菜单事件
              */
-            function userlist_tab_add(){
+            function user_list_tab_add(){
                 if($("#index_tt").tabs("exists","用户列表")){
                     $("#index_tt").tabs("select","用户列表");
                 }else{
@@ -187,7 +190,7 @@
             /**
              * 实验室列表菜单事件
              */
-            function lablist_tab_add(){
+            function lab_list_tab_add(){
                 if($("#index_tt").tabs("exists","实验室列表")){
                     $("#index_tt").tabs("select","实验室列表");
                 }else{
@@ -216,6 +219,54 @@
                 }
             }
 
+            /**
+             * 实验室负责人管理菜单事件
+             */
+            function lab_mgr_tab_add(){
+                if($("#index_tt").tabs("exists","实验室负责人管理")){
+                    $("#index_tt").tabs("select","实验室负责人管理");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室负责人管理",
+                        closable:true,
+                        href:"./lab/mgr_lab.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 实验室负责人管理菜单事件
+             */
+            function equ_list_tab_add(){
+                if($("#index_tt").tabs("exists","设备列表")){
+                    $("#index_tt").tabs("select","设备列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"设备列表",
+                        closable:true,
+                        href:"./equ/list_equ.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 实验室负责人管理菜单事件
+             */
+            function enorder_lab_tab_add(){
+                if($("#index_tt").tabs("exists","实验室预约")){
+                    $("#index_tt").tabs("select","实验室预约");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"实验室预约",
+                        closable:true,
+                        href:"./lab/enorder_lab_list.jsp",
+                        fit:true
+                    });
+                }
+            }
+
         });
     </script>
     <style>
@@ -232,7 +283,7 @@
 </head>
 <body>
 <div id="cc" class="easyui-layout" data-options="fit : true">
-    <div data-options="region:'north',split:false,collapsible:false" style="height:80px;">
+    <div data-options="region:'north',split:false,collapsible:false" style="height:70px;">
         <div style="width:100%;height: 100%">
             <div style="width:80%;float: left;margin-top: 20px;margin-bottom: auto">
                 <b style="font-size: 48px;color: #0E76CB">Laboratory Equipment Management System</b>
@@ -264,6 +315,7 @@
             </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
+                    <li><a id="equlist_link" href="javascript:;">设备列表</a></li>
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
                     <li>设备报修</li>
                     <li>设备转移(分配)</li>
@@ -274,8 +326,8 @@
                 <ul>
                     <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
-                    <li>实验室移除</li>
-                    <li>实验室负责人管理</li>
+                    <li>实验室移除(列表)</li>
+                    <li><a id="labmgr_link" href="javascript:;">实验室负责人</a></li>
                 </ul>
             </div>
             <div title="设备日程管理" data-options="border:false,iconCls:'anchor'">
@@ -287,7 +339,8 @@
             </div>
             <div title="实验室日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设实验室预约</li>
+                    <li><a id="enorder_lab_link" href="javascript:;">实验室预约</a></li>
+                    <li>已预约列表</li>
                 </ul>
             </div>
             <div title="角色管理" data-options="border:false,iconCls:'anchor'">
@@ -301,7 +354,7 @@
                 <ul>
                     <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
-                    <li><a id="userremove_link" href="javascript:;">用户删除</a></li>
+                    <li><a id="userremove_link" href="javascript:;">用户删除(用户列表)</a></li>
                     <li>用户授权管理(角色)</li>
                 </ul>
             </div>

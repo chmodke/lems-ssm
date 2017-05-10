@@ -1,5 +1,7 @@
 package org.kehao.lems.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class LabSchedule {
@@ -7,11 +9,15 @@ public class LabSchedule {
 
     private String lid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date starttime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endtime;
 
     private String sname;
+
+    private String stel;
 
     public String getSlid() {
         return slid;
@@ -51,5 +57,13 @@ public class LabSchedule {
 
     public void setSname(String sname) {
         this.sname = sname == null ? null : sname.trim();
+    }
+
+    public String getStel() {
+        return stel;
+    }
+
+    public void setStel(String stel) {
+        this.stel = stel;
     }
 }

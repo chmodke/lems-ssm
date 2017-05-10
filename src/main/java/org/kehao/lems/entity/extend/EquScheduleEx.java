@@ -1,5 +1,8 @@
 package org.kehao.lems.entity.extend;
 
+import org.kehao.lems.entity.EquSchedule;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class EquScheduleEx{
@@ -7,49 +10,11 @@ public class EquScheduleEx{
 
     private String eid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date starttime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endtime;
 
     private String sname;
-
-	public String getSeid() {
-		return seid;
-	}
-
-	public void setSeid(String seid) {
-		this.seid = seid;
-	}
-
-	public String getEid() {
-		return eid;
-	}
-
-	public void setEid(String eid) {
-		this.eid = eid;
-	}
-
-	public Date getStarttime() {
-		return starttime;
-	}
-
-	public void setStarttime(Date starttime) {
-		this.starttime = starttime;
-	}
-
-	public Date getEndtime() {
-		return endtime;
-	}
-
-	public void setEndtime(Date endtime) {
-		this.endtime = endtime;
-	}
-
-	public String getSname() {
-		return sname;
-	}
-
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
 }

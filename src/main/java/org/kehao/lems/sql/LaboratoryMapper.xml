@@ -115,7 +115,7 @@
         user.uid u_uid ,
         user.uname u_uname
     </sql>
-
+    <!-- Lab User-->
     <resultMap id="LabUserResultMap" type="org.kehao.lems.entity.Laboratory">
         <id column="lid" jdbcType="CHAR" property="lid"/>
         <result column="id" jdbcType="VARCHAR" property="id"/>
@@ -139,11 +139,10 @@
             <result column="masterid" jdbcType="CHAR" property="masterid"/>
             <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
             <result column="token" jdbcType="CHAR" property="token"/>
-            <result column="status" jdbcType="INTEGER" property="status"/>
         </association>
     </resultMap>
     <sql id="Lab_User_Column_List">
-        lab.id ,user.uname
+        lab.lid,lab.id, lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark ,user.uname,user.uid
     </sql>
 
 
@@ -281,19 +280,19 @@
         where lid = #{lid,jdbcType=CHAR}
     </update>
 
-    <select id="selectLaboratoryCondition" parameterType="java.util.Map" resultMap="BaseResultMap">
+    <select id="selectLaboratoryCondition" parameterType="java.util.Map" resultMap="LabUserResultMap">
         select
-        <include refid="Base_Column_List"/>
-        from s_laboratory
-        where status !='1'
-        <if test="lname != null">
-            AND lname LIKE concat(concat('%',#{lname,jdbcType=VARCHAR}),'%')
+        <include refid="Lab_User_Column_List"/>
+        from s_laboratory lab left join s_user user on(lab.uid=user.uid)
+        where lab.status !='1'
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="id != null">
-            AND id LIKE concat(concat('%',#{id,jdbcType=VARCHAR}),'%')
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="type!=null">
-            AND type LIKE concat(concat('%',#{type,jdbcType=VARCHAR}),'%')
+        <if test="laboratoryEx.type!=null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
         </if>
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
@@ -303,20 +302,21 @@
     <select id="selectLaboratoryConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select
         COUNT(*)
-        from s_laboratory
-        where status !='1'
-        <if test="lname != null">
-            AND lname LIKE concat(concat('%',#{lname,jdbcType=VARCHAR}),'%')
+        from s_laboratory lab left join s_user user on(lab.uid=user.uid)
+        where lab.status !='1'
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="id != null">
-            AND id LIKE concat(concat('%',#{id,jdbcType=VARCHAR}),'%')
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="type!=null">
-            AND type LIKE concat(concat('%',#{type,jdbcType=VARCHAR}),'%')
+        <if test="laboratoryEx.type!=null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
         </if>
     </select>
-    <update id="updateLabStatusByLid" parameterType="java.util.Map">
-        UPDATE s_laboratory SET status = #{status} WHERE lid IN
+    <update id="updateLabStatusByLidBatch" parameterType="java.util.Map">
+        UPDATE s_laboratory SET status = #{status}
+        WHERE lid IN
         <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
             #{item}
         </foreach>
@@ -358,6 +358,9 @@
         <if test="laboratoryEx.type != null">
             AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
         </if>
+        <if test="laboratoryEx.lab_uname != null">
+            AND user.uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
+        </if>
 
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
@@ -391,14 +394,17 @@
             AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
         </if>
 
-        <if test="laboratoryEx.equ_id != null">
+        <if test="laboratoryEx.id != null">
             AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="laboratoryEx.equ_ename != null">
+        <if test="laboratoryEx.lname != null">
             AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
         </if>
-        <if test="laboratoryEx.equ_type != null">
+        <if test="laboratoryEx.type != null">
             AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.lab_uname != null">
+            AND user.uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
         </if>
     </select>
 
@@ -407,4 +413,50 @@
         from s_laboratory lab join s_user user on(lab.uid=user.uid)
         where lab.lid = #{lid,jdbcType=CHAR};
     </select>
+
+    <select id="selectEnOrderLabCondition" parameterType="java.util.Map" resultMap="LabUserResultMap">
+        select
+        <include refid="Lab_User_Column_List"/>
+        from s_laboratory lab left join s_user user on(lab.uid=user.uid)
+        where lab.status ='0'
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.type!=null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectEnOrderLabConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        COUNT(*)
+        from s_laboratory lab left join s_user user on(lab.uid=user.uid)
+        where lab.status ='0'
+        <if test="laboratoryEx.lname != null">
+            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.id != null">
+            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="laboratoryEx.type!=null">
+            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+    </select>
+    <update id="updateLabStatusByLid" parameterType="java.util.Map">
+        update s_laboratory
+        set status = #{status,jdbcType=INTEGER}
+        where lid = #{lid,jdbcType=CHAR}
+    </update>
+    <update id="updateLabUidByLid" parameterType="java.util.Map">
+        UPDATE s_laboratory
+        SET uid = #{uid,jdbcType=CHAR}
+        WHERE lid = #{lid,jdbcType=CHAR}
+    </update>
+
 </mapper>

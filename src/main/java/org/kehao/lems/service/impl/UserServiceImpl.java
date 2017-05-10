@@ -2,22 +2,24 @@ package org.kehao.lems.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Resource;
 
+import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
 import org.kehao.lems.dao.UserRoleMapper;
 import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.UserRole;
+import org.kehao.lems.entity.extend.UserEx;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
 import org.kehao.lems.utils.SendEmail;
+import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 /**
@@ -246,15 +248,10 @@ public class UserServiceImpl implements UserService{
         return result;
     }
 
-    public LEMSResult getUser(Integer page, Integer pageSize, User user, String order, String sort,String rname) {
+    public LEMSResult getUser(Integer page, Integer pageSize, String order, String sort, UserEx userEx) {
         LEMSResult result=new LEMSResult();
         Map<String,Object> map=new HashMap<String, Object>(8);
-        if(null!=user.getUname()){
-            map.put("uname",user.getUname());
-        }
-        if(null!=user.getTureName()){
-            map.put("tureName",user.getTureName());
-        }
+        map.put("userEx",userEx);
         if(null==page){
             page=1;
         }
@@ -268,31 +265,29 @@ public class UserServiceImpl implements UserService{
         if(sort.equals("tureName")){
             sort="ture_name";
         }
-        if(sort.equals("userRole")){
-            sort="rname";
-        }
         map.put("sort",sort);
 
-        if(null!=rname){
-            map.put("rname",rname);
+        List<User> userList=userMapper.selectUserCondition(map);
+        List<UserEx> userExList=new ArrayList<UserEx>(userList.size());
+        for(User user:userList){
+            UserEx userExTmp=new UserEx();
+            BeanUtils.copyProperties(user,userExTmp);
+            if(user.getUserRole()!=null){
+                UserRole userRole=user.getUserRole();
+                if(userRole.getRole()!=null){
+                    userExTmp.setRname(userRole.getRole().getRname());
+                }
+            }
+            userExList.add(userExTmp);
         }
-
-        result.setData(userMapper.selectUserCondition(map));
+        result.setData(userExList);
         result.setStatus(0);
         return result;
     }
 
-    public Long getUserCount(User user,String rname) {
+    public Long getUserCount(UserEx userEx) {
         Map<String,Object> map=new HashMap<String, Object>(8);
-        if(null!=user.getUname()){
-            map.put("uname",user.getUname());
-        }
-        if(null!=user.getTureName()){
-            map.put("tureName",user.getTureName());
-        }
-        if(null!=rname){
-            map.put("rname",rname);
-        }
+        map.put("userEx",userEx);
         return userMapper.selectUserConditionCount(map);
     }
 
@@ -308,6 +303,21 @@ public class UserServiceImpl implements UserService{
             result.setData(rec);
         }else {
             result.setMessage("批量删除失败");
+            result.setStatus(1);
+        }
+        return result;
+    }
+
+    @Override
+    public LEMSResult getAllUser() {
+        LEMSResult result =new LEMSResult();
+        List<User> userList=userMapper.selectAllUser("0");
+        if(userList.size()>0){
+            result.setData(userList);
+            result.setMessage("获取成功");
+            result.setStatus(0);
+        }else {
+            result.setMessage("获取失败");
             result.setStatus(1);
         }
         return result;

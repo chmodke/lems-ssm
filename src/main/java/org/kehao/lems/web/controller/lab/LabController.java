@@ -1,19 +1,19 @@
 package org.kehao.lems.web.controller.lab;
 
+import org.kehao.lems.entity.LabSchedule;
 import org.kehao.lems.entity.Laboratory;
+import org.kehao.lems.entity.User;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.LabService;
 import org.kehao.lems.utils.LEMSResult;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by kehao on 2017/4/26.
@@ -40,15 +40,15 @@ public class LabController {
      * @param rows
      * @param order
      * @param sort
-     * @param laboratory 查询条件
+     * @param laboratoryEx 查询条件
      * @return
      */
     @RequestMapping("/lab_list.do")
     @ResponseBody
-    public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, Laboratory laboratory){
+    public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("total", labService.labGetCount(laboratory));
-        data.put("rows", labService.labGet(page,rows,order,sort,laboratory).getData());
+        data.put("total", labService.labGetCount(laboratoryEx));
+        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
         return data;
     }
     @RequestMapping("/labdel.do")
@@ -65,5 +65,33 @@ public class LabController {
         data.put("total", labService.searchLabCount(laboratoryEx));
         data.put("rows", labService.searchLab(page, rows, order, sort, laboratoryEx).getData());
         return data;
+    }
+    @RequestMapping("/lab_mgr_list.do")
+    @ResponseBody
+    public Map<String,Object> mgrGetLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", labService.labGetCount(laboratoryEx));
+        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
+        return data;
+    }
+    @RequestMapping("/enorder_lab_list.do")
+    @ResponseBody
+    public Map<String,Object> enorderLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", labService.enOrderLabCount(laboratoryEx));
+        data.put("rows", labService.enOrderLab(page,rows,order,sort,laboratoryEx).getData());
+        return data;
+    }
+    @RequestMapping("/order_lab.do")
+    @ResponseBody
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public LEMSResult orderLab(LabSchedule labSchedule){
+        return labService.orderLab(labSchedule);
+    }
+
+    @RequestMapping("/mod_mgr_lab.do")
+    @ResponseBody
+    public LEMSResult modMgrLab(String lid,String uid){
+        return labService.modMgrLab(lid,uid);
     }
 }

@@ -1,25 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
-        $('#list_lab_list').datagrid({
-            url: './lab/lab_list.do',
+        $('#equ_list_list').datagrid({
+            url: './equ/equ_list.do',
             pagination: true,
             fit: true,
             fitColumns: true,
             singleSelect:false,
-            idField: 'lid',
+            idField: 'eid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],
-            sortName: 'lname',
+            sortName: 'ename',
             sortOrder: 'asc',
             columns: [[
                 {field:'ck',checkbox:"true"},
-                {field: 'id', title: '实验室编号', width: 100, sortable: true},
-                {field: 'lname', title: '实验室名称', width: 100, sortable: true},
-                {field: 'type', title: '实验室类型', width: 100, sortable: true},
-                {field: 'lsize', title: '学生容量(人)', width: 100},
-                {field: 'equcount', title: '设备容量(台)', width: 100},
-                {field: 'lab_uname', title: '实验室负责人', width: 100,sortable: true},
+                {field: 'id', title: '设备编号', width: 100, sortable: true},
+                {field: 'ename', title: '设备名称', width: 100, sortable: true},
+                {field: 'type', title: '设备类型', width: 100, sortable: true},
+                {field: 'lanme', title: '所属实验室', width: 100},
                 {
                     field: 'status',
                     title: '状态',
@@ -41,14 +39,14 @@
                 text:'增加',
                 iconCls:'icon-edit',
                 handler:function(){
-                    $("#list_lab_dialog").dialog({
-                        title: '实验室添加',
+                    $("#equ_list_dialog").dialog({
+                        title: '设备添加',
                         width: 650,
                         height: 480,
-                        href: './lab/add_lab.jsp',
+                        href: './equ/add_equ.jsp',
                         modal: true,
                         onClose: function () {
-                            $('#lab_list').datagrid('load',{});
+                            $('#equ_list_list').datagrid('load',{});
                         }
                     });
                 }
@@ -56,35 +54,34 @@
                 text:'删除',
                 iconCls:'icon-remove',
                 handler:function(){
-                    list_del_lab();
-                    $('#lab_list').datagrid('load',{});
+                    equ_list_del();
                 }
             }]
         });
 
-        $("#list_search_lab_btn").click(list_search_lab);//绑定查询事件
-        $("#list_reset_search_lab_btn").click(list_reset_search_lab);
+        $("#equ_list_search_lab_btn").click(equ_list_search_lab);//绑定查询事件
+        $("#equ_list_reset_search_lab_btn").click(equ_list_reset_search_lab);
 
         /**
-         * 删除用户
+         * 删除设备
          */
-        function list_del_lab(){
-            var del_lablist=$('#list_lab_list').datagrid('getSelections');
+        function equ_list_del(){
+            var del_equlist=$('#equ_list_list').datagrid('getSelections');
             var del_list='';
-            for(var i=0;i<del_lablist.length;i++){
-                var selected=del_lablist[i];
-                del_list+=selected['lid']+' ';
+            for(var i=0;i<del_equlist.length;i++){
+                var selected=del_equlist[i];
+                del_list+=selected['eid']+' ';
             }
             del_list.trim();
             $.ajax({
-                url: "./lab/labdel.do",
+                url: "./equ/equdel.do",
                 type: "post",
                 data:{"delList":del_list},
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#list_lab_list').datagrid('load');
+                        $('#equ_list_list').datagrid('load',{});
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -100,25 +97,25 @@
         /**
          * 条件查询
          */
-        function list_search_lab() {
-            var list_lname = $("#list_search_lname").val().trim();
-            var list_id = $("#list_search_id").val().trim();
-            var list_type = $("#list_search_type").val().trim();
-            $('#list_lab_list').datagrid('load', {
-                lname: list_lname,
-                id:list_id,
-                type: list_type
+        function equ_list_search_lab() {
+            var equ_ename = $("#equ_list_search_ename").val().trim();
+            var equ_id = $("#equ_list_search_id").val().trim();
+            var equ_etype = $("#equ_list_search_etype").val().trim();
+            $('#equ_list_list').datagrid('load', {
+                ename: equ_ename,
+                id:equ_id,
+                type: equ_etype
             });
         }
 
         /**
          * 清空条件查询
          */
-        function list_reset_search_lab() {
-            $("#list_search_lname").val("");
-            $("#list_search_id").val("");
-            $("#list_search_type").val("");
-            $('#list_lab_list').datagrid('load',{});
+        function equ_list_reset_search_lab() {
+            $("#equ_list_search_ename").val("");
+            $("#equ_list_search_id").val("");
+            $("#equ_list_search_etype").val("");
+            $('#equ_list_list').datagrid('load',{});
         }
     });
 </script>
@@ -127,20 +124,20 @@
         <form>
 
             <div style="float: left;margin-top: 5px;margin-bottom: 5px" >
-                &emsp;<b>实验室编号查询</b><input id="list_search_id" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室名查询</b><input id="list_search_lname" class="easyui-validatebox">&emsp;
-                &emsp;<b>实验室类型查询</b><input id="list_search_type" class="easyui-validatebox">&emsp;
+                &emsp;<b>设备编号查询</b><input id="equ_list_search_id" class="easyui-validatebox">&emsp;
+                &emsp;<b>设备名查询</b><input id="equ_list_search_ename" class="easyui-validatebox">&emsp;
+                &emsp;<b>设备类型查询</b><input id="equ_list_search_etype" class="easyui-validatebox">&emsp;
             </div>
             <div style="float: left;margin-top: 5px;margin-bottom: 5px">
-                <input id="list_search_lab_btn" type="button" value="查询">
-                <input id="list_reset_search_lab_btn" type="button" value="清空">&emsp;
+                <input id="equ_list_search_lab_btn" type="button" value="查询">
+                <input id="equ_list_reset_search_lab_btn" type="button" value="清空">&emsp;
             </div>
         </form>
     </div>
-    <div id="list_lab_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
-        <div id="list_lab_dialog" style="overflow: hidden">
+    <div id="equ_list_grid" data-options="region:'center',collapsible:false" style="padding:5px;background:#eee;overflow: hidden">
+        <div id="equ_list_dialog" style="overflow: hidden">
             <%--用于实现datagrid弹出窗口--%>
         </div>
-        <table id="list_lab_list"></table>
+        <table id="equ_list_list"></table>
     </div>
 </div>

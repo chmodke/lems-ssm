@@ -35,10 +35,44 @@
         </association>
     </resultMap>
 
-
-    <sql id="Jion_Column_List">
+    <sql id="Equ_Purc_Jion_Column_List">
         eid, id, ename, type, addtime, status, remark, equipment.pcid,uid,pctime,price
     </sql>
+
+
+    <!-- 自定义映射关系 -->
+    <resultMap id="Equ_Lab_Jion_Map" type="org.kehao.lems.entity.Equipment">
+        <id column="eid" jdbcType="CHAR" property="eid"/>
+        <result column="e_id" jdbcType="VARCHAR" property="id"/>
+        <result column="ename" jdbcType="VARCHAR" property="ename"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+        <result column="e_status" jdbcType="INTEGER" property="status"/>
+        <result column="e_remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="pcid" jdbcType="CHAR" property="pcid"/>
+        <!-- 关联 属性 equLab -->
+        <association property="equLab" javaType="org.kehao.lems.entity.EquLab"><!-- 对象关联 -->
+            <result column="lid" jdbcType="CHAR" property="lid"/>
+            <result column="eid" jdbcType="CHAR" property="eid"/>
+            <association property="laboratory" javaType="org.kehao.lems.entity.Laboratory"><!-- 对象关联 -->
+                <id column="lid" jdbcType="CHAR" property="lid"/>
+                <result column="l_id" jdbcType="VARCHAR" property="id"/>
+                <result column="lname" jdbcType="VARCHAR" property="lname"/>
+                <result column="lsize" jdbcType="INTEGER" property="lsize"/>
+                <result column="addtime" jdbcType="TIMESTAMP" property="addtime"/>
+                <result column="l_status" jdbcType="INTEGER" property="status"/>
+                <result column="type" jdbcType="VARCHAR" property="type"/>
+                <result column="remark" jdbcType="VARCHAR" property="remark"/>
+                <result column="uid" jdbcType="CHAR" property="uid"/>
+                <result column="equcount" jdbcType="INTEGER" property="equcount"/>
+            </association>
+        </association>
+    </resultMap>
+
+    <sql id="Equ_Lab_Jion_Column_List">
+        equ.eid, equ.id e_id, equ.ename, equ.type, equ.addtime, equ.status e_status, equ.remark e_remark, lab.lname,lab.id l_id
+    </sql>
+
 
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
@@ -141,21 +175,67 @@
         where eid = #{eid,jdbcType=CHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Equipment">
-    update s_equipment
-    set id = #{id,jdbcType=VARCHAR},
-      ename = #{ename,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
-      addtime = #{addtime,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=INTEGER},
-      remark = #{remark,jdbcType=VARCHAR},
-      pcid = #{pcid,jdbcType=CHAR}
-    where eid = #{eid,jdbcType=CHAR}
-  </update>
+        update s_equipment
+        set id = #{id,jdbcType=VARCHAR},
+        ename = #{ename,jdbcType=VARCHAR},
+        type = #{type,jdbcType=VARCHAR},
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+        status = #{status,jdbcType=INTEGER},
+        remark = #{remark,jdbcType=VARCHAR},
+        pcid = #{pcid,jdbcType=CHAR}
+        where eid = #{eid,jdbcType=CHAR}
+    </update>
     <!--关联查询-->
     <select id="selectEquJionPurcByEid" parameterType="java.lang.String" resultMap="Equ_Purc_Jion_Map">
-        select <include refid="Jion_Column_List"/>
+        select
+        <include refid="Equ_Purc_Jion_Column_List"/>
         from s_equipment equipment join
         s_equ_purchase purchase on(equipment.pcid=purchase.pcid)
         where eid = #{eid,jdbcType=CHAR}
     </select>
+
+    <select id="selectEquipmentCondition" parameterType="java.util.Map" resultMap="Equ_Lab_Jion_Map">
+        select
+        <include refid="Equ_Lab_Jion_Column_List"/>
+        from s_equipment equ left join equ_lab elab on(equ.eid=elab.eid) left join s_laboratory lab on(elab.lid=lab.lid)
+        where equ.status!='1'
+
+        <if test="equipmentEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equipmentEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equipmentEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{equipmentEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectEquipmentConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        count(*)
+        from s_equipment equ left join equ_lab elab on(equ.eid=elab.eid) left join s_laboratory lab on(elab.lid=lab.lid)
+        where equ.status!='1'
+
+        <if test="equipmentEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equipmentEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equipmentEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{equipmentEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+    </select>
+    <update id="updateEquStatusByEidBatch" parameterType="java.util.Map">
+        UPDATE s_equipment SET status = #{status}
+        WHERE eid IN
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
 </mapper>
