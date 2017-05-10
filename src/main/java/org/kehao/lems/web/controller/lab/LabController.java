@@ -3,6 +3,7 @@ package org.kehao.lems.web.controller.lab;
 import org.kehao.lems.entity.LabSchedule;
 import org.kehao.lems.entity.Laboratory;
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.extend.LabScheduleEx;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.LabService;
 import org.kehao.lems.utils.LEMSResult;
