@@ -45,7 +45,7 @@
                         },//传递参数
                         modal: true,
                         onClose: function () {
-                            $('#mgr_lab_list').datagrid('clearSelections');//清除选中
+//                            $('#mgr_lab_list').datagrid('clearSelections');//清除选中
                             $('#mgr_lab_list').datagrid('load', {});
                         }
                     });

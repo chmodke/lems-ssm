@@ -2,9 +2,11 @@ package org.kehao.lems.web.controller.equ;
 
 import javax.annotation.Resource;
 
+import org.kehao.lems.entity.EquBreak;
 import org.kehao.lems.entity.EquLab;
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
+import org.kehao.lems.entity.extend.EquBreakEx;
 import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.EquPurcService;
@@ -84,5 +86,25 @@ public class EquController {
     @ResponseBody
     public LEMSResult moveEqu(EquLab equLab){
         return equService.moveEqu(equLab);
+    }
+    @RequestMapping("/break_equ.do")
+    @ResponseBody
+    public LEMSResult breakEqu(EquBreak equBreak){
+        return equService.breakEqu(equBreak);
+    }
+
+    @RequestMapping("/break_equ_list.do")
+    @ResponseBody
+    public Map<String,Object> getBreakEquList(Integer page, Integer rows, String order, String sort, EquBreakEx equBreakEx){
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", equService.labGetBreakCount(equBreakEx));
+        data.put("rows", equService.labGetBreak(page, rows, order, sort, equBreakEx).getData());
+        return data;
+    }
+
+    @RequestMapping("/fixed_equ.do")
+    @ResponseBody
+    public LEMSResult fixEqu(String bid,String eid){
+        return equService.fixEqu(bid,eid);
     }
 }

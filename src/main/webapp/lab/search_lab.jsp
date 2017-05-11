@@ -49,6 +49,9 @@
                         if (equ_status == 2) {
                             return '已预约';
                         }
+                        if (equ_status == 3) {
+                            return '故障';
+                        }
                     }
                 },
                 {field: 'purc_price', title: '设备价格(元)', width: 100},

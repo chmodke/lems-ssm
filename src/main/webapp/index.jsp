@@ -49,6 +49,10 @@
             $("#equlist_link").click(equ_list_tab_add);//实验室负责人管理菜单事件绑定
             $("#enorder_lab_link").click(enorder_lab_tab_add);//实验室负责人管理菜单事件绑定
             $("#ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
+            $("#equ_break_link").click(break_equ_tab_add);//设备报修菜单事件绑定
+            $("#equ_break_list_link").click(break_equ_list_tab_add);//报修设备列表菜单事件绑定
+
+
 
 
             /**
@@ -287,6 +291,38 @@
                     });
                 }
             }
+
+            /**
+             * 设备报修菜单事件
+             */
+            function break_equ_tab_add() {
+                if($("#index_tt").tabs("exists","设备报修")){
+                    $("#index_tt").tabs("select","设备报修");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"设备报修",
+                        closable:true,
+                        href:"./equ/break_equ.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 报修设备列表菜单事件
+             */
+            function break_equ_list_tab_add() {
+                if($("#index_tt").tabs("exists","报修设备列表")){
+                    $("#index_tt").tabs("select","报修设备列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"报修设备列表",
+                        closable:true,
+                        href:"./equ/break_equ_list.jsp",
+                        fit:true
+                    });
+                }
+            }
         });
     </script>
     <style>
@@ -339,9 +375,10 @@
                 <ul>
                     <li><a id="equlist_link" href="javascript:;">设备列表</a></li>
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
-                    <li>设备报修</li>
                     <li><a href="javascript:;" title="已经在列表中实现">设备转移(分配)</a></li>
                     <li><a href="javascript:;" title="已经在列表中实现">设备注销</a></li>
+                    <li><a id="equ_break_link" href="javascript:;">设备报修</a></li>
+                    <li><a id="equ_break_list_link" href="javascript:;">报修设备列表</a></li>
                 </ul>
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">

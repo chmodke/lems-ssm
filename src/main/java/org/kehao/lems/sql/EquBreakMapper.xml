@@ -1,93 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kehao.lems.dao.EquBreakMapper">
-  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquBreak">
-    <id column="bid" jdbcType="CHAR" property="bid" />
-    <result column="eid" jdbcType="CHAR" property="eid" />
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="breason" jdbcType="VARCHAR" property="breason" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    bid, eid, id, breason, status
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from s_equ_break
-    where bid = #{bid,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from s_equ_break
-    where bid = #{bid,jdbcType=CHAR}
-  </delete>
-  <insert id="insert" parameterType="org.kehao.lems.entity.EquBreak">
-    insert into s_equ_break (bid, eid, id, breason, 
-      status)
-    values (#{bid,jdbcType=CHAR}, #{eid,jdbcType=CHAR}, #{id,jdbcType=INTEGER}, #{breason,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquBreak">
-    insert into s_equ_break
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="bid != null">
-        bid,
-      </if>
-      <if test="eid != null">
-        eid,
-      </if>
-      <if test="id != null">
-        id,
-      </if>
-      <if test="breason != null">
-        breason,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="bid != null">
-        #{bid,jdbcType=CHAR},
-      </if>
-      <if test="eid != null">
-        #{eid,jdbcType=CHAR},
-      </if>
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="breason != null">
-        #{breason,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquBreak">
-    update s_equ_break
-    <set>
-      <if test="eid != null">
-        eid = #{eid,jdbcType=CHAR},
-      </if>
-      <if test="id != null">
-        id = #{id,jdbcType=INTEGER},
-      </if>
-      <if test="breason != null">
-        breason = #{breason,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
-      </if>
-    </set>
-    where bid = #{bid,jdbcType=CHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquBreak">
-    update s_equ_break
-    set eid = #{eid,jdbcType=CHAR},
-      id = #{id,jdbcType=INTEGER},
-      breason = #{breason,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER}
-    where bid = #{bid,jdbcType=CHAR}
-  </update>
+    <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquBreak">
+        <id column="bid" jdbcType="CHAR" property="bid"/>
+        <result column="eid" jdbcType="CHAR" property="eid"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="breason" jdbcType="VARCHAR" property="breason"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        bid, eid, id, breason, status
+    </sql>
+
+
+    <resultMap id="Brk_Equ_Lab_ResultMap" type="org.kehao.lems.entity.EquBreak">
+        <id column="bid" jdbcType="CHAR" property="bid"/>
+        <result column="eid" jdbcType="CHAR" property="eid"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="breason" jdbcType="VARCHAR" property="breason"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <association property="equipment" javaType="org.kehao.lems.entity.Equipment">
+            <result column="e_id" jdbcType="VARCHAR" property="id"/>
+            <result column="ename" jdbcType="VARCHAR" property="ename"/>
+            <result column="etype" jdbcType="VARCHAR" property="type"/>
+            <!-- 关联 属性 equLab -->
+            <association property="equLab" javaType="org.kehao.lems.entity.EquLab"><!-- 对象关联 -->
+                <result column="lid" jdbcType="CHAR" property="lid"/>
+                <result column="eid" jdbcType="CHAR" property="eid"/>
+                <association property="laboratory" javaType="org.kehao.lems.entity.Laboratory"><!-- 对象关联 -->
+                    <result column="lname" jdbcType="VARCHAR" property="lname"/>
+                </association>
+            </association>
+        </association>
+    </resultMap>
+    <sql id="Brk_Equ_Lab_Column_List">
+        brk.bid, brk.eid, brk.id, brk.breason, brk.status,
+        equ.id e_id, equ.ename ename, equ.type etype,
+        lab.lname lname
+    </sql>
+
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from s_equ_break
+        where bid = #{bid,jdbcType=CHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        DELETE FROM s_equ_break
+        WHERE bid = #{bid,jdbcType=CHAR}
+    </delete>
+    <insert id="insert" parameterType="org.kehao.lems.entity.EquBreak">
+        INSERT INTO s_equ_break (bid, eid, id, breason,
+                                 status)
+        VALUES (#{bid,jdbcType=CHAR}, #{eid,jdbcType=CHAR}, #{id,jdbcType=INTEGER}, #{breason,jdbcType=VARCHAR},
+                #{status,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquBreak">
+        insert into s_equ_break
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bid != null">
+                bid,
+            </if>
+            <if test="eid != null">
+                eid,
+            </if>
+            <if test="id != null">
+                id,
+            </if>
+            <if test="breason != null">
+                breason,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bid != null">
+                #{bid,jdbcType=CHAR},
+            </if>
+            <if test="eid != null">
+                #{eid,jdbcType=CHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="breason != null">
+                #{breason,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="org.kehao.lems.entity.EquBreak">
+        update s_equ_break
+        <set>
+            <if test="eid != null">
+                eid = #{eid,jdbcType=CHAR},
+            </if>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="breason != null">
+                breason = #{breason,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+        </set>
+        where bid = #{bid,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquBreak">
+        UPDATE s_equ_break
+        SET eid     = #{eid,jdbcType=CHAR},
+            id      = #{id,jdbcType=INTEGER},
+            breason = #{breason,jdbcType=VARCHAR},
+            status  = #{status,jdbcType=INTEGER}
+        WHERE bid = #{bid,jdbcType=CHAR}
+    </update>
+
+    <select id="selectEquBreakByCondition" parameterType="java.util.Map" resultMap="Brk_Equ_Lab_ResultMap">
+        select
+        <include refid="Brk_Equ_Lab_Column_List"/>
+        from s_equ_break brk left join s_equipment equ on(brk.eid=equ.eid) left join equ_lab elab on(equ.eid=elab.eid)
+        left join s_laboratory lab on(elab.lid=lab.lid)
+        <where>
+            <if test="equBreakEx.e_id != null">
+                AND equ.id LIKE concat(concat('%',#{equBreakEx.e_id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="equBreakEx.ename != null">
+                AND equ.ename LIKE concat(concat('%',#{equBreakEx.ename,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="equBreakEx.id != null">
+                AND brk.id LIKE concat(concat('%',#{equBreakEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectEquBreakByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        count(*)
+        from s_equ_break brk left join s_equipment equ on(brk.eid=equ.eid) left join equ_lab elab on(equ.eid=elab.eid)
+        left join s_laboratory lab on(elab.lid=lab.lid)
+        <where>
+            <if test="equBreakEx.e_id != null">
+                AND equ.id LIKE concat(concat('%',#{equBreakEx.e_id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="equBreakEx.ename != null">
+                AND equ.ename LIKE concat(concat('%',#{equBreakEx.ename,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="equBreakEx.id != null">
+                AND brk.id LIKE concat(concat('%',#{equBreakEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+    </select>
+
+    <update id="updateBrkStatusByBid" parameterType="java.util.Map">
+        UPDATE s_equ_break
+        SET status  = #{status,jdbcType=INTEGER}
+        WHERE bid = #{bid,jdbcType=CHAR}
+    </update>
 </mapper>

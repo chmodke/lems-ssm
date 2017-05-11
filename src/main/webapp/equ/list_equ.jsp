@@ -29,6 +29,9 @@
                         if (status == 2) {
                             return '已预约';
                         }
+                        if (status == 3) {
+                            return '故障';
+                        }
                     },
                     sortable: true,
                     fixed: true
@@ -65,7 +68,7 @@
                     var move_equ_eid = move_equ['eid'];
                     var move_equ_id = move_equ['id'];
                     var move_equ_ename = move_equ['ename'];
-                    $('#equ_list_list').datagrid('clearSelections');//清除选中
+//                    $('#equ_list_list').datagrid('clearSelections');//清除选中
                     $("#equ_list_dialog").dialog({
                         title: '设备转移',
                         width: 650,
@@ -76,6 +79,32 @@
                             'move_equ_eid': move_equ_eid,
                             'move_equ_id': move_equ_id,
                             'move_equ_ename': move_equ_ename
+                        },//传递参数
+                        onClose: function () {
+                            $('#equ_list_list').datagrid('load',{});
+                        }
+                    });
+                }
+            },'-',{
+                text:'报修',
+                iconCls:'icon-edit',
+                handler:function(){
+                    //获取参数
+                    var break_equ = $('#equ_list_list').datagrid('getSelected');
+                    var break_equ_eid = break_equ['eid'];
+                    var break_equ_id = break_equ['id'];
+                    var break_equ_ename = break_equ['ename'];
+//                    $('#equ_list_list').datagrid('clearSelections');//清除选中
+                    $("#equ_list_dialog").dialog({
+                        title: '设备转移',
+                        width: 650,
+                        height: 480,
+                        href: './equ/break_equ.jsp',
+                        modal: true,
+                        params: {
+                            'break_equ_eid': break_equ_eid,
+                            'break_equ_id': break_equ_id,
+                            'break_equ_ename': break_equ_ename
                         },//传递参数
                         onClose: function () {
                             $('#equ_list_list').datagrid('load',{});

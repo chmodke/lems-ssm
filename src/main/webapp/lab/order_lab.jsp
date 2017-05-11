@@ -35,7 +35,6 @@
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message);
-                        addlab_reset();
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);

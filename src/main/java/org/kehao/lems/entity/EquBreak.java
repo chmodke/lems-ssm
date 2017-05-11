@@ -11,6 +11,8 @@ public class EquBreak {
 
     private Integer status;
 
+    private Equipment equipment;
+
     public String getBid() {
         return bid;
     }
@@ -49,5 +51,13 @@ public class EquBreak {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 }
