@@ -99,4 +99,9 @@ public interface LaboratoryMapper {
      * @return
      */
     int updateLabUidByLid(Map<String,String > map);
+
+    /**
+     * @return
+     */
+    List<Laboratory>selectAllLab();
 }

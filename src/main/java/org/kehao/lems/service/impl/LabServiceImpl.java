@@ -285,4 +285,19 @@ public class LabServiceImpl implements LabService {
         }
         return result;
     }
+
+    @Override
+    public LEMSResult getAllLab() {
+        LEMSResult result =new LEMSResult();
+        List<Laboratory> laboratoryList=laboratoryMapper.selectAllLab();
+        if(laboratoryList.size()>0){
+            result.setData(laboratoryList);
+            result.setMessage("获取成功");
+            result.setStatus(0);
+        }else {
+            result.setMessage("获取失败");
+            result.setStatus(1);
+        }
+        return result;
+    }
 }

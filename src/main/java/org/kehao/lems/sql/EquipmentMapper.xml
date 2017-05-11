@@ -36,7 +36,7 @@
     </resultMap>
 
     <sql id="Equ_Purc_Jion_Column_List">
-        eid, id, ename, type, addtime, status, remark, equipment.pcid,uid,pctime,price
+        eid, id, ename, type, addtime, status, remark, equipment.pcid, uid, pctime, price
     </sql>
 
 
@@ -70,7 +70,7 @@
     </resultMap>
 
     <sql id="Equ_Lab_Jion_Column_List">
-        equ.eid, equ.id e_id, equ.ename, equ.type, equ.addtime, equ.status e_status, equ.remark e_remark, lab.lname,lab.id l_id
+        equ.eid, equ.id e_id, equ.ename, equ.type, equ.addtime, equ.status e_status, equ.remark e_remark, lab.lname, lab.id l_id
     </sql>
 
 
@@ -81,16 +81,16 @@
         where eid = #{eid,jdbcType=CHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-        delete from s_equipment
-        where eid = #{eid,jdbcType=CHAR}
+        DELETE FROM s_equipment
+        WHERE eid = #{eid,jdbcType=CHAR}
     </delete>
     <insert id="insert" parameterType="org.kehao.lems.entity.Equipment">
-        insert into s_equipment (eid, id, ename,
-          type, addtime, status,
-          remark, pcid)
-        values (#{eid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR},
-          #{type,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
-          #{remark,jdbcType=VARCHAR}, #{pcid,jdbcType=CHAR})
+        INSERT INTO s_equipment (eid, id, ename,
+                                 type, addtime, status,
+                                 remark, pcid)
+        VALUES (#{eid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR},
+                #{type,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+                #{remark,jdbcType=VARCHAR}, #{pcid,jdbcType=CHAR})
     </insert>
     <insert id="insertSelective" parameterType="org.kehao.lems.entity.Equipment">
         insert into s_equipment
@@ -175,15 +175,15 @@
         where eid = #{eid,jdbcType=CHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Equipment">
-        update s_equipment
-        set id = #{id,jdbcType=VARCHAR},
-        ename = #{ename,jdbcType=VARCHAR},
-        type = #{type,jdbcType=VARCHAR},
-        addtime = #{addtime,jdbcType=TIMESTAMP},
-        status = #{status,jdbcType=INTEGER},
-        remark = #{remark,jdbcType=VARCHAR},
-        pcid = #{pcid,jdbcType=CHAR}
-        where eid = #{eid,jdbcType=CHAR}
+        UPDATE s_equipment
+        SET id      = #{id,jdbcType=VARCHAR},
+            ename   = #{ename,jdbcType=VARCHAR},
+            type    = #{type,jdbcType=VARCHAR},
+            addtime = #{addtime,jdbcType=TIMESTAMP},
+            status  = #{status,jdbcType=INTEGER},
+            remark  = #{remark,jdbcType=VARCHAR},
+            pcid    = #{pcid,jdbcType=CHAR}
+        WHERE eid = #{eid,jdbcType=CHAR}
     </update>
     <!--关联查询-->
     <select id="selectEquJionPurcByEid" parameterType="java.lang.String" resultMap="Equ_Purc_Jion_Map">

@@ -14,7 +14,7 @@
         <result column="equcount" jdbcType="INTEGER" property="equcount"/>
     </resultMap>
     <sql id="Base_Column_List">
-      lid, id, lname, lsize, addtime, status, type, remark, uid, equcount
+        lid, id, lname, lsize, addtime, status, type, remark, uid, equcount
     </sql>
 
     <!--Test-->
@@ -45,10 +45,10 @@
         </collection>
     </resultMap>
     <sql id="Lab_Equ_Column_List">
-            lab.lid, lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type, lab.remark,
-            elab.lid el_lid,elab.eid el_eid,
-            equ.id e_id , equ.ename , equ.type e_type , equ.status e_status ,equ.remark e_remark
-        </sql>
+        lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark,
+        elab.lid el_lid, elab.eid el_eid,
+        equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark
+    </sql>
     <select id="selectLabEquByCondition" parameterType="java.lang.String" resultMap="LabEquResultMap">
         select
         <include refid="Lab_Equ_Column_List"/>
@@ -108,11 +108,11 @@
         </collection>
     </resultMap>
     <sql id="Lab_Equ_Purc_User_Column_List">
-        lab.lid,lab.id , lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark , epurc.price ,
-        elab.lid el_lid , elab.eid el_eid ,
-        equ.id e_id , equ.ename , equ.type e_type , equ.status e_status , equ.remark e_remark ,
-        epurc.uid ep_uid ,
-        user.uid u_uid ,
+        lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark, epurc.price,
+        elab.lid el_lid, elab.eid el_eid,
+        equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark,
+        epurc.uid ep_uid,
+        user.uid u_uid,
         user.uname u_uname
     </sql>
     <!-- Lab User-->
@@ -142,7 +142,7 @@
         </association>
     </resultMap>
     <sql id="Lab_User_Column_List">
-        lab.lid,lab.id, lab.lname , lab.lsize , lab.equcount , lab.status , lab.type , lab.remark ,user.uname,user.uid
+        lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark, user.uname, user.uid
     </sql>
 
 
@@ -153,18 +153,18 @@
         where lid = #{lid,jdbcType=CHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-        delete from s_laboratory
-        where lid = #{lid,jdbcType=CHAR}
+        DELETE FROM s_laboratory
+        WHERE lid = #{lid,jdbcType=CHAR}
     </delete>
     <insert id="insert" parameterType="org.kehao.lems.entity.Laboratory">
-        insert into s_laboratory (lid, id, lname,
-          lsize, addtime, status,
-          type, remark, uid, equcount
-          )
-        values (#{lid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{lname,jdbcType=VARCHAR},
-          #{lsize,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
-          #{type,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{equcount,jdbcType=INTEGER}
-          )
+        INSERT INTO s_laboratory (lid, id, lname,
+                                  lsize, addtime, status,
+                                  type, remark, uid, equcount
+        )
+        VALUES (#{lid,jdbcType=CHAR}, #{id,jdbcType=VARCHAR}, #{lname,jdbcType=VARCHAR},
+                #{lsize,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+                #{type,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{equcount,jdbcType=INTEGER}
+        )
     </insert>
     <insert id="insertSelective" parameterType="org.kehao.lems.entity.Laboratory">
         insert into s_laboratory
@@ -267,17 +267,17 @@
         where lid = #{lid,jdbcType=CHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.Laboratory">
-        update s_laboratory
-        set id = #{id,jdbcType=VARCHAR},
-          lname = #{lname,jdbcType=VARCHAR},
-          lsize = #{lsize,jdbcType=INTEGER},
-          addtime = #{addtime,jdbcType=TIMESTAMP},
-          status = #{status,jdbcType=INTEGER},
-          type = #{type,jdbcType=VARCHAR},
-          remark = #{remark,jdbcType=VARCHAR},
-          uid = #{uid,jdbcType=CHAR},
-          equcount = #{equcount,jdbcType=INTEGER}
-        where lid = #{lid,jdbcType=CHAR}
+        UPDATE s_laboratory
+        SET id       = #{id,jdbcType=VARCHAR},
+            lname    = #{lname,jdbcType=VARCHAR},
+            lsize    = #{lsize,jdbcType=INTEGER},
+            addtime  = #{addtime,jdbcType=TIMESTAMP},
+            status   = #{status,jdbcType=INTEGER},
+            type     = #{type,jdbcType=VARCHAR},
+            remark   = #{remark,jdbcType=VARCHAR},
+            uid      = #{uid,jdbcType=CHAR},
+            equcount = #{equcount,jdbcType=INTEGER}
+        WHERE lid = #{lid,jdbcType=CHAR}
     </update>
 
     <select id="selectLaboratoryCondition" parameterType="java.util.Map" resultMap="LabUserResultMap">
@@ -409,9 +409,10 @@
     </select>
 
     <select id="selectLabUserByLid" parameterType="java.lang.String" resultMap="LabUserResultMap">
-        select user.uname
-        from s_laboratory lab join s_user user on(lab.uid=user.uid)
-        where lab.lid = #{lid,jdbcType=CHAR};
+        SELECT user.uname
+        FROM s_laboratory lab
+            JOIN s_user user ON (lab.uid = user.uid)
+        WHERE lab.lid = #{lid,jdbcType=CHAR};
     </select>
 
     <select id="selectEnOrderLabCondition" parameterType="java.util.Map" resultMap="LabUserResultMap">
@@ -449,14 +450,20 @@
         </if>
     </select>
     <update id="updateLabStatusByLid" parameterType="java.util.Map">
-        update s_laboratory
-        set status = #{status,jdbcType=INTEGER}
-        where lid = #{lid,jdbcType=CHAR}
+        UPDATE s_laboratory
+        SET status = #{status,jdbcType=INTEGER}
+        WHERE lid = #{lid,jdbcType=CHAR}
     </update>
     <update id="updateLabUidByLid" parameterType="java.util.Map">
         UPDATE s_laboratory
         SET uid = #{uid,jdbcType=CHAR}
         WHERE lid = #{lid,jdbcType=CHAR}
     </update>
+    <select id="selectAllLab" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from s_laboratory
+        where status != '1'
+    </select>
 
 </mapper>

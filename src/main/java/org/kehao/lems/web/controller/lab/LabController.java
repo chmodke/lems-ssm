@@ -95,4 +95,10 @@ public class LabController {
     public LEMSResult modMgrLab(String lid,String uid){
         return labService.modMgrLab(lid,uid);
     }
+
+    @RequestMapping("/get_all_lab.do")
+    @ResponseBody
+    public LEMSResult getAllLab(){
+        return labService.getAllLab();
+    }
 }

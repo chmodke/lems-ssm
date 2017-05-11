@@ -4,8 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/index.jsp" line="393" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" line="107" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/repeat_pwd.jsp" line="11" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="134" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="144" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="133" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="143" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/test/test_datagrid.html" line="10" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" line="25" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/RoleMapper.xml" line="139" />
@@ -13,18 +13,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60717c3a-28ec-4aba-8786-214ae1031305" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reset.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabScheduleService.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabScheduleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquLabMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquLabMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquLabMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquLabMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,117 +87,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ordered_lab_list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="26" column="66" lean-forward="true" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabScheduleServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding>
-                <element signature="e#1604#1620#0" expanded="true" />
-                <element signature="e#2216#2231#0" expanded="true" />
-                <element signature="e#3533#3549#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="71" column="95" lean-forward="false" selection-start-line="71" selection-start-column="95" selection-end-line="71" selection-end-column="95" />
-              <folding>
-                <element signature="e#3458#3459#0" expanded="true" />
-                <element signature="e#3510#3511#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabScheduleMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabScheduleMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="155" column="106" lean-forward="false" selection-start-line="155" selection-start-column="106" selection-end-line="155" selection-end-column="106" />
-              <folding>
-                <marker date="1494422065753" expanded="true" signature="2674:2795" ph="select from s_lab_schedule" />
-                <marker date="1494422065753" expanded="true" signature="2888:2957" ph="DELETE FROM " />
-                <marker date="1494422065753" expanded="true" signature="3055:3320" ph="INSERT INTO s_lab_schedule... " />
-                <marker date="1494422065753" expanded="true" signature="4799:5437" ph="update s_lab... " />
-                <marker date="1494422065753" expanded="true" signature="5547:5869" ph="UPDATE s_lab... " />
-                <marker date="1494422065753" expanded="true" signature="6007:7017" ph="select from s_lab_schedule" />
-                <marker date="1494422065753" expanded="true" signature="6007:7018" ph="select from s_lab_schedule" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="351" column="34" lean-forward="true" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
+            <state relative-caret-position="5568">
+              <caret line="348" column="79" lean-forward="true" selection-start-line="348" selection-start-column="79" selection-end-line="348" selection-end-column="79" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabSchedule.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
-                <element signature="e#1425#1426#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabScheduleEx.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -243,11 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/301c8861-16c0-49a2-97cd-2f58a76fe0b9/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/install.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquLab.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lems/sql/test.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/schedule_lab.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/repeat_pwd.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jslib/lems/lems-util.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/lab/add_lab.jsp" />
@@ -263,37 +163,42 @@
         <option value="$PROJECT_DIR$/src/main/webapp/user/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquipmentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabScheduleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquLabMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquLabMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/reset.sql" />
       </list>
     </option>
   </component>
@@ -336,8 +241,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -380,11 +285,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -394,21 +301,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -419,18 +312,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -449,14 +334,10 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -482,33 +363,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jslib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -534,7 +389,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -552,37 +407,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -609,14 +434,10 @@
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -647,14 +468,10 @@
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="labs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -692,7 +509,45 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="equ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -718,7 +573,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -748,7 +603,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -778,7 +633,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
+              <option name="myItemId" value="LEMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -812,71 +667,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -906,8 +697,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -925,12 +714,12 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\equ" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\lab" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\lab" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.kehao.lems.web.controller.labs" />
@@ -939,12 +728,12 @@
       <recent name="org.kehao.lems.service" />
       <recent name="org.kehao.lems.web.controller.role" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\lab" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\lab" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\equ" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\test\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1002,61 +791,6 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -1622,6 +1356,7 @@
       <workItem from="1494383321076" duration="13397000" />
       <workItem from="1494404557354" duration="85000" />
       <workItem from="1494413730605" duration="8789000" />
+      <workItem from="1494463754971" duration="8052000" />
     </task>
     <servers />
   </component>
@@ -1658,7 +1393,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358519000" />
+    <option name="totallyTimeSpent" value="366571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1670,43 +1405,43 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25353926" sideWeight="0.5025773" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15270619" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.126933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4708589" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25920245" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25153375" sideWeight="0.4974227" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261745" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698795" sideWeight="0.50386596" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15270619" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3704698" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20499243" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35609102" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20489691" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925257" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2671141" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.126933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698795" sideWeight="0.496134" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35649934" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2671141" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1766,7 +1501,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="97" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -1785,45 +1520,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/Resources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquBreakEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquipmentEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquPurchaseEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1842,9 +1538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1913,13 +1606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="84" column="44" lean-forward="true" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -1935,49 +1621,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="356" column="18" lean-forward="false" selection-start-line="356" selection-start-column="13" selection-end-line="356" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="319" column="35" lean-forward="false" selection-start-line="319" selection-start-column="35" selection-end-line="319" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="91" column="15" lean-forward="false" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/add_lab.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1988,50 +1636,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="233" column="52" lean-forward="false" selection-start-line="233" selection-start-column="52" selection-end-line="233" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="130" column="42" lean-forward="false" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="50" lean-forward="true" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="48" column="58" lean-forward="true" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -2044,86 +1652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/Laboratory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2329">
-          <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding>
-            <element signature="e#1701#1717#0" expanded="true" />
-            <element signature="e#2386#2400#0" expanded="true" />
-            <element signature="e#3130#3146#0" expanded="true" />
-            <element signature="e#4072#4088#0" expanded="true" />
-            <element signature="e#4912#4926#0" expanded="true" />
-            <element signature="e#7110#7126#0" expanded="true" />
-            <element signature="e#7497#7513#0" expanded="true" />
-            <element signature="e#8183#8197#0" expanded="true" />
-            <element signature="e#8931#8947#0" expanded="true" />
-            <element signature="e#9292#9308#0" expanded="true" />
-            <element signature="e#10299#10315#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="71" column="95" lean-forward="false" selection-start-line="71" selection-start-column="95" selection-end-line="71" selection-end-column="95" />
-          <folding>
-            <element signature="e#3458#3459#0" expanded="true" />
-            <element signature="e#3510#3511#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="433" column="71" lean-forward="true" selection-start-line="433" selection-start-column="71" selection-end-line="433" selection-end-column="71" />
-          <folding>
-            <marker date="1494413603849" expanded="true" signature="3281:3498" ph="select from s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="9410:9527" ph="select from s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="9620:9685" ph="delete from " />
-            <marker date="1494413603849" expanded="true" signature="9782:10219" ph="insert into s_laboratory... " />
-            <marker date="1494413603849" expanded="true" signature="12392:13446" ph="update s_lab... " />
-            <marker date="1494413603849" expanded="true" signature="13555:14022" ph="update s_lab... " />
-            <marker date="1494413603849" expanded="true" signature="14149:14913" ph="select from s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="16051:18075" ph="select from s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="20151:20281" ph="select user.... s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="20409:21172" ph="select from s_laboratory" />
-            <marker date="1494413603849" expanded="true" signature="21971:22079" ph="update s_lab... " />
-            <marker date="1494413603849" expanded="true" signature="22168:22267" ph="UPDATE s_lab... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="83" column="55" lean-forward="false" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -2140,38 +1672,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2179,53 +1688,309 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LabScheduleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="110" column="66" lean-forward="true" selection-start-line="110" selection-start-column="66" selection-end-line="110" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="95" column="31" lean-forward="true" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4733#4739#1#HTML" expanded="true" />
+            <element signature="e#4884#4890#1#HTML" expanded="true" />
+            <element signature="e#5035#5041#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#5297#5303#0#HTML" expanded="true" />
+            <element signature="e#5525#5531#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="171" column="16" lean-forward="false" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
+          <folding>
+            <marker date="1494466024197" expanded="true" signature="2674:2795" ph="select from s_lab_schedule" />
+            <marker date="1494466024197" expanded="true" signature="2888:2957" ph="DELETE FROM " />
+            <marker date="1494466024197" expanded="true" signature="3055:3320" ph="INSERT INTO s_lab_schedule... " />
+            <marker date="1494466024197" expanded="true" signature="4799:5437" ph="update s_lab... " />
+            <marker date="1494466024197" expanded="true" signature="5547:5869" ph="UPDATE s_lab... " />
+            <marker date="1494466024197" expanded="true" signature="6007:7034" ph="select from s_lab_schedule" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#841#856#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="-124">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#1604#1620#0" expanded="true" />
             <element signature="e#2216#2231#0" expanded="true" />
-            <element signature="e#3533#3549#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="26" column="66" lean-forward="true" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+        <state relative-caret-position="592">
+          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="155" column="106" lean-forward="false" selection-start-line="155" selection-start-column="106" selection-end-line="155" selection-end-column="106" />
+        <state relative-caret-position="453">
+          <caret line="60" column="46" lean-forward="false" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="93" column="17" lean-forward="true" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="75" column="41" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/LabService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="102" column="27" lean-forward="true" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="322" column="22" lean-forward="true" selection-start-line="322" selection-start-column="22" selection-end-line="322" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="357" column="10" lean-forward="false" selection-start-line="357" selection-start-column="10" selection-end-line="357" selection-end-column="10" />
           <folding>
-            <marker date="1494422065753" expanded="true" signature="2674:2795" ph="select from s_lab_schedule" />
-            <marker date="1494422065753" expanded="true" signature="2888:2957" ph="DELETE FROM " />
-            <marker date="1494422065753" expanded="true" signature="3055:3320" ph="INSERT INTO s_lab_schedule... " />
-            <marker date="1494422065753" expanded="true" signature="4799:5437" ph="update s_lab... " />
-            <marker date="1494422065753" expanded="true" signature="5547:5869" ph="UPDATE s_lab... " />
-            <marker date="1494422065753" expanded="true" signature="6007:7017" ph="select from s_lab_schedule" />
-            <marker date="1494422065753" expanded="true" signature="6007:7018" ph="select from s_lab_schedule" />
+            <marker date="1494397875606" expanded="true" signature="4673:4784" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="4877:4936" ph="delete from " />
+            <marker date="1494397875606" expanded="true" signature="5027:5565" ph="insert into s_user... " />
+            <marker date="1494397875606" expanded="true" signature="8170:9501" ph="update s_use... " />
+            <marker date="1494397875606" expanded="true" signature="9604:10200" ph="update s_use... " />
+            <marker date="1494397875606" expanded="true" signature="10313:10428" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="10504:10585" ph="update s_use... " />
+            <marker date="1494397875606" expanded="true" signature="10697:10815" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="10926:12255" ph="update s_use... " />
+            <marker date="1494397875606" expanded="true" signature="12379:12555" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="12677:12892" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="13015:14113" ph="select from s_user" />
+            <marker date="1494397875606" expanded="true" signature="15667:15784" ph="select from s_user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="434" column="71" lean-forward="true" selection-start-line="434" selection-start-column="71" selection-end-line="434" selection-end-column="71" />
+          <folding>
+            <marker date="1494469477082" expanded="true" signature="3260:3477" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="9370:9487" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="9580:9645" ph="DELETE FROM " />
+            <marker date="1494469477082" expanded="true" signature="9742:10235" ph="INSERT INTO s_laboratory... " />
+            <marker date="1494469477082" expanded="true" signature="12408:13462" ph="update s_lab... " />
+            <marker date="1494469477082" expanded="true" signature="13571:14080" ph="UPDATE s_lab... " />
+            <marker date="1494469477082" expanded="true" signature="14207:14971" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="16109:18133" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="20209:20354" ph="SELECT user.... s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="20482:21245" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="22044:22152" ph="UPDATE s_lab... " />
+            <marker date="1494469477082" expanded="true" signature="22241:22340" ph="UPDATE s_lab... " />
+            <marker date="1494469477082" expanded="true" signature="22453:22554" ph="select from s_laboratory" />
+            <marker date="1494469477082" expanded="true" signature="22453:22557" ph="select from s_laboratory" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="102" column="7" lean-forward="false" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="291" column="70" lean-forward="true" selection-start-line="291" selection-start-column="70" selection-end-line="291" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="102" column="5" lean-forward="false" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+          <folding>
+            <element signature="e#2048#2063#0" expanded="true" />
+            <element signature="e#2485#2500#0" expanded="true" />
+            <element signature="e#3458#3459#0" expanded="true" />
+            <element signature="e#3510#3511#0" expanded="true" />
+            <element signature="e#3603#3604#0" expanded="true" />
+            <element signature="e#3648#3649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquLabMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+          <folding>
+            <marker date="1494470602815" expanded="true" signature="4298:4414" ph="select from s_equipment" />
+            <marker date="1494470602815" expanded="true" signature="4507:4571" ph="delete from " />
+            <marker date="1494470602815" expanded="true" signature="4667:5067" ph="insert into s_equipment... " />
+            <marker date="1494470602815" expanded="true" signature="6873:7706" ph="update s_equ... " />
+            <marker date="1494470602815" expanded="true" signature="7814:8213" ph="update s_equ... " />
+            <marker date="1494470602815" expanded="true" signature="8356:8561" ph="select from s_equipment" />
+            <marker date="1494470602815" expanded="true" signature="8687:9500" ph="select from s_equipment" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquLabMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding>
+            <marker date="1494470634676" expanded="true" signature="550:640" ph="INSERT INTO equ_lab... " />
+            <marker date="1494470634676" expanded="true" signature="1378:1499" ph="SELECT FROM equ_lab" />
+            <marker date="1494470634676" expanded="true" signature="1629:1750" ph="SELECT FROM equ_lab" />
+            <marker date="1494470634676" expanded="true" signature="1857:1951" ph="UPDATE equ_l... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <folding>
+            <element signature="e#2808#2809#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1744">
+          <caret line="127" column="32" lean-forward="true" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reset.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="351" column="34" lean-forward="true" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
+        <state relative-caret-position="5568">
+          <caret line="348" column="79" lean-forward="true" selection-start-line="348" selection-start-column="79" selection-end-line="348" selection-end-column="79" />
           <folding />
         </state>
       </provider>

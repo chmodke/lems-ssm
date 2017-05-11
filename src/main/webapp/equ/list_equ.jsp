@@ -56,6 +56,32 @@
                 handler:function(){
                     equ_list_del();
                 }
+            },'-',{
+                text:'转移',
+                iconCls:'icon-edit',
+                handler:function(){
+                    //获取参数
+                    var move_equ = $('#equ_list_list').datagrid('getSelected');
+                    var move_equ_eid = move_equ['eid'];
+                    var move_equ_id = move_equ['id'];
+                    var move_equ_ename = move_equ['ename'];
+                    $('#equ_list_list').datagrid('clearSelections');//清除选中
+                    $("#equ_list_dialog").dialog({
+                        title: '设备转移',
+                        width: 650,
+                        height: 480,
+                        href: './equ/move_equ.jsp',
+                        modal: true,
+                        params: {
+                            'move_equ_eid': move_equ_eid,
+                            'move_equ_id': move_equ_id,
+                            'move_equ_ename': move_equ_ename
+                        },//传递参数
+                        onClose: function () {
+                            $('#equ_list_list').datagrid('load',{});
+                        }
+                    });
+                }
             }]
         });
 
