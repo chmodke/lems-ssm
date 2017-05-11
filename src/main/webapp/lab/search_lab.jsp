@@ -52,7 +52,12 @@
                         if (equ_status == 3) {
                             return '故障';
                         }
-                    }
+                        if (equ_status == 4) {
+                            return '借出';
+                        }
+                    },
+                    sortable: true,
+                    fixed: true
                 },
                 {field: 'purc_price', title: '设备价格(元)', width: 100},
                 {field: 'equ_uname', title: '设备采购者', width: 100},
