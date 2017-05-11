@@ -5,3 +5,4 @@ update s_user set status='0';
 update s_laboratory set status='0';
 delete from s_equ_schedule;
 delete from s_lab_schedule;
+delete from s_equ_break;

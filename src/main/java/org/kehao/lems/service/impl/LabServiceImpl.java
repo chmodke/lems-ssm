@@ -139,6 +139,9 @@ public class LabServiceImpl implements LabService {
         if (sort.equals("equ_id")) {
             sort = "equ.id";
         }
+        if(sort.equals("equ_status")){
+            sort="equ.status";
+        }
         map.put("sort", sort);
         //封装返回数据集合
         List<Laboratory> laboratoryList = laboratoryMapper.selectLabEquUserByCondition(map);

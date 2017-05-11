@@ -66,7 +66,7 @@
         $("#list_reset_search_lab_btn").click(list_reset_search_lab);
 
         /**
-         * 删除用户
+         * 删除实验室
          */
         function list_del_lab(){
             var del_lablist=$('#list_lab_list').datagrid('getSelections');

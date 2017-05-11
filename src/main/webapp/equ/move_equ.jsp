@@ -103,7 +103,7 @@
                     </a>
                     <a id="move_equ_btn" class="l-btn">
                                     <span class="l-btn-left" style="color:#ffffff;background-color:#0e90d2">
-                                        <span class="l-btn-text">添加</span>
+                                        <span class="l-btn-text">转移</span>
                                     </span>
                     </a>
                 </div>

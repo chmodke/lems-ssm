@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-05-10 22:25:42
+Date: 2017-05-11 19:40:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,6 +38,7 @@ INSERT INTO `equ_lab` VALUES ('5370735eff1f4a25ba5b046baa873c3c', 'a7d5fe3f19cd4
 INSERT INTO `equ_lab` VALUES ('5370735eff1f4a25ba5b046baa873c3c', '9999');
 INSERT INTO `equ_lab` VALUES ('45b0084bc10d4dd4b78eb9bf0c5ce477', '6101e7eedf2544b186f6fead7bf677bc');
 INSERT INTO `equ_lab` VALUES ('b91e4444c3f843e2b2be0276bd8b3265', '82f89ad15cd74461884acac5dbf12284');
+INSERT INTO `equ_lab` VALUES ('0b1533555c0748b4a8e985f7b9e52897', 'cc4e2015519f4dd68d7ebadf4e37283e');
 
 -- ----------------------------
 -- Table structure for role_permission
@@ -83,13 +84,13 @@ INSERT INTO `s_equipment` VALUES ('41c9f5d89408441485a0be5dd9fde61b', '0429-003'
 INSERT INTO `s_equipment` VALUES ('6101e7eedf2544b186f6fead7bf677bc', '0429-001', '0429', '001', '2017-04-30 17:13:42', '0', '采购日期实现测试', '4f5565971ad24b1cb933395d98c58a0d');
 INSERT INTO `s_equipment` VALUES ('6c2e9cbd753b4431942dbe1ebd82dba3', '0429-003', '0429', '003', '2017-04-30 19:45:21', '0', '12', 'ea40ef0930fa45e3becfe545902dc2e4');
 INSERT INTO `s_equipment` VALUES ('6d0918be1a964d07948495feef08fbd2', '631-001', 'web服务器', '服务器', '2017-04-30 16:49:59', '0', '计算机', '495277f85336499cb646b68de9a91e22');
-INSERT INTO `s_equipment` VALUES ('82f89ad15cd74461884acac5dbf12284', 'xxxy_zz01', '计算机', 'zz01', '2017-04-29 00:04:18', '1', '计算机', '8b880fc5597f4d329364ed680ceb826e');
+INSERT INTO `s_equipment` VALUES ('82f89ad15cd74461884acac5dbf12284', 'xxxy_zz01', '计算机', 'zz01', '2017-04-29 00:04:18', '0', '计算机', '8b880fc5597f4d329364ed680ceb826e');
 INSERT INTO `s_equipment` VALUES ('98b7579ec813488083287bfdb62cdd67', '531-001', '星研硬件实验箱', 'Y001', '2017-04-27 18:41:56', '0', '星研硬件实验箱', '66de736c5743481980b81a96b16df497');
 INSERT INTO `s_equipment` VALUES ('9999', '9999', '电脑', '电脑', '2017-04-25 09:32:11', '0', '电脑', '9999');
 INSERT INTO `s_equipment` VALUES ('a7d5fe3f19cd4fd5a58e785c9cba7c5f', '631-002', '数据库服务器', '123', '2017-04-27 15:55:10', '0', '数据库服务器', '8050d7fc49d14468a6cd0fae7f9472d8');
 INSERT INTO `s_equipment` VALUES ('cc4e2015519f4dd68d7ebadf4e37283e', '0429-002', '0429', '002', '2017-04-30 19:42:40', '0', '1', '72d7913511ca49bb84d41dafec02236d');
-INSERT INTO `s_equipment` VALUES ('d16bbc38a9a94f6a8ca1f82797463cfa', '631-001', 'web服务器', '服务器', '2017-04-27 15:20:08', '2', '计算机', '79e142a75ba3492ca528c390863f3b93');
-INSERT INTO `s_equipment` VALUES ('de3fd36c5d0e4401a667dc93c70a637c', 'equ_001_001', '数据库服务器', 'eq_003', '2017-04-27 23:48:22', '2', '服务器', '3c469c21d49242f7a1e27c47346db097');
+INSERT INTO `s_equipment` VALUES ('d16bbc38a9a94f6a8ca1f82797463cfa', '631-001', 'web服务器', '服务器', '2017-04-27 15:20:08', '0', '计算机', '79e142a75ba3492ca528c390863f3b93');
+INSERT INTO `s_equipment` VALUES ('de3fd36c5d0e4401a667dc93c70a637c', 'equ_001_001', '数据库服务器', 'eq_003', '2017-04-27 23:48:22', '0', '服务器', '3c469c21d49242f7a1e27c47346db097');
 
 -- ----------------------------
 -- Table structure for s_equ_break
@@ -98,7 +99,7 @@ DROP TABLE IF EXISTS `s_equ_break`;
 CREATE TABLE `s_equ_break` (
   `bid` char(32) NOT NULL COMMENT '故障事件id',
   `eid` char(32) NOT NULL COMMENT '故障设备id',
-  `id` int(11) DEFAULT NULL COMMENT '自定义编号',
+  `id` varchar(15) DEFAULT NULL COMMENT '自定义编号',
   `breason` varchar(500) DEFAULT NULL COMMENT '故障原因',
   `status` int(2) DEFAULT NULL COMMENT '处理状态',
   PRIMARY KEY (`bid`),
@@ -109,7 +110,6 @@ CREATE TABLE `s_equ_break` (
 -- ----------------------------
 -- Records of s_equ_break
 -- ----------------------------
-INSERT INTO `s_equ_break` VALUES ('9999', '9999', '9999', '电源', '1');
 
 -- ----------------------------
 -- Table structure for s_equ_purchase
@@ -183,14 +183,14 @@ CREATE TABLE `s_laboratory` (
 -- Records of s_laboratory
 -- ----------------------------
 INSERT INTO `s_laboratory` VALUES ('0b1533555c0748b4a8e985f7b9e52897', '630', '630', '80', '2017-05-03 19:16:31', '0', '计算机软件', '软件', '16e3a3765d2a40b4917eb2cce7d372d4', '80');
-INSERT INTO `s_laboratory` VALUES ('45b0084bc10d4dd4b78eb9bf0c5ce477', '9#629', '629', '80', '2017-04-27 09:02:29', '2', '计算机机房', '计算机软件机房', '9999', '80');
+INSERT INTO `s_laboratory` VALUES ('45b0084bc10d4dd4b78eb9bf0c5ce477', '9#629', '629', '80', '2017-04-27 09:02:29', '0', '计算机机房', '计算机软件机房', '9999', '80');
 INSERT INTO `s_laboratory` VALUES ('5370735eff1f4a25ba5b046baa873c3c', 'zzzz', 'zzz', '111', '2017-05-03 19:43:31', '0', 'zzz', 'zzz', '16e3a3765d2a40b4917eb2cce7d372d4', '111');
-INSERT INTO `s_laboratory` VALUES ('62440b72fab24af984f99ceb1681bf2d', 'zzz_zz', '软件实验室', '80', '2017-05-03 19:33:04', '1', '计算机', '软件实验室', 'af7b3b6768c243f28aa2f62de9a98287', '80');
+INSERT INTO `s_laboratory` VALUES ('62440b72fab24af984f99ceb1681bf2d', 'zzz_zz', '软件实验室', '80', '2017-05-03 19:33:04', '0', '计算机', '软件实验室', 'af7b3b6768c243f28aa2f62de9a98287', '80');
 INSERT INTO `s_laboratory` VALUES ('8bbfe4d37a094789a042fface14e8d20', 'wqe', 'qqqq', '21', '2017-05-03 19:39:34', '0', 'qqqq', 'qweqe', '16e3a3765d2a40b4917eb2cce7d372d4', '21');
-INSERT INTO `s_laboratory` VALUES ('b91e4444c3f843e2b2be0276bd8b3265', '629', '计算机公共机房', '50', '2017-04-25 09:41:08', '2', '计算机', '计算机机房', '9999', '50');
+INSERT INTO `s_laboratory` VALUES ('b91e4444c3f843e2b2be0276bd8b3265', '629', '计算机公共机房', '50', '2017-04-25 09:41:08', '0', '计算机', '计算机机房', '9999', '50');
 INSERT INTO `s_laboratory` VALUES ('b96a1257cbee464aba8845b29dbbea1a', 'soft_001', '软件工程实验室', '80', '2017-04-27 23:49:18', '0', '软件工程', '软件工程', 'be817b4d6b8743f5a1e26fd826b4f155', '80');
-INSERT INTO `s_laboratory` VALUES ('c75ff212a8c148e1b7587008ae2e2589', '555', '555', '50', '2017-05-08 11:21:34', '2', '传媒', '传媒', '16e3a3765d2a40b4917eb2cce7d372d4', '50');
-INSERT INTO `s_laboratory` VALUES ('ijfnsalfhai4325g93r20t14h3iq9hfe', '320', '320', '6', '2017-05-08 11:24:25', '2', '办公室', '办公', '6e28f9a7da5d44d3bc5d7e0844b45eb5', '6');
+INSERT INTO `s_laboratory` VALUES ('c75ff212a8c148e1b7587008ae2e2589', '555', '555', '50', '2017-05-08 11:21:34', '0', '传媒', '传媒', '16e3a3765d2a40b4917eb2cce7d372d4', '50');
+INSERT INTO `s_laboratory` VALUES ('ijfnsalfhai4325g93r20t14h3iq9hfe', '320', '320', '6', '2017-05-08 11:24:25', '0', '办公室', '办公', '6e28f9a7da5d44d3bc5d7e0844b45eb5', '6');
 
 -- ----------------------------
 -- Table structure for s_lab_schedule
@@ -211,8 +211,6 @@ CREATE TABLE `s_lab_schedule` (
 -- ----------------------------
 -- Records of s_lab_schedule
 -- ----------------------------
-INSERT INTO `s_lab_schedule` VALUES ('27f5c6c8d6944314b26f0e1e531c7e1c', 'c75ff212a8c148e1b7587008ae2e2589', '2017-05-11 20:51:22', '2017-05-12 20:51:24', 'test', '123');
-INSERT INTO `s_lab_schedule` VALUES ('e498d68bc8f64008a547828d86931e2f', 'ijfnsalfhai4325g93r20t14h3iq9hfe', '2017-05-10 19:59:41', '2017-05-17 19:59:43', 'kehao', '123445');
 
 -- ----------------------------
 -- Table structure for s_permission
@@ -295,17 +293,17 @@ CREATE TABLE `s_user` (
 -- ----------------------------
 INSERT INTO `s_user` VALUES ('0e690bc74f354a0996942ee091709943', 'kehao003', 'kehao003', 'ILfXjzPgW073ICQUfhIhwA==', 'sqDUL6', null, null, 'kehao003@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('0ec092f59ead420ba6b3829ea4d4cfb8', 'test002', 'test002', 'LV/jqd7Y0ZJRDxdf4alnFQ==', 'FjeoK4', null, null, 'test002@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
-INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'VCN6WdSBoDOKnmnzLvpgzA==', '5a2615', '火星', '111', 'kehao@lems.com', '9999', '2017-05-05 11:27:40', '6eb09774a4464c1280466ea20f3687e7', '0');
+INSERT INTO `s_user` VALUES ('16e3a3765d2a40b4917eb2cce7d372d4', 'kehao', 'kehao', 'VCN6WdSBoDOKnmnzLvpgzA==', '5a2615', '火星', '111', 'kehao@lems.com', '9999', '2017-05-05 11:27:40', '381ddcd4b4204d6cab3b110d0690c4fe', '0');
 INSERT INTO `s_user` VALUES ('2caf84fa65c04963818da964ce10fc4b', 'test000', 'kehao', 'aMtnkqh+KcQGjfZoLftcuQ==', '0tzkmh', null, null, 'test001@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('56c0b00dbceb4a54b065b0aa71bca526', 'user1', 'user', '6khXbzC+FmmXFpnAmtBclA==', '123456', '630', '111', 'xxx@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('6e28f9a7da5d44d3bc5d7e0844b45eb5', '朱晨光', '朱晨光', 'mUuuLL580Y+CC97uHFrgDw==', 'wHsa7Q', null, null, 'zhuchenguang@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', 'd1c553fb2f8e43ddb4704f79f0de53ae', '0');
-INSERT INTO `s_user` VALUES ('8f6e66694bc84d3299e3c5df0485e579', 'wangwu', '王五', '4BnJUfs9SArj08zgPZttBQ==', '5dXKjO', null, null, 'wangwu@lems.com', 'af7b3b6768c243f28aa2f62de9a98287', '2017-05-01 18:17:23', null, '1');
+INSERT INTO `s_user` VALUES ('8f6e66694bc84d3299e3c5df0485e579', 'wangwu', '王五', '4BnJUfs9SArj08zgPZttBQ==', '5dXKjO', null, null, 'wangwu@lems.com', 'af7b3b6768c243f28aa2f62de9a98287', '2017-05-01 18:17:23', null, '0');
 INSERT INTO `s_user` VALUES ('9999', 'admin', 'admin', '6khXbzC+FmmXFpnAmtBclA==', '123456', 'address', '110', 'admin@xx.com', '9999', '2017-05-05 11:40:53', '91934aa334ed40a2ad5fca4e35c5c7dg', '0');
 INSERT INTO `s_user` VALUES ('9a0329eac5f444ee93e16aa00627489e', 'kehao004', 'kehao004', 'yQGL6sCpxi4Ox4SqbUUp2A==', 'fCOdm4', null, null, 'kehao004@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
-INSERT INTO `s_user` VALUES ('9b5f8b00c8aa4c188cdc7bfb6502c14c', 'kehao006', 'kehao', 'CSb7RgQVgOa1n3auvKn5cw==', 'gUHu7h', null, null, 'kehao006@lems.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-03 00:03:29', null, '1');
+INSERT INTO `s_user` VALUES ('9b5f8b00c8aa4c188cdc7bfb6502c14c', 'kehao006', 'kehao', 'CSb7RgQVgOa1n3auvKn5cw==', 'gUHu7h', null, null, 'kehao006@lems.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-03 00:03:29', null, '0');
 INSERT INTO `s_user` VALUES ('9eeaaf17b2894b4bb3767a25f0155ce4', 'test004', 'test', 'G8TP3AtVmjMdK3BAvtsPpA==', 'jcPoOg', null, null, 'test004@lems.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-03 19:17:52', null, '0');
 INSERT INTO `s_user` VALUES ('af7b3b6768c243f28aa2f62de9a98287', 'zhangsan', '张三', 'f339Fttx2MEhM5tqQl1Hdg==', 'hWQrtH', '极地', '130', 'zhangsan@xx.com', '9999', '2017-05-01 18:17:11', '4143a2b82ef1485296c29f62d0213a24', '0');
-INSERT INTO `s_user` VALUES ('be817b4d6b8743f5a1e26fd826b4f155', 'lisi', '李四', 'VGdHapNb/xVEX8A+z52XIA==', '6bGysS', null, null, 'lisi@xx.com', '9999', '2017-05-03 00:03:29', '89177a25ecc04c658561c6d14d97f3e9', '1');
+INSERT INTO `s_user` VALUES ('be817b4d6b8743f5a1e26fd826b4f155', 'lisi', '李四', 'VGdHapNb/xVEX8A+z52XIA==', '6bGysS', null, null, 'lisi@xx.com', '9999', '2017-05-03 00:03:29', '89177a25ecc04c658561c6d14d97f3e9', '0');
 INSERT INTO `s_user` VALUES ('c8f7256f5fa34a1b9fac60ce0d29ed6e', 'test003', 'test003', 'Gqs2VjEmWBQY3hsmN6rSqA==', '3rkUnK', null, null, 'test003@xx.com', '9999', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('caa8e746ff7e4cbd9285a21f51d25f8e', 'kehao001', 'kehao001', 'baSjbI/kE6d9BsThmXaZCA==', 'QdGPfX', null, null, 'kehao001@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', null, '0');
 INSERT INTO `s_user` VALUES ('d791da75a18c4877b31b3b97cdc195a7', 'kehao002', 'kehao002', 'VF59KSBxbVFrTDjOsrfGcQ==', 'AhtWFp', null, null, 'kehao002@xx.com', '16e3a3765d2a40b4917eb2cce7d372d4', '2017-05-01 18:17:11', '12bc61a3f9474a98877764c45f850ef4', '0');

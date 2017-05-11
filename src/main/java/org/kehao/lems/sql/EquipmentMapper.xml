@@ -232,7 +232,7 @@
         </if>
     </select>
     <update id="updateEquStatusByEidBatch" parameterType="java.util.Map">
-        UPDATE s_equipment SET status = #{status}
+        UPDATE s_equipment SET status = #{status,jdbcType=INTEGER}
         WHERE eid IN
         <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
             #{item}

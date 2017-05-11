@@ -1,10 +1,13 @@
 package org.kehao.lems.service.impl;
 
+import org.kehao.lems.dao.EquBreakMapper;
 import org.kehao.lems.dao.EquLabMapper;
 import org.kehao.lems.dao.EquipmentMapper;
+import org.kehao.lems.entity.EquBreak;
 import org.kehao.lems.entity.EquLab;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.entity.Laboratory;
+import org.kehao.lems.entity.extend.EquBreakEx;
 import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.EquService;
@@ -14,6 +17,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.validation.ReportAsSingleViolation;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +33,8 @@ public class EquServiceImpl implements EquService {
     EquipmentMapper equipmentMapper;
     @Resource
     EquLabMapper equLabMapper;
+    @Resource
+    EquBreakMapper equBreakMapper;
 
     public LEMSResult equAdd(Equipment equipment) {
         LEMSResult result = new LEMSResult();
@@ -124,7 +130,7 @@ public class EquServiceImpl implements EquService {
     public LEMSResult moveEqu(EquLab equLab) {
         LEMSResult result = new LEMSResult();
         EquLab equLabTmp = equLabMapper.selectEquLabByEid(equLab.getEid());
-        int upCount=0;
+        int upCount = 0;
         if (equLabTmp != null) {
             upCount = equLabMapper.updateEquLabLidByEid(equLab);
         } else {
@@ -136,6 +142,138 @@ public class EquServiceImpl implements EquService {
         } else {
             result.setStatus(1);
             result.setMessage("转移失败");
+        }
+        return result;
+    }
+
+    @Override
+    public LEMSResult breakEqu(EquBreak equBreak) {
+        LEMSResult result = new LEMSResult();
+        List<String> list = new ArrayList<String>(1);
+        list.add(equBreak.getEid());
+        Map map = new HashMap();
+        map.put("status", "3");//故障状态
+        map.put("list", list);
+        int upCount = equipmentMapper.updateEquStatusByEidBatch(map);//更新设备状态
+        if (1 == upCount) {
+            equBreak.setBid(CodeUtil.createId());
+            equBreak.setStatus(0);
+            upCount=equBreakMapper.insertSelective(equBreak);
+        }
+        if (1==upCount){
+            result.setStatus(0);
+            result.setMessage("报修成功");
+        }else {
+            result.setStatus(1);
+            result.setMessage("报修失败");
+        }
+        return result;
+    }
+
+    @Override
+    public LEMSResult labGetBreak(Integer page, Integer pageSize, String order, String sort, EquBreakEx equBreakEx) {
+        LEMSResult result = new LEMSResult();
+        Map<String, Object> map = new HashMap<String, Object>(8);
+        //查询条件
+        map.put("equBreakEx", equBreakEx);
+        //分页
+        if (null == page) {
+            page = 1;
+        }
+        if (null == pageSize) {
+            pageSize = 5;
+        }
+        map.put("startRec", pageSize * (page - 1));//5*(1-1)=0,,5*(2-1)=5
+        map.put("recCount", pageSize);
+        //映射排序字段
+        if (sort.equals("id")) {
+            sort = "brk.id";
+        }
+        if (sort.equals("e_id")) {
+            sort = "equ.id";
+        }
+        if (sort.equals("ename")) {
+            sort = "equ.ename";
+        }
+        if (sort.equals("etype")) {
+            sort = "equ.type";
+        }
+        if (sort.equals("status")) {
+            sort = "brk.status";
+        }
+        //排序
+        map.put("order", order);
+        map.put("sort", sort);
+
+        List<EquBreak> equBreakList=equBreakMapper.selectEquBreakByCondition(map);
+        //将数据封装至扩展对象
+        List<EquBreakEx> equBreakExList=new ArrayList<EquBreakEx>(equBreakList.size());
+        for(EquBreak equBreak:equBreakList){
+            EquBreakEx equBreakExTmp=new EquBreakEx();
+            BeanUtils.copyProperties(equBreak,equBreakExTmp);
+            if (equBreak.getEquipment()!=null){
+                Equipment equipment=equBreak.getEquipment();
+                equBreakExTmp.setEname(equipment.getEname());
+                equBreakExTmp.setEtype(equipment.getType());
+                equBreakExTmp.setE_id(equipment.getId());
+                if(equipment.getEquLab()!=null){
+                    EquLab equLab=equipment.getEquLab();
+                    if(equLab.getLaboratory()!=null){
+                        Laboratory laboratory=equLab.getLaboratory();
+                        equBreakExTmp.setLname(laboratory.getLname());
+                    }
+                }
+            }
+            equBreakExList.add(equBreakExTmp);
+        }
+        result.setData(equBreakExList);
+        result.setStatus(0);
+        return result;
+    }
+
+    @Override
+    public Long labGetBreakCount(EquBreakEx equBreakEx) {
+        Map<String, Object> map = new HashMap<String, Object>(8);
+        //查询条件
+        map.put("equBreakEx", equBreakEx);
+        return equBreakMapper.selectEquBreakByConditionCount(map);
+    }
+
+    @Override
+    public LEMSResult fixEqu(String bid,String eid) {
+        LEMSResult result=new LEMSResult();
+        List<String> list = new ArrayList<String>(1);
+        list.add(eid);
+        Map map = new HashMap();
+        map.put("status", "0");//故障状态
+        map.put("list", list);
+        int upCount = equipmentMapper.updateEquStatusByEidBatch(map);//更新设备状态
+        if(1==upCount){
+            Map map1=new HashMap();
+            map1.put("bid",bid);
+            map1.put("status","1");
+            upCount=equBreakMapper.updateBrkStatusByBid(map1);//更新报修状态
+        }
+        if (1 == upCount) {
+            result.setStatus(0);
+            result.setMessage("更新成功");
+        } else {
+            result.setStatus(1);
+            result.setMessage("更新失败");
+        }
+        return result;
+    }
+
+    @Override
+    public LEMSResult fixEquDel(String bid) {
+        LEMSResult result=new LEMSResult();
+        int upCount=equBreakMapper.deleteByPrimaryKey(bid);
+        if(1==upCount){
+            result.setStatus(0);
+            result.setMessage("删除成功");
+        }else{
+            result.setStatus(1);
+            result.setMessage("删除失败");
         }
         return result;
     }

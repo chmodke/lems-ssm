@@ -5,11 +5,13 @@ public class EquBreak {
 
     private String eid;
 
-    private Integer id;
+    private String id;
 
     private String breason;
 
     private Integer status;
+
+    private Equipment equipment;
 
     public String getBid() {
         return bid;
@@ -27,11 +29,11 @@ public class EquBreak {
         this.eid = eid == null ? null : eid.trim();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -49,5 +51,13 @@ public class EquBreak {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 }
