@@ -5,7 +5,7 @@ public class EquBreak {
 
     private String eid;
 
-    private Integer id;
+    private String id;
 
     private String breason;
 
@@ -29,11 +29,11 @@ public class EquBreak {
         this.eid = eid == null ? null : eid.trim();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

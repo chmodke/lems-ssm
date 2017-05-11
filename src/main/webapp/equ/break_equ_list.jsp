@@ -40,6 +40,12 @@
                 text:'修复',
                 iconCls:'icon-edit',
                 handler:function(){
+                    break_equ_list_fix();
+                }
+            },'-',{
+                text:'删除',
+                iconCls:'icon-edit',
+                handler:function(){
                     break_equ_list_del();
                 }
             }]
@@ -49,9 +55,9 @@
         $("#break_equ_list_reset_search_lab_btn").click(break_equ_list_reset_search_lab);
 
         /**
-         * 删除设备
+         * 修复设备
          */
-        function break_equ_list_del(){
+        function break_equ_list_fix(){
             var break_equ = $('#break_equ_list').datagrid('getSelected');
             var break_equ_bid = break_equ['bid'];
             var break_equ_eid = break_equ['eid'];
@@ -75,6 +81,39 @@
                 },
                 async: true
             });
+        }
+
+        /**
+         * 删除修复设备
+         */
+        function break_equ_list_del(){
+            var break_equ = $('#break_equ_list').datagrid('getSelected');
+            var break_equ_bid = break_equ['bid'];
+            var break_equ_status=break_equ['status'];
+            if(break_equ_status==1){
+                $.ajax({
+                    url: "./equ/fixed_equ_del.do",
+                    type: "post",
+                    data:{"bid":break_equ_bid},
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.status == 0) {
+                            $.messager.alert('提示', result.message);
+                            $('#break_equ_list').datagrid('load',{});
+                        }
+                        if (result.status != 0) {
+                            $.messager.alert('警告', result.message);
+                        }
+                        $('#break_equ_list').datagrid('clearSelections');//清除选中
+                    },
+                    error: function () {
+                        $.messager.alert('警告', "修复设备异常");
+                    },
+                    async: true
+                });
+            }else {
+                $.messager.alert("info","此设备尚未修复不可删除");
+            }
         }
 
 

@@ -263,4 +263,18 @@ public class EquServiceImpl implements EquService {
         }
         return result;
     }
+
+    @Override
+    public LEMSResult fixEquDel(String bid) {
+        LEMSResult result=new LEMSResult();
+        int upCount=equBreakMapper.deleteByPrimaryKey(bid);
+        if(1==upCount){
+            result.setStatus(0);
+            result.setMessage("删除成功");
+        }else{
+            result.setStatus(1);
+            result.setMessage("删除失败");
+        }
+        return result;
+    }
 }

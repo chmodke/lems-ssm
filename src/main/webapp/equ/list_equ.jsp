@@ -6,7 +6,7 @@
             pagination: true,
             fit: true,
             fitColumns: true,
-            singleSelect:false,
+            singleSelect:true,
             idField: 'eid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],

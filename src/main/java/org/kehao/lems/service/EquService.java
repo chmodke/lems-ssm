@@ -86,5 +86,18 @@ public interface EquService {
      */
     Long labGetBreakCount(EquBreakEx equBreakEx);
 
+    /**
+     * 修复设备
+     * @param bid
+     * @param eid
+     * @return
+     */
     LEMSResult fixEqu(String bid,String eid);
+
+    /**
+     * 删除已修复的记录
+     * @param bid
+     * @return
+     */
+    LEMSResult fixEquDel(String bid);
 }

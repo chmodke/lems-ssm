@@ -100,7 +100,7 @@
                 eid = #{eid,jdbcType=CHAR},
             </if>
             <if test="id != null">
-                id = #{id,jdbcType=INTEGER},
+                id = #{id,jdbcType=VARCHAR},
             </if>
             <if test="breason != null">
                 breason = #{breason,jdbcType=VARCHAR},
@@ -114,7 +114,7 @@
     <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.EquBreak">
         UPDATE s_equ_break
         SET eid     = #{eid,jdbcType=CHAR},
-            id      = #{id,jdbcType=INTEGER},
+            id      = #{id,jdbcType=VARCHAR},
             breason = #{breason,jdbcType=VARCHAR},
             status  = #{status,jdbcType=INTEGER}
         WHERE bid = #{bid,jdbcType=CHAR}

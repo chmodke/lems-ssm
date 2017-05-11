@@ -5,7 +5,7 @@ public class EquBreakEx{
 
     private String eid;//设备编号
 
-    private Integer id;//故障编号
+    private String id;//故障编号
 
     private String breason;//故障原因
 
@@ -36,11 +36,11 @@ public class EquBreakEx{
         this.eid = eid;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
