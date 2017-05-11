@@ -47,7 +47,6 @@
                     var order_lab_id = order_lab['id'];
                     var order_lab_lname = order_lab['lname'];
                     $('#enorder_lab_list').datagrid('clearSelections');//清除选中
-
                     $("#enorder_lab_dialog").dialog({
                         title: '实验室预约',
                         width: 650,

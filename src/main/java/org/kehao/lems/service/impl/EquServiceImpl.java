@@ -1,5 +1,6 @@
 package org.kehao.lems.service.impl;
 
+import org.kehao.lems.dao.EquLabMapper;
 import org.kehao.lems.dao.EquipmentMapper;
 import org.kehao.lems.entity.EquLab;
 import org.kehao.lems.entity.Equipment;
@@ -26,15 +27,18 @@ import java.util.Map;
 public class EquServiceImpl implements EquService {
     @Resource
     EquipmentMapper equipmentMapper;
+    @Resource
+    EquLabMapper equLabMapper;
+
     public LEMSResult equAdd(Equipment equipment) {
-        LEMSResult result=new LEMSResult();
+        LEMSResult result = new LEMSResult();
         equipment.setEid(CodeUtil.createId());
         equipment.setAddtime(new Timestamp(System.currentTimeMillis()));
         equipment.setStatus(0);
-        if(equipmentMapper.insertSelective(equipment)==1){
+        if (equipmentMapper.insertSelective(equipment) == 1) {
             result.setStatus(0);
             result.setMessage("设备部分完成");
-        }else {
+        } else {
             result.setStatus(1);
             result.setMessage("设备部分失败");
         }
@@ -42,44 +46,44 @@ public class EquServiceImpl implements EquService {
     }
 
     @Override
-    public LEMSResult labGet(Integer page, Integer pageSize, String order, String sort,  EquipmentEx equipmentEx) {
-        LEMSResult result=new LEMSResult();
-        Map<String,Object> map=new HashMap<String, Object>(8);
+    public LEMSResult labGet(Integer page, Integer pageSize, String order, String sort, EquipmentEx equipmentEx) {
+        LEMSResult result = new LEMSResult();
+        Map<String, Object> map = new HashMap<String, Object>(8);
         //查询条件
-        map.put("equipmentEx",equipmentEx);
+        map.put("equipmentEx", equipmentEx);
         //分页
-        if(null==page){
-            page=1;
+        if (null == page) {
+            page = 1;
         }
-        if(null==pageSize){
-            pageSize=5;
+        if (null == pageSize) {
+            pageSize = 5;
         }
-        map.put("startRec",pageSize*(page-1));//5*(1-1)=0,,5*(2-1)=5
-        map.put("recCount",pageSize);
+        map.put("startRec", pageSize * (page - 1));//5*(1-1)=0,,5*(2-1)=5
+        map.put("recCount", pageSize);
         //映射排序字段
-        if(sort.equals("id")){
-            sort="equ.id";
+        if (sort.equals("id")) {
+            sort = "equ.id";
         }
-        if(sort.equals("type")){
-            sort="equ.type";
+        if (sort.equals("type")) {
+            sort = "equ.type";
         }
-        if(sort.equals("status")){
-            sort="equ.status";
+        if (sort.equals("status")) {
+            sort = "equ.status";
         }
         //排序
-        map.put("order",order);
-        map.put("sort",sort);
+        map.put("order", order);
+        map.put("sort", sort);
 
-        List<Equipment> equipmentList=equipmentMapper.selectEquipmentCondition(map);
+        List<Equipment> equipmentList = equipmentMapper.selectEquipmentCondition(map);
         //将数据封装至扩展对象
-        List<EquipmentEx> equipmentExList=new ArrayList<EquipmentEx>(equipmentList.size());
-        for(Equipment equipment:equipmentList){
+        List<EquipmentEx> equipmentExList = new ArrayList<EquipmentEx>(equipmentList.size());
+        for (Equipment equipment : equipmentList) {
             EquipmentEx equipmentExTmp = new EquipmentEx();
-            BeanUtils.copyProperties(equipment,equipmentExTmp);
+            BeanUtils.copyProperties(equipment, equipmentExTmp);
             //拿到空记录，会导致结果集错乱
-            if(equipment.getEquLab()!=null){//检测空记录
-                EquLab equLab=equipment.getEquLab();
-                if(equLab.getLaboratory()!=null){
+            if (equipment.getEquLab() != null) {//检测空记录
+                EquLab equLab = equipment.getEquLab();
+                if (equLab.getLaboratory() != null) {
                     equipmentExTmp.setLid(equLab.getLaboratory().getLid());
                     equipmentExTmp.setLanme(equLab.getLaboratory().getLname());
                 }
@@ -93,14 +97,14 @@ public class EquServiceImpl implements EquService {
 
     @Override
     public Long labGetCount(EquipmentEx equipmentEx) {
-        Map<String,Object> map=new HashMap<String, Object>(8);
+        Map<String, Object> map = new HashMap<String, Object>(8);
         //查询条件
-        map.put("equipmentEx",equipmentEx);
+        map.put("equipmentEx", equipmentEx);
         return equipmentMapper.selectEquipmentConditionCount(map);
     }
 
-    public LEMSResult equDel(List<String> delList){
-        LEMSResult result=new LEMSResult();
+    public LEMSResult equDel(List<String> delList) {
+        LEMSResult result = new LEMSResult();
         Map map = new HashMap();
         map.put("status", 1);//删除状态
         map.put("list", delList);
@@ -112,6 +116,26 @@ public class EquServiceImpl implements EquService {
         } else {
             result.setMessage("批量删除失败");
             result.setStatus(1);
+        }
+        return result;
+    }
+
+    @Override
+    public LEMSResult moveEqu(EquLab equLab) {
+        LEMSResult result = new LEMSResult();
+        EquLab equLabTmp = equLabMapper.selectEquLabByEid(equLab.getEid());
+        int upCount=0;
+        if (equLabTmp != null) {
+            upCount = equLabMapper.updateEquLabLidByEid(equLab);
+        } else {
+            upCount = equLabMapper.insert(equLab);
+        }
+        if (1 == upCount) {
+            result.setStatus(0);
+            result.setMessage("转移成功");
+        } else {
+            result.setStatus(1);
+            result.setMessage("转移失败");
         }
         return result;
     }

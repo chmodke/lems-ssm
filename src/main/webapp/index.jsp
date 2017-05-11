@@ -40,10 +40,15 @@
             //$("#userremove_link").click(user_remove_tab_add);//删除用户菜单事件绑定
             $("#userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
             $("#lablist_link").click(lab_list_tab_add);//用户列表菜单事件绑定
-            $("#labsearch_link").click(lab_search_list_tab_add);//用户列表菜单事件绑定
+            /*搜索*/
+            $("#labsearch_link").click(lab_search_list_tab_add);//实验室列表菜单事件绑定
+            $("#search_userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
+            $("#search_ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
+            /*搜索*/
             $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
             $("#equlist_link").click(equ_list_tab_add);//实验室负责人管理菜单事件绑定
             $("#enorder_lab_link").click(enorder_lab_tab_add);//实验室负责人管理菜单事件绑定
+            $("#ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
 
 
             /**
@@ -207,11 +212,11 @@
              * 实验室搜索菜单事件
              */
             function lab_search_list_tab_add(){
-                if($("#index_tt").tabs("exists","实验室查询")){
-                    $("#index_tt").tabs("select","实验室查询");
+                if($("#index_tt").tabs("exists","实验室/设备查询")){
+                    $("#index_tt").tabs("select","实验室/设备查询");
                 }else{
                     $("#index_tt").tabs('add',{
-                        title:"实验室查询",
+                        title:"实验室/设备查询",
                         closable:true,
                         href:"./lab/search_lab.jsp",
                         fit:true
@@ -267,6 +272,21 @@
                 }
             }
 
+            /**
+             * 实验室已预约列表菜单事件
+             */
+            function ordered_lab_tab_add(){
+                if($("#index_tt").tabs("exists","已预约列表")){
+                    $("#index_tt").tabs("select","已预约列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"已预约列表",
+                        closable:true,
+                        href:"./lab/ordered_lab_list.jsp",
+                        fit:true
+                    });
+                }
+            }
         });
     </script>
     <style>
@@ -309,8 +329,10 @@
         <div class="easyui-accordion" data-options="fit:true,border:false">
             <div title="基础功能" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设备查询</li>
-                    <li><a id="labsearch_link" href="javascript:;">实验室查询</a></li>
+                    <li><a id="labsearch_link" href="javascript:;">实验室<b>/</b>设备查询</a></li>
+                    <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室列表</a></li>
+                    <li>已预约设备列表</li>
+                    <li><a id="search_userlist_link" href="javascript:;">用户列表</a></li>
                 </ul>
             </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">
@@ -318,29 +340,28 @@
                     <li><a id="equlist_link" href="javascript:;">设备列表</a></li>
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
                     <li>设备报修</li>
-                    <li>设备转移(分配)</li>
-                    <li>设备注销</li>
+                    <li><a href="javascript:;" title="已经在列表中实现">设备转移(分配)</a></li>
+                    <li><a href="javascript:;" title="已经在列表中实现">设备注销</a></li>
                 </ul>
             </div>
             <div title="实验室管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
-                    <li>实验室移除(列表)</li>
+                    <li><a href="javascript:;" title="已经在列表中实现">实验室移除</a></li>
                     <li><a id="labmgr_link" href="javascript:;">实验室负责人</a></li>
                 </ul>
             </div>
             <div title="设备日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设备借出</li>
-                    <li>设备归还</li>
                     <li>设备预约</li>
+                    <li>已预约列表</li>
                 </ul>
             </div>
             <div title="实验室日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="enorder_lab_link" href="javascript:;">实验室预约</a></li>
-                    <li>已预约列表</li>
+                    <li><a id="ordered_lab_link" href="javascript:;">已预约列表</a></li>
                 </ul>
             </div>
             <div title="角色管理" data-options="border:false,iconCls:'anchor'">
@@ -354,7 +375,7 @@
                 <ul>
                     <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
-                    <li><a id="userremove_link" href="javascript:;">用户删除(用户列表)</a></li>
+                    <li><a id="userremove_link" href="javascript:;" title="已经在列表中实现">用户删除</a></li>
                     <li>用户授权管理(角色)</li>
                 </ul>
             </div>

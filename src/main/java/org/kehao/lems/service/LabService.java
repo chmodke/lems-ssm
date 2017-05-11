@@ -95,4 +95,10 @@ public interface LabService {
      * @return
      */
     LEMSResult modMgrLab(String lid,String uid);
+
+    /**
+     * 获取实验室列表下拉菜单使用
+     * @return
+     */
+    LEMSResult getAllLab();
 }

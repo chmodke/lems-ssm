@@ -82,5 +82,10 @@ public interface UserMapper{
      */
     int updateUserStatusByUid(Map map);
 
+    /**
+     * 按状态查询所有用户
+     * @param status
+     * @return
+     */
     List<User> selectAllUser(String status);
 }

@@ -108,7 +108,7 @@
                         <td><input id="search_id" class="easyui-validatebox"></td>
                         <td><b>实验室类型查询</b></td>
                         <td><input id="search_type" class="easyui-validatebox"></td>
-                        <td rowspan="3" style="padding-left: 5px">
+                        <td rowspan="2" style="padding-left: 5px">
                             <input id="search_lab_btn" type="button" value="查询">&emsp;
                             <input id="reset_search_lab_btn" type="button" value="清空">
                         </td>

@@ -31,7 +31,7 @@
                     var mgr_lab_lid = mod_mgr_lab['lid'];
                     var mgr_lab_id = mod_mgr_lab['id'];
                     var mgr_lab_lname = mod_mgr_lab['lname'];
-                    //$('#mgr_lab_list').datagrid('clearSelections');//清除选中
+
 
                     $("#mgr_lab_dialog").dialog({
                         title: '实验室管理',
@@ -45,6 +45,7 @@
                         },//传递参数
                         modal: true,
                         onClose: function () {
+                            $('#mgr_lab_list').datagrid('clearSelections');//清除选中
                             $('#mgr_lab_list').datagrid('load', {});
                         }
                     });

@@ -39,16 +39,15 @@
                 $.messager.alert('警告', "非法操作");
             }
 
-            var addequ_serial = $("#addequ_serial").val();
-            var addequ_name = $("#addequ_name").val();
-            var addequ_type=$("#addequ_type").val();
+            var addequ_serial = $("#addequ_serial").val().trim();
+            var addequ_name = $("#addequ_name").val().trim();
+            var addequ_type=$("#addequ_type").val().trim();
             var addequ_time=$("#addequ_time").datetimebox('getValue');
-            var addequ_price=$("#addequ_price").val();
-            var addequ_remark=$("#addequ_remark").val();
+            var addequ_price=$("#addequ_price").val().trim();
+            var addequ_remark=$("#addequ_remark").val().trim();
             if(addequ_remark==null){
                 addequ_remark="";
             }
-
             if(price_flag){
                 $.ajax({
                     url: "./equ/equadd.do",
@@ -83,7 +82,7 @@
     });
 
 </script>
-<form method="post">
+<form method="post" id="add_equ_form">
         <table class="table table-hover table-condensed" style="width: 500px;margin: auto">
         <h3 style="text-align: center">采购设备</h3>
         <hr>

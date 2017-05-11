@@ -19,6 +19,8 @@ public class LabSchedule {
 
     private String stel;
 
+    private Laboratory laboratory;
+
     public String getSlid() {
         return slid;
     }
@@ -65,5 +67,13 @@ public class LabSchedule {
 
     public void setStel(String stel) {
         this.stel = stel;
+    }
+
+    public Laboratory getLaboratory() {
+        return laboratory;
+    }
+
+    public void setLaboratory(Laboratory laboratory) {
+        this.laboratory = laboratory;
     }
 }

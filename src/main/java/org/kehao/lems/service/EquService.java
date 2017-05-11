@@ -1,5 +1,6 @@
 package org.kehao.lems.service;
 
+import org.kehao.lems.entity.EquLab;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.utils.LEMSResult;
@@ -42,4 +43,11 @@ public interface EquService {
      * @return
      */
     LEMSResult equDel(List<String> delList);
+
+    /**
+     * 转移设备
+     * @param equLab
+     * @return
+     */
+    LEMSResult moveEqu(EquLab equLab);
 }

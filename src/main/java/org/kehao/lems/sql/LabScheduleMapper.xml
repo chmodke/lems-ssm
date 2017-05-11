@@ -12,6 +12,35 @@
     <sql id="Base_Column_List">
         slid, lid, starttime, endtime, sname, stel
     </sql>
+
+    <resultMap id="LabSch_Lab_User_ResultMap" type="org.kehao.lems.entity.LabSchedule">
+        <id column="ls_slid" jdbcType="CHAR" property="slid"/>
+        <result column="ls_lid" jdbcType="CHAR" property="lid"/>
+        <result column="ls_starttime" jdbcType="TIMESTAMP" property="starttime"/>
+        <result column="ls_endtime" jdbcType="TIMESTAMP" property="endtime"/>
+        <result column="ls_sname" jdbcType="VARCHAR" property="sname"/>
+        <result column="ls_stel" jdbcType="VARCHAR" property="stel"/>
+        <association property="laboratory" javaType="org.kehao.lems.entity.Laboratory">
+            <!--<id column="lid" jdbcType="CHAR" property="lid"/>-->
+            <result column="l_id" jdbcType="VARCHAR" property="id"/>
+            <result column="l_lname" jdbcType="VARCHAR" property="lname"/>
+            <result column="l_lsize" jdbcType="INTEGER" property="lsize"/>
+            <result column="l_type" jdbcType="VARCHAR" property="type"/>
+            <result column="l_remark" jdbcType="VARCHAR" property="remark"/>
+            <result column="l_equcount" jdbcType="INTEGER" property="equcount"/>
+            <association property="user" javaType="org.kehao.lems.entity.User">
+                <!--<id column="uid" jdbcType="CHAR" property="uid"/>-->
+                <result column="u_uname" jdbcType="VARCHAR" property="uname"/>
+            </association>
+        </association>
+    </resultMap>
+    <sql id="LabSch_Lab_User_Column_List">
+        labs.slid ls_slid,labs.lid ls_lid, labs.starttime ls_starttime, labs.endtime ls_endtime, labs.sname ls_sname, labs.stel ls_stel,
+        lab.id l_id, lab.lname l_lname, lab.type l_type, lab.lsize l_size, lab.equcount l_equcount, lab.remark l_remark,
+        user.uname u_uname
+    </sql>
+
+
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -23,7 +52,7 @@
         WHERE slid = #{slid,jdbcType=CHAR}
     </delete>
     <insert id="insert" parameterType="org.kehao.lems.entity.LabSchedule">
-        INSERT INTO s_lab_schedule (slid, lid, starttime, endtime, sname,stel)
+        INSERT INTO s_lab_schedule (slid, lid, starttime, endtime, sname, stel)
         VALUES (#{slid,jdbcType=CHAR}, #{lid,jdbcType=CHAR}, #{starttime,jdbcType=TIMESTAMP},
                 #{endtime,jdbcType=TIMESTAMP}, #{sname,jdbcType=VARCHAR}, #{stel,jdbcType=VARCHAR})
     </insert>
@@ -93,11 +122,53 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="org.kehao.lems.entity.LabSchedule">
         UPDATE s_lab_schedule
-        SET lid = #{lid,jdbcType=CHAR},
+        SET lid       = #{lid,jdbcType=CHAR},
             starttime = #{starttime,jdbcType=TIMESTAMP},
-            endtime = #{endtime,jdbcType=TIMESTAMP},
-            sname  = #{sname,jdbcType=VARCHAR},
-            stel = #{stel,jdbcType=VARCHAR}
+            endtime   = #{endtime,jdbcType=TIMESTAMP},
+            sname     = #{sname,jdbcType=VARCHAR},
+            stel      = #{stel,jdbcType=VARCHAR}
         WHERE slid = #{slid,jdbcType=CHAR}
     </update>
+
+    <select id="selectLabSchInfoByCondition" parameterType="java.util.Map" resultMap="LabSch_Lab_User_ResultMap">
+        select
+        <include refid="LabSch_Lab_User_Column_List"/>
+        from s_lab_schedule labs join s_laboratory lab on (labs.lid=lab.lid) join s_user user on(lab.uid=user.uid)
+        <where>
+            <if test="labScheduleEx.sname != null">
+                AND labs.sname LIKE concat(concat('%',#{labScheduleEx.sname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.lname != null">
+                AND lab.lname LIKE concat(concat('%',#{labScheduleEx.lname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.id != null">
+                AND lab.id LIKE concat(concat('%',#{labScheduleEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.type!=null">
+                AND lab.type LIKE concat(concat('%',#{labScheduleEx.type,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectLabSchInfoByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select count(*)
+        from s_lab_schedule labs join s_laboratory lab on (labs.lid=lab.lid) join s_user user on(lab.uid=user.uid)
+        <where>
+            <if test="labScheduleEx.sname != null">
+                AND labs.sname LIKE concat(concat('%',#{labScheduleEx.sname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.lname != null">
+                AND lab.lname LIKE concat(concat('%',#{labScheduleEx.lname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.id != null">
+                AND lab.id LIKE concat(concat('%',#{labScheduleEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="labScheduleEx.type!=null">
+                AND lab.type LIKE concat(concat('%',#{labScheduleEx.type,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+    </select>
 </mapper>

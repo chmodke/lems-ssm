@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kehao.lems.dao.EquLabMapper">
-  <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquLab">
-    <result column="lid" jdbcType="CHAR" property="lid" />
-    <result column="eid" jdbcType="CHAR" property="eid" />
-  </resultMap>
-  <insert id="insert" parameterType="org.kehao.lems.entity.EquLab">
-    insert into equ_lab (lid, eid)
-    values (#{lid,jdbcType=CHAR}, #{eid,jdbcType=CHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquLab">
-    insert into equ_lab
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        lid,
-      </if>
-      <if test="eid != null">
-        eid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        #{lid,jdbcType=CHAR},
-      </if>
-      <if test="eid != null">
-        #{eid,jdbcType=CHAR},
-      </if>
-    </trim>
-  </insert>
+    <resultMap id="BaseResultMap" type="org.kehao.lems.entity.EquLab">
+        <result column="lid" jdbcType="CHAR" property="lid"/>
+        <result column="eid" jdbcType="CHAR" property="eid"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        lid, eid
+    </sql>
+    <insert id="insert" parameterType="org.kehao.lems.entity.EquLab">
+        INSERT INTO equ_lab (lid, eid)
+        VALUES (#{lid,jdbcType=CHAR}, #{eid,jdbcType=CHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquLab">
+        insert into equ_lab
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="lid != null">
+                lid,
+            </if>
+            <if test="eid != null">
+                eid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="lid != null">
+                #{lid,jdbcType=CHAR},
+            </if>
+            <if test="eid != null">
+                #{eid,jdbcType=CHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectEquLabByEid" parameterType="org.kehao.lems.entity.EquLab" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"></include>
+        FROM equ_lab
+        WHERE eid = #{eid,jdbcType=CHAR}
+    </select>
+    <select id="selectEquLabByLid" parameterType="org.kehao.lems.entity.EquLab" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"></include>
+        FROM equ_lab
+        WHERE lid = #{lid,jdbcType=CHAR}
+    </select>
+    <update id="updateEquLabLidByEid" parameterType="org.kehao.lems.entity.EquLab">
+        UPDATE equ_lab
+        SET lid = #{lid,jdbcType=CHAR}
+        WHERE eid = #{eid,jdbcType=CHAR}
+    </update>
 </mapper>

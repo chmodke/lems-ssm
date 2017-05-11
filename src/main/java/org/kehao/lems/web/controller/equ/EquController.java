@@ -2,6 +2,7 @@ package org.kehao.lems.web.controller.equ;
 
 import javax.annotation.Resource;
 
+import org.kehao.lems.entity.EquLab;
 import org.kehao.lems.entity.EquPurchase;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.entity.extend.EquipmentEx;
@@ -78,5 +79,10 @@ public class EquController {
         String[] arr=delList.split(" ");
         List<String> list= Arrays.asList(arr);
         return equService.equDel(list);
+    }
+    @RequestMapping("/move_equ.do")
+    @ResponseBody
+    public LEMSResult moveEqu(EquLab equLab){
+        return equService.moveEqu(equLab);
     }
 }
