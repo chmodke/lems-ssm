@@ -138,7 +138,10 @@
     <select id="selectEquSchInfoByCondition" parameterType="java.util.Map" resultMap="EquS_Equ_Lab_ResultMap">
         select
         <include refid="EquS_Equ_Lab_Column_List"/>
-        from s_equ_schedule equs join s_equipment equ on (equs.eid=equ.eid) join equ_lab elab on(equ.eid=elab.eid) join s_laboratory lab on (elab.lid=lab.lid)
+        from s_equ_schedule equs
+        left join s_equipment equ on (equs.eid=equ.eid)
+        left join equ_lab elab on(equ.eid=elab.eid)
+        left join s_laboratory lab on (elab.lid=lab.lid)
         <where>
             <if test="equScheduleEx.sname != null">
                 AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')
@@ -161,7 +164,10 @@
     <select id="selectEquSchInfoByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select
         count(*)
-        from s_equ_schedule equs join s_equipment equ on (equs.eid=equ.eid) join equ_lab elab on(equ.eid=elab.eid) join s_laboratory lab on (elab.lid=lab.lid)
+        from s_equ_schedule equs
+        left join s_equipment equ on (equs.eid=equ.eid)
+        left join equ_lab elab on(equ.eid=elab.eid)
+        left join s_laboratory lab on (elab.lid=lab.lid)
         <where>
             <if test="equScheduleEx.sname != null">
                 AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')

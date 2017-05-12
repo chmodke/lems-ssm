@@ -133,7 +133,9 @@
     <select id="selectLabSchInfoByCondition" parameterType="java.util.Map" resultMap="LabSch_Lab_User_ResultMap">
         select
         <include refid="LabSch_Lab_User_Column_List"/>
-        from s_lab_schedule labs join s_laboratory lab on (labs.lid=lab.lid) join s_user user on(lab.uid=user.uid)
+        from s_lab_schedule labs
+        left join s_laboratory lab on (labs.lid=lab.lid)
+        left join s_user user on(lab.uid=user.uid)
         <where>
             <if test="labScheduleEx.sname != null">
                 AND labs.sname LIKE concat(concat('%',#{labScheduleEx.sname,jdbcType=VARCHAR}),'%')
@@ -155,7 +157,9 @@
     </select>
     <select id="selectLabSchInfoByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
         select count(*)
-        from s_lab_schedule labs join s_laboratory lab on (labs.lid=lab.lid) join s_user user on(lab.uid=user.uid)
+        from s_lab_schedule labs
+        left join s_laboratory lab on (labs.lid=lab.lid)
+        left join s_user user on(lab.uid=user.uid)
         <where>
             <if test="labScheduleEx.sname != null">
                 AND labs.sname LIKE concat(concat('%',#{labScheduleEx.sname,jdbcType=VARCHAR}),'%')
