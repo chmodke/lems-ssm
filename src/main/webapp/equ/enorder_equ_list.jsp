@@ -96,6 +96,9 @@
             var equ_ename = $("#enorder_equ_list_search_ename").val().trim();
             var equ_id = $("#enorder_equ_list_search_id").val().trim();
             var equ_etype = $("#enorder_equ_list_search_etype").val().trim();
+            equ_ename=(equ_ename==""?undefined:equ_ename);
+            equ_id=(equ_id==""?undefined:equ_id);
+            equ_etype=(equ_etype==""?undefined:equ_etype);
             $('#enorder_equ_list').datagrid('load', {
                 ename: equ_ename,
                 id:equ_id,

@@ -64,6 +64,9 @@
             var mgr_lname = $("#mgr_lab_search_lname").val().trim();
             var mgr_id = $("#mgr_lab_search_id").val().trim();
             var mgr_type = $("#mgr_lab_search_type").val().trim();
+            mgr_lname=(mgr_lname==""?undefined:mgr_lname);
+            mgr_id=(mgr_id==""?undefined:mgr_id);
+            mgr_type=(mgr_type==""?undefined:mgr_type);
             $('#mgr_lab_list').datagrid('load', {
                 lname: mgr_lname,
                 id: mgr_id,

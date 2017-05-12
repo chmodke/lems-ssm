@@ -124,6 +124,9 @@
             var break_equ_ename = $("#break_equ_list_search_ename").val().trim();
             var break_equ_eid = $("#break_equ_list_search_eid").val().trim();
             var break_equ_id = $("#break_equ_list_search_id").val().trim();
+            break_equ_ename=(break_equ_ename==""?undefined:break_equ_ename);
+            break_equ_eid=(break_equ_eid==""?undefined:break_equ_eid);
+            break_equ_id=(break_equ_id==""?undefined:break_equ_id);
             $('#break_equ_list').datagrid('load', {
                 ename: break_equ_ename,
                 e_id:break_equ_eid,

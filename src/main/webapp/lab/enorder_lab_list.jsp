@@ -77,6 +77,9 @@
             var enorder_lname = $("#enorder_lab_search_lname").val().trim();
             var enorder_id = $("#enorder_lab_search_id").val().trim();
             var enorder_type = $("#enorder_lab_search_type").val().trim();
+            enorder_lname=(enorder_lname==""?undefined:enorder_lname);
+            enorder_id=(enorder_id==""?undefined:enorder_id);
+            enorder_type=(enorder_type==""?undefined:enorder_type);
             $('#enorder_lab_list').datagrid('load', {
                 lname: enorder_lname,
                 id: enorder_id,

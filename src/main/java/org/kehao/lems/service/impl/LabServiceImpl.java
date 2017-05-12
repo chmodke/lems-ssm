@@ -142,7 +142,7 @@ public class LabServiceImpl implements LabService {
         if(sort.equals("equ_status")){
             sort="e_status";
         }
-        map.put("sort", "a."+sort);
+        map.put("sort", "a."+sort);//因为后台采用了联合查询，结果集名称为'a'
         //封装返回数据集合
         List<Laboratory> laboratoryList = laboratoryMapper.selectLabEquUserByCondition(map);
         List<LaboratoryEx> laboratoryExList = new ArrayList<LaboratoryEx>();

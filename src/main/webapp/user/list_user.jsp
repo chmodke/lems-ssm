@@ -100,6 +100,9 @@
             var uname = $("#search_uname").val().trim();
             var truename = $("#search_truename").val().trim();
             var rname = $("#search_rname").val().trim();
+            uname=(uname==""?undefined:uname);
+            truename=(truename==""?undefined:truename);
+            rname=(rname==""?undefined:rname);
             $('#user_list').datagrid('load', {
                 uname: uname,
                 tureName: truename,
@@ -123,7 +126,7 @@
         <form>
 
             <div style="float: left;margin-top: 5px;margin-bottom: 5px">
-                &emsp;<b>登录名查询</b><input id="search_uname" class="easyui-validatebox">&emsp;
+                &emsp;<b>用户名查询</b><input id="search_uname" class="easyui-validatebox">&emsp;
                 &emsp;<b>真实姓名查询</b><input id="search_truename" class="easyui-validatebox">&emsp;
                 &emsp;<b>角色查询</b><input id="search_rname" class="easyui-validatebox">&emsp;
             </div>

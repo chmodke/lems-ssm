@@ -90,7 +90,10 @@
             var ordered_id = $("#ordered_lab_search_id").val().trim();
             var ordered_type = $("#ordered_lab_search_type").val().trim();
             var ordered_sname = $("#ordered_lab_search_sname").val().trim();
-
+            ordered_lname=(ordered_lname==""?undefined:ordered_lname);
+            ordered_id=(ordered_id==""?undefined:ordered_id);
+            ordered_type=(ordered_type==""?undefined:ordered_type);
+            ordered_sname=(ordered_sname==""?undefined:ordered_sname);
             $('#ordered_lab_list').datagrid('load', {
                 lname: ordered_lname,
                 id: ordered_id,

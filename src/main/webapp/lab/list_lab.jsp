@@ -104,6 +104,9 @@
             var list_lname = $("#list_search_lname").val().trim();
             var list_id = $("#list_search_id").val().trim();
             var list_type = $("#list_search_type").val().trim();
+            list_lname=(list_lname==""?undefined:list_lname);
+            list_id=(list_id==""?undefined:list_id);
+            list_type=(list_type==""?undefined:list_type);
             $('#list_lab_list').datagrid('load', {
                 lname: list_lname,
                 id:list_id,

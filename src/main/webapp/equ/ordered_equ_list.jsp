@@ -61,7 +61,10 @@
             var ordered_id = $("#ordered_equ_search_id").val().trim();
             var ordered_type = $("#ordered_equ_search_type").val().trim();
             var ordered_sname = $("#ordered_equ_search_sname").val().trim();
-
+            ordered_ename=(ordered_ename==""?undefined:ordered_ename);
+            ordered_id=(ordered_id==""?undefined:ordered_id);
+            ordered_type=(ordered_type==""?undefined:ordered_type);
+            ordered_sname=(ordered_sname==""?undefined:ordered_sname);
             $('#ordered_equ_list').datagrid('load', {
                 ename: ordered_ename,
                 id: ordered_id,
