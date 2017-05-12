@@ -2,6 +2,7 @@ package org.kehao.lems.service;
 
 import org.kehao.lems.entity.EquBreak;
 import org.kehao.lems.entity.EquLab;
+import org.kehao.lems.entity.EquSchedule;
 import org.kehao.lems.entity.Equipment;
 import org.kehao.lems.entity.extend.EquBreakEx;
 import org.kehao.lems.entity.extend.EquipmentEx;
@@ -32,7 +33,7 @@ public interface EquService {
      * @param equipmentEx
      * @return
      */
-    LEMSResult labGet(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx);
+    LEMSResult equGet(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx);
 
     /**
      * 获得条件查询的记录总数
@@ -40,7 +41,7 @@ public interface EquService {
      * @param equipmentEx
      * @return
      */
-    Long labGetCount(EquipmentEx equipmentEx);
+    Long equGetCount(EquipmentEx equipmentEx);
 
     /**
      * 批量删除设备
@@ -100,4 +101,29 @@ public interface EquService {
      * @return
      */
     LEMSResult fixEquDel(String bid);
+
+    /**
+     * 获取可预约设备数量
+     * @param equipmentEx
+     * @return
+     */
+    Long enOrderEquCount(EquipmentEx equipmentEx);
+
+    /**
+     * 获取可预约设备列表
+     * @param page
+     * @param pageSize
+     * @param order
+     * @param sort
+     * @param equipmentEx
+     * @return
+     */
+    LEMSResult enOrderEqu(Integer page, Integer pageSize, String order, String sort, EquipmentEx equipmentEx);
+
+    /**
+     * 预约设备
+     * @param equSchedule
+     * @return
+     */
+    LEMSResult orderEqu(EquSchedule equSchedule);
 }

@@ -46,6 +46,7 @@
                         if (equ_status == 0) {
                             return '可用';
                         }
+                        //状态1，删除状态
                         if (equ_status == 2) {
                             return '已预约';
                         }
@@ -79,6 +80,12 @@
             var ename = $("#search_ename").val().trim();
             var eid = $("#search_eid").val().trim();
             var etype = $("#search_etype").val().trim();
+            lname=(lname==""?undefined:lname);
+            id=(id==""?undefined:id);
+            type=(type==""?undefined:type);
+            ename=(ename==""?undefined:ename);
+            eid=(eid==""?undefined:eid);
+            etype=(etype==""?undefined:etype);
             $('#lab_list').datagrid('load', {
                 lname: lname,
                 id: id,

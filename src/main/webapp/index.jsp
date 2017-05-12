@@ -39,18 +39,23 @@
             $("#roleadd_link").click(role_add_tab_add);//添加角色菜单事件绑定
             //$("#userremove_link").click(user_remove_tab_add);//删除用户菜单事件绑定
             $("#userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
-            $("#lablist_link").click(lab_list_tab_add);//用户列表菜单事件绑定
+            $("#lablist_link").click(lab_list_tab_add);//实验室列表菜单事件绑定
             /*搜索*/
             $("#labsearch_link").click(lab_search_list_tab_add);//实验室列表菜单事件绑定
             $("#search_userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
             $("#search_ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
+            $("#search_ordered_equ_link").click(ordered_equ_tab_add);//已预约设备列表菜单事件绑定
+
+
             /*搜索*/
             $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
-            $("#equlist_link").click(equ_list_tab_add);//实验室负责人管理菜单事件绑定
-            $("#enorder_lab_link").click(enorder_lab_tab_add);//实验室负责人管理菜单事件绑定
+            $("#equlist_link").click(equ_list_tab_add);//设备列表菜单事件绑定
+            $("#enorder_lab_link").click(enorder_lab_tab_add);//可预约实验室菜单事件绑定
             $("#ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
 //            $("#equ_break_link").click(break_equ_tab_add);//设备报修菜单事件绑定
             $("#equ_break_list_link").click(break_equ_list_tab_add);//报修设备列表菜单事件绑定
+            $("#enorder_equ_link").click(enorder_equ_tab_add);//设备预约管理菜单事件绑定
+            $("#ordered_equ_link").click(ordered_equ_tab_add);//已预约设备列表菜单事件绑定
 
 
 
@@ -261,7 +266,7 @@
             }
 
             /**
-             * 实验室负责人管理菜单事件
+             * 可预约实验室管理菜单事件
              */
             function enorder_lab_tab_add(){
                 if($("#index_tt").tabs("exists","实验室预约")){
@@ -280,11 +285,11 @@
              * 实验室已预约列表菜单事件
              */
             function ordered_lab_tab_add(){
-                if($("#index_tt").tabs("exists","已预约列表")){
-                    $("#index_tt").tabs("select","已预约列表");
+                if($("#index_tt").tabs("exists","已预约实验室列表")){
+                    $("#index_tt").tabs("select","已预约实验室列表");
                 }else{
                     $("#index_tt").tabs('add',{
-                        title:"已预约列表",
+                        title:"已预约实验室列表",
                         closable:true,
                         href:"./lab/ordered_lab_list.jsp",
                         fit:true
@@ -319,6 +324,37 @@
                         title:"报修设备列表",
                         closable:true,
                         href:"./equ/break_equ_list.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 可预约设备管理菜单事件
+             */
+            function enorder_equ_tab_add(){
+                if($("#index_tt").tabs("exists","设备预约")){
+                    $("#index_tt").tabs("select","设备预约");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"设备预约",
+                        closable:true,
+                        href:"./equ/enorder_equ_list.jsp",
+                        fit:true
+                    });
+                }
+            }
+            /**
+             * 设备已预约列表菜单事件
+             */
+            function ordered_equ_tab_add(){
+                if($("#index_tt").tabs("exists","已预约设备列表")){
+                    $("#index_tt").tabs("select","已预约设备列表");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"已预约设备列表",
+                        closable:true,
+                        href:"./equ/ordered_equ_list.jsp",
                         fit:true
                     });
                 }
@@ -367,7 +403,7 @@
                 <ul>
                     <li><a id="labsearch_link" href="javascript:;">实验室<b>/</b>设备查询</a></li>
                     <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室列表</a></li>
-                    <li>已预约设备列表</li>
+                    <li><a id="search_ordered_equ_link" href="javascript:;">已预约设备列表</a></li>
                     <li><a id="search_userlist_link" href="javascript:;">用户列表</a></li>
                 </ul>
             </div>
@@ -391,8 +427,8 @@
             </div>
             <div title="设备日程管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
-                    <li>设备预约</li>
-                    <li>已预约列表</li>
+                    <li><a id="enorder_equ_link" href="javascript:;">设备预约</a></li>
+                    <li><a id="ordered_equ_link" href="javascript:;">已预约列表</a></li>
                 </ul>
             </div>
             <div title="实验室日程管理" data-options="border:false,iconCls:'anchor'">

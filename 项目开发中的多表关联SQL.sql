@@ -102,3 +102,33 @@ left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
 left join s_user user on(epurc.uid=user.uid) 
 where lab.status !='1' AND lab.lname LIKE concat(concat('%',?),'%'),  
 ORDER BY lab.lname asc  LIMIT ?,?
+
+<!-- 实验室设备级联查询 -->
+select a.* from( 
+    select lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark, epurc.price, 
+    equ.eid,equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark, user.uname u_uname 
+    from s_laboratory lab 
+    LEFT JOIN equ_lab elab on(lab.lid=elab.lid) 
+    LEFT JOIN s_equipment equ on(elab.eid=equ.eid) 
+    left join s_equ_purchase epurc on(equ.pcid=epurc.pcid) 
+    left join s_user user on(epurc.uid=user.uid) 
+    where lab.status !='1' 
+    UNION 
+    select lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark, epurc.price, 
+    equ.eid,equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark, user.uname u_uname 
+    from s_equipment equ 
+    LEFT JOIN equ_lab elab on (elab.eid=equ.eid) 
+    LEFT JOIN s_laboratory lab on (lab.lid=elab.lid) 
+    left join s_equ_purchase epurc on(equ.pcid=epurc.pcid) 
+    left join s_user user on(epurc.uid=user.uid) 
+    where equ.status !='1' 
+) a 
+WHERE 
+a.id LIKE concat(concat('%',''),'%') 
+AND a.lname LIKE concat(concat('%',''),'%') 
+AND a.type LIKE concat(concat('%',''),'%') 
+AND a.e_id LIKE concat(concat('%',''),'%') 
+AND a.ename LIKE concat(concat('%',''),'%') 
+AND a.e_type LIKE concat(concat('%',''),'%') 
+ORDER BY a.lname asc 
+LIMIT ?,?

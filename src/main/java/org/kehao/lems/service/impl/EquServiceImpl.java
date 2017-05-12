@@ -3,13 +3,11 @@ package org.kehao.lems.service.impl;
 import org.kehao.lems.dao.EquBreakMapper;
 import org.kehao.lems.dao.EquLabMapper;
 import org.kehao.lems.dao.EquipmentMapper;
-import org.kehao.lems.entity.EquBreak;
-import org.kehao.lems.entity.EquLab;
-import org.kehao.lems.entity.Equipment;
-import org.kehao.lems.entity.Laboratory;
+import org.kehao.lems.entity.*;
 import org.kehao.lems.entity.extend.EquBreakEx;
 import org.kehao.lems.entity.extend.EquipmentEx;
 import org.kehao.lems.entity.extend.LaboratoryEx;
+import org.kehao.lems.service.EquScheduleService;
 import org.kehao.lems.service.EquService;
 import org.kehao.lems.utils.CodeUtil;
 import org.kehao.lems.utils.LEMSResult;
@@ -35,6 +33,8 @@ public class EquServiceImpl implements EquService {
     EquLabMapper equLabMapper;
     @Resource
     EquBreakMapper equBreakMapper;
+    @Resource
+    EquScheduleService equScheduleService;
 
     public LEMSResult equAdd(Equipment equipment) {
         LEMSResult result = new LEMSResult();
@@ -52,7 +52,7 @@ public class EquServiceImpl implements EquService {
     }
 
     @Override
-    public LEMSResult labGet(Integer page, Integer pageSize, String order, String sort, EquipmentEx equipmentEx) {
+    public LEMSResult equGet(Integer page, Integer pageSize, String order, String sort, EquipmentEx equipmentEx) {
         LEMSResult result = new LEMSResult();
         Map<String, Object> map = new HashMap<String, Object>(8);
         //查询条件
@@ -102,7 +102,7 @@ public class EquServiceImpl implements EquService {
     }
 
     @Override
-    public Long labGetCount(EquipmentEx equipmentEx) {
+    public Long equGetCount(EquipmentEx equipmentEx) {
         Map<String, Object> map = new HashMap<String, Object>(8);
         //查询条件
         map.put("equipmentEx", equipmentEx);
@@ -274,6 +274,86 @@ public class EquServiceImpl implements EquService {
         }else{
             result.setStatus(1);
             result.setMessage("删除失败");
+        }
+        return result;
+    }
+
+    @Override
+    public Long enOrderEquCount(EquipmentEx equipmentEx) {
+        Map<String, Object> map = new HashMap<String, Object>(8);
+        //查询条件
+        map.put("equipmentEx", equipmentEx);
+        return equipmentMapper.selectEnOrderEquConditionCount(map);
+    }
+
+    @Override
+    public LEMSResult enOrderEqu(Integer page, Integer pageSize, String order, String sort, EquipmentEx equipmentEx) {
+        LEMSResult result = new LEMSResult();
+        Map<String, Object> map = new HashMap<String, Object>(8);
+        //查询条件
+        map.put("equipmentEx", equipmentEx);
+        //分页
+        if (null == page) {
+            page = 1;
+        }
+        if (null == pageSize) {
+            pageSize = 5;
+        }
+        map.put("startRec", pageSize * (page - 1));//5*(1-1)=0,,5*(2-1)=5
+        map.put("recCount", pageSize);
+        //映射排序字段
+        if (sort.equals("lab_uname")) {
+            sort = "user.uname";
+        }
+        //排序
+        map.put("order", order);
+        map.put("sort", sort);
+
+        List<Equipment> equipmentList = equipmentMapper.selectEnOrderEquCondition(map);
+        //将数据封装至扩展对象
+        List<EquipmentEx> laboratoryExList = new ArrayList<EquipmentEx>(equipmentList.size());
+        for (Equipment equipment : equipmentList) {
+            EquipmentEx equipmentExTmp = new EquipmentEx();
+            BeanUtils.copyProperties(equipment, equipmentExTmp);
+            //拿到空记录，会导致结果集错乱
+            if (equipment.getEquLab() != null) {//检测空记录
+                EquLab equLab=equipment.getEquLab();
+                if(equLab.getLaboratory()!=null){
+                    Laboratory laboratory=equLab.getLaboratory();
+                    equipmentExTmp.setLanme(laboratory.getLname());
+                }
+            }
+            laboratoryExList.add(equipmentExTmp);
+        }
+        result.setData(laboratoryExList);
+        result.setStatus(0);
+        return result;
+    }
+
+    @Override
+    public LEMSResult orderEqu(EquSchedule equSchedule) {
+        LEMSResult result = new LEMSResult();
+        if (equSchedule != null) {
+            Map<String, String> map = new HashMap<String, String>(4);
+            map.put("eid", equSchedule.getEid());
+            map.put("status", "2");//预约状态
+            int upConut = equipmentMapper.updateEquStatusByEid(map);
+            if (1 == upConut) {
+                int status = equScheduleService.addOrderEqu(equSchedule).getStatus();
+                if (0 == status) {
+                    result.setStatus(0);
+                    result.setMessage("预约成功");
+                } else {
+                    //回滚数据
+                    map.put("status", "0");
+                    equipmentMapper.updateEquStatusByEid(map);
+                    result.setStatus(2);
+                    result.setMessage("预约失败");
+                }
+            } else {
+                result.setStatus(1);
+                result.setMessage("更改设备状态失败");
+            }
         }
         return result;
     }
