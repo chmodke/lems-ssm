@@ -19,6 +19,8 @@ public class EquSchedule {
 
     private String stel;
 
+    private Integer status;
+
     private Equipment equipment;
 
     public String getSeid() {
@@ -75,5 +77,13 @@ public class EquSchedule {
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

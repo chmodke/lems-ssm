@@ -20,6 +20,8 @@ public class EquScheduleEx{
 
     private String stel;
 
+    private Integer status;
+
     //扩展属性
 
     private String id;//设备编号
@@ -120,5 +122,11 @@ public class EquScheduleEx{
         this.lname = lname;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
 
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

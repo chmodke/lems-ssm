@@ -8,6 +8,7 @@
         <result column="endtime" jdbcType="TIMESTAMP" property="endtime"/>
         <result column="sname" jdbcType="VARCHAR" property="sname"/>
         <result column="stel" jdbcType="VARCHAR" property="stel"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
     </resultMap>
     <sql id="Base_Column_List">
         seid, eid, starttime, endtime, sname, stel
@@ -20,6 +21,7 @@
         <result column="endtime" jdbcType="TIMESTAMP" property="endtime"/>
         <result column="sname" jdbcType="VARCHAR" property="sname"/>
         <result column="stel" jdbcType="VARCHAR" property="stel"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
         <association property="equipment" javaType="org.kehao.lems.entity.Equipment">
             <id column="eid" jdbcType="CHAR" property="eid"/>
             <result column="e_id" jdbcType="VARCHAR" property="id"/>
@@ -40,7 +42,7 @@
 
     <sql id="EquS_Equ_Lab_Column_List">
         equs.seid, equs.eid, equs.starttime, equs.endtime, equs.sname, equs.stel,
-        equ.id e_id,equ.ename,equ.type,equ.status e_status,equ.remark e_remark,
+        equ.id e_id, equ.ename, equ.type, equ.status e_status, equ.remark e_remark,
         lab.lname
     </sql>
 
@@ -55,10 +57,10 @@
         WHERE seid = #{seid,jdbcType=CHAR}
     </delete>
     <insert id="insert" parameterType="org.kehao.lems.entity.EquSchedule">
-        INSERT INTO s_equ_schedule (seid, eid, starttime,
-                                    endtime, sname, stel)
+        INSERT INTO s_equ_schedule (seid, eid, starttime, endtime, sname, stel, status)
         VALUES (#{seid,jdbcType=CHAR}, #{eid,jdbcType=CHAR}, #{starttime,jdbcType=TIMESTAMP},
-                #{endtime,jdbcType=TIMESTAMP}, #{sname,jdbcType=VARCHAR}, #{stel,jdbcType=VARCHAR})
+                #{endtime,jdbcType=TIMESTAMP}, #{sname,jdbcType=VARCHAR}, #{stel,jdbcType=VARCHAR},
+                #{status,jdbcType=INTEGER})
     </insert>
     <insert id="insertSelective" parameterType="org.kehao.lems.entity.EquSchedule">
         insert into s_equ_schedule
@@ -81,6 +83,9 @@
             <if test="stel != null">
                 stel,
             </if>
+            <if test="status != null">
+                status,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="seid != null">
@@ -100,6 +105,9 @@
             </if>
             <if test="stel != null">
                 #{stel,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
             </if>
         </trim>
     </insert>
@@ -121,6 +129,9 @@
             <if test="stel != null">
                 stel = #{sname,jdbcType=VARCHAR},
             </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
         </set>
         where seid = #{seid,jdbcType=CHAR}
     </update>
@@ -130,7 +141,8 @@
             starttime = #{starttime,jdbcType=TIMESTAMP},
             endtime   = #{endtime,jdbcType=TIMESTAMP},
             sname     = #{sname,jdbcType=VARCHAR},
-            stel      = #{stel,jdbcType=VARCHAR}
+            stel      = #{stel,jdbcType=VARCHAR},
+            status    = #{status,jdbcType=INTEGER}
         WHERE seid = #{seid,jdbcType=CHAR}
     </update>
 
@@ -142,20 +154,19 @@
         left join s_equipment equ on (equs.eid=equ.eid)
         left join equ_lab elab on(equ.eid=elab.eid)
         left join s_laboratory lab on (elab.lid=lab.lid)
-        <where>
-            <if test="equScheduleEx.sname != null">
-                AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.ename != null">
-                AND equ.ename LIKE concat(concat('%',#{equScheduleEx.ename,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.id != null">
-                AND equ.id LIKE concat(concat('%',#{equScheduleEx.id,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.type!=null">
-                AND equ.type LIKE concat(concat('%',#{equScheduleEx.type,jdbcType=VARCHAR}),'%')
-            </if>
-        </where>
+        where equs.status != '1'
+        <if test="equScheduleEx.sname != null">
+            AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equScheduleEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equScheduleEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.type!=null">
+            AND equ.type LIKE concat(concat('%',#{equScheduleEx.type,jdbcType=VARCHAR}),'%')
+        </if>
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
         </if>
@@ -168,19 +179,18 @@
         left join s_equipment equ on (equs.eid=equ.eid)
         left join equ_lab elab on(equ.eid=elab.eid)
         left join s_laboratory lab on (elab.lid=lab.lid)
-        <where>
-            <if test="equScheduleEx.sname != null">
-                AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.ename != null">
-                AND equ.ename LIKE concat(concat('%',#{equScheduleEx.ename,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.id != null">
-                AND equ.id LIKE concat(concat('%',#{equScheduleEx.id,jdbcType=VARCHAR}),'%')
-            </if>
-            <if test="equScheduleEx.type!=null">
-                AND equ.type LIKE concat(concat('%',#{equScheduleEx.type,jdbcType=VARCHAR}),'%')
-            </if>
-        </where>
+        where equs.status != '1'
+        <if test="equScheduleEx.sname != null">
+            AND equs.sname LIKE concat(concat('%',#{equScheduleEx.sname,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equScheduleEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equScheduleEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equScheduleEx.type!=null">
+            AND equ.type LIKE concat(concat('%',#{equScheduleEx.type,jdbcType=VARCHAR}),'%')
+        </if>
     </select>
 </mapper>

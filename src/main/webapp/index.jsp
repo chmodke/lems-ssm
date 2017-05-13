@@ -31,33 +31,62 @@
             }
 
             $("#index_logout").click(index_logout);//退出按钮事件绑定
-            $("#useradd_link").click(user_add_tab_add);//添加用户菜单事件绑定
-            $("#equadd_link").click(equ_add_tab_add);//添加设备菜单事件绑定
-            $("#labadd_link").click(lab_add_tab_add);//添加实验室菜单事件绑定
-            $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
-            $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
-            $("#roleadd_link").click(role_add_tab_add);//添加角色菜单事件绑定
-            //$("#userremove_link").click(user_remove_tab_add);//删除用户菜单事件绑定
-            $("#userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
-            $("#lablist_link").click(lab_list_tab_add);//实验室列表菜单事件绑定
-            /*搜索*/
+
+            /*
+            * 查询模块
+            */
             $("#labsearch_link").click(lab_search_list_tab_add);//实验室列表菜单事件绑定
-            $("#search_userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
             $("#search_ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
             $("#search_ordered_equ_link").click(ordered_equ_tab_add);//已预约设备列表菜单事件绑定
+            $("#search_user_list_link").click(search_user_list_tab_add);//用户列表菜单事件绑定
 
 
-            /*搜索*/
-            $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
+            /*
+             * 设备模块
+             */
             $("#equlist_link").click(equ_list_tab_add);//设备列表菜单事件绑定
-            $("#enorder_lab_link").click(enorder_lab_tab_add);//可预约实验室菜单事件绑定
-            $("#ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
-//            $("#equ_break_link").click(break_equ_tab_add);//设备报修菜单事件绑定
+            $("#equadd_link").click(equ_add_tab_add);//添加设备菜单事件绑定
+            $("#equ_move_link").click(equ_list_tab_add);//设备列表菜单事件绑定
+            $("#equ_remove_link").click(equ_list_tab_add);//设备列表菜单事件绑定
+            $("#equ_break_link").click(equ_list_tab_add);//设备报修菜单事件绑定
             $("#equ_break_list_link").click(break_equ_list_tab_add);//报修设备列表菜单事件绑定
+
+            /*
+             * 实验室模块
+             */
+            $("#lablist_link").click(lab_list_tab_add);//实验室列表菜单事件绑定
+            $("#labadd_link").click(lab_add_tab_add);//添加实验室菜单事件绑定
+            $("#lab_remove_link").click(lab_list_tab_add);//实验室列表菜单事件绑定
+            $("#labmgr_link").click(lab_mgr_tab_add);//实验室负责人管理菜单事件绑定
+
+            /*
+             * 设备日程模块
+             */
             $("#enorder_equ_link").click(enorder_equ_tab_add);//设备预约管理菜单事件绑定
             $("#ordered_equ_link").click(ordered_equ_tab_add);//已预约设备列表菜单事件绑定
 
+            /*
+             * 实验室日程模块
+             */
+            $("#enorder_lab_link").click(enorder_lab_tab_add);//可预约实验室菜单事件绑定
+            $("#ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
 
+            /*
+            * 角色模块
+            */
+            $("#roleadd_link").click(role_add_tab_add);//添加角色菜单事件绑定
+            /*
+             * 用户模块
+             */
+            $("#userlist_link").click(user_list_tab_add);//用户列表菜单事件绑定
+            $("#useradd_link").click(user_add_tab_add);//添加用户菜单事件绑定
+            $("#user_remove_link").click(user_list_tab_add);//删除用户菜单事件绑定
+            $("#mod_user_role_link").click(user_list_tab_add);//删除用户菜单事件绑定
+            /*
+             * 用户个人管理模块
+             */
+            $("#modify_user_info_link").click(modify_user_info_tab_add);//添加用户信息修改菜单事件绑定
+            $("#modify_user_pwd_link").click(modify_user_pwd_tab_add);//添加用户密码修改菜单事件绑定
 
 
             /**
@@ -196,6 +225,22 @@
                         title:"用户列表",
                         closable:true,
                         href:"./user/list_user.jsp",
+                        fit:true
+                    });
+                }
+            }
+
+            /**
+             * 查询用户列表菜单事件
+             */
+            function search_user_list_tab_add(){
+                if($("#index_tt").tabs("exists","查询用户")){
+                    $("#index_tt").tabs("select","查询用户");
+                }else{
+                    $("#index_tt").tabs('add',{
+                        title:"查询用户",
+                        closable:true,
+                        href:"./user/search_user.jsp",
                         fit:true
                     });
                 }
@@ -402,17 +447,17 @@
             <div title="基础功能" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="labsearch_link" href="javascript:;">实验室<b>/</b>设备查询</a></li>
-                    <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室列表</a></li>
-                    <li><a id="search_ordered_equ_link" href="javascript:;">已预约设备列表</a></li>
-                    <li><a id="search_userlist_link" href="javascript:;">用户列表</a></li>
+                    <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室查询</a></li>
+                    <li><a id="search_ordered_equ_link" href="javascript:;">已预约设备查询</a></li>
+                    <li><a id="search_user_list_link" href="javascript:;">用户查询</a></li>
                 </ul>
             </div>
             <div title="设备管理" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="equlist_link" href="javascript:;">设备列表</a></li>
                     <li><a id="equadd_link" href="javascript:;">设备采购(添加)</a></li>
-                    <li><a href="javascript:;" title="已经在列表中实现">设备转移(分配)</a></li>
-                    <li><a href="javascript:;" title="已经在列表中实现">设备注销</a></li>
+                    <li><a id="equ_move_link" href="javascript:;" title="已经在列表中实现">设备转移(分配)</a></li>
+                    <li><a id="equ_remove_link" href="javascript:;" title="已经在列表中实现">设备注销</a></li>
                     <li><a id="equ_break_link" href="javascript:;" title="已经在列表中实现">设备报修</a></li>
                     <li><a id="equ_break_list_link" href="javascript:;">报修设备列表</a></li>
                 </ul>
@@ -421,7 +466,7 @@
                 <ul>
                     <li><a id="lablist_link" href="javascript:;">实验室列表</a></li>
                     <li><a id="labadd_link" href="javascript:;">实验室添加</a></li>
-                    <li><a href="javascript:;" title="已经在列表中实现">实验室移除</a></li>
+                    <li><a id="lab_remove_link" href="javascript:;" title="已经在列表中实现">实验室移除</a></li>
                     <li><a id="labmgr_link" href="javascript:;">实验室负责人</a></li>
                 </ul>
             </div>
@@ -449,7 +494,7 @@
                     <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
                     <li><a id="userremove_link" href="javascript:;" title="已经在列表中实现">用户删除</a></li>
-                    <li>用户授权管理(角色)</li>
+                    <li><a id="mod_user_role_link" href="javascript:;" title="已经在列表中实现">用户授权管理(角色)</a></li>
                 </ul>
             </div>
             <div title="用户个人信息管理" data-options="border:false,iconCls:'anchor'">

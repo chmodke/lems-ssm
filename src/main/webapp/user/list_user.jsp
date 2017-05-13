@@ -6,7 +6,7 @@
             pagination: true,
             fit: true,
             fitColumns: true,
-            singleSelect: false,
+            singleSelect: true,
             idField: 'uid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],
@@ -55,11 +55,17 @@
                 handler: function () {
                     del_user();
                 }
+            }, '-', {
+                text: '修改角色',
+                iconCls: 'icon-remove',
+                handler: function () {
+                    mod_user_role();
+                }
             }]
         });
 
-        $("#search_user_btn").click(search_user);//绑定查询事件
-        $("#reset_search_user_btn").click(reset_search_user);
+        $("#search_user_list_btn").click(search_user_list);//绑定查询事件
+        $("#reset_search_user_list_btn").click(reset_search_user_list);
 
         /**
          * 删除用户
@@ -92,11 +98,33 @@
                 async: true
             });
         }
+        /*
+        * 修改用户角色
+        */
+        function mod_user_role() {
+            var mod_role = $('#user_list').datagrid('getSelected');
+            var mod_role_uid = mod_role['uid'];
+            var mod_role_uname = mod_role['uname'];
+            $("#user_dialog").dialog({
+                title: '角色修改',
+                width: 650,
+                height: 480,
+                href: './user/mod_user_role.jsp',
+                modal: true,
+                params: {
+                    'mod_role_uid': mod_role_uid,
+                    'mod_role_uname': mod_role_uname
+                },//传递参数
+                onClose: function () {
+                    $('#user_list').datagrid('load',{});
+                }
+            });
+        }
 
         /**
          * 条件查询
          */
-        function search_user() {
+        function search_user_list() {
             var uname = $("#search_uname").val().trim();
             var truename = $("#search_truename").val().trim();
             var rname = $("#search_rname").val().trim();
@@ -113,7 +141,7 @@
         /**
          * 清空条件查询
          */
-        function reset_search_user() {
+        function reset_search_user_list() {
             $("#search_uname").val("");
             $("#search_truename").val("");
             $("#search_rname").val("");
@@ -131,8 +159,8 @@
                 &emsp;<b>角色查询</b><input id="search_rname" class="easyui-validatebox">&emsp;
             </div>
             <div style="float: left;margin-top: 5px;margin-bottom: 5px">
-                <input id="search_user_btn" type="button" value="查询">
-                <input id="reset_search_user_btn" type="button" value="清空">&emsp;
+                <input id="search_user_list_btn" type="button" value="查询">
+                <input id="reset_search_user_list_btn" type="button" value="清空">&emsp;
             </div>
         </form>
     </div>
