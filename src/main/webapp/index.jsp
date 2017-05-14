@@ -36,8 +36,8 @@
             * 查询模块
             */
             $("#labsearch_link").click(lab_search_list_tab_add);//实验室列表菜单事件绑定
-            $("#search_ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
             $("#search_ordered_equ_link").click(ordered_equ_tab_add);//已预约设备列表菜单事件绑定
+            $("#search_ordered_lab_link").click(ordered_lab_tab_add);//已预约实验室列表菜单事件绑定
             $("#search_user_list_link").click(search_user_list_tab_add);//用户列表菜单事件绑定
 
 
@@ -447,8 +447,8 @@
             <div title="基础功能" data-options="border:false,iconCls:'anchor'">
                 <ul>
                     <li><a id="labsearch_link" href="javascript:;">实验室<b>/</b>设备查询</a></li>
-                    <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室查询</a></li>
                     <li><a id="search_ordered_equ_link" href="javascript:;">已预约设备查询</a></li>
+                    <li><a id="search_ordered_lab_link" href="javascript:;">已预约实验室查询</a></li>
                     <li><a id="search_user_list_link" href="javascript:;">用户查询</a></li>
                 </ul>
             </div>

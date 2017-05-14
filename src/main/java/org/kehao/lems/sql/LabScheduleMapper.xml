@@ -38,7 +38,7 @@
     </resultMap>
     <sql id="LabSch_Lab_User_Column_List">
         labs.slid ls_slid, labs.lid ls_lid, labs.starttime ls_starttime, labs.endtime ls_endtime, labs.sname ls_sname, labs.stel ls_stel,
-        lab.id l_id, lab.lname l_lname, lab.type l_type, lab.lsize l_size, lab.equcount l_equcount, lab.remark l_remark,
+        lab.id l_id, lab.lname l_lname, lab.type l_type, lab.lsize l_lsize, lab.equcount l_equcount, lab.remark l_remark,
         user.uname u_uname
     </sql>
 

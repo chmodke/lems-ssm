@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local_mysql
+Source Server         : root_mysql
 Source Server Version : 50703
 Source Host           : localhost:3306
 Source Database       : lems
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-05-13 14:18:27
+Date: 2017-05-14 20:35:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,7 +80,7 @@ CREATE TABLE `s_equipment` (
 -- Records of s_equipment
 -- ----------------------------
 INSERT INTO `s_equipment` VALUES ('1f31e4e37b724bacab4874ffbde16593', 'NCIT-01-07', '笔记本电脑07', 'ThinkPad T430 Plus', '2017-05-12 16:15:25', '2', '无', 'fd53b30b1d82429ea85fdf45312be78b');
-INSERT INTO `s_equipment` VALUES ('2d2f4dec4e864a6fa191f5382af20f23', 'NCIT-01-01', '笔记本电脑01', 'ThinkPad T430', '2017-05-12 16:03:47', '2', '无', '2e7d4108a7154153873f08151ef7401f');
+INSERT INTO `s_equipment` VALUES ('2d2f4dec4e864a6fa191f5382af20f23', 'NCIT-01-01', '笔记本电脑01', 'ThinkPad T430', '2017-05-12 16:03:47', '0', '无', '2e7d4108a7154153873f08151ef7401f');
 INSERT INTO `s_equipment` VALUES ('40f9627a24b54617a275653c825ac87b', 'NCIT-01-05', '笔记本电脑05', 'ThinkPad T430', '2017-05-12 16:13:02', '0', '无', 'a45c9bc5487741c0ad84a75244e24b35');
 INSERT INTO `s_equipment` VALUES ('63dd0237d0d3422491268a00753741f5', 'NCIT-01-10', '笔记本电脑10', 'ThinkPad T430', '2017-05-12 16:19:08', '0', '无', '25db7d13887448518a10abba5a9bdf86');
 INSERT INTO `s_equipment` VALUES ('72dc710722c1477d85bd2ec0e9f0effa', 'NCIT-01-02', '笔记本电脑02', 'ThinkPad T430', '2017-05-12 16:05:31', '2', '无', '63606cd5b20a4a369a41419c917cc6ce');
@@ -159,7 +159,7 @@ CREATE TABLE `s_equ_schedule` (
 -- ----------------------------
 INSERT INTO `s_equ_schedule` VALUES ('54a6a1bcce0a483bbdc5d2757d1ea9a3', 'ff6d02dc17c7410585d2439d462fe0ec', '2017-05-09 13:40:33', '2017-05-12 13:40:36', 'zzz', '123', '1');
 INSERT INTO `s_equ_schedule` VALUES ('be4f43f71d5841e6be0ad78daf47ed4f', '80eafa666cd94f11a903707b1fc50255', '2017-05-15 16:34:14', '2017-05-19 16:34:18', 'stu02', '222', '0');
-INSERT INTO `s_equ_schedule` VALUES ('bfe413477ad845ae8615d540cab0be0d', '2d2f4dec4e864a6fa191f5382af20f23', '2017-05-12 23:12:19', '2017-05-13 23:12:21', 'stu03', '3333', '0');
+INSERT INTO `s_equ_schedule` VALUES ('bfe413477ad845ae8615d540cab0be0d', '2d2f4dec4e864a6fa191f5382af20f23', '2017-05-12 23:12:19', '2017-05-13 23:12:21', 'stu03', '3333', '1');
 INSERT INTO `s_equ_schedule` VALUES ('efda73606a5948a9ae156312a2af700e', '72dc710722c1477d85bd2ec0e9f0effa', '2017-05-12 16:48:17', '2017-05-15 16:48:18', 'stu01', '1111', '0');
 
 -- ----------------------------
@@ -188,7 +188,7 @@ CREATE TABLE `s_laboratory` (
 INSERT INTO `s_laboratory` VALUES ('0901e9aa103f40fb9b469564ca6119d4', 'NCIT-02', 'NCIT-02', '25', '2017-05-12 16:20:02', '2', '测试', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '25');
 INSERT INTO `s_laboratory` VALUES ('270ff7f071e848acbbb46699b0d559df', 'NCIT-05', 'NCIT-05', '25', '2017-05-12 16:25:19', '0', '实施', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '25');
 INSERT INTO `s_laboratory` VALUES ('7ffd6161f171408ba77d9069727c67d3', 'NCIT-04', 'NCIT-04', '20', '2017-05-12 16:20:52', '0', '翻译', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '20');
-INSERT INTO `s_laboratory` VALUES ('90583c07c9e542ceacfec6a4f0def2b6', 'NCIT-01', 'NCIT-01', '25', '2017-05-12 16:19:45', '2', '开发', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '25');
+INSERT INTO `s_laboratory` VALUES ('90583c07c9e542ceacfec6a4f0def2b6', 'NCIT-01', 'NCIT-01', '25', '2017-05-12 16:19:45', '0', '开发', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '25');
 INSERT INTO `s_laboratory` VALUES ('953c09c8ac7d4644b757ca746ed2010a', 'NCIT-03', 'NCIT-03', '25', '2017-05-12 16:20:18', '0', '研发', '无', '30e5ec73716746bf8e6520c5d5c93d6f', '25');
 
 -- ----------------------------
@@ -212,7 +212,7 @@ CREATE TABLE `s_lab_schedule` (
 -- Records of s_lab_schedule
 -- ----------------------------
 INSERT INTO `s_lab_schedule` VALUES ('303e2c3e75074e1f850156ac58ffe24b', '0901e9aa103f40fb9b469564ca6119d4', '2017-05-11 16:29:09', '2017-05-15 16:29:12', 'stu12', '123456', '0');
-INSERT INTO `s_lab_schedule` VALUES ('911096a461364559a115c4250549ac33', '90583c07c9e542ceacfec6a4f0def2b6', '2017-05-12 16:28:42', '2017-05-13 16:28:44', 'stu11', '123', '0');
+INSERT INTO `s_lab_schedule` VALUES ('911096a461364559a115c4250549ac33', '90583c07c9e542ceacfec6a4f0def2b6', '2017-05-12 16:28:42', '2017-05-13 16:28:44', 'stu11', '123', '1');
 
 -- ----------------------------
 -- Table structure for s_permission
@@ -320,42 +320,4 @@ INSERT INTO `user_role` VALUES ('35da2e5a6296403baedd089c9ac4d671', '921795995')
 INSERT INTO `user_role` VALUES ('1b402fd2d24c4628a6f16d835a97b357', '771598489');
 INSERT INTO `user_role` VALUES ('3666ca6111fa4d19b0ca10391f07ba53', '771598489');
 
--- ----------------------------
--- Procedure structure for event_lems_etime
--- ----------------------------
-DROP PROCEDURE IF EXISTS `event_lems_etime`;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `event_lems_etime`()
-BEGIN
-		DECLARE x_lid varchar(32) DEFAULT '';
-		DECLARE x_eid varchar(32) DEFAULT '';
-	
-		SELECT lems.s_lab_schedule.lid 
-		INTO x_lid
-		from lems.s_lab_schedule 
-		where now()-endtime>=0 and status=0;
-		
-		update lems.s_lab_schedule set status=1 where lems.s_lab_schedule.lid=x_lid;
-		update lems.s_laboratory set status=0 where lems.s_laboratory.lid=x_lid;		
-
-		SELECT lems.s_equ_schedule.eid 
-		INTO x_eid
-		from lems.s_equ_schedule 
-		where now()-endtime>=0 and status=0;
-		
-		update lems.s_equ_schedule set status=1 where lems.s_equ_schedule.eid=x_eid;
-		update lems.s_equipment set status=0 where lems.s_equipment.eid=x_eid;
-		
-		
-	END
-;;
-DELIMITER ;
-
--- ----------------------------
--- Event structure for lems_trigger
--- ----------------------------
-DROP EVENT IF EXISTS `lems_trigger`;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `lems_trigger` ON SCHEDULE EVERY 1 SECOND STARTS '2017-05-13 13:38:34' ON COMPLETION PRESERVE ENABLE DO CALL event_lems_etime()
-;;
-DELIMITER ;
+SET FOREIGN_KEY_CHECKS=1;
