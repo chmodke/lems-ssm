@@ -2,8 +2,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var ordered_equ_list_uid_auth = getCookie("uid");
+        var ordered_equ_list_token_auth = getCookie("token");
+        if (ordered_equ_list_uid_auth == null || ordered_equ_list_token_auth == null) {
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#ordered_equ_list').datagrid({
             url: './equs/ordered_equ_list.do',
+            queryParams: {//认证条件
+                auth_uid: ordered_equ_list_uid_auth,
+                auth_token: ordered_equ_list_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: false,
@@ -14,7 +27,6 @@
             sortName: 'ename',
             sortOrder: 'asc',
             columns: [[
-                {field: 'ck', checkbox: "true"},
                 {field: 'id', title: '设备编号', width: 80, sortable: true},
                 {field: 'ename', title: '设备名称', width: 80, sortable: true},
 
@@ -46,7 +58,15 @@
                 {field: 'type', title: '设备类型', width: 80, sortable: true},
                 {field: 'lname', title: '所属实验室', width: 100, sortable: true},
                 {field: 'remark', title: '备注', width: 100}
-            ]]
+            ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            }
         });
 
         $("#ordered_equ_search_btn").click(ordered_equ_search);//绑定查询事件
@@ -69,7 +89,9 @@
                 ename: ordered_ename,
                 id: ordered_id,
                 type: ordered_type,
-                sname: ordered_sname
+                sname: ordered_sname,
+                auth_uid: ordered_equ_list_uid_auth,
+                auth_token: ordered_equ_list_token_auth
             });
         }
 
@@ -81,7 +103,10 @@
             $("#ordered_equ_search_id").val("");
             $("#ordered_equ_search_type").val("");
             $("#ordered_equ_search_sname").val("");
-            $('#ordered_equ_list').datagrid('load', {});
+            $('#ordered_equ_list').datagrid('load', {
+                auth_uid: ordered_equ_list_uid_auth,
+                auth_token: ordered_equ_list_token_auth
+            });
         }
     });
 </script>
@@ -91,11 +116,11 @@
             <div style="float: left;margin-top: 5px;margin-bottom: 5px;padding-left: 5px">
                 <table>
                     <tr>
-                        <td><b>实验室编号查询</b></td>
+                        <td><b>设备编号查询</b></td>
                         <td><input id="ordered_equ_search_id" class="easyui-validatebox">&emsp;</td>
-                        <td><b>实验室名查询</b></td>
+                        <td><b>设备名称查询</b></td>
                         <td><input id="ordered_equ_search_ename" class="easyui-validatebox">&emsp;</td>
-                        <td><b>实验室类型查询</b></td>
+                        <td><b>设备类型查询</b></td>
                         <td><input id="ordered_equ_search_type" class="easyui-validatebox">&emsp;</td>
                         <td rowspan="2" style="padding-left: 5px">
                             <input id="ordered_equ_search_btn" type="button" value="查询">

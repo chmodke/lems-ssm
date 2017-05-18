@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var enorder_equ_list_uid_auth = getCookie("uid");
+        var enorder_equ_list_token_auth = getCookie("token");
+        if (enorder_equ_list_uid_auth == null || enorder_equ_list_token_auth == null) {
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#enorder_equ_list').datagrid({
             url: './equ/enorder_equ_list.do',
+            queryParams: {//认证条件
+                auth_uid: enorder_equ_list_uid_auth,
+                auth_token: enorder_equ_list_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -35,6 +48,14 @@
                 },
                 {field: 'remark', title: '备注', width: 100}
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar:['-',{
                 text:'预约',
                 iconCls:'icon-edit',
@@ -55,7 +76,10 @@
                         },//传递参数
                         modal: true,
                         onClose: function () {
-                            $('#enorder_equ_list').datagrid('load',{});
+                            $('#enorder_equ_list').datagrid('load',{
+                                auth_uid: enorder_equ_list_uid_auth,
+                                auth_token: enorder_equ_list_token_auth
+                            });
                         }
                     });
                 }
@@ -79,7 +103,10 @@
                         },//传递参数
                         modal: true,
                         onClose: function () {
-                            $('#enorder_equ_list').datagrid('load',{});
+                            $('#enorder_equ_list').datagrid('load',{
+                                auth_uid: enorder_equ_list_uid_auth,
+                                auth_token: enorder_equ_list_token_auth
+                            });
                         }
                     });
                 }

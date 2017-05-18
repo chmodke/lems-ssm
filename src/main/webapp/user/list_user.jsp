@@ -1,8 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var list_user_uid_auth = getCookie("uid");
+        var list_user_token_auth = getCookie("token");
+        if(list_user_uid_auth==null||list_user_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#user_list').datagrid({
-            url: './user/user_list.do',
+            url: './user/user_list.do',queryParams: {//认证条件
+                auth_uid: list_user_uid_auth,
+                auth_token: list_user_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -34,6 +46,14 @@
                     fixed: true
                 }
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar: ['-', {
                 text: '增加',
                 iconCls: 'icon-edit',
@@ -45,7 +65,10 @@
                         href: './user/add_user.jsp',
                         modal: true,
                         onClose: function () {
-                            $('#user_list').datagrid('load', {});
+                            $('#user_list').datagrid('load', {
+                                auth_uid: list_user_uid_auth,
+                                auth_token: list_user_token_auth
+                            });
                         }
                     });
                 }
@@ -81,12 +104,19 @@
             $.ajax({
                 url: "./user/userdel.do",
                 type: "post",
-                data: {"delList": del_list},
+                data: {
+                    "delList": del_list,
+                    "auth_uid": list_user_uid_auth,
+                    "auth_token": list_user_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message + "，已删除" + result.data + "条数据");
-                        $('#user_list').datagrid('load');
+                        $('#user_list').datagrid('load',{
+                            auth_uid: list_user_uid_auth,
+                            auth_token: list_user_token_auth
+                        });
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -116,7 +146,10 @@
                     'mod_role_uname': mod_role_uname
                 },//传递参数
                 onClose: function () {
-                    $('#user_list').datagrid('load',{});
+                    $('#user_list').datagrid('load',{
+                        auth_uid: list_user_uid_auth,
+                        auth_token: list_user_token_auth
+                    });
                 }
             });
         }

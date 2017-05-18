@@ -73,7 +73,7 @@
     </resultMap>
 
     <sql id="Jion_User_Role_Column_List">
-        user.uid,uname, ture_name, office_address, office_phone, email, masterid, createtime,status,rname, remark
+        user.uid,uname, ture_name, office_address, office_phone, email, masterid, token,createtime,status,rname, remark
     </sql>
 
 

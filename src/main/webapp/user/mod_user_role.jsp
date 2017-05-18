@@ -1,11 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var mod_user_uid_auth = getCookie("uid");
+        var mod_user_token_auth = getCookie("token");
+        if(mod_user_uid_auth==null||mod_user_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
 
         var mod_role_uid = lems.getDialogParam('user_dialog', 'mod_role_uid');
         $("#mod_user_role_namebox").val(lems.getDialogParam('user_dialog', 'mod_role_uname'));
-
-
 
         $("#mod_user_role_btn").click(mod_user_role);//添加用户按钮事件绑定
         $("#mod_user_role_reset_btn").click(mod_user_role_reset);
@@ -14,7 +21,10 @@
         $.ajax({
             url: './role/get_all_role.do',
             dataType: 'json',
-            timeout: 1000,
+            data:{
+                "auth_uid": mod_user_uid_auth,
+                "auth_token": mod_user_token_auth
+            },
             cache: false,
             success: function (result) {
                 var data = result.data;
@@ -28,7 +38,7 @@
                 $("#mod_user_role_rolebox").combobox("loadData", dataList);
             },
             error: function () {
-
+                $.messager.alert('警告', "获取角色列表异常");
             },
             async: true
         });
@@ -41,7 +51,12 @@
             $.ajax({
                 url: "./user/mod_user_role.do",
                 type: "post",
-                data:{"uid":mod_role_uid,"rid":mod_user_role},
+                data:{
+                    "uid":mod_role_uid,
+                    "rid":mod_user_role,
+                    "auth_uid": mod_user_uid_auth,
+                    "auth_token": mod_user_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {

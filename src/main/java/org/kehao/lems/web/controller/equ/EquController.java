@@ -73,7 +73,10 @@ public class EquController {
     public Map<String, Object> getEquList(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx) {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("total", equService.equGetCount(equipmentEx));
-        data.put("rows", equService.equGet(page, rows, order, sort, equipmentEx).getData());
+        LEMSResult result=equService.equGet(page, rows, order, sort, equipmentEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 
@@ -102,7 +105,10 @@ public class EquController {
     public Map<String, Object> getBreakEquList(Integer page, Integer rows, String order, String sort, EquBreakEx equBreakEx) {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("total", equService.labGetBreakCount(equBreakEx));
-        data.put("rows", equService.labGetBreak(page, rows, order, sort, equBreakEx).getData());
+        LEMSResult result=equService.labGetBreak(page, rows, order, sort, equBreakEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 
@@ -123,7 +129,10 @@ public class EquController {
     public Map<String,Object> enorderEqu(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx) {
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", equService.enOrderEquCount(equipmentEx));
-        data.put("rows", equService.enOrderEqu(page,rows,order,sort,equipmentEx).getData());
+        LEMSResult result=equService.enOrderEqu(page,rows,order,sort,equipmentEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
     @RequestMapping("/order_equ.do")

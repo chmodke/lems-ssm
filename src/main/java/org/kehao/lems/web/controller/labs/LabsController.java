@@ -24,7 +24,10 @@ public class LabsController {
     public Map<String,Object> orderLab(Integer page, Integer rows, String order, String sort, LabScheduleEx labScheduleEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labScheduleService.getLabSchInfoCount(labScheduleEx));
-        data.put("rows", labScheduleService.getLabSchInfo(page,rows,order,sort,labScheduleEx).getData());
+        LEMSResult result=labScheduleService.getLabSchInfo(page,rows,order,sort,labScheduleEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 }

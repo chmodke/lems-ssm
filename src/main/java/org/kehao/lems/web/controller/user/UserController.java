@@ -136,7 +136,10 @@ public class UserController {
     public Map<String,Object> getUserList(Integer page, Integer rows,String order,String sort, UserEx userEx) {
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", userService.getUserCount(userEx));
-        data.put("rows", userService.getUser(page, rows,order,sort, userEx).getData());
+        LEMSResult result=userService.getUser(page, rows,order,sort, userEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 

@@ -1,30 +1,38 @@
 package org.kehao.lems.web.interceptor;
 
+import org.kehao.lems.utils.JsonUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * Created by kehao on 2016/11/28 22:35.
- * Class LoginInterceptor
+ * Created by kehao on 2017/05/17 .
+ * Class AuthIntercepter
  * Description:
  */
-public class AuthInterceptor implements HandlerInterceptor {
-    //TODO :访问拦截器
+public class AuthIntercepter implements HandlerInterceptor {
+    //TODO  request controller interceptor
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
        HttpSession session=request.getSession();
-       String uid=session.getAttribute("uid");
-       String path=request.get...();
-       List<String> resources=userService.getUserResources(String uid);
-       LEMSResult result=new LEMSResult();
+       Object uid=session.getAttribute("uid");
+       String path=request.getContextPath();
+       List<String> resources=null/*userService.getUserResources(String uid)*/;
        if(-1==resources.indexOf(path)){
            Writer out=response.getWriter();
-           result.setStatus(9);
-           result.setMessage("您无权操作");
-           out.write(result.toJSON());
+           Map map=new HashMap();
+           map.put("total",0);
+           map.put("rows",null);
+           map.put("status",9);
+           map.put("message","503,您没有访问权限");
+           out.write(JsonUtil.objectToJson(map));
+           //TODO response ObjectToJson
            return false;
        }else{
            return true;

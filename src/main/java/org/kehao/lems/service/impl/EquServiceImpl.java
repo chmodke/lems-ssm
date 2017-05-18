@@ -98,6 +98,7 @@ public class EquServiceImpl implements EquService {
         }
         result.setData(equipmentExList);
         result.setStatus(0);
+        result.setMessage("获取设备列表成功");
         return result;
     }
 
@@ -228,6 +229,7 @@ public class EquServiceImpl implements EquService {
         }
         result.setData(equBreakExList);
         result.setStatus(0);
+        result.setMessage("获取保修列表成功");
         return result;
     }
 
@@ -327,6 +329,7 @@ public class EquServiceImpl implements EquService {
         }
         result.setData(laboratoryExList);
         result.setStatus(0);
+        result.setMessage("获取可预约设备成功");
         return result;
     }
 

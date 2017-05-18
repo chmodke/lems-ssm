@@ -1,11 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
-        var add_user_btn = $("#add_user_btn");
-        var adduser_reset_btn = $("#adduser_reset_btn");
-
-        add_user_btn.click(add_user);//添加用户按钮事件绑定
-        adduser_reset_btn.click(adduser_reset);
+        var add_user_uid_auth = getCookie("uid");
+        var add_user_token_auth = getCookie("token");
+        if(add_user_uid_auth==null||add_user_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+        $("#add_user_btn").click(add_user);//添加用户按钮事件绑定
+        $("#adduser_reset_btn").click(adduser_reset);
 
         $("#adduser_namebox").blur(validation_adduser);
         $("#adduser_namebox").focus(function () {
@@ -17,8 +23,10 @@
         $.ajax({
             url: './role/get_all_role.do',
             dataType: 'json',
-            timeout: 1000,
-            cache: false,
+            data:{
+                "auth_uid": add_user_uid_auth,
+                "auth_token": add_user_token_auth
+            },
             success: function (result) {
                 var data = result.data;
                 var dataList, rid, rname;
@@ -31,7 +39,7 @@
                 $("#adduser_rolebox").combobox("loadData", dataList);
             },
             error: function () {
-
+                $.messager.alert('警告', "获取角色异常");
             },
             async: true
         });
@@ -51,7 +59,11 @@
             $.ajax({
                 url: "./user/useradd_validation.do",
                 type: "post",
-                data: {"uname": adduser_uname},
+                data: {
+                    "uname": adduser_uname,
+                    "auth_uid": add_user_uid_auth,
+                    "auth_token": add_user_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status != 0) {
@@ -69,10 +81,8 @@
         //用户添加
         function add_user() {
             var adduser_uid = getCookie("uid");
-            var adduser_token = getCookie("token");
-
-            if (adduser_uid == null || adduser_token == null) {
-                $.messager.alert('警告', "非法操作");
+            if (adduser_uid == null) {
+                $.messager.alert('警告', "非法操作");//masterId不能为空
             }
 
             var adduser_uname = $("#adduser_namebox").val();
@@ -87,7 +97,10 @@
             $.ajax({
                 url: "./user/useradd.do",
                 type: "post",
-                // data:{"uname":name,"passwd":pwd},
+                data:{
+                    "auth_uid": add_user_uid_auth,
+                    "auth_token": add_user_token_auth
+                },
                 dataType: "json",
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("Authorization_adduser", "Basic " + base64_adduser_msg);

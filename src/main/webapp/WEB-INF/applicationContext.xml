@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
@@ -23,15 +25,16 @@
     <!-- 扫描@RequestMapping、@Controller、@NumberFormatannotation、@DateTimeFormat、@Valid注解 -->
     <mvc:annotation-driven></mvc:annotation-driven>
 
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
     <!-- 数据源配置, 使用 BoneCP 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         <!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="${drivername}"/>
         <!-- 基本属性 url、user、password -->
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/lems?useUnicode=true&amp;characterEncoding=utf8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="3"/>
         <property name="minIdle" value="3"/>
@@ -57,16 +60,20 @@
     <!-- 定义SQLSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+        <!--配置日志打印SQL-->
+        <!--<property name="configLocation" value="classpath:mybatis-config.xml"></property>-->
         <!-- SQL定义的XML -->
         <property name="mapperLocations" value="classpath:org/kehao/lems/sql/*.xml"></property>
     </bean>
 
     <!-- 根据Dao接口生成实现类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 会自动注入seqSessionFactory -->
+
+        <!--自动进行包扫描，扫描所有Mapper接口-->
         <property name="basePackage" value="org.kehao.lems.dao"></property>
 
-        <!-- 可以自动注入seqSessionFactory -->
-        <!-- 手动注入Mapper -->
+        <!-- 手动注入，使用自动以注解方式扫描Mapper，与自动扫描不能共存 -->
         <!-- <property name="annotationClass" value="org.kehao.lems.annotation.MapperRepository"></property> -->
     </bean>
 
@@ -77,14 +84,22 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <!-- 注册拦截器 -->
-    <!--<mvc:interceptors>
-        &lt;!&ndash; 登录检查拦截器 &ndash;&gt;
+    <!-- interceptor注册拦截器 -->
+    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/login/toLogin.do"/>
-            <mvc:exclude-mapping path="/login/checkLogin.do"/>
-            <bean class="org.kehao.qiai.interceptor.LoginInterceptor"></bean>
+            <mvc:exclude-mapping path="/user/login.do"/>
+            <mvc:exclude-mapping path="/user/useradd_validation.do"/>
+            <mvc:exclude-mapping path="/user/send_vali_code.do"/>
+            <mvc:exclude-mapping path="/user/vali_vali_code.do"/>
+            <mvc:exclude-mapping path="/user/rep_user_pwd.do"/>
+            <mvc:exclude-mapping path="/*.jsp"/>
+            <mvc:exclude-mapping path="/*.js"/>
+            <mvc:exclude-mapping path="/*.css"/>
+            <mvc:exclude-mapping path="/*.png"/>
+            <bean class="org.kehao.lems.web.interceptor.LoginIntercepter"></bean>
         </mvc:interceptor>
-    </mvc:interceptors>-->
+    </mvc:interceptors>
+
+    <bean id="loggerInjector" class="org.kehao.lems.utils.LoggerInjector"></bean>
 </beans>

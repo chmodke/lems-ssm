@@ -493,7 +493,7 @@
                 <ul>
                     <li><a id="userlist_link" href="javascript:;">用户列表</a></li>
                     <li><a id="useradd_link" href="javascript:;">用户添加</a></li>
-                    <li><a id="userremove_link" href="javascript:;" title="已经在列表中实现">用户删除</a></li>
+                    <li><a id="user_remove_link" href="javascript:;" title="已经在列表中实现">用户删除</a></li>
                     <li><a id="mod_user_role_link" href="javascript:;" title="已经在列表中实现">用户授权管理(角色)</a></li>
                 </ul>
             </div>

@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var search_lab_uid_auth = getCookie("uid");
+        var search_lab_token_auth = getCookie("token");
+        if(search_lab_uid_auth==null||search_lab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#lab_list').datagrid({
             url: './lab/labsearch.do',
+            queryParams: {//认证条件
+                auth_uid: search_lab_uid_auth,
+                auth_token: search_lab_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: false,
@@ -64,7 +77,15 @@
                 {field: 'equ_uname', title: '设备采购者', width: 100},
                 {field: 'remark', title: '实验室备注', width: 100},
                 {field: 'equ_remark', title: '设备备注', width: 100}
-            ]]
+            ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            }
         });
 
         $("#search_lab_btn").click(search_lab);//绑定查询事件
@@ -92,7 +113,9 @@
                 type: type,
                 equ_ename: ename,
                 equ_id: eid,
-                equ_type: etype
+                equ_type: etype,
+                auth_uid: search_lab_uid_auth,//认证条件
+                auth_token: search_lab_token_auth//认证条件
             });
         }
 
@@ -106,7 +129,10 @@
             $("#search_ename").val("");
             $("#search_eid").val("");
             $("#search_etype").val("");
-            $('#lab_list').datagrid('load', {});
+            $('#lab_list').datagrid('load', {
+                auth_uid: search_lab_uid_auth,//认证条件
+                auth_token: search_lab_token_auth//认证条件
+            });
         }
     });
 </script>

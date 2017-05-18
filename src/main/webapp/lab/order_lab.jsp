@@ -2,6 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var order_lab_uid_auth = getCookie("uid");
+        var order_lab_token_auth = getCookie("token");
+        if(order_lab_uid_auth==null||order_lab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+
         var order_lab_lid = lems.getDialogParam('enorder_lab_dialog', 'order_lab_lid');
         $("#order_lab_id").val(lems.getDialogParam('enorder_lab_dialog', 'order_lab_id'));
         $("#order_lab_lname").val(lems.getDialogParam('enorder_lab_dialog', 'order_lab_lname'));
@@ -29,7 +39,10 @@
                     "starttime": order_lab_stime,
                     "endtime": order_lab_etime,
                     "sname": order_lab_user,
-                    "stel": order_lab_tel
+                    "stel": order_lab_tel,
+                    "auth_uid": order_lab_uid_auth,//认证条件
+                    "auth_token": order_lab_token_auth//认证条件
+
                 },
                 dataType: "json",
                 success: function (result) {

@@ -2,8 +2,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var enorder_lab_uid_auth = getCookie("uid");
+        var enorder_lab_token_auth = getCookie("token");
+        if(enorder_lab_uid_auth==null||enorder_lab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#enorder_lab_list').datagrid({
             url: './lab/enorder_lab_list.do',
+            queryParams: {//认证条件
+                auth_uid: enorder_lab_uid_auth,//认证条件
+                auth_token: enorder_lab_token_auth//认证条件
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -38,6 +51,14 @@
                 },
                 {field: 'remark', title: '备注', width: 100}
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar: ['-', {
                 text: '预约',
                 iconCls: 'icon-edit',
@@ -59,7 +80,10 @@
                         },//传递参数
                         modal: true,
                         onClose: function () {
-                            $('#enorder_lab_list').datagrid('load', {});
+                            $('#enorder_lab_list').datagrid('load', {
+                                auth_uid: enorder_lab_uid_auth,//认证条件
+                                auth_token: enorder_lab_token_auth//认证条件
+                            });
                         },
                     });
                 }
@@ -83,7 +107,9 @@
             $('#enorder_lab_list').datagrid('load', {
                 lname: enorder_lname,
                 id: enorder_id,
-                type: enorder_type
+                type: enorder_type,
+                auth_uid: enorder_lab_uid_auth,//认证条件
+                auth_token: enorder_lab_token_auth//认证条件
             });
         }
 
@@ -94,7 +120,10 @@
             $("#enorder_lab_search_lname").val("");
             $("#enorder_lab_search_id").val("");
             $("#enorder_lab_search_type").val("");
-            $('#enorder_lab_list').datagrid('load', {});
+            $('#enorder_lab_list').datagrid('load', {
+                auth_uid: enorder_lab_uid_auth,//认证条件
+                auth_token: enorder_lab_token_auth//认证条件
+            });
         }
     });
 </script>

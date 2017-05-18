@@ -4,6 +4,7 @@ import org.kehao.lems.entity.extend.EquScheduleEx;
 import org.kehao.lems.entity.extend.LabScheduleEx;
 import org.kehao.lems.service.EquScheduleService;
 import org.kehao.lems.service.LabScheduleService;
+import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +26,10 @@ public class EqusController {
     public Map<String,Object> orderLab(Integer page, Integer rows, String order, String sort, EquScheduleEx equScheduleEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", equScheduleService.getEquSchInfoCount(equScheduleEx));
-        data.put("rows", equScheduleService.getEquSchInfo(page,rows,order,sort,equScheduleEx).getData());
+        LEMSResult result=equScheduleService.getEquSchInfo(page,rows,order,sort,equScheduleEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 

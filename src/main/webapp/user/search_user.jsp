@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var search_user_uid_auth = getCookie("uid");
+        var search_user_token_auth = getCookie("token");
+        if(search_user_uid_auth==null||search_user_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#search_user_list').datagrid({
             url: './user/user_list.do',
+            queryParams: {//认证条件
+                auth_uid: search_user_uid_auth,
+                auth_token: search_user_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -13,7 +26,6 @@
             sortName: 'uname',
             sortOrder: 'asc',
             columns: [[
-                {field: 'ck', checkbox: "true"},
                 {field: 'uname', title: '用户名', width: 100, sortable: true},
                 {field: 'tureName', title: '真实姓名', width: 100, sortable: true},
                 {field: 'officeAddress', title: '办公室', width: 100},
@@ -33,7 +45,15 @@
                     sortable: true,
                     fixed: true
                 }
-            ]]
+            ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            }
         });
 
         $("#search_user_btn").click(search_user);//绑定查询事件
@@ -52,7 +72,9 @@
             $('#search_user_list').datagrid('load', {
                 uname: uname,
                 tureName: truename,
-                rname: rname
+                rname: rname,
+                auth_uid: search_user_uid_auth,
+                auth_token: search_user_token_auth
             });
         }
 
@@ -63,7 +85,10 @@
             $("#search_user_uname").val("");
             $("#search_user_truename").val("");
             $("#search_user_rname").val("");
-            $('#search_user_list').datagrid('load', {});
+            $('#search_user_list').datagrid('load', {
+                auth_uid: search_user_uid_auth,
+                auth_token: search_user_token_auth
+            });
         }
     });
 </script>

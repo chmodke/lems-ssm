@@ -2,6 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var move_equ_uid_auth = getCookie("uid");
+        var move_equ_token_auth = getCookie("token");
+        if (move_equ_uid_auth == null || move_equ_token_auth == null) {
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+
         var order_equ_eid = lems.getDialogParam('enorder_equ_list_dialog', 'order_equ_eid');
         $("#order_equ_id").val(lems.getDialogParam('enorder_equ_list_dialog', 'order_equ_id'));
         $("#order_equ_ename").val(lems.getDialogParam('enorder_equ_list_dialog', 'order_equ_ename'));
@@ -29,7 +39,9 @@
                     "starttime": order_equ_stime,
                     "endtime": order_equ_etime,
                     "sname": order_equ_user,
-                    "stel": order_equ_tel
+                    "stel": order_equ_tel,
+                    "auth_uid": move_equ_uid_auth,
+                    "auth_token": move_equ_token_auth
                 },
                 dataType: "json",
                 success: function (result) {
@@ -51,17 +63,17 @@
 <div id="order_lab_dialog">
     <form method="post">
         <table class="table table-hover table-condensed" style="width: 500px;margin: auto">
-            <h3 style="text-align: center">实验室预约</h3>
+            <h3 style="text-align: center">设备预约</h3>
             <hr>
             <tr>
-                <th>实验室编号</th>
+                <th>设备编号</th>
                 <td>
                     <input id="order_equ_id" type="text" class="easyui-validatebox" editable="false"
                            data-options="required:true">
                 </td>
             </tr>
             <tr>
-                <th>实验室名称</th>
+                <th>设备名称</th>
                 <td>
                     <input id="order_equ_ename" type="text" class="easyui-validatebox" editable="false"
                            data-options="required:true">

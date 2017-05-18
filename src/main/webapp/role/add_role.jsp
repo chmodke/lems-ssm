@@ -1,11 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
-        var add_role_btn = $("#add_role_btn");
-        var addrole_reset_btn = $("#addrole_reset_btn");
-
-        add_role_btn.click(add_role);//添加用户按钮事件绑定
-        addrole_reset_btn.click(addrole_reset);
+        var add_role_uid_auth = getCookie("uid");
+        var add_role_token_auth = getCookie("token");
+        if(add_role_uid_auth==null||add_role_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+        $("#add_role_btn").click(add_role);//添加用户按钮事件绑定
+        $("#addrole_reset_btn").click(addrole_reset);
 
         $("#addrole_namebox").blur(validation_addrole);
         $("#addrole_namebox").focus(function(){
@@ -28,12 +34,15 @@
             $.ajax({
                 url: "./role/roleadd_validation.do",
                 type: "post",
-                data:{"rname":addrole_name},
+                data:{
+                    "rname":addrole_name,
+                    "auth_uid": add_role_uid_auth,
+                    "auth_token": add_role_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status != 0) {
                         $("#addrole_namebox_msg").text(result.message);
-//                        $.messager.alert('警告', result.message);
                     }
                 },
                 error: function () {
@@ -54,10 +63,18 @@
             var addrole_name = $("#addrole_namebox").val();
             var addrole_remark = $("#addrole_remarkbox").val();
 
+            addrole_name=(addrole_name==""?undefined:addrole_name);
+            addrole_remark=(addrole_remark==""?undefined:addrole_remark);
+
             $.ajax({
                 url: "./role/roleadd.do",
                 type: "post",
-                data:{"rname":addrole_name,"remark":addrole_remark},
+                data:{
+                    "rname":addrole_name,
+                    "remark":addrole_remark,
+                    "auth_uid": add_role_uid_auth,
+                    "auth_token": add_role_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {

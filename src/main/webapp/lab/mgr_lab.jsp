@@ -4,8 +4,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var mgr_lab_uid_auth = getCookie("uid");
+        var mgr_lab_token_auth = getCookie("token");
+        if(mgr_lab_uid_auth==null||mgr_lab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#mgr_lab_list').datagrid({
             url: './lab/lab_mgr_list.do',
+            queryParams: {//认证条件
+                auth_uid: mgr_lab_uid_auth,
+                auth_token: mgr_lab_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -23,6 +36,14 @@
                 /*----------实验室部分--------*/
                 {field: 'lab_uname', title: '实验室负责人', width: 100, sortable: true},
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar: ['-', {
                 text: '管理',
                 iconCls: 'icon-edit',
@@ -31,7 +52,6 @@
                     var mgr_lab_lid = mod_mgr_lab['lid'];
                     var mgr_lab_id = mod_mgr_lab['id'];
                     var mgr_lab_lname = mod_mgr_lab['lname'];
-
 
                     $("#mgr_lab_dialog").dialog({
                         title: '实验室管理',
@@ -46,7 +66,10 @@
                         modal: true,
                         onClose: function () {
 //                            $('#mgr_lab_list').datagrid('clearSelections');//清除选中
-                            $('#mgr_lab_list').datagrid('load', {});
+                            $('#mgr_lab_list').datagrid('load', {
+                                auth_uid: mgr_lab_uid_auth,//认证条件
+                                auth_token: mgr_lab_token_auth//认证条件
+                            });
                         }
                     });
                 }
@@ -70,7 +93,9 @@
             $('#mgr_lab_list').datagrid('load', {
                 lname: mgr_lname,
                 id: mgr_id,
-                type: mgr_type
+                type: mgr_type,
+                auth_uid: mgr_lab_uid_auth,//认证条件
+                auth_token: mgr_lab_token_auth//认证条件
             });
         }
 

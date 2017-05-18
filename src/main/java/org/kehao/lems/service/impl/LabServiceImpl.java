@@ -83,6 +83,7 @@ public class LabServiceImpl implements LabService {
         }
         result.setData(laboratoryExList);
         result.setStatus(0);
+        result.setMessage("获取实验室列表成功");
         return result;
     }
 
@@ -233,6 +234,7 @@ public class LabServiceImpl implements LabService {
         }
         result.setData(laboratoryExList);
         result.setStatus(0);
+        result.setMessage("获取可预约实验室成功");
         return result;
     }
 

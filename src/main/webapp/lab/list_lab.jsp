@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var list_lab_uid_auth = getCookie("uid");
+        var list_lab_token_auth = getCookie("token");
+        if(list_lab_uid_auth==null||list_lab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#list_lab_list').datagrid({
             url: './lab/lab_list.do',
+            queryParams: {//认证条件
+                auth_uid: list_lab_uid_auth,
+                auth_token: list_lab_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
-            singleSelect:false,
+            singleSelect:true,
             idField: 'lid',
             pageSize: 5,
             pageList: [5, 10, 15, 20],
@@ -37,6 +50,14 @@
                 },
                 {field: 'remark', title: '备注', width: 100}
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar:['-',{
                 text:'增加',
                 iconCls:'icon-edit',
@@ -48,7 +69,10 @@
                         href: './lab/add_lab.jsp',
                         modal: true,
                         onClose: function () {
-                            $('#lab_list').datagrid('load',{});
+                            $('#list_lab_list').datagrid('load',{
+                                auth_uid: list_lab_uid_auth,//认证条件
+                                auth_token: list_lab_token_auth//认证条件
+                            });
                         }
                     });
                 }
@@ -57,7 +81,10 @@
                 iconCls:'icon-remove',
                 handler:function(){
                     list_del_lab();
-                    $('#lab_list').datagrid('load',{});
+                    $('#list_lab_list').datagrid('load',{
+                        auth_uid: list_lab_uid_auth,//认证条件
+                        auth_token: list_lab_token_auth//认证条件
+                    });
                 }
             }]
         });
@@ -79,12 +106,15 @@
             $.ajax({
                 url: "./lab/labdel.do",
                 type: "post",
-                data:{"delList":del_list},
+                data:{
+                    "delList":del_list,
+                    auth_uid: list_lab_uid_auth,//认证条件
+                    auth_token: list_lab_token_auth//认证条件
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#list_lab_list').datagrid('load');
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -110,7 +140,9 @@
             $('#list_lab_list').datagrid('load', {
                 lname: list_lname,
                 id:list_id,
-                type: list_type
+                type: list_type,
+                auth_uid: list_lab_uid_auth,//认证条件
+                auth_token: list_lab_token_auth//认证条件
             });
         }
 
@@ -121,7 +153,10 @@
             $("#list_search_lname").val("");
             $("#list_search_id").val("");
             $("#list_search_type").val("");
-            $('#list_lab_list').datagrid('load',{});
+            $('#list_lab_list').datagrid('load',{
+                auth_uid: list_lab_uid_auth,//认证条件
+                auth_token: list_lab_token_auth//认证条件
+            });
         }
     });
 </script>
