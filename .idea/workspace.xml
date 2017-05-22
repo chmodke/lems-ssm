@@ -2,59 +2,24 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/index.jsp" line="517" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" line="107" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" line="120" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/repeat_pwd.jsp" line="11" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="133" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="143" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/test/test_datagrid.html" line="10" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" line="25" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="147" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" line="157" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" line="37" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/RoleMapper.xml" line="139" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/LaboratoryMapper.java" line="87" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60717c3a-28ec-4aba-8786-214ae1031305" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_3_0_alpha_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_3_0_alpha_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_25.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_25.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_8_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_8_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_8_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_8_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_7_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_4_2_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_4_2_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_3_2_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_3_2_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cd.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/error.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/LEMS_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/LEMS_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LEMS.iml" afterPath="$PROJECT_DIR$/LEMS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lems_stadard_test.sql" afterPath="$PROJECT_DIR$/lems_stadard_test.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/AuthIntercepter.java" afterPath="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/AuthIntercepter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,7 +71,28 @@
     <favorites_list name="LEMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LoginIntercepter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/LoginIntercepter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/user/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,14 +104,12 @@
         <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\&lt;project xmlns\=\&quot;http\:\/\/maven\.apache\.org\/POM\/4\.0\.0\&quot; xmlns\:xsi\=\&quot;http\:\/\/www\.w3\.org\/2001\/XMLSchema\-instance\&quot;\n  xsi\:schemaLocation\=\&quot;http\:\/\/maven\.apache\.org\/POM\/4\.0\.0 http\:\/\/maven\.apache\.org\/maven\-v4_0_0\.xsd\&quot;\&gt;\n  \&lt;modelVersion\&gt;4\.0\.0\&lt;\/modelVersion\&gt;\n  \&lt;groupId\&gt;org\.kehao\&lt;\/groupId\&gt;\n  \&lt;artifactId\&gt;lems\&lt;\/artifactId\&gt;\n  \&lt;packaging\&gt;war\&lt;\/packaging\&gt;\n  \&lt;version\&gt;1\.0\-SNAPSHOT\&lt;\/version\&gt;\n  \&lt;name\&gt;LEMS\&lt;\/name\&gt;\n  \&lt;url\&gt;http\:\/\/maven\.apache\.org\&lt;\/url\&gt;\n\n  \&lt;dependencies\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;junit\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;junit\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;4\.12\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n\n\n    \&lt;\!\-\-SSM\-\-\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;aopalliance\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;aopalliance\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.0\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;commons\-codec\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;commons\-codec\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.9\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.apache\.commons\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;commons\-collections4\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;4\.0\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;commons\-logging\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;commons\-logging\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.1\.1\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;com\.alibaba\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;druid\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.0\.9\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.hibernate\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;hibernate\-validator\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;4\.2\.0\.Final\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;com\.fasterxml\.jackson\.core\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;jackson\-annotations\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;2\.4\.1\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;com\.fasterxml\.jackson\.core\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;jackson\-core\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;2\.4\.1\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;com\.fasterxml\.jackson\.core\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;jackson\-databind\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;2\.4\.1\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;javax\.servlet\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;jstl\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.2\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;log4j\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;log4j\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.2\.11\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;javax\.mail\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;mail\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.4\.7\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.mybatis\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;mybatis\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.5\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.mybatis\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;mybatis\-spring\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.2\.2\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;mysql\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;mysql\-connector\-java\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;6\.0\.4\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;javax\.servlet\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;servlet\-api\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.0\-alpha\-1\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.slf4j\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;slf4j\-api\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.2\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.slf4j\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;slf4j\-simple\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.2\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-aop\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-aspects\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-beans\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-context\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-core\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-expression\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-test\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-tx\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-web\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;org\.springframework\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;spring\-webmvc\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;3\.2\.8\.RELEASE\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;dependency\&gt;\n      \&lt;groupId\&gt;taglibs\&lt;\/groupId\&gt;\n      \&lt;artifactId\&gt;standard\&lt;\/artifactId\&gt;\n      \&lt;version\&gt;1\.1\.2\&lt;\/version\&gt;\n    \&lt;\/dependency\&gt;\n    \&lt;\!\-\-SSM\-\-\&gt;\n\n  \&lt;\/dependencies\&gt;\n\n\n  \&lt;\!\-\-\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ PLUGINS \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\-\-\&gt;\n  \&lt;build\&gt;\n    \&lt;defaultGoal\&gt;compile\&lt;\/defaultGoal\&gt;\n    \&lt;finalName\&gt;lems\&lt;\/finalName\&gt;\n    \&lt;plugins\&gt;\n      \&lt;plugin\&gt;\n        \&lt;groupId\&gt;org\.apache\.maven\.plugins\&lt;\/groupId\&gt;\n        \&lt;artifactId\&gt;maven\-clean\-plugin\&lt;\/artifactId\&gt;\n        \&lt;version\&gt;2\.5\&lt;\/version\&gt;\n      \&lt;\/plugin\&gt;\n      \&lt;plugin\&gt;\n        \&lt;groupId\&gt;org\.apache\.maven\.plugins\&lt;\/groupId\&gt;\n        \&lt;artifactId\&gt;maven\-compiler\-plugin\&lt;\/artifactId\&gt;\n        \&lt;version\&gt;3\.1\&lt;\/version\&gt;\n      \&lt;\/plugin\&gt;\n      \&lt;plugin\&gt;\n        \&lt;groupId\&gt;org\.apache\.maven\.plugins\&lt;\/groupId\&gt;\n        \&lt;artifactId\&gt;maven\-resources\-plugin\&lt;\/artifactId\&gt;\n        \&lt;version\&gt;2\.6\&lt;\/version\&gt;\n      \&lt;\/plugin\&gt;\n    \&lt;\/plugins\&gt;\n    \&lt;resources\&gt;\n      \&lt;resource\&gt;\n        \&lt;directory\&gt;src\/main\/java\&lt;\/directory\&gt;\n        \&lt;includes\&gt;\n          \&lt;include\&gt;\*\*\/\*\.xml\&lt;\/include\&gt;\n        \&lt;\/includes\&gt;\n      \&lt;\/resource\&gt;\n    \&lt;\/resources\&gt;\n  \&lt;\/build\&gt;\n\&lt;\/project\&gt;\n</find>
-      <find>mod</find>
-      <find>req_</find>
       <find>rep</find>
       <find>user_flag</find>
       <find>validation_mod_pqsswduser</find>
@@ -150,6 +134,12 @@
       <find>selectRloeByURId</find>
       <find>selectUserByURId</find>
       <find>BeanUtil</find>
+      <find>Jion_User_Role_Column_List</find>
+      <find>slf4j-log4j12</find>
+      <find>org.slf4j</find>
+      <find>503</find>
+      <find>break_equ_list_uid_auth</find>
+      <find>userremove_link</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,57 +153,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquLabMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquLabMapper.java" />
-        <option value="$PROJECT_DIR$/src/reset.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquLabEx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquBreakMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/break_equ.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquBreakMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquBreak.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquBreakEx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquScheduleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquipmentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquScheduleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquScheduleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/order_equ.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equs/EqusController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/LEMSResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/AuthIntercepter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lems/utils/TestJsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/ordered_equ_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/equ/enorder_equ_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equs/EqusController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/annotation/EnableLog.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/LoggerInjector.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/break_equ.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/equ/break_equ_list.jsp" />
-        <option value="$PROJECT_DIR$/reset.sql" />
-        <option value="$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/enorder_equ_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/add_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/role/add_role.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserRoleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserRoleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserRoleMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserRoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/user/mod_user_role.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/user/search_user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/user/list_user.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquSchedule.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquScheduleEx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquScheduleMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/mod_user_role.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/modify_user_info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/modify_user_pwd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/remove_user.jsp" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.8.RELEASE/spring-webmvc-3.2.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/search_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/ordered_equ_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/equ/order_equ.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/LoginIntercepter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/user/add_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
       </list>
     </option>
   </component>
@@ -234,7 +224,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="D:/Programs/ApacheSoftware/maven" />
-        <option name="userSettingsFile" value="D:\Programs\ApacheSoftware\maven\conf\settings.xml" />
+        <option name="userSettingsFile" value="/opt/local/evn/maven/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -273,6 +263,24 @@
           <option name="myItemId" value="LEMS" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="org.slf4j:slf4j-log4j12:1.6.6" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="LEMS" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
       </PATH>
     </treeState>
   </component>
@@ -293,13 +301,163 @@
             <id />
           </State>
           <State>
+            <id>AOP</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Internationalization &gt; Bidirectional Text</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>ArquillianJava</id>
+          </State>
+          <State>
+            <id>Bean Validation issues</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class structureJava</id>
+          </State>
+          <State>
+            <id>Code quality toolsCSS</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
             <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issuesJava</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>Error handlingJava</id>
+          </State>
+          <State>
+            <id>FlexUnit inspections</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 8Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Memory issuesJava</id>
+          </State>
+          <State>
+            <id>Modularization issuesJava</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>Packaging issuesJava</id>
+          </State>
+          <State>
+            <id>Pattern Validation</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
           </State>
           <State>
             <id>Spring</id>
           </State>
           <State>
+            <id>Spring AOPSpring</id>
+          </State>
+          <State>
             <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>WebSocket issues</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>XPath</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -326,6 +484,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +512,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -371,6 +536,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,16 +611,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36095616" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -437,14 +625,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="System.out&#9;null&#9;null&#10;Map&#9;PSI&#9;JAVA://org.kehao.lems.dao.EquBreakMapper&#10;updateTokenByUid&#9;PSI&#9;JAVA://lems.dao.TestUserDao#testUpdateTokenByUid" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Workspaces\IDEA\LEMS\src\main\webapp\user" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\equ" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\lab" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\lab" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
+      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.kehao.lems.web.controller.equs" />
@@ -453,12 +642,12 @@
       <recent name="org.kehao.lems.web.controller.labs" />
       <recent name="lems.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib\lems" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\test" />
-      <recent name="F:\Document\GraduationDesign\Dev\Project\LEMS\src\main\webapp\jslib" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp" />
-      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\jslib" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor" />
+      <recent name="F:\Workspaces\IDEA\LEMS\src\main\webapp\user" />
+      <recent name="F:\Workspace\IDEA\LEMS\src\main\webapp\equ" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -490,7 +679,7 @@
       <deployment />
       <server-settings>
         <data>
-          <option name="transportHostId" />
+          <option name="transportHostId" value="" />
           <host-id />
         </data>
       </server-settings>
@@ -907,8 +1096,80 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="lems" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <configuration default="false" name="lems_war" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat7" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="D:\Programs\Java\jdk1.8.0_51\jre">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="LEMS:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/lems" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_lems" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="17474" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LEMS:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="lems" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat7" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="D:\Programs\Java\jdk1.8.0_51\jre">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="LEMS:war exploded">
           <settings>
@@ -979,83 +1240,9 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="lems_war" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/lems_war/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="LEMS:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/lems_war" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_lems" />
-        <option name="HTTP_PORT" value="8088" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="17474" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="LEMS:war" />
-        </option>
-      </method>
-    </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.lems" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.lems_war" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.lems_war" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.lems" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -1130,30 +1317,34 @@
       <workItem from="1494644417895" duration="3095000" />
       <workItem from="1494764987446" duration="879000" />
       <workItem from="1494765903966" duration="2196000" />
+      <workItem from="1494983426988" duration="7051000" />
+      <workItem from="1494990797778" duration="43000" />
+      <workItem from="1494991694869" duration="1567000" />
+      <workItem from="1494995666982" duration="13206000" />
+      <workItem from="1495068982879" duration="11985000" />
+      <workItem from="1495084700043" duration="15236000" />
+      <workItem from="1495445194422" duration="1193000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLabController_labControllerOrderLab - 2017.05.10 at 11h 47m 16s.xml">
-      <configuration name="TestLabController.labControllerOrderLab" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testObjectToJson - 2017.05.17 at 10h 24m 49s.xml">
+      <configuration name="TestJsonUtil.testObjectToJson" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLabController_labControllerOrderLab - 2017.05.10 at 11h 49m 03s.xml">
-      <configuration name="TestLabController.labControllerOrderLab" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testObjectToJson - 2017.05.17 at 10h 26m 02s.xml">
+      <configuration name="TestJsonUtil.testObjectToJson" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLabController_labControllerSearch - 2017.05.04 at 16h 04m 35s.xml">
-      <configuration name="TestLabController.labControllerSearch" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testObjectToJson - 2017.05.17 at 10h 27m 02s.xml">
+      <configuration name="TestJsonUtil.testObjectToJson" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLabController_labControllerSearch - 2017.05.04 at 16h 05m 33s.xml">
-      <configuration name="TestLabController.labControllerSearch" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testObjectToJson - 2017.05.17 at 15h 01m 25s.xml">
+      <configuration name="TestJsonUtil.testObjectToJson" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLabController_labControllerSearch - 2017.05.04 at 16h 07m 42s.xml">
-      <configuration name="TestLabController.labControllerSearch" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testStringToJson - 2017.05.17 at 15h 02m 07s.xml">
+      <configuration name="TestJsonUtil.testStringToJson" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestLabService_searchLabCount - 2017.05.04 at 15h 49m 07s.xml">
-      <configuration name="TestLabService.searchLabCount" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestLabService_searchLabCount - 2017.05.04 at 15h 57m 02s.xml">
-      <configuration name="TestLabService.searchLabCount" configurationId="JUnit" />
+    <history-entry file="TestJsonUtil_testStringToJson - 2017.05.17 at 15h 02m 54s.xml">
+      <configuration name="TestJsonUtil.testStringToJson" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestLabService_searchLabCount - 2017.05.04 at 15h 59m 45s.xml">
       <configuration name="TestLabService.searchLabCount" configurationId="JUnit" />
@@ -1164,9 +1355,12 @@
     <history-entry file="TestLabService_testSearchLab - 2017.05.04 at 15h 47m 52s.xml">
       <configuration name="TestLabService.testSearchLab" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestUserService_testGetUserByUid - 2017.05.17 at 10h 25m 29s.xml">
+      <configuration name="TestUserService.testGetUserByUid" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418916000" />
+    <option name="totallyTimeSpent" value="469197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,40 +1376,77 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698795" sideWeight="0.50386596" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17397882" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38343558" sideWeight="0.50680786" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23712121" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2677761" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2677761" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43711656" sideWeight="0.496134" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31441718" sideWeight="0.4974227" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38343558" sideWeight="0.49319214" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580645" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7223926" sideWeight="0.4974227" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261745" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32507738" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36809817" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20801815" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818532" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46165645" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12556732" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47699386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35609102" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35609102" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46904024" sideWeight="0.50386596" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17348485" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2677761" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36687306" sideWeight="0.496134" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580645" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3142415" sideWeight="0.4974227" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32507738" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32198143" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32689834" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35609102" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20378788" sideWeight="0.493578" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12556732" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47699386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489691" sideWeight="0.50642204" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1231,14 +1462,6 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
               </option>
             </State>
           </value>
@@ -1274,7 +1497,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="131" />
+      <option name="time" value="155" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1288,336 +1511,360 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="123" column="11" lean-forward="false" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquipmentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="67" column="38" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquipmentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="280" column="40" lean-forward="true" selection-start-line="280" selection-start-column="40" selection-end-line="280" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/order_equ.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equs/EqusController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/EquScheduleService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/EquScheduleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="106" column="61" lean-forward="true" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="81" column="67" lean-forward="true" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="22" column="65" lean-forward="true" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="95" column="70" lean-forward="true" selection-start-line="95" selection-start-column="70" selection-end-line="95" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/break_equ_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="128" column="67" lean-forward="true" selection-start-line="128" selection-start-column="67" selection-end-line="128" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/break_equ.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lems.sql" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/lems/web/controller/TestUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="100" column="31" lean-forward="true" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reset.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="77" column="117" lean-forward="true" selection-start-line="77" selection-start-column="117" selection-end-line="77" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserRoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/UserRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="166" column="53" lean-forward="true" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/mod_user_role.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="47" column="63" lean-forward="false" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/mybatis-config.xml" />
+    <entry file="file://$PROJECT_DIR$/src/test/resources/jdbc.properties" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/lems/utils/TestJsonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="67" column="71" lean-forward="true" selection-start-line="67" selection-start-column="71" selection-end-line="67" selection-end-column="71" />
-          <folding />
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/search_user.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jdbc.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-656">
-          <caret line="18" column="67" lean-forward="true" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/enorder_equ_list.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/ordered_equ_list.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LaboratoryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="396" column="34" lean-forward="true" selection-start-line="396" selection-start-column="34" selection-end-line="396" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/LabSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="81" column="32" lean-forward="false" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="97" column="121" lean-forward="true" selection-start-line="97" selection-start-column="121" selection-end-line="97" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="81" column="32" lean-forward="false" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/EquScheduleEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="124" column="32" lean-forward="false" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/extend/LabScheduleEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/EquScheduleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="151" column="51" lean-forward="true" selection-start-line="151" selection-start-column="51" selection-end-line="151" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="339" column="68" lean-forward="true" selection-start-line="339" selection-start-column="68" selection-end-line="339" selection-end-column="68" />
+        <state relative-caret-position="96">
+          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1568">
-          <caret line="142" column="28" lean-forward="true" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
+        <state relative-caret-position="128">
+          <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquScheduleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="327" column="49" lean-forward="true" selection-start-line="327" selection-start-column="49" selection-end-line="327" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equs/EqusController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/equ/EquController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="132" column="43" lean-forward="true" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/lab/LabController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/annotation/EnableLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="101" column="23" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquScheduleServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/resources/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="16">
+          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="301">
+          <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/EquPurcServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/utils/LoggerInjector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/entity/EquPurchase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/add_equ.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2281">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/break_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/break_equ_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/enorder_equ_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/move_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/mgr_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/mod_mgr_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/role/add_role.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1264">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/role/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/labs/LabsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281">
+          <caret line="141" column="48" lean-forward="true" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/modify_user_info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="63" column="72" lean-forward="true" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/modify_user_pwd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/mod_user_role.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/remove_user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.8.RELEASE/spring-webmvc-3.2.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-928">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/list_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="174" column="61" lean-forward="false" selection-start-line="174" selection-start-column="61" selection-end-line="174" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/add_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/enorder_lab_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1984">
+          <caret line="124" column="56" lean-forward="false" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/list_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2332">
+          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/list_user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1312">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/order_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/order_equ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="75" column="22" lean-forward="false" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/service/impl/LabScheduleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="e#2216#2231#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="128">
+          <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/sql/LabScheduleMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/ordered_lab_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="40" column="72" lean-forward="false" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-          <folding>
-            <marker date="1494766421075" expanded="true" signature="2818:2939" ph="select from s_lab_schedule" />
-            <marker date="1494766421075" expanded="true" signature="3032:3101" ph="DELETE FROM " />
-            <marker date="1494766421075" expanded="true" signature="3199:3516" ph="INSERT INTO s_lab_schedule... " />
-            <marker date="1494766421075" expanded="true" signature="5177:5925" ph="update s_lab... " />
-            <marker date="1494766421075" expanded="true" signature="6035:6409" ph="UPDATE s_lab... " />
-            <marker date="1494766421075" expanded="true" signature="6547:7552" ph="select from s_lab_schedule" />
-          </folding>
+        <state relative-caret-position="864">
+          <caret line="62" column="15" lean-forward="true" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/equ/ordered_equ_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/search_user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lab/search_lab.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="39" column="85" lean-forward="false" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
+        <state relative-caret-position="321">
+          <caret line="488" column="39" lean-forward="true" selection-start-line="488" selection-start-column="39" selection-end-line="488" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/add_user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kehao/lems/web/interceptor/LoginIntercepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/user/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1700,7 +1947,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.apache.commons:commons-collections4:4.0</last-edited>
+          <last-edited>Maven: log4j:log4j:1.2.17</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
