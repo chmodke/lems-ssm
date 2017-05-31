@@ -2,7 +2,6 @@ package lems.utils;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kehao.lems.entity.User;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.JsonUtil;
 import org.kehao.lems.utils.LEMSResult;
