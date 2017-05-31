@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var break_equ_uid_auth = getCookie("uid");
+        var break_equ_token_auth = getCookie("token");
+        if (break_equ_uid_auth == null || break_equ_token_auth == null) {
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
 
         var break_equ_eid = lems.getDialogParam('equ_list_dialog', 'break_equ_eid');
         $("#break_equ_id").val(lems.getDialogParam('equ_list_dialog', 'break_equ_id'));
@@ -13,18 +22,18 @@
 
         //设备添加
         function break_equ() {
-            /*var addequ_uid=getCookie("uid");
-             var addequ_token=getCookie("token");
-
-             if(addequ_uid==null||addequ_token==null){
-             $.messager.alert('警告', "非法操作");
-             }*/
             var break_equ_bid = $("#break_equ_bid").val().trim();
             var break_equ_breason = $("#break_equ_breason").val().trim();
             $.ajax({
                 url: "./equ/break_equ.do",
                 type: "post",
-                data: {"eid": break_equ_eid, "id": break_equ_bid, "breason": break_equ_breason},
+                data: {
+                    "eid": break_equ_eid,
+                    "id": break_equ_bid,
+                    "breason": break_equ_breason,
+                    "auth_uid": break_equ_uid_auth,
+                    "auth_token": break_equ_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
@@ -40,6 +49,7 @@
                 async: true
             });
         }
+
         function break_equ_reset() {
             $("#break_equ_bid").val("");
             $("#break_equ_breason").val("");

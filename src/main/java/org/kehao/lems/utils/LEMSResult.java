@@ -1,5 +1,7 @@
 package org.kehao.lems.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * Created by kehao on 2017/4/20.
  */

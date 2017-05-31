@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var equ_list_uid_auth = getCookie("uid");
+        var equ_list_token_auth = getCookie("token");
+        if (equ_list_uid_auth == null || equ_list_token_auth == null) {
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
         $('#equ_list_list').datagrid({
             url: './equ/equ_list.do',
+            queryParams: {//认证条件
+                auth_uid: equ_list_uid_auth,
+                auth_token: equ_list_token_auth
+            },
             pagination: true,
             fit: true,
             fitColumns: true,
@@ -38,6 +51,14 @@
                 },
                 {field: 'remark', title: '备注', width: 100}
             ]],
+            onLoadSuccess:function (result) {
+                if (result.status!=0){
+                    $.messager.alert('警告', result.message);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            },
             toolbar:['-',{
                 text:'增加',
                 iconCls:'icon-edit',
@@ -49,7 +70,10 @@
                         href: './equ/add_equ.jsp',
                         modal: true,
                         onClose: function () {
-                            $('#equ_list_list').datagrid('load',{});
+                            $('#equ_list_list').datagrid('load',{
+                                auth_uid: equ_list_uid_auth,
+                                auth_token: equ_list_token_auth
+                            });
                         }
                     });
                 }
@@ -81,7 +105,10 @@
                             'move_equ_ename': move_equ_ename
                         },//传递参数
                         onClose: function () {
-                            $('#equ_list_list').datagrid('load',{});
+                            $('#equ_list_list').datagrid('load',{
+                                auth_uid: equ_list_uid_auth,
+                                auth_token: equ_list_token_auth
+                            });
                         }
                     });
                 }
@@ -107,7 +134,10 @@
                             'break_equ_ename': break_equ_ename
                         },//传递参数
                         onClose: function () {
-                            $('#equ_list_list').datagrid('load',{});
+                            $('#equ_list_list').datagrid('load',{
+                                auth_uid: equ_list_uid_auth,
+                                auth_token: equ_list_token_auth
+                            });
                         }
                     });
                 }
@@ -131,12 +161,19 @@
             $.ajax({
                 url: "./equ/equdel.do",
                 type: "post",
-                data:{"delList":del_list},
+                data:{
+                    "delList":del_list,
+                    "auth_uid": equ_list_uid_auth,
+                    "auth_token": equ_list_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
                         $.messager.alert('提示', result.message+"，已删除"+result.data+"条数据");
-                        $('#equ_list_list').datagrid('load',{});
+                        $('#equ_list_list').datagrid('load',{
+                            "auth_uid": equ_list_uid_auth,
+                            "auth_token": equ_list_token_auth
+                        });
                     }
                     if (result.status != 0) {
                         $.messager.alert('警告', result.message);
@@ -156,10 +193,15 @@
             var equ_ename = $("#equ_list_search_ename").val().trim();
             var equ_id = $("#equ_list_search_id").val().trim();
             var equ_etype = $("#equ_list_search_etype").val().trim();
+            equ_ename=(equ_ename==""?undefined:equ_ename);
+            equ_id=(equ_id==""?undefined:equ_id);
+            equ_etype=(equ_etype==""?undefined:equ_etype);
             $('#equ_list_list').datagrid('load', {
                 ename: equ_ename,
                 id:equ_id,
-                type: equ_etype
+                type: equ_etype,
+                auth_uid: equ_list_uid_auth,
+                auth_token: equ_list_token_auth
             });
         }
 
@@ -170,7 +212,10 @@
             $("#equ_list_search_ename").val("");
             $("#equ_list_search_id").val("");
             $("#equ_list_search_etype").val("");
-            $('#equ_list_list').datagrid('load',{});
+            $('#equ_list_list').datagrid('load',{
+                auth_uid: equ_list_uid_auth,
+                auth_token: equ_list_token_auth
+            });
         }
     });
 </script>

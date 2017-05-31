@@ -45,4 +45,25 @@ public interface EquipmentMapper {
      * @return
      */
     int updateEquStatusByEidBatch(Map map);
+
+    /**
+     * 获取可预约设备数量
+     * @param map
+     * @return
+     */
+    Long selectEnOrderEquConditionCount(Map map);
+
+    /**
+     * 获取可预约设备列表
+     * @param map
+     * @return
+     */
+    List<Equipment> selectEnOrderEquCondition(Map map);
+
+    /**
+     * 更新设备状态
+     * @param map
+     * @return
+     */
+    int updateEquStatusByEid(Map map);
 }

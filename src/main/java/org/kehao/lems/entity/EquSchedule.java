@@ -17,6 +17,12 @@ public class EquSchedule {
 
     private String sname;
 
+    private String stel;
+
+    private Integer status;
+
+    private Equipment equipment;
+
     public String getSeid() {
         return seid;
     }
@@ -55,5 +61,29 @@ public class EquSchedule {
 
     public void setSname(String sname) {
         this.sname = sname == null ? null : sname.trim();
+    }
+
+    public String getStel() {
+        return stel;
+    }
+
+    public void setStel(String stel) {
+        this.stel = stel;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

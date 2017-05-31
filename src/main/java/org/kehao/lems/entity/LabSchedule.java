@@ -19,6 +19,8 @@ public class LabSchedule {
 
     private String stel;
 
+    private Integer status;
+
     private Laboratory laboratory;
 
     public String getSlid() {
@@ -75,5 +77,13 @@ public class LabSchedule {
 
     public void setLaboratory(Laboratory laboratory) {
         this.laboratory = laboratory;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

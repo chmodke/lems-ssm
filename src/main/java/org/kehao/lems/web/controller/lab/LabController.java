@@ -49,7 +49,10 @@ public class LabController {
     public Map<String,Object> getLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.labGetCount(laboratoryEx));
-        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
+        LEMSResult result=labService.labGet(page,rows,order,sort,laboratoryEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
     @RequestMapping("/labdel.do")
@@ -64,7 +67,10 @@ public class LabController {
     public Map<String,Object> searchLab(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.searchLabCount(laboratoryEx));
-        data.put("rows", labService.searchLab(page, rows, order, sort, laboratoryEx).getData());
+        LEMSResult result=labService.searchLab(page, rows, order, sort, laboratoryEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
     @RequestMapping("/lab_mgr_list.do")
@@ -72,7 +78,10 @@ public class LabController {
     public Map<String,Object> mgrGetLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.labGetCount(laboratoryEx));
-        data.put("rows", labService.labGet(page,rows,order,sort,laboratoryEx).getData());
+        LEMSResult result=labService.labGet(page,rows,order,sort,laboratoryEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
     @RequestMapping("/enorder_lab_list.do")
@@ -80,7 +89,10 @@ public class LabController {
     public Map<String,Object> enorderLib(Integer page, Integer rows, String order, String sort, LaboratoryEx laboratoryEx){
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", labService.enOrderLabCount(laboratoryEx));
-        data.put("rows", labService.enOrderLab(page,rows,order,sort,laboratoryEx).getData());
+        LEMSResult result=labService.enOrderLab(page,rows,order,sort,laboratoryEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
     @RequestMapping("/order_lab.do")

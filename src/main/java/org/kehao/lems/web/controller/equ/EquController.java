@@ -2,16 +2,14 @@ package org.kehao.lems.web.controller.equ;
 
 import javax.annotation.Resource;
 
-import org.kehao.lems.entity.EquBreak;
-import org.kehao.lems.entity.EquLab;
-import org.kehao.lems.entity.EquPurchase;
-import org.kehao.lems.entity.Equipment;
+import org.kehao.lems.entity.*;
 import org.kehao.lems.entity.extend.EquBreakEx;
 import org.kehao.lems.entity.extend.EquipmentEx;
-import org.kehao.lems.entity.extend.LaboratoryEx;
 import org.kehao.lems.service.EquPurcService;
+import org.kehao.lems.service.EquScheduleService;
 import org.kehao.lems.service.EquService;
 import org.kehao.lems.utils.LEMSResult;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -74,8 +72,11 @@ public class EquController {
     @ResponseBody
     public Map<String, Object> getEquList(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx) {
         Map<String, Object> data = new HashMap<String, Object>();
-        data.put("total", equService.labGetCount(equipmentEx));
-        data.put("rows", equService.labGet(page, rows, order, sort, equipmentEx).getData());
+        data.put("total", equService.equGetCount(equipmentEx));
+        LEMSResult result=equService.equGet(page, rows, order, sort, equipmentEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 
@@ -104,7 +105,10 @@ public class EquController {
     public Map<String, Object> getBreakEquList(Integer page, Integer rows, String order, String sort, EquBreakEx equBreakEx) {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("total", equService.labGetBreakCount(equBreakEx));
-        data.put("rows", equService.labGetBreak(page, rows, order, sort, equBreakEx).getData());
+        LEMSResult result=equService.labGetBreak(page, rows, order, sort, equBreakEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 
@@ -118,5 +122,23 @@ public class EquController {
     @ResponseBody
     public LEMSResult fixEquDel(String bid) {
         return equService.fixEquDel(bid);
+    }
+
+    @RequestMapping("/enorder_equ_list.do")
+    @ResponseBody
+    public Map<String,Object> enorderEqu(Integer page, Integer rows, String order, String sort, EquipmentEx equipmentEx) {
+        Map<String,Object> data = new HashMap<String,Object>();
+        data.put("total", equService.enOrderEquCount(equipmentEx));
+        LEMSResult result=equService.enOrderEqu(page,rows,order,sort,equipmentEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
+        return data;
+    }
+    @RequestMapping("/order_equ.do")
+    @ResponseBody
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public LEMSResult orderEqu(EquSchedule equSchedule){
+        return equService.orderEqu(equSchedule);
     }
 }

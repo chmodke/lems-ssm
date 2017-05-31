@@ -1,6 +1,8 @@
-package org.kehao.lems.web.controller.labs;
+package org.kehao.lems.web.controller.equs;
 
+import org.kehao.lems.entity.extend.EquScheduleEx;
 import org.kehao.lems.entity.extend.LabScheduleEx;
+import org.kehao.lems.service.EquScheduleService;
 import org.kehao.lems.service.LabScheduleService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.stereotype.Controller;
@@ -15,19 +17,20 @@ import java.util.Map;
  * Created by kehao on 2017/5/10.
  */
 @Controller
-@RequestMapping("/labs")
-public class LabsController {
+@RequestMapping("/equs")
+public class EqusController {
     @Resource
-    LabScheduleService labScheduleService;
-    @RequestMapping("/ordered_lab_list.do")
+    EquScheduleService equScheduleService;
+    @RequestMapping("/ordered_equ_list.do")
     @ResponseBody
-    public Map<String,Object> orderLab(Integer page, Integer rows, String order, String sort, LabScheduleEx labScheduleEx){
+    public Map<String,Object> orderLab(Integer page, Integer rows, String order, String sort, EquScheduleEx equScheduleEx){
         Map<String,Object> data = new HashMap<String,Object>();
-        data.put("total", labScheduleService.getLabSchInfoCount(labScheduleEx));
-        LEMSResult result=labScheduleService.getLabSchInfo(page,rows,order,sort,labScheduleEx);
+        data.put("total", equScheduleService.getEquSchInfoCount(equScheduleEx));
+        LEMSResult result=equScheduleService.getEquSchInfo(page,rows,order,sort,equScheduleEx);
         data.put("rows", result.getData());
         data.put("status",result.getStatus());
         data.put("message",result.getMessage());
         return data;
     }
+
 }

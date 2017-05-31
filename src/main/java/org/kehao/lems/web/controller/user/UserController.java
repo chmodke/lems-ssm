@@ -4,7 +4,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.kehao.lems.entity.User;
+import org.kehao.lems.entity.UserRole;
 import org.kehao.lems.entity.extend.UserEx;
+import org.kehao.lems.service.UserRoleService;
 import org.kehao.lems.service.UserService;
 import org.kehao.lems.utils.LEMSResult;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,6 +22,8 @@ import java.util.*;
 public class UserController {
     @Resource
     private UserService userService;
+    @Resource
+    private UserRoleService userRoleService;
 
     /**
      * 通过id获取用户信息，测试使用
@@ -132,7 +136,10 @@ public class UserController {
     public Map<String,Object> getUserList(Integer page, Integer rows,String order,String sort, UserEx userEx) {
         Map<String,Object> data = new HashMap<String,Object>();
         data.put("total", userService.getUserCount(userEx));
-        data.put("rows", userService.getUser(page, rows,order,sort, userEx).getData());
+        LEMSResult result=userService.getUser(page, rows,order,sort, userEx);
+        data.put("rows", result.getData());
+        data.put("status",result.getStatus());
+        data.put("message",result.getMessage());
         return data;
     }
 
@@ -156,6 +163,12 @@ public class UserController {
         return userService.getAllUser();
     }
 
+
+    @RequestMapping("/mod_user_role.do")
+    @ResponseBody
+    public LEMSResult modUserRole(UserRole userRole) {
+        return userRoleService.modUserRole(userRole);
+    }
 
 }
 

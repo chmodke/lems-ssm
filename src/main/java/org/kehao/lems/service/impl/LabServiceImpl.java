@@ -83,6 +83,7 @@ public class LabServiceImpl implements LabService {
         }
         result.setData(laboratoryExList);
         result.setStatus(0);
+        result.setMessage("获取实验室列表成功");
         return result;
     }
 
@@ -131,18 +132,18 @@ public class LabServiceImpl implements LabService {
         map.put("order", order);
         //映射排序字段
         if (sort.equals("equ_ename")) {
-            sort = "equ.ename";
+            sort = "ename";
         }
         if (sort.equals("equ_type")) {
-            sort = "equ.type";
+            sort = "e_type";
         }
         if (sort.equals("equ_id")) {
-            sort = "equ.id";
+            sort = "e_id";
         }
         if(sort.equals("equ_status")){
-            sort="equ.status";
+            sort="e_status";
         }
-        map.put("sort", sort);
+        map.put("sort", "a."+sort);//因为后台采用了联合查询，结果集名称为'a'
         //封装返回数据集合
         List<Laboratory> laboratoryList = laboratoryMapper.selectLabEquUserByCondition(map);
         List<LaboratoryEx> laboratoryExList = new ArrayList<LaboratoryEx>();
@@ -233,6 +234,7 @@ public class LabServiceImpl implements LabService {
         }
         result.setData(laboratoryExList);
         result.setStatus(0);
+        result.setMessage("获取可预约实验室成功");
         return result;
     }
 

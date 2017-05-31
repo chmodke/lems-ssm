@@ -238,4 +238,46 @@
             #{item}
         </foreach>
     </update>
+    <select id="selectEnOrderEquCondition" parameterType="java.util.Map" resultMap="Equ_Lab_Jion_Map">
+        select
+        <include refid="Equ_Lab_Jion_Column_List"/>
+        from s_equipment equ left join equ_lab elab on(equ.eid=elab.eid) left join s_laboratory lab on(elab.lid=lab.lid)
+        where equ.status = '0'
+
+        <if test="equipmentEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equipmentEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equipmentEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{equipmentEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+
+        <if test="sort!=null">
+            ORDER BY ${sort} ${order}
+        </if>
+        LIMIT #{startRec,jdbcType=INTEGER},#{recCount,jdbcType=INTEGER}
+    </select>
+    <select id="selectEnOrderEquConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        count(*)
+        from s_equipment equ left join equ_lab elab on(equ.eid=elab.eid) left join s_laboratory lab on(elab.lid=lab.lid)
+        where equ.status ='0'
+
+        <if test="equipmentEx.id != null">
+            AND equ.id LIKE concat(concat('%',#{equipmentEx.id,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.ename != null">
+            AND equ.ename LIKE concat(concat('%',#{equipmentEx.ename,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="equipmentEx.type != null">
+            AND equ.type LIKE concat(concat('%',#{equipmentEx.type,jdbcType=VARCHAR}),'%')
+        </if>
+    </select>
+    <update id="updateEquStatusByEid" parameterType="java.util.Map">
+        UPDATE s_equipment
+        SET status = #{status,jdbcType=INTEGER}
+        WHERE eid = #{eid,jdbcType=CHAR}
+    </update>
 </mapper>

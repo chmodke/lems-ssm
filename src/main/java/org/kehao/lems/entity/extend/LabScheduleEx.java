@@ -19,6 +19,8 @@ public class LabScheduleEx{
 
     private String stel;
 
+    private Integer status;
+
     /*
     * 扩展属性
     */
@@ -140,5 +142,13 @@ public class LabScheduleEx{
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

@@ -13,6 +13,19 @@ public interface UserRoleMapper {
 
     List<UserRole> selectUserByURId(String rid);
 
+    /**
+     * 添加用户失败时回滚事务
+     * @param uid
+     * @return
+     */
     int deleteByUid(String uid);
-    int deleteByRid(String rid);
+
+    /**
+     * 更新用户角色时
+     * @param uid
+     * @return
+     */
+    UserRole selectUserRoleByUid(String uid);
+
+    int updateRidByUid(UserRole record);
 }

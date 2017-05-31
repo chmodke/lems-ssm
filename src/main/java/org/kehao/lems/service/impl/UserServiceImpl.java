@@ -6,7 +6,6 @@ import java.util.*;
 
 import javax.annotation.Resource;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.kehao.lems.dao.UserMapper;
 import org.kehao.lems.dao.UserRoleMapper;
@@ -19,7 +18,6 @@ import org.kehao.lems.utils.LEMSMD5Util;
 import org.kehao.lems.utils.LEMSResult;
 import org.kehao.lems.utils.SendEmail;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 /**

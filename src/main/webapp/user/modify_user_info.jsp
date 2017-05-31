@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var mod_userinfo_uid_auth = getCookie("uid");
+        var mod_userinfo_token_auth = getCookie("token");
+        if(mod_userinfo_uid_auth==null||mod_userinfo_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+
         $("#mod_userinfo_btn").click(moduserinfo);//添加用户按钮事件绑定
         $("#moduserinfo_reset_btn").click(moduserinfo_reset)
         moduserinfo_load();
@@ -20,7 +30,11 @@
             $.ajax({
                 url: "./user/getuserinfo.do",
                 type: "post",
-                data:{"uid":moduserinfo_uid},
+                data:{
+                    "uid":moduserinfo_uid,
+                    "auth_uid": mod_userinfo_uid_auth,
+                    "auth_token": mod_userinfo_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {
@@ -43,9 +57,7 @@
         //用户信息修改
         function moduserinfo() {
             var moduserinfo_uid=getCookie("uid");
-            var moduserinfo_token=getCookie("token");
-
-            if(moduserinfo_uid==null||moduserinfo_token==null){
+            if(moduserinfo_uid==null){
                 $.messager.alert('警告', "非法操作");
             }
 
@@ -56,7 +68,14 @@
             $.ajax({
                 url: "./user/modfifyuserinfo.do",
                 type: "post",
-                data:{"uid":moduserinfo_uid,"email":moduserinfo_emailbox,"officeAddress":moduserinfo_officeaddress,"officePhone":moduserinfo_officephone},
+                data:{
+                    "uid":moduserinfo_uid,
+                    "email":moduserinfo_emailbox,
+                    "officeAddress":moduserinfo_officeaddress,
+                    "officePhone":moduserinfo_officephone,
+                    "auth_uid": mod_userinfo_uid_auth,
+                    "auth_token": mod_userinfo_token_auth
+                },
                 dataType: "json",
                 success: function (result) {
                     if (result.status == 0) {

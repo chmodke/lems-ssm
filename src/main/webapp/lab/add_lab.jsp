@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script>
     $(function () {
+        var addlab_uid_auth = getCookie("uid");
+        var addlab_token_auth = getCookie("token");
+        if(addlab_uid_auth==null||addlab_token_auth==null){
+            $.messager.alert('警告', "530,您没有登录");
+            setTimeout(function () {
+                window.location.reload();
+            }, 3000);
+            return;
+        }
+
         $("#add_lab_btn").click(add_lab);//添加用户按钮事件绑定
         $("#addlab_reset_btn").click(addlab_reset);
 
@@ -15,13 +25,6 @@
         });
         //实验室添加
         function add_lab() {
-            var addlab_uid = getCookie("uid");
-            var addlab_token = getCookie("token");
-
-            if (addlab_uid == null || addlab_token == null) {
-                $.messager.alert('警告', "非法操作");
-            }
-
             var lab_serial = $("#addlab_serial").val();
             var lab_name = $("#addlab_name").val();
             var lab_type = $("#addlab_type").val();
@@ -31,7 +34,7 @@
             if (lab_remark == null) {
                 lab_remark = "";
             }
-            var lab_uid = addlab_uid;
+            var lab_uid = addlab_uid_auth;
 
             $.ajax({
                 url: "./lab/labadd.do",
@@ -43,7 +46,9 @@
                     "lsize": lab_size,
                     "equcount": lab_equcount,
                     "remark": lab_remark,
-                    "uid": lab_uid
+                    "uid": lab_uid,
+                    "auth_uid":addlab_uid_auth,
+                    "auth_token":addlab_token_auth
                 },
                 dataType: "json",
                 success: function (result) {

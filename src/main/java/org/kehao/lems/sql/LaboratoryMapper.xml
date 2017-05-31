@@ -109,10 +109,7 @@
     </resultMap>
     <sql id="Lab_Equ_Purc_User_Column_List">
         lab.lid, lab.id, lab.lname, lab.lsize, lab.equcount, lab.status, lab.type, lab.remark, epurc.price,
-        elab.lid el_lid, elab.eid el_eid,
-        equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark,
-        epurc.uid ep_uid,
-        user.uid u_uid,
+        equ.eid,equ.id e_id, equ.ename, equ.type e_type, equ.status e_status, equ.remark e_remark,
         user.uname u_uname
     </sql>
     <!-- Lab User-->
@@ -322,46 +319,57 @@
         </foreach>
     </update>
 
+
     <select id="selectLabEquUserByCondition" parameterType="java.util.Map" resultMap="LabEquPurcUserResultMap">
-        select
-        <include refid="Lab_Equ_Purc_User_Column_List"/>
-        from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid)
-        left join s_equipment equ on(elab.eid=equ.eid)
-        left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
-        left join s_user user on(epurc.uid=user.uid)
-        where lab.status !='1'
-        <if test="laboratoryEx.id != null">
-            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lname != null">
-            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lsize != null">
-            AND lab.lsize >= #{laboratoryEx.lsize,jdbcType=INTEGER}
-        </if>
-        <if test="laboratoryEx.status != null">
-            AND lab.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
-        </if>
-        <if test="laboratoryEx.type != null">
-            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.remark != null">
-            AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
-        </if>
+        select a.* from(
+            select
+            <include refid="Lab_Equ_Purc_User_Column_List"/>
+            from s_laboratory lab
+            LEFT JOIN equ_lab elab on(lab.lid=elab.lid)
+            LEFT JOIN s_equipment equ on(elab.eid=equ.eid)
+            left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+            left join s_user user on(epurc.uid=user.uid)
+            where lab.status !='1'
+            UNION
+            select
+            <include refid="Lab_Equ_Purc_User_Column_List"/>
+            from s_equipment equ
+            LEFT JOIN equ_lab elab on (elab.eid=equ.eid)
+            LEFT JOIN s_laboratory lab on (lab.lid=elab.lid)
+            left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+            left join s_user user on(epurc.uid=user.uid)
+            where equ.status !='1'
+        ) a
+        <where>
+            <if test="laboratoryEx.id != null">
+                AND a.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lname != null">
+                AND a.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lsize != null">
+                AND a.lsize &lt;= #{laboratoryEx.lsize,jdbcType=INTEGER}
+            </if>
+            <if test="laboratoryEx.status != null">
+                AND a.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
+            </if>
+            <if test="laboratoryEx.type != null">
+                AND a.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+            </if>
 
-        <if test="laboratoryEx.id != null">
-            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lname != null">
-            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.type != null">
-            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lab_uname != null">
-            AND user.uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
-        </if>
-
+            <if test="laboratoryEx.equ_id != null">
+                AND a.e_id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.equ_ename != null">
+                AND a.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.equ_type != null">
+                AND a.e_type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lab_uname != null">
+                AND a.u_uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
         <if test="sort!=null">
             ORDER BY ${sort} ${order}
         </if>
@@ -369,43 +377,55 @@
     </select>
 
     <select id="selectLabEquUserByConditionCount" parameterType="java.util.Map" resultType="java.lang.Long">
-        select count(*)
-        from s_laboratory lab left join equ_lab elab on(lab.lid=elab.lid)
-        left join s_equipment equ on(elab.eid=equ.eid)
-        left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
-        left join s_user user on(epurc.uid=user.uid)
-        where lab.status !='1'
-        <if test="laboratoryEx.id != null">
-            AND lab.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lname != null">
-            AND lab.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lsize != null">
-            AND lab.lsize >= #{laboratoryEx.lsize,jdbcType=INTEGER}
-        </if>
-        <if test="laboratoryEx.status != null">
-            AND lab.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
-        </if>
-        <if test="laboratoryEx.type != null">
-            AND lab.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.remark != null">
-            AND lab.remark LIKE concat(concat('%', #{laboratoryEx.remark,jdbcType=VARCHAR}),'%')
-        </if>
+        select count(*) from(
+            select
+            <include refid="Lab_Equ_Purc_User_Column_List"/>
+            from s_laboratory lab
+            LEFT JOIN equ_lab elab on(lab.lid=elab.lid)
+            LEFT JOIN s_equipment equ on(elab.eid=equ.eid)
+            left join s_equ_purchase epurc on(equ.pcid=epurc.pcid)
+            left join s_user user on(epurc.uid=user.uid)
+            where lab.status !='1'
+            UNION
+            select
+            <include refid="Lab_Equ_Purc_User_Column_List"/>
+            from s_equipment equ
+            LEFT JOIN equ_lab elab on (elab.eid=equ.eid)
+            LEFT JOIN s_laboratory lab on (lab.lid=elab.lid)
+            left join s_equ_purchase epurc on (equ.pcid=epurc.pcid)
+            left join s_user user on (epurc.uid=user.uid)
+            where equ.status !='1'
+        ) a
+        <where>
+            <if test="laboratoryEx.id != null">
+                AND a.id LIKE concat(concat('%',#{laboratoryEx.id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lname != null">
+                AND a.lname LIKE concat(concat('%',#{laboratoryEx.lname,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lsize != null">
+                AND a.lsize &lt;= #{laboratoryEx.lsize,jdbcType=INTEGER}
+            </if>
+            <if test="laboratoryEx.status != null">
+                AND a.status LIKE concat(concat('%',#{laboratoryEx.status,jdbcType=INTEGER}),'%')
+            </if>
+            <if test="laboratoryEx.type != null">
+                AND a.type LIKE concat(concat('%',#{laboratoryEx.type,jdbcType=VARCHAR}),'%')
+            </if>
 
-        <if test="laboratoryEx.id != null">
-            AND equ.id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lname != null">
-            AND equ.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.type != null">
-            AND equ.type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
-        </if>
-        <if test="laboratoryEx.lab_uname != null">
-            AND user.uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
-        </if>
+            <if test="laboratoryEx.equ_id != null">
+                AND a.e_id LIKE concat(concat('%',#{laboratoryEx.equ_id,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.equ_ename != null">
+                AND a.ename LIKE concat(concat('%',#{laboratoryEx.equ_ename,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.equ_type != null">
+                AND a.e_type LIKE concat(concat('%',#{laboratoryEx.equ_type,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="laboratoryEx.lab_uname != null">
+                AND a.u_uname LIKE concat(concat('%',#{laboratoryEx.lab_uname,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
     </select>
 
     <select id="selectLabUserByLid" parameterType="java.lang.String" resultMap="LabUserResultMap">

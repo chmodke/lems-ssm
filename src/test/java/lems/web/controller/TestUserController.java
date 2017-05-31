@@ -94,10 +94,10 @@ public class TestUserController {
     }
     @Test
     public void testAuthorAdd() throws Exception{
-	    String uname="test003";
+	    String uname="admin";
 	    String passwd="123456";
-	    String trueName="test003";
-	    String email="test003@xx.com";
+	    String trueName="admin";
+	    String email="admin@lems.com";
 	    String masterid="9999";
         String msg = uname + ":" + passwd + ":"+trueName+ ":" + email+":"+masterid;
         String base_64_msg= Base64.encodeBase64String(msg.getBytes());
