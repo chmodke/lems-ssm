@@ -9,8 +9,14 @@
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+	
+	<!-- web.xml中监听器的启动优先级要高于过滤器，所以配在下面无所谓的 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	
     <!-- 加载文件 -->
-    <context-param>
+    <context-param>  
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
@@ -18,7 +24,11 @@
     <servlet>
         <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+		<init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:applicationContext.xml</param-value>
+        </init-param>  
+        <load-on-startup>2</load-on-startup> 
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
@@ -37,10 +47,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- web.xml中监听器的启动优先级要高于过滤器，所以配在下面无所谓的 -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+
 
     <!-- 数据监控 -->
     <!-- druid -->
