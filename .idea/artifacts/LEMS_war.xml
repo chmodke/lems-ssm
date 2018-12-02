@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="LEMS:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="lems.war">
-      <element id="artifact" artifact-name="LEMS:war exploded" />
-    </root>
-  </artifact>
-</component>

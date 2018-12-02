@@ -79,12 +79,12 @@ CREATE TABLE `s_equipment` (
 -- ----------------------------
 -- Records of s_equipment
 -- ----------------------------
-INSERT INTO `s_equipment` VALUES ('1f31e4e37b724bacab4874ffbde16593', 'NCIT-01-07', '笔记本电脑07', 'ThinkPad T430 Plus', '2017-05-12 16:15:25', '2', '无', 'fd53b30b1d82429ea85fdf45312be78b');
+INSERT INTO `s_equipment` VALUES ('1f31e4e37b724bacab4874ffbde16593', 'NCIT-01-07', '笔记本电脑07', 'ThinkPad T430 Plus', '2017-05-12 16:15:25', '0', '无', 'fd53b30b1d82429ea85fdf45312be78b');
 INSERT INTO `s_equipment` VALUES ('2d2f4dec4e864a6fa191f5382af20f23', 'NCIT-01-01', '笔记本电脑01', 'ThinkPad T430', '2017-05-12 16:03:47', '0', '无', '2e7d4108a7154153873f08151ef7401f');
 INSERT INTO `s_equipment` VALUES ('40f9627a24b54617a275653c825ac87b', 'NCIT-01-05', '笔记本电脑05', 'ThinkPad T430', '2017-05-12 16:13:02', '0', '无', 'a45c9bc5487741c0ad84a75244e24b35');
 INSERT INTO `s_equipment` VALUES ('63dd0237d0d3422491268a00753741f5', 'NCIT-01-10', '笔记本电脑10', 'ThinkPad T430', '2017-05-12 16:19:08', '0', '无', '25db7d13887448518a10abba5a9bdf86');
-INSERT INTO `s_equipment` VALUES ('72dc710722c1477d85bd2ec0e9f0effa', 'NCIT-01-02', '笔记本电脑02', 'ThinkPad T430', '2017-05-12 16:05:31', '2', '无', '63606cd5b20a4a369a41419c917cc6ce');
-INSERT INTO `s_equipment` VALUES ('80eafa666cd94f11a903707b1fc50255', 'NCIT-01-08', '笔记本电脑08', 'ThinkPad T430 Plus', '2017-05-12 16:17:09', '2', '无', 'ff1754bb969146f7b5a192d161ed66eb');
+INSERT INTO `s_equipment` VALUES ('72dc710722c1477d85bd2ec0e9f0effa', 'NCIT-01-02', '笔记本电脑02', 'ThinkPad T430', '2017-05-12 16:05:31', '0', '无', '63606cd5b20a4a369a41419c917cc6ce');
+INSERT INTO `s_equipment` VALUES ('80eafa666cd94f11a903707b1fc50255', 'NCIT-01-08', '笔记本电脑08', 'ThinkPad T430 Plus', '2017-05-12 16:17:09', '0', '无', 'ff1754bb969146f7b5a192d161ed66eb');
 INSERT INTO `s_equipment` VALUES ('b7bf068da7404358a4a853ccab9484db', 'NCIT-01-06', '笔记本电脑06', 'ThinkPad T430', '2017-05-12 16:13:44', '0', '无', '52bd9a78ff5d49d981783af3de372677');
 INSERT INTO `s_equipment` VALUES ('b8d1c6cf26bb45378ebc02bf45f79090', 'NCIT-01-09', '笔记本电脑09', 'ThinkPad T430 Mini', '2017-05-12 16:18:19', '0', '无', 'd2dde6496bcd4fdba765cbe06ac31195');
 INSERT INTO `s_equipment` VALUES ('f2fbfb4f18b349afab6ef1dc82b2cbb0', 'NCIT-01-04', '笔记本电脑04', 'ThinkPad T430', '2017-05-12 16:09:47', '0', '无', '5585aa71285b44b2b9d265675ec65d3b');
@@ -158,9 +158,9 @@ CREATE TABLE `s_equ_schedule` (
 -- Records of s_equ_schedule
 -- ----------------------------
 INSERT INTO `s_equ_schedule` VALUES ('54a6a1bcce0a483bbdc5d2757d1ea9a3', 'ff6d02dc17c7410585d2439d462fe0ec', '2017-05-09 13:40:33', '2017-05-12 13:40:36', 'zzz', '123', '1');
-INSERT INTO `s_equ_schedule` VALUES ('be4f43f71d5841e6be0ad78daf47ed4f', '80eafa666cd94f11a903707b1fc50255', '2017-05-15 16:34:14', '2017-05-19 16:34:18', 'stu02', '222', '0');
+INSERT INTO `s_equ_schedule` VALUES ('be4f43f71d5841e6be0ad78daf47ed4f', '80eafa666cd94f11a903707b1fc50255', '2017-05-15 16:34:14', '2017-05-19 16:34:18', 'stu02', '222', '1');
 INSERT INTO `s_equ_schedule` VALUES ('bfe413477ad845ae8615d540cab0be0d', '2d2f4dec4e864a6fa191f5382af20f23', '2017-05-12 23:12:19', '2017-05-13 23:12:21', 'stu03', '3333', '1');
-INSERT INTO `s_equ_schedule` VALUES ('efda73606a5948a9ae156312a2af700e', '72dc710722c1477d85bd2ec0e9f0effa', '2017-05-12 16:48:17', '2017-05-15 16:48:18', 'stu01', '1111', '0');
+INSERT INTO `s_equ_schedule` VALUES ('efda73606a5948a9ae156312a2af700e', '72dc710722c1477d85bd2ec0e9f0effa', '2017-05-12 16:48:17', '2017-05-15 16:48:18', 'stu01', '1111', '1');
 
 -- ----------------------------
 -- Table structure for s_laboratory

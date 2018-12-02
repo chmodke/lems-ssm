@@ -8,6 +8,12 @@
     <name>LEMS</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <java.home>D:\Programs\Java\jdk1.7.0_80</java.home>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -62,6 +68,12 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.4.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -101,11 +113,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.25</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -168,7 +175,11 @@
             <version>1.1.2</version>
         </dependency>
         <!--SSM-->
-
+        <!-- <dependency>
+            <groupId>org.kehao.container</groupId>
+            <artifactId>jetty</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency> -->
     </dependencies>
 
 
@@ -188,9 +199,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <bootclasspath>${java.home}/jre/lib/rt.jar;${java.home}/jre/lib/jce.jar</bootclasspath>
+                    </compilerArguments>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -206,6 +220,12 @@
 					<include>**/*.xml</include>
 				</includes>
 			</resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
 		</resources>
 	</build>
 </project>
