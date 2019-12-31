@@ -1,33 +1,33 @@
 # LEMS
 
-##»ùÓÚSpring MVCÄ£Ê½µÄÊµÑéÊÒÉè±¸¹ÜÀíÏµÍ³
+##åŸºäºŽSpring MVCæ¨¡å¼çš„å®žéªŒå®¤è®¾å¤‡ç®¡ç†ç³»ç»Ÿ
 
-###ÏµÍ³¿ª·¢»·¾³
+###ç³»ç»Ÿå¼€å‘çŽ¯å¢ƒ
 
-**¿ª·¢»·¾³£º** Windows7¡¢JDK1.8¡¢IDEA¡¢Tomcat7¡¢MySQL5.6¡¢Maven3.3¡¢hMailServer
+**å¼€å‘çŽ¯å¢ƒï¼š** Windows7ã€JDK1.8ã€IDEAã€Tomcat7ã€MySQL5.6ã€Maven3.3ã€hMailServer
 
-**¼¼ÊõÊµÏÖ£º** Java¡¢Spring(IOC¡¢AOP ¡¢MVC)¡¢MyBatis¡¢Shiro¡¢HTML¡¢JSP¡¢jQuery¡¢Ajax¡¢JSON¡¢EasyUI¡¢Git
+**æŠ€æœ¯å®žçŽ°ï¼š** Javaã€Spring(IOCã€AOP ã€MVC)ã€MyBatisã€Shiroã€HTMLã€JSPã€jQueryã€Ajaxã€JSONã€EasyUIã€Git
 
-###¿ª·¢·½·¨
+###å¼€å‘æ–¹æ³•
 
-Ê¹ÓÃMaven¹¤¾ß½øÐÐÏîÄ¿¹ÜÀí£»
+ä½¿ç”¨Mavenå·¥å…·è¿›è¡Œé¡¹ç›®ç®¡ç†ï¼›
 
-»ùÓÚMVCÄ£Ê½¿ª·¢£¬Ê¹ÓÃSpringÕûºÏMyBatis´î½¨ËÄ²ãÈí¼þÌåÏµ(SSM¿ò¼Ü)£»
+åŸºäºŽMVCæ¨¡å¼å¼€å‘ï¼Œä½¿ç”¨Springæ•´åˆMyBatisæ­å»ºå››å±‚è½¯ä»¶ä½“ç³»(SSMæ¡†æž¶)ï¼›
 
-²ÉÓÃSpringIOC·´×ª¿ØÖÆÈ¨£¬ÓÉÏµÍ³×Ô¶¯¹ÜÀíBean¶ÔÏó£»
+é‡‡ç”¨SpringIOCåè½¬æŽ§åˆ¶æƒï¼Œç”±ç³»ç»Ÿè‡ªåŠ¨ç®¡ç†Beanå¯¹è±¡ï¼›
 
-Ê¹ÓÃSpringMVC×÷ÎªÇ°¶Ë¿ØÖÆÆ÷£»
+ä½¿ç”¨SpringMVCä½œä¸ºå‰ç«¯æŽ§åˆ¶å™¨ï¼›
 
-Ê¹ÓÃMyBatisÈ¡´ú´«Í³JDBC£¬×÷Îª³Ö¾Ã»¯²ã¶ÔÊý¾Ý¿â½øÐÐ(MySQL)²Ù×÷£»
+ä½¿ç”¨MyBatiså–ä»£ä¼ ç»ŸJDBCï¼Œä½œä¸ºæŒä¹…åŒ–å±‚å¯¹æ•°æ®åº“è¿›è¡Œ(MySQL)æ“ä½œï¼›
 
-Ê¹ÓÃShiro¿ò¼ÜÍê³ÉÈÏÖ¤¼°ÊÚÈ¨¿ØÖÆ£¬ÊµÏÖÈ¨ÏÞ¿ØÖÆ£»
+ä½¿ç”¨Shiroæ¡†æž¶å®Œæˆè®¤è¯åŠæŽˆæƒæŽ§åˆ¶ï¼Œå®žçŽ°æƒé™æŽ§åˆ¶ï¼›
 
-Ç°¶ËÊÇÓÃEasyUI´î½¨¼òÒ×Ò³Ãæ£»
+å‰ç«¯æ˜¯ç”¨EasyUIæ­å»ºç®€æ˜“é¡µé¢ï¼›
 
-Ç°¶ËÊý¾Ý½»»¥²ÉÓÃHTML¡¢JSP½áºÏAjax¼°JSONÒì²½ÇëÇóÍê³É£»
+å‰ç«¯æ•°æ®äº¤äº’é‡‡ç”¨HTMLã€JSPç»“åˆAjaxåŠJSONå¼‚æ­¥è¯·æ±‚å®Œæˆï¼›
 
-Ê¹ÓÃJava Mail×é¼þ½øÐÐÓÃ»§×¢²áÑéÖ¤£¬±¾µØÊ¹ÓÃhMailServer×÷ÎªÓÊ¼þ·þÎñÆ÷£»
+ä½¿ç”¨Java Mailç»„ä»¶è¿›è¡Œç”¨æˆ·æ³¨å†ŒéªŒè¯ï¼Œæœ¬åœ°ä½¿ç”¨hMailServerä½œä¸ºé‚®ä»¶æœåŠ¡å™¨ï¼›
 
-²ÉÓÃlog4j×é¼þ×÷ÎªÈÕÖ¾¼ÇÂ¼¹¤¾ß(SpringAOP)£»
+é‡‡ç”¨log4jç»„ä»¶ä½œä¸ºæ—¥å¿—è®°å½•å·¥å…·(SpringAOP)ï¼›
 
-Ê¹ÓÃGit×÷Îª°æ±¾¿ØÖÆ¹¤¾ß¡£
+ä½¿ç”¨Gitä½œä¸ºç‰ˆæœ¬æŽ§åˆ¶å·¥å…·ã€‚

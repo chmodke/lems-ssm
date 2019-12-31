@@ -1,2 +1,9 @@
-/target/*
-/out/*
+**/.metadata
+**/.settings
+**/.metadata
+**/.idea/
+**/.git/
+**/target
+**/out
+**/logs/
+*.log
