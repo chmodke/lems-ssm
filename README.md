@@ -1,14 +1,14 @@
 # LEMS
 
-##基于Spring MVC模式的实验室设备管理系统
+## 基于Spring MVC模式的实验室设备管理系统
 
-###系统开发环境
+### 系统开发环境
 
 **开发环境：** Windows7、JDK1.8、IDEA、Tomcat7、MySQL5.6、Maven3.3、hMailServer
 
 **技术实现：** Java、Spring(IOC、AOP 、MVC)、MyBatis、Shiro、HTML、JSP、jQuery、Ajax、JSON、EasyUI、Git
 
-###开发方法
+### 开发方法
 
 使用Maven工具进行项目管理；
 
